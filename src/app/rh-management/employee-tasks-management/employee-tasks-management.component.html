@@ -1,0 +1,144 @@
+<app-rh-header (adminRole)="onAdminRole($event)">
+</app-rh-header>
+<div class="page-container">
+  <div class="container">
+    <div style="padding-top : 30px; padding-bottom: 15px;" *ngIf="adminRole">
+      <a (click)="goRH()" style="color: blue;">
+        <i class="fa fa-user"></i> Employés
+      </a> /
+       <span *ngIf="employee != null">
+        {{employee.lastName }} {{employee.firstName}}
+      </span>
+      <button mat-raised-button style="float : right" (click)="addMission(employee)">
+        <i class="fa fa-plus"></i> Mission
+      </button>
+    </div>
+    <div>
+      <mat-tab-group animationDuration="0ms">
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <i class="fa fa-briefcase"></i>
+            Missions
+          </ng-template>
+          <div>
+            <div *ngIf="tasks">
+              <div style="margin :15px; color:#9A2828" *ngIf="tasks.length == 0">
+                <strong>Aucune mission dans la liste</strong> <strong *ngIf="adminRole">, veuillez affecter une mission à ce collaborateur</strong>
+              </div>
+
+              <div *ngIf="tasks.length > 0">
+                <div style="margin : 15px;">
+                  <strong *ngIf="tasks.length == 1" style="color: #32c5d2">{{tasks.length}} mission trouvée</strong>
+                  <p *ngIf="tasks.length > 1" style="color: #32c5d2">{{tasks.length}} missions trouvées</p>
+                </div>
+                <table class="table table-responsive-md btn-table table-hover" style="background-color: #8080800d;">
+                  <thead>
+                    <tr>
+                      <th class="h6" style="width:30%">Référence</th>
+                      <th class="h6" style="width:30%">Client</th>
+                      <th class="h6" style="width:20%" *ngIf="adminRole">Démarrage</th>
+                      <th class="h6" style="width:15%" *ngIf="adminRole">Duréé</th>
+                      <th class="h6" style="width:5%" *ngIf="adminRole">TJM</th>
+                      <th class="h6" style="width:10%">Status</th>
+                      <th *ngIf="adminRole"></th>
+                      <th *ngIf="adminRole"></th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr *ngFor="let task of tasks">
+                      <td>
+                        <strong style="color:#434142;">{{ task.name }}</strong>
+                      </td>
+                      <td>
+                        <strong style="color:#434142;">{{ task.client.name }}</strong>
+                      </td>
+                      <td *ngIf="adminRole">
+                          <strong style="color:#434142;" *ngIf="task.startDate == null">immédiate</strong>
+                          <strong style="color:#434142;" *ngIf="task.startDate != null">{{ task.startDate }}</strong>
+                      </td>
+                      <td *ngIf="adminRole">
+                          <strong style="color:#434142;">{{ task.duration }}</strong>
+                      </td>
+                      <td *ngIf="adminRole">
+                        <strong style="color:#434142;">{{ task.cjm}}</strong>
+                      </td>
+                      <td>
+                        <strong style="color:#434142;"> - </strong>
+                      </td>
+                      <td *ngIf="adminRole">
+                        <a tooltip="Modifier la mission" (click)="editTask(task)">
+                          <i class="fa fa-pencil" aria-hidden="true"></i>
+                        </a>
+                      </td>
+      
+                      <td *ngIf="adminRole">
+                        <a tooltip="Supprimer la mission" (click)="deleteTask(task)" >
+                          <i class="fa fa-trash" aria-hidden="true"></i>
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <i class="fa fa-calendar-o"></i>
+            Temps
+          </ng-template>
+          
+          <div>
+            <div *ngIf="timeSheets">
+              <div *ngIf="timeSheets.length == 0" style="margin :15px; color:#9A2828">
+                <strong>Aucune feuille de temps dans la liste</strong>
+              </div>
+              <!-- <div  *ngIf="timeSheets.length > 0" style="margin : 15px;">
+                  <strong *ngIf="timeSheets.length == 1" style="color: #32c5d2">{{timeSheets.length}} feuille de temps trouvée</strong>
+                  <p *ngIf="timeSheets.length > 1" style="color: #32c5d2">{{timeSheets.length}} feuilles de temps trouvées</p>
+              </div> -->
+            </div>
+            <table class="table table-responsive-md btn-table table-hover" style="background-color: #8080800d;">
+              <thead>
+                <tr>
+                  <th class="h6" style="width:80%">Période</th>
+                  <th class="h6 center" style="width:20%">Validation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngIf="!isCurrentMonthCreated" (click)="goToTimeSheetOf(currentMonthYear)" style="cursor: pointer" >
+                  <td > <span> {{currentMonthYear}} </span></td>
+                  <td class="center" >
+                      <i *ngIf="!adminRole" class="fa fa-calendar-plus-o" aria-hidden="true"></i>
+                      <i *ngIf="adminRole" class="fa fa-hourglass-half" aria-hidden="true"></i>
+                  </td>
+                </tr>
+                <tr *ngFor="let t of timeSheets" (click)="goToTimeSheetOf(t.currentMonthYear)" style="cursor: pointer">
+                  <td> <span> {{t.currentMonthYear}} </span></td>
+                  <td class="center" >
+                      <i *ngIf="!adminRole && !t.approvedByEmp && !t.approvedByAdmin" class="fa fa-calendar-plus-o" aria-hidden="true"></i>
+            
+                      <i *ngIf="!adminRole && t.approvedByEmp && !t.approvedByAdmin " class="fa fa-hourglass-half" aria-hidden="true"></i>
+                      <i *ngIf="adminRole && !t.approvedByEmp" class="fa fa-hourglass-half" aria-hidden="true"></i>
+                      <i *ngIf="t.approvedByEmp && t.approvedByAdmin " class="fa fa-calendar-check-o" aria-hidden="true"></i>
+                      <i *ngIf="adminRole && t.approvedByEmp && !t.approvedByAdmin " class="fa fa-edit" aria-hidden="true"></i>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </mat-tab>
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <i class="fa fa-calendar-minus-o"></i>
+            Absences
+          </ng-template>
+          Demande d'une absence
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</div>
+

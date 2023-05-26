@@ -1,0 +1,25 @@
+<!--<div class="chatform chat-box">-->
+<div class="chatform chat-box" *ngIf="showChatBox">
+  <div class="title">
+    Welcome to Kakoo
+  </div>
+  <img src="./assets/home/images/personal-user-illustration-@2x.png" class="avatar" />
+  <!--<i class="fa fa-4x fa-user-circle-o avatar"></i>-->
+  <br>
+  <message-list [messages]="messages"></message-list>
+
+  <div class="footer">
+
+  </div>
+  <!--<message-form [message]="message" [messages]="messages"></message-form>-->
+
+</div>
+
+<div class="open-chat-box">
+  <button class="mySimpleButton join{{showChatBox}}" (click)="showChatBox=!showChatBox;">
+    <span *ngIf="!showChatBox">Join us now !</span>
+    <span *ngIf="showChatBox" style="margin-right: 25%;"><i class="fa fa-remove fa-lg"></i></span>
+
+  </button>
+
+</div>

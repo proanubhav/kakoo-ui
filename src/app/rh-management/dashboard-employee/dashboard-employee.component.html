@@ -1,0 +1,54 @@
+<app-rh-header></app-rh-header>
+
+<div class="page-container">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <section>
+          <header class="header">
+            <div style="text-align:right;">
+              <div style="text-align:center;color:#9A2828;">
+                <h4>
+                  <br>Liste des Arrets</h4>
+              </div>
+            </div>
+
+          </header>
+        </section>
+
+        <section class="main rounded">
+          <table class="table table-responsive-md btn-table table-hover">
+            <thead>
+            <tr>
+              <th class="h6" style="width:10%">#</th>
+              <th class="h6" style="width:20%"> Type Arret</th>
+              <th class="h6" style="width:20%"> Date Début</th>
+              <th class="h6" style="width:20%"> Date Fin</th>
+              <th class="h6" style="width:10%"> Durée (jrs)</th>
+            </tr>
+            </thead>
+            <tBody *ngIf="allArrets">
+            <tr *ngFor="let arret of pagedArretItems">
+              <td>
+                <strong style="color:#434142;">{{arret.id }}</strong>
+              </td>
+              <td>
+                <strong> {{arret.type_arret|lowercase}}</strong>
+              </td>
+              <td>
+                <strong>{{arret.date_d}}</strong>
+              </td>
+              <td>
+                <strong>{{arret.duree}}</strong>
+              </td>
+            </tr>
+            </tBody>
+          </table>
+          <div class="text-center mt-4 mb-2">
+            <button mat-raised-button type="submit" class="mySuccessButton" (click)="addArrets()">Ajouter un arret <i class="fa fa-plus ml-3"></i> </button>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>

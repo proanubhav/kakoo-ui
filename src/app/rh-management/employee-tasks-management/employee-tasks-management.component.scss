@@ -1,0 +1,52 @@
+.mat-tab-group {
+  margin-bottom: 48px;
+  width : 100%;
+}
+
+.mat-tab-label {
+    min-width: 25px !important;
+    padding: 5px;
+    background-color: transparent;
+    color: blue;
+    font-weight: 700;
+}
+
+/* Styles for the active tab label */
+.mat-tab-label.mat-tab-label-active {
+    min-width: 25px !important;
+    padding: 5px;
+    background-color: transparent;
+    color: #0043ff;
+    font-weight: 700;
+}
+
+/* Styles for the ink bar */
+.mat-ink-bar {
+    background-color: green;
+}
+
+p {
+  font-family: Lato;
+}
+
+.fa-pencil, .fa-info-circle, .fa-caret-square-o-right, .fa-calendar-plus-o {
+    color: #9A2828;
+    font-size: 1.15rem;
+    line-height: 2rem;
+    &:hover {
+      color: rgb(32, 109, 197);
+    }
+  }
+  
+  .fa-trash {
+    color:	#9A2828;
+    font-size: 1.15rem;
+    line-height: 2rem;
+    &:hover {
+      color: rgb(117, 6, 6);
+    }
+  }
+
+  .center {
+    text-align: center;
+  }

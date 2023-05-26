@@ -1,0 +1,149 @@
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg navbar-light changed-color lighten-4 ">
+  <a class="navbar-brand" routerLink="">
+    <img src="./assets/home/images/newlogokako.png" style="margin-top:-0.3em" height="30" alt="">
+    <strong style="position:absolute">akoo Software</strong>
+  </a>
+
+
+  <!-- Collapse button -->
+
+  <!-- Collapsible content -->
+  <div class="collapse navbar-collapse" id="basicExampleNav">
+
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+      <!-- <li class="nav-item">
+          <a class="nav-link " routerLink=""><i class="fa fa-home"></i> Acceuil
+              <span class="sr-only">(current)</span>
+          </a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" routerLink="/candidate/list" routerLinkActive="active"><i class="fa fa-th-list"></i> Candidats</a>
+      </li>
+      <li>
+           
+            <a class="nav-link"  routerLink="/user/profile" ><i class="fa fa-user"></i> Mon Profil</a>
+      </li>
+    -->
+      <li class="nav-item" style="margin-left:40em;">
+        <strong class="nav-link " style="color:#9A2828"> Espace Candidat {{companyName | uppercase}}
+        </strong>
+      </li>
+
+
+
+    </ul>
+    <div>
+
+    </div>
+
+
+
+
+  </div>
+  <!-- Collapsible content -->
+  <!--menu-->
+  <div class="menu">
+    <span>
+
+      <div>
+        <button mat-icon-button [matMenuTriggerFor]="menun">
+          <mat-icon class="maticon">notifications</mat-icon>
+          <span class="badge" *ngIf="notifs.length!==0"> {{notifs.length}}</span>
+        </button>
+      </div>
+    </span>
+    <mat-menu #menun="matMenu">
+      <button mat-menu-item class="dropdown-item" *ngFor="let notif of notifs" (click)="checkNotif(notif)">
+        <mat-icon>description</mat-icon>
+        <span>{{notif['message']}}</span>
+      </button>
+      <button mat-menu-item class="dropdown-item" *ngIf="notifs.length==0">
+        <span>Aucune nouvelle notification </span>
+      </button>
+    </mat-menu>
+
+  </div>
+  <div class="menu">
+    <span>
+
+      <button mat-icon-button [matMenuTriggerFor]="menu1">
+        <mat-icon mat-button class="maticon">apps</mat-icon>
+      </button>
+    </span>
+    <mat-menu #menu1="matMenu">
+      <button *ngIf="isAdminRole" mat-menu-item (click)="viewUsers()">
+        <mat-icon>group_work</mat-icon>
+        <span>Espace Utilisateurs</span>
+      </button>
+
+      <button mat-menu-item class="dropdown-item" (click)="goCandidates()">
+        <mat-icon>supervisor_account</mat-icon>
+        Espace Candidats
+      </button>
+      <button mat-menu-item class="dropdown-item" (click)="goRecrutement()">
+        <mat-icon>card_travel</mat-icon>
+        <span>Espace Recrutement</span>
+      </button>
+
+      <span>
+        <button mat-menu-item class="dropdown-item" [matMenuTriggerFor]="menu2">
+          <mat-icon>card_travel</mat-icon>
+          Espace RH
+        </button>
+      </span>
+      <mat-menu #menu2="matMenu">
+        <button mat-menu-item class="dropdown-item" (click)="goRH()">
+          <mat-icon>card_travel</mat-icon>
+          Employés
+        </button>
+
+        <button mat-menu-item class="dropdown-item" (click)="goClients()">
+          <mat-icon>business</mat-icon>
+          Clients
+        </button>
+
+        <button mat-menu-item class="dropdown-item" (click)="goTasks()">
+          <mat-icon>business_center</mat-icon>
+          Missions
+        </button>
+      </mat-menu>
+    </mat-menu>
+  </div>
+
+
+
+
+
+
+  <!--profile user-->
+  <div>
+    <span>
+      <a>
+        <img id="user-image" [src]="imageUrl" mat-button [matMenuTriggerFor]="menu" height="30" alt="" class="rounded-circle img-fluid">
+      </a>
+    </span>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item class="dropdown-item" (click)=" goProfile()">
+        <mat-icon>
+          <img id="user-image" [src]="imageUrl" style="height:1.2em;" class="rounded-circle img-fluid">
+        </mat-icon>
+        {{firstName | titlecase}} {{lastName | uppercase}}
+      </button>
+      <!-- <strong  mat-menu-item class="dropdown-item"><p >Mon Profil</p></strong>-->
+
+      <button mat-menu-item class="dropdown-item" (click)=" goSettings()">
+        <mat-icon>settings</mat-icon>
+        Paramètres
+      </button>
+
+      <button mat-menu-item class="dropdown-item" (click)="disconnect()">
+        <mat-icon>power_settings_new</mat-icon>Déconnexion
+      </button>
+    </mat-menu>
+
+  </div>
+
+</nav>
+<!--/.Navbar-->

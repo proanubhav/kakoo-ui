@@ -1,0 +1,1702 @@
+{
+    "Resume": {
+        "@xml:lang": "fr",
+        "@xmlns": "http://ns.hr-xml.org/2006-02-28",
+        "@xmlns:sov": "http://sovren.com/hr-xml/2006-02-28",
+        "ResumeId": {
+            "IdValue": null
+        },
+        "StructuredXMLResume": {
+            "ContactInfo": {
+                "ContactMethod": [
+                    {
+                        "Telephone": {
+                            "FormattedNumber": "+216 24 48 15 57"
+                        }
+                    },
+                    {
+                        "Use": "personal",
+                        "Location": "onPerson",
+                        "WhenAvailable": "anytime",
+                        "InternetEmailAddress": "touatimoutii@gmail.com"
+                    }
+                ]
+            },
+            "EmploymentHistory": {
+                "EmployerOrg": [
+                    {
+                        "EmployerOrgName": "Sopra Steria Group",
+                        "PositionHistory": [
+                            {
+                                "@currentEmployer": "true",
+                                "OrgName": {
+                                    "OrganizationName": "Sopra Steria Group"
+                                },
+                                "Description": "",
+                                "StartDate": {
+                                    "YearMonth": "2017-12"
+                                },
+                                "EndDate": {
+                                    "StringDate": "current"
+                                },
+                                "JobCategory": [
+                                    {
+                                        "TaxonomyName": "Job Level",
+                                        "CategoryCode": "Experienced (non-manager)"
+                                    }
+                                ],
+                                "UserArea": {
+                                    "sov:PositionHistoryUserArea": {
+                                        "sov:Id": "POS-3",
+                                        "sov:CompanyNameProbabilityInterpretation": {
+                                            "@internalUseOnly": "SS",
+                                            "#text": "Confident"
+                                        },
+                                        "sov:NormalizedOrganizationName": "Sopra Steria Group"
+                                    }
+                                }
+                            }
+                        ],
+                        "UserArea": {
+                            "sov:EmployerOrgUserArea": {
+                                "sov:NormalizedEmployerOrgName": "Sopra Steria Group"
+                            }
+                        }
+                    },
+                    {
+                        "EmployerOrgName": "Arabe",
+                        "PositionHistory": [
+                            {
+                                "@positionType": "directHire",
+                                "@currentEmployer": "true",
+                                "OrgName": {
+                                    "OrganizationName": "Arabe"
+                                },
+                                "Description": "Français: Courant\r\nLANGUES\r\n-Conception détaillée de la solution et développement d'une application\r\nde gestion des temps et activités, d'une application de gestion des absences et d'un workøow pour un ERP.",
+                                "StartDate": {
+                                    "StringDate": "current"
+                                },
+                                "EndDate": {
+                                    "StringDate": "current"
+                                },
+                                "JobCategory": [
+                                    {
+                                        "TaxonomyName": "Skills taxonomy",
+                                        "CategoryCode": "Human Resources → Diversity & Inclusion",
+                                        "Comments": "Human Resources describes 20% of this job"
+                                    },
+                                    {
+                                        "TaxonomyName": "Job Level",
+                                        "CategoryCode": "Experienced (non-manager)"
+                                    }
+                                ],
+                                "UserArea": {
+                                    "sov:PositionHistoryUserArea": {
+                                        "sov:Id": "POS-1",
+                                        "sov:CompanyNameProbabilityInterpretation": {
+                                            "@internalUseOnly": "BS",
+                                            "#text": "Confident"
+                                        },
+                                        "sov:NormalizedOrganizationName": "Arabe"
+                                    }
+                                }
+                            }
+                        ],
+                        "UserArea": {
+                            "sov:EmployerOrgUserArea": {
+                                "sov:NormalizedEmployerOrgName": "Arabe"
+                            }
+                        }
+                    },
+                    {
+                        "EmployerOrgName": "Metam",
+                        "PositionHistory": [
+                            {
+                                "@positionType": "internship",
+                                "Title": "Stage de projet de ön d'études du cycle ingénieur",
+                                "OrgName": {
+                                    "OrganizationName": "Metam"
+                                },
+                                "Description": "- Périmètre technico- fonctionnel des Ressources Humaines.\r\n- Gestion de la paie et des Déclaratifs (DSN) et signalements d'événements.\r\n- Rédaction des spéciöcations fonctionnelles et de la documentation détaillée.\r\n- Estimation des tâches au cours du sprint et proposition de la charge au client\r\n- Analyse des exigences fonctionnelles, développement, tests unitaires, recettes\r\nhomologation.\r\n- - Etude et analyse d'impact des modiöcations.\r\n- Préparation des scénarios de tests fonctionnels et des tests unitaires.\r\n- Reproduction et réalisation des cas de test et des cas de tests de non régression.\r\n- Qualiöcation pour la validation des fonctionnalités exprimées dans le cahier\r\ndes charges.\r\n- Réalisation des livrables du projet dans la qualité et les délais attendus.\r\n- Participation à des comités de projet et point de suivi hebdomadaire.\r\n- - Responsable TMA de bout en bout des diverses demandes client (correction\r\nde bug, évolution version du système, ajout de nouvelles fonctionnalités\r\nmodiöcation de fonctionnalités existantes ou d'un module ).\r\n- Mise en œuvre des scripts de développement shell, xml, javascript.\r\n- Utilisation de l'outil de gestion de projet MAVEN, et de gestion de version SVN\r\net d'intégration continue Jenkins et Git.\r\nMots clés: HR ACCESS, Auto validateur, SQL, Linux, JIRA, JavaScript, XML, Junit\r\nSVN, jen SVN, jenkins, CI, SCRUM, GitLab CI, Design center\r\nIngénieur Consultant Support & Integration  [ Sopra HR Software",
+                                "StartDate": {
+                                    "YearMonth": "2017-02"
+                                },
+                                "EndDate": {
+                                    "YearMonth": "2017-06"
+                                },
+                                "JobCategory": [
+                                    {
+                                        "TaxonomyName": "Skills taxonomy",
+                                        "CategoryCode": "Technologies Informatique → Programmation",
+                                        "Comments": "Technologies Informatique describes 22% of this job"
+                                    },
+                                    {
+                                        "TaxonomyName": "Job Level",
+                                        "CategoryCode": "Experienced (non-manager)"
+                                    }
+                                ],
+                                "UserArea": {
+                                    "sov:PositionHistoryUserArea": {
+                                        "sov:Id": "POS-2",
+                                        "sov:CompanyNameProbabilityInterpretation": {
+                                            "@internalUseOnly": "Q",
+                                            "#text": "Probable"
+                                        },
+                                        "sov:PositionTitleProbabilityInterpretation": {
+                                            "@internalUseOnly": "TF",
+                                            "#text": "Confident"
+                                        },
+                                        "sov:NormalizedOrganizationName": "Metam",
+                                        "sov:NormalizedTitle": "Stage de projet de ön détudes du cycle ingénieur",
+                                        "sov:Subtitles": {
+                                            "sov:Subtitle": [
+                                                "Stage de projet",
+                                                "Stage",
+                                                "ön d'études du cycle ingénieur",
+                                                "cycle ingénieur"
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        ],
+                        "UserArea": {
+                            "sov:EmployerOrgUserArea": {
+                                "sov:NormalizedEmployerOrgName": "Metam"
+                            }
+                        }
+                    },
+                    {
+                        "EmployerOrgName": "Insititut supérieur",
+                        "PositionHistory": [
+                            {
+                                "@positionType": "directHire",
+                                "Title": "Diplôme national d'ingénieur en informatique",
+                                "OrgName": {
+                                    "OrganizationName": "Insititut supérieur"
+                                },
+                                "Description": "",
+                                "StartDate": {
+                                    "Year": "2014"
+                                },
+                                "EndDate": {
+                                    "Year": "2017"
+                                },
+                                "JobCategory": [
+                                    {
+                                        "TaxonomyName": "Job Level",
+                                        "CategoryCode": "Entry Level"
+                                    }
+                                ],
+                                "UserArea": {
+                                    "sov:PositionHistoryUserArea": {
+                                        "sov:Id": "POS-4",
+                                        "sov:CompanyNameProbabilityInterpretation": {
+                                            "@internalUseOnly": "Q",
+                                            "#text": "Probable"
+                                        },
+                                        "sov:PositionTitleProbabilityInterpretation": {
+                                            "@internalUseOnly": "BQ",
+                                            "#text": "Confident"
+                                        },
+                                        "sov:NormalizedOrganizationName": "Insititut supérieur",
+                                        "sov:NormalizedTitle": "Diplôme national dingénieur en informatique",
+                                        "sov:Subtitles": {
+                                            "sov:Subtitle": [
+                                                "Diplôme national d'ingénieur"
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        ],
+                        "UserArea": {
+                            "sov:EmployerOrgUserArea": {
+                                "sov:NormalizedEmployerOrgName": "Insititut supérieur"
+                            }
+                        }
+                    }
+                ]
+            },
+            "LicensesAndCertifications": {
+                "LicenseOrCertification": [
+                    {
+                        "Name": "CCNA",
+                        "Id": "1",
+                        "Description": "certification; matched to list"
+                    }
+                ]
+            },
+            "Languages": {
+                "Language": [
+                    {
+                        "LanguageCode": "ar",
+                        "Read": "true",
+                        "Write": "false",
+                        "Speak": "false",
+                        "Comments": "Arabe: Maternel"
+                    },
+                    {
+                        "LanguageCode": "es",
+                        "Read": "true",
+                        "Write": "false",
+                        "Speak": "false",
+                        "Comments": "Espagnol: Notions"
+                    },
+                    {
+                        "LanguageCode": "en",
+                        "Read": "true",
+                        "Write": "true",
+                        "Speak": "true",
+                        "Comments": "Anglais: Courant"
+                    },
+                    {
+                        "LanguageCode": "fr",
+                        "Read": "true",
+                        "Write": "true",
+                        "Speak": "true",
+                        "Comments": "Français: Courant"
+                    }
+                ]
+            },
+            "RevisionDate": "2018-12-03"
+        },
+        "NonXMLResume": {
+            "TextResume": "Node.js\r\nVériöcation formelle\r\nQualité et test: Junit 4\r\nHTML5 / CSS3\r\nCISCO: CCNA 1 Routage et commutation\r\nTCF: C1\r\nCOMPETENCES\r\nCERTIFICATIONS\r\nArabe: Maternel\r\nEspagnol: Notions\r\nAnglais: Courant\r\nFrançais: Courant\r\nLANGUES\r\n-Conception détaillée de la solution et développement d'une application\r\nde gestion des temps et activités, d'une application de gestion des absences\r\net d'un workøow pour un ERP.\r\nStage de projet de ön d'études du cycle ingénieur  [ Metam ]\r\nFévrier 2017 - Juin 2017\r\n- Périmètre technico- fonctionnel des Ressources Humaines.\r\n- Gestion de la paie et des Déclaratifs (DSN) et signalements d'événements.\r\n- Rédaction des spéciöcations fonctionnelles et de la documentation détaillée.\r\n- Estimation des tâches au cours du sprint et proposition de la charge au client\r\n- Analyse des exigences fonctionnelles, développement, tests unitaires, recettes\r\nhomologation.\r\n- - Etude et analyse d'impact des modiöcations.\r\n- Préparation des scénarios de tests fonctionnels et des tests unitaires.\r\n- Reproduction et réalisation des cas de test et des cas de tests de non régression.\r\n- Qualiöcation pour la validation des fonctionnalités exprimées dans le cahier\r\ndes charges.\r\n- Réalisation des livrables du projet dans la qualité et les délais attendus.\r\n- Participation à des comités de projet et point de suivi hebdomadaire.\r\n- - Responsable TMA de bout en bout des diverses demandes client (correction\r\nde bug, évolution version du système, ajout de nouvelles fonctionnalités\r\nmodiöcation de fonctionnalités existantes ou d'un module ).\r\n- Mise en œuvre des scripts de développement shell, xml, javascript.\r\n- Utilisation de l'outil de gestion de projet MAVEN, et de gestion de version SVN\r\net d'intégration continue Jenkins et Git.\r\nMots clés: HR ACCESS, Auto validateur, SQL, Linux, JIRA, JavaScript, XML, Junit\r\nSVN, jen SVN, jenkins, CI, SCRUM, GitLab CI, Design center\r\nIngénieur Consultant Support & Integration  [ Sopra HR Software\r\n(Sopra Steria Group) ]\r\nDécembre 2017 - présent\r\nExpérience professionnelle\r\nDynamique, autonome, rigoureux\r\nBon relationnel, qualité d'écoute\r\nEsprit d'équipe et d'analyse\r\nde service et le sens du contact.\r\nEncadrement de Juniors\r\net des stagiaires de l'outsourcing\r\ndans leurs p dans leurs projets de ön d'études\r\nÀ PROPOS DE MOI\r\n04 Novembre 1992\r\n+216 24 48 15 57\r\ntouatimoutii@gmail.com\r\nhttps://www.linkedin.com/in/moutii-touati\r\n10, Rue Salah Ben Osman\r\nSidi El Bechir, Tunis, Tunisie\r\nMoutii TOUATI\r\nIngénieur génie logiciel\r\nIngénieur Consultant Support & Integration | Sopra HR Software (Sopra Steria Group)\r\n\r\n\r\n- Spécialité: Mathématiques\r\nBaccalauréat\r\nLycée Sadiki  2011\r\n- Spécialité: informatique et multimédia\r\nLicence fondamentale en informatique et multimedia\r\nInsititut supérieur des arts multimédia de manouba 2011- 2014\r\n- Spécialité: génie logiciel\r\nDiplôme national d'ingénieur en informatique\r\nInsititut supérieur des arts multimédia de manouba 2014 - 2017\r\nFormation\r\n- Réseau social avec JEE, Hibernate et Spring (öl de partage, proöl et système\r\nde chat (avec NodeJS))\r\n- Réseau social avec symfony3 (öl de partage, proöl et système de chat (avec\r\nNodeJS))\r\n- Site web e-commerce avec Django (Python)\r\n- Application Android de gestion des événements\r\n- - Projet en java qui met en place les web services SOAP et REST\r\n- Projet qui met en place le web load balancing\r\n- Jeu de course 2D avec Unity3D (langage de développement C#)\r\nProjets académiques\r\n- Conception et développement d'un jeu video 3D\r\ntechnologies utilisées: Unity3D, langage de développement: C#\r\nStage du projet de ön d'études du premier cycle  [ Stellar vf ]\r\nFévrier 2014 - Mai 2014\r\no Module de gestion des absences dans l'espace salarié et dans l'espace manager\r\net gestionnaire RH\r\no Module de gestion des temps et activités dans l'espace salarié et dans l'espace\r\nmanager et gestionnaire RH\r\no Workøow pour automatiser le traitement des absences et des activités saisies\r\npar les salariés et validés par les manager et gestionnaires RH (changements\r\nde st   de statuts, mailing, notiöcations)\r\no Gestion et sécurisations des différents rôles.\r\nMots clés: Symfony 3, Javascript, MVC, CSS3, HTML5, AngularJS, SQL.\r\nAgile:\r\n- Suivre la méthodologie Agile Scrum: estimation des tâches, reporting, daily\r\nscrum et démonstration de ön d'itération.\r\n- Participation aux spéciöcations de besoins\r\nJ'ai pratiqué le handball pendant\r\n2 ans et le volleyball pendant\r\n1 an\r\nInteressé par les nouvelles\r\ntechnologies et les jeux vidéos\r\nEtant co-fondateur et membre\r\ndu club \" T3alem ISAMM Club \"\r\nqui organise des événements\r\ndes compétitions et formations\r\ngratuites dans le domaine de\r\nl'informatique, cela m'a\r\nbeau beaucoup apporter sur le plan\r\nsens de travail en équipe\r\nl'esprit de concurrence\r\net l'organisation.\r\nCENTRES D'INTERET"
+        },
+        "UserArea": {
+            "sov:ResumeUserArea": {
+                "sov:Culture": {
+                    "sov:Language": "fr",
+                    "sov:Country": "FR",
+                    "sov:CultureInfo": "fr-FR"
+                },
+                "sov:ExperienceSummary": {
+                    "sov:Description": "[Le candidat] Expérience principale : quelque peu avec une expérience secondaire dans Technologies Informatique / Programmation. [Le candidat] Niveau d'expérience : Intermédiaire, avec 4 mois d'expérience .",
+                    "sov:MonthsOfWorkExperience": "53",
+                    "sov:AverageMonthsPerEmployer": "13",
+                    "sov:FulltimeDirectHirePredictiveIndex": "37",
+                    "sov:MonthsOfManagementExperience": "0",
+                    "sov:HighestManagementScore": "0",
+                    "sov:ExecutiveType": "none",
+                    "sov:ManagementStory": null,
+                    "sov:SkillsTaxonomyOutput": {
+                        "sov:TaxonomyRoot": [
+                            {
+                                "@name": "Sovren.fr",
+                                "sov:Taxonomy": [
+                                    {
+                                        "@name": "Technologies Informatique",
+                                        "@id": "10",
+                                        "@percentOfOverall": "22",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Programmation",
+                                                "@id": "204",
+                                                "@percentOfOverall": "7",
+                                                "@percentOfParentTaxonomy": "31",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "C#",
+                                                        "@id": "012275",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in EDUCATION; TRAINING"
+                                                    },
+                                                    {
+                                                        "@name": "COMMERCE À COMMERCE LOGICIEL",
+                                                        "@id": "023446",
+                                                        "@existsInText": "false",
+                                                        "sov:ChildSkill": [
+                                                            {
+                                                                "@name": "GÉNIE LOGICIEL",
+                                                                "@id": "0082211",
+                                                                "@existsInText": "true",
+                                                                "@whereFound": "Found in WORK HISTORY"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "@name": "GIT",
+                                                        "@id": "1004755",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "4",
+                                                        "@lastUsed": "2017-06-01",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-2"
+                                                    },
+                                                    {
+                                                        "@name": "PYTHON",
+                                                        "@id": "006120",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in EDUCATION; TRAINING"
+                                                    },
+                                                    {
+                                                        "@name": "SCRIPTS",
+                                                        "@id": "024873",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "4",
+                                                        "@lastUsed": "2017-06-01",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-2"
+                                                    },
+                                                    {
+                                                        "@name": "SUBVERSION",
+                                                        "@id": "1004756",
+                                                        "@existsInText": "false",
+                                                        "@childrenTotalMonths": "4",
+                                                        "@childrenLastUsed": "2017-06-01",
+                                                        "sov:ChildSkill": [
+                                                            {
+                                                                "@name": "SVN",
+                                                                "@id": "100475601",
+                                                                "@existsInText": "true",
+                                                                "@totalMonths": "4",
+                                                                "@lastUsed": "2017-06-01",
+                                                                "@whereFound": "Found in WORK HISTORY; POS-2"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "@name": "XML",
+                                                        "@id": "011476",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "4",
+                                                        "@lastUsed": "2017-06-01",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-2"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Base de Données",
+                                                "@id": "193",
+                                                "@percentOfOverall": "6",
+                                                "@percentOfParentTaxonomy": "29",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "RÉPLICATION",
+                                                        "@id": "025246",
+                                                        "@existsInText": "false",
+                                                        "@childrenTotalMonths": "4",
+                                                        "@childrenLastUsed": "2017-06-01",
+                                                        "sov:ChildSkill": [
+                                                            {
+                                                                "@name": "REPRODUCTION",
+                                                                "@id": "0252461",
+                                                                "@existsInText": "true",
+                                                                "@totalMonths": "4",
+                                                                "@lastUsed": "2017-06-01",
+                                                                "@whereFound": "Found in WORK HISTORY; POS-2"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "@name": "SQL",
+                                                        "@id": "008481",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "4",
+                                                        "@lastUsed": "2017-06-01",
+                                                        "@whereFound": "Found in EDUCATION; TRAINING; WORK HISTORY; POS-2"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Java",
+                                                "@id": "339",
+                                                "@percentOfOverall": "5",
+                                                "@percentOfParentTaxonomy": "21",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "JAVASCRIPT",
+                                                        "@id": "025394",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "4",
+                                                        "@lastUsed": "2017-06-01",
+                                                        "@whereFound": "Found in EDUCATION; TRAINING; WORK HISTORY; POS-2"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "UNIX et LINUX",
+                                                "@id": "203",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "7",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "LINUX",
+                                                        "@id": "023925",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "4",
+                                                        "@lastUsed": "2017-06-01",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-2"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "ERP et CRM",
+                                                "@id": "195",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "7",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "ERP",
+                                                        "@id": "016891",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "1",
+                                                        "@lastUsed": "2018-12-03",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Internet",
+                                                "@id": "196",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "3",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "COMMERCE ÉLECTRONIQUE",
+                                                        "@id": "026768",
+                                                        "@existsInText": "false",
+                                                        "sov:ChildSkill": [
+                                                            {
+                                                                "@name": "E-COMMERCE",
+                                                                "@id": "0267681",
+                                                                "@existsInText": "true",
+                                                                "@whereFound": "Found in EDUCATION; TRAINING"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "@name": "WEB SERVICES",
+                                                        "@id": "011022.en",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in EDUCATION; TRAINING"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Normes et Protocoles",
+                                                "@id": "253",
+                                                "@percentOfOverall": "0",
+                                                "@percentOfParentTaxonomy": "1",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "SOAP",
+                                                        "@id": "008187",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in EDUCATION; TRAINING"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Architecture",
+                                                "@id": "201",
+                                                "@percentOfOverall": "0",
+                                                "@percentOfParentTaxonomy": "1",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "MVC",
+                                                        "@id": "003233",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in EDUCATION; TRAINING"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Reseau",
+                                                "@id": "198",
+                                                "@percentOfOverall": "0",
+                                                "@percentOfParentTaxonomy": "1",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "CCNA",
+                                                        "@id": "026808",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in CERTIFICATIONS"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "@name": "Ingénierie",
+                                        "@id": "5",
+                                        "@percentOfOverall": "21",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Ingénierie Generale",
+                                                "@id": "307",
+                                                "@percentOfOverall": "10",
+                                                "@percentOfParentTaxonomy": "49",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "ESTIMATION",
+                                                        "@id": "080470",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "4",
+                                                        "@lastUsed": "2017-06-01",
+                                                        "@whereFound": "Found in EDUCATION; TRAINING; WORK HISTORY; POS-2"
+                                                    },
+                                                    {
+                                                        "@name": "INGÉNIEUR",
+                                                        "@id": "080540",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "40",
+                                                        "@lastUsed": "2017-06-01",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-2; POS-4"
+                                                    },
+                                                    {
+                                                        "@name": "MISE EN ŒUVRE",
+                                                        "@id": "023747",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "4",
+                                                        "@lastUsed": "2017-06-01",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-2"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Conception",
+                                                "@id": "134",
+                                                "@percentOfOverall": "5",
+                                                "@percentOfParentTaxonomy": "23",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "CONCEPTION",
+                                                        "@id": "025590",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "1",
+                                                        "@lastUsed": "2018-12-03",
+                                                        "@whereFound": "Found in EDUCATION; TRAINING; WORK HISTORY; POS-1"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Autres",
+                                                "@id": "263",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "7",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "INGÉNIEUR",
+                                                        "@id": "080650",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "4",
+                                                        "@lastUsed": "2017-06-01",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-2"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Techniques",
+                                                "@id": "264",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "7"
+                                            },
+                                            {
+                                                "@name": "Matériel Informatique",
+                                                "@id": "144",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "7",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "LINUX",
+                                                        "@id": "023926",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "4",
+                                                        "@lastUsed": "2017-06-01",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-2"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Analyse Contraintes et Essais",
+                                                "@id": "309",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "7",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "TESTS FONCTIONNELS",
+                                                        "@id": "022845",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "4",
+                                                        "@lastUsed": "2017-06-01",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-2"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "@name": "Gestion Generale",
+                                        "@id": "80",
+                                        "@percentOfOverall": "14",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Gestions et Taches",
+                                                "@id": "519",
+                                                "@percentOfOverall": "9",
+                                                "@percentOfParentTaxonomy": "63",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "MANAGÉRIALES",
+                                                        "@id": "021109",
+                                                        "@existsInText": "false",
+                                                        "@childrenTotalMonths": "5",
+                                                        "@childrenLastUsed": "2018-12-03",
+                                                        "sov:ChildSkill": [
+                                                            {
+                                                                "@name": "DE GESTION",
+                                                                "@id": "0211091",
+                                                                "@existsInText": "true",
+                                                                "@totalMonths": "5",
+                                                                "@lastUsed": "2018-12-03",
+                                                                "@whereFound": "Found in EDUCATION; TRAINING; WORK HISTORY; POS-1; POS-2"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Lies au Budget",
+                                                "@id": "516",
+                                                "@percentOfOverall": "5",
+                                                "@percentOfParentTaxonomy": "35",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "ESTIMATION",
+                                                        "@id": "016952",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "4",
+                                                        "@lastUsed": "2017-06-01",
+                                                        "@whereFound": "Found in EDUCATION; TRAINING; WORK HISTORY; POS-2"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Orientée Vers les Gens",
+                                                "@id": "517",
+                                                "@percentOfOverall": "0",
+                                                "@percentOfParentTaxonomy": "2",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "BÂTIMENT D’ÉQUIPE",
+                                                        "@id": "009221",
+                                                        "@existsInText": "false",
+                                                        "sov:ChildSkill": [
+                                                            {
+                                                                "@name": "ESPRIT D'ÉQUIPE",
+                                                                "@id": "0092211",
+                                                                "@existsInText": "true",
+                                                                "@whereFound": "Found in WORK HISTORY"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "@name": "Administrative ou  de Bureau",
+                                        "@id": "1",
+                                        "@percentOfOverall": "6",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Sténographie, Dactylographie,Dépôt",
+                                                "@id": "109",
+                                                "@percentOfOverall": "5",
+                                                "@percentOfParentTaxonomy": "76",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "JUNIT",
+                                                        "@id": "020369",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "4",
+                                                        "@lastUsed": "2017-06-01",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-2"
+                                                    },
+                                                    {
+                                                        "@name": "REVISER",
+                                                        "@id": "025021",
+                                                        "@existsInText": "false",
+                                                        "@childrenTotalMonths": "4",
+                                                        "@childrenLastUsed": "2017-06-01",
+                                                        "sov:ChildSkill": [
+                                                            {
+                                                                "@name": "CORRECTION",
+                                                                "@id": "0250212",
+                                                                "@existsInText": "true",
+                                                                "@totalMonths": "4",
+                                                                "@lastUsed": "2017-06-01",
+                                                                "@whereFound": "Found in WORK HISTORY; POS-2"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "@name": "TESTS UNITAIRES",
+                                                        "@id": "010255",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "4",
+                                                        "@lastUsed": "2017-06-01",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-2"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Liés à la comptabilité",
+                                                "@id": "117",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "24",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "LA PAIE",
+                                                        "@id": "022783",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "4",
+                                                        "@lastUsed": "2017-06-01",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-2"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "@name": "Construction non-travail",
+                                        "@id": "22",
+                                        "@percentOfOverall": "5",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Estimation",
+                                                "@id": "380",
+                                                "@percentOfOverall": "5",
+                                                "@percentOfParentTaxonomy": "95",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "ESTIMATION",
+                                                        "@id": "022413",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "4",
+                                                        "@lastUsed": "2017-06-01",
+                                                        "@whereFound": "Found in EDUCATION; TRAINING; WORK HISTORY; POS-2"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Generale Taches et Equipement",
+                                                "@id": "389",
+                                                "@percentOfOverall": "0",
+                                                "@percentOfParentTaxonomy": "5",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "PLAN",
+                                                        "@id": "025418",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in EDUCATION; TRAINING"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "@name": "AQ et AC",
+                                        "@id": "69",
+                                        "@percentOfOverall": "5",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Techniques",
+                                                "@id": "446",
+                                                "@percentOfOverall": "5",
+                                                "@percentOfParentTaxonomy": "100",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "ESSAI",
+                                                        "@id": "009472",
+                                                        "@existsInText": "false",
+                                                        "@childrenTotalMonths": "4",
+                                                        "@childrenLastUsed": "2017-06-01",
+                                                        "sov:ChildSkill": [
+                                                            {
+                                                                "@name": "TEST",
+                                                                "@id": "0094722",
+                                                                "@existsInText": "true",
+                                                                "@totalMonths": "4",
+                                                                "@lastUsed": "2017-06-01",
+                                                                "@whereFound": "Found in WORK HISTORY; POS-2"
+                                                            },
+                                                            {
+                                                                "@name": "TESTS",
+                                                                "@id": "0094723",
+                                                                "@existsInText": "true",
+                                                                "@totalMonths": "4",
+                                                                "@lastUsed": "2017-06-01",
+                                                                "@whereFound": "Found in WORK HISTORY; POS-2"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "@name": "TESTS FONCTIONNELS",
+                                                        "@id": "022846",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "4",
+                                                        "@lastUsed": "2017-06-01",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-2"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "@name": "Achats et Approvisionnement",
+                                        "@id": "97",
+                                        "@percentOfOverall": "3",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Logistique",
+                                                "@id": "460",
+                                                "@percentOfOverall": "3",
+                                                "@percentOfParentTaxonomy": "100",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "ÉPANOUISSEMENT",
+                                                        "@id": "018024",
+                                                        "@existsInText": "false",
+                                                        "@childrenTotalMonths": "4",
+                                                        "@childrenLastUsed": "2017-06-01",
+                                                        "sov:ChildSkill": [
+                                                            {
+                                                                "@name": "RÉALISATION",
+                                                                "@id": "0180241",
+                                                                "@existsInText": "true",
+                                                                "@totalMonths": "4",
+                                                                "@lastUsed": "2017-06-01",
+                                                                "@whereFound": "Found in WORK HISTORY; POS-2"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "@name": "ERP",
+                                                        "@id": "016892",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "1",
+                                                        "@lastUsed": "2018-12-03",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "@name": "Ressources Humaines",
+                                        "@id": "9",
+                                        "@percentOfOverall": "2",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Autres",
+                                                "@id": "262",
+                                                "@percentOfOverall": "2",
+                                                "@percentOfParentTaxonomy": "100",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "HR",
+                                                        "@id": "019094.en",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "4",
+                                                        "@lastUsed": "2017-06-01",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-2"
+                                                    },
+                                                    {
+                                                        "@name": "RESSOURCES HUMAINES",
+                                                        "@id": "022567",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "4",
+                                                        "@lastUsed": "2017-06-01",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-2"
+                                                    },
+                                                    {
+                                                        "@name": "RH",
+                                                        "@id": "019094",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in EDUCATION; TRAINING"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "@name": "Redaction Technique",
+                                        "@id": "31",
+                                        "@percentOfOverall": "1",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Spécifications et Documentation",
+                                                "@id": "429",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "100",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "DOCUMENTATION",
+                                                        "@id": "022620",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "4",
+                                                        "@lastUsed": "2017-06-01",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-2"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "@name": "Logiciel Commun Utilisateur Final",
+                                        "@id": "0",
+                                        "@percentOfOverall": "1",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Donnees",
+                                                "@id": "228",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "100",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "ACCESS",
+                                                        "@id": "003891",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "4",
+                                                        "@lastUsed": "2017-06-01",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-2"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "@name": "Finance",
+                                        "@id": "7",
+                                        "@percentOfOverall": "1",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Analyse",
+                                                "@id": "235",
+                                                "@percentOfOverall": "0",
+                                                "@percentOfParentTaxonomy": "39",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "COMMERCE",
+                                                        "@id": "080204",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in EDUCATION; TRAINING"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Conformité",
+                                                "@id": "245",
+                                                "@percentOfOverall": "0",
+                                                "@percentOfParentTaxonomy": "39",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "COMMERCE",
+                                                        "@id": "080179",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in EDUCATION; TRAINING"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Négoce",
+                                                "@id": "239",
+                                                "@percentOfOverall": "0",
+                                                "@percentOfParentTaxonomy": "22",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "ESPRIT D'ÉQUIPE",
+                                                        "@id": "026528",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in WORK HISTORY"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "@name": "CAD/CAM",
+                                        "@id": "4",
+                                        "@percentOfOverall": "0",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Ingénierie",
+                                                "@id": "357",
+                                                "@percentOfOverall": "0",
+                                                "@percentOfParentTaxonomy": "100",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "ESPRIT",
+                                                        "@id": "026503",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in EDUCATION; TRAINING; WORK HISTORY"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "@name": "Comptabilité Diplômée",
+                                        "@id": "32",
+                                        "@percentOfOverall": "0",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Paie",
+                                                "@id": "961",
+                                                "@percentOfOverall": "0",
+                                                "@percentOfParentTaxonomy": "100",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "SAISIES",
+                                                        "@id": "018091",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in EDUCATION; TRAINING"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "@name": "Sovren",
+                                "sov:Taxonomy": [
+                                    {
+                                        "@name": "Information Technology",
+                                        "@id": "10",
+                                        "@percentOfOverall": "10",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Big Data",
+                                                "@id": "553",
+                                                "@percentOfOverall": "2",
+                                                "@percentOfParentTaxonomy": "19",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "ENTERPRISE RESOURCE PLANNING",
+                                                        "@id": "5530983",
+                                                        "@existsInText": "false",
+                                                        "@childrenTotalMonths": "1",
+                                                        "@childrenLastUsed": "2018-12-03",
+                                                        "sov:ChildSkill": [
+                                                            {
+                                                                "@name": "ERP",
+                                                                "@id": "5530984",
+                                                                "@existsInText": "true",
+                                                                "@totalMonths": "1",
+                                                                "@lastUsed": "2018-12-03",
+                                                                "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "@name": "LOAD BALANCING",
+                                                        "@id": "5531011",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in EDUCATION; TRAINING"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Programming",
+                                                "@id": "204",
+                                                "@percentOfOverall": "2",
+                                                "@percentOfParentTaxonomy": "19",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "DJANGO",
+                                                        "@id": "3391160",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in EDUCATION; TRAINING"
+                                                    },
+                                                    {
+                                                        "@name": "JENKINS",
+                                                        "@id": "3391150",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "4",
+                                                        "@lastUsed": "2017-06-01",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-2"
+                                                    },
+                                                    {
+                                                        "@name": "PHP",
+                                                        "@id": "004736",
+                                                        "@existsInText": "false",
+                                                        "sov:ChildSkill": [
+                                                            {
+                                                                "@name": "SYMFONY",
+                                                                "@id": "3391114",
+                                                                "@existsInText": "true",
+                                                                "@whereFound": "Found in EDUCATION; TRAINING"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Mobile Applications",
+                                                "@id": "552",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "14",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "ANGULARJS",
+                                                        "@id": "5520505",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in EDUCATION; TRAINING"
+                                                    },
+                                                    {
+                                                        "@name": "HTML5",
+                                                        "@id": "5520541",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in EDUCATION; TRAINING"
+                                                    },
+                                                    {
+                                                        "@name": "MODEL VIEW CONTROLLER",
+                                                        "@id": "5520572",
+                                                        "@existsInText": "false",
+                                                        "sov:ChildSkill": [
+                                                            {
+                                                                "@name": "MVC",
+                                                                "@id": "552057201",
+                                                                "@existsInText": "true",
+                                                                "@whereFound": "Found in EDUCATION; TRAINING"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "@name": "SOAP",
+                                                        "@id": "5520605",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in EDUCATION; TRAINING"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Config Deploy Upgrade Migrate",
+                                                "@id": "251",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "14",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "MAVEN",
+                                                        "@id": "2510001",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "4",
+                                                        "@lastUsed": "2017-06-01",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-2"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "QA and QC",
+                                                "@id": "200",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "14",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "JIRA",
+                                                        "@id": "2000006",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "4",
+                                                        "@lastUsed": "2017-06-01",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-2"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "User Interface",
+                                                "@id": "731",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "6",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "ANDROID",
+                                                        "@id": "7310008",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in EDUCATION; TRAINING"
+                                                    },
+                                                    {
+                                                        "@name": "MODEL-VIEW-CONTROLLER",
+                                                        "@id": "7310042",
+                                                        "@existsInText": "false",
+                                                        "sov:ChildSkill": [
+                                                            {
+                                                                "@name": "MVC",
+                                                                "@id": "7310043",
+                                                                "@existsInText": "true",
+                                                                "@whereFound": "Found in EDUCATION; TRAINING"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Java",
+                                                "@id": "339",
+                                                "@percentOfOverall": "0",
+                                                "@percentOfParentTaxonomy": "5",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "JAVA",
+                                                        "@id": "023328",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in EDUCATION; TRAINING",
+                                                        "sov:ChildSkill": [
+                                                            {
+                                                                "@name": "HIBERNATE",
+                                                                "@id": "3391127",
+                                                                "@existsInText": "true",
+                                                                "@whereFound": "Found in EDUCATION; TRAINING"
+                                                            },
+                                                            {
+                                                                "@name": "SPRING",
+                                                                "@id": "3391126",
+                                                                "@existsInText": "true",
+                                                                "@whereFound": "Found in EDUCATION; TRAINING"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Operations, Monitoring and Software Management",
+                                                "@id": "349",
+                                                "@percentOfOverall": "0",
+                                                "@percentOfParentTaxonomy": "4",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "CCNA",
+                                                        "@id": "3490004",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in CERTIFICATIONS"
+                                                    },
+                                                    {
+                                                        "@name": "LOAD BALANCING",
+                                                        "@id": "3490057",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in EDUCATION; TRAINING"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Distributed Systems",
+                                                "@id": "718",
+                                                "@percentOfOverall": "0",
+                                                "@percentOfParentTaxonomy": "2",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "REST",
+                                                        "@id": "7180010",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in EDUCATION; TRAINING"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Gaming",
+                                                "@id": "551",
+                                                "@percentOfOverall": "0",
+                                                "@percentOfParentTaxonomy": "2",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "DJANGO",
+                                                        "@id": "5510043",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in EDUCATION; TRAINING"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Privacy and Data Security",
+                                                "@id": "556",
+                                                "@percentOfOverall": "0",
+                                                "@percentOfParentTaxonomy": "1",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "CCNA",
+                                                        "@id": "5551296",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in CERTIFICATIONS"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "@name": "Construction Non-Laborer",
+                                        "@id": "22",
+                                        "@percentOfOverall": "5",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Estimating",
+                                                "@id": "380",
+                                                "@percentOfOverall": "5",
+                                                "@percentOfParentTaxonomy": "100",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "ESTIMATION",
+                                                        "@id": "023407",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "4",
+                                                        "@lastUsed": "2017-06-01",
+                                                        "@whereFound": "Found in EDUCATION; TRAINING; WORK HISTORY; POS-2"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "@name": "Human Resources",
+                                        "@id": "9",
+                                        "@percentOfOverall": "2",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Diversity & Inclusion",
+                                                "@id": "574",
+                                                "@percentOfOverall": "2",
+                                                "@percentOfParentTaxonomy": "100",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "EMPLOYEE RESOURCE GROUP",
+                                                        "@id": "9000074",
+                                                        "@existsInText": "false",
+                                                        "@childrenTotalMonths": "1",
+                                                        "@childrenLastUsed": "2018-12-03",
+                                                        "sov:ChildSkill": [
+                                                            {
+                                                                "@name": "ERP",
+                                                                "@id": "9000075",
+                                                                "@existsInText": "true",
+                                                                "@totalMonths": "1",
+                                                                "@lastUsed": "2018-12-03",
+                                                                "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "@name": "User Experience",
+                                        "@id": "93",
+                                        "@percentOfOverall": "2",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Web Design",
+                                                "@id": "571",
+                                                "@percentOfOverall": "2",
+                                                "@percentOfParentTaxonomy": "100",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "INTEGRATOR",
+                                                        "@id": "5570146",
+                                                        "@existsInText": "false",
+                                                        "@childrenTotalMonths": "4",
+                                                        "@childrenLastUsed": "2017-06-01",
+                                                        "sov:ChildSkill": [
+                                                            {
+                                                                "@name": "INTEGRATION",
+                                                                "@id": "5570147",
+                                                                "@existsInText": "true",
+                                                                "@totalMonths": "4",
+                                                                "@lastUsed": "2017-06-01",
+                                                                "@whereFound": "Found in WORK HISTORY; POS-2"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "sov:TrainingHistory": {
+                    "sov:Text": "Réseau social avec JEE, Hibernate et Spring (öl de partage, proöl et système de chat (avec NodeJS))\r\n- Réseau social avec symfony3 (öl de partage, proöl et système de chat (avec NodeJS))\r\n- Site web e-commerce avec Django (Python)\r\n- Application Android de gestion des événements\r\n- - Projet en java qui met en place les web services SOAP et REST\r\n- Projet qui met en place le web load balancing\r\n- Jeu de course 2D avec Unity3D (langage de développement C#)\r\nProjets académiques\r\n- Conception et développement d'un jeu video 3D\r\ntechnologies utilisées: Unity3D, langage de développement: C#\r\nStage du projet de ön d'études du premier cycle  [ Stellar vf ]\r\nFévrier 2014 - Mai 2014\r\no Module de gestion des absences dans l'espace salarié et dans l'espace manager et gestionnaire RH\r\no Module de gestion des temps et activités dans l'espace salarié et dans l'espace\r\nmanager et gestionnaire RH\r\no Workøow pour automatiser le traitement des absences et des activités saisies par les salariés et validés par les manager et gestionnaires RH (changements\r\nde st   de statuts, mailing, notiöcations)\r\no Gestion et sécurisations des différents rôles.\r\nMots clés: Symfony 3, Javascript, MVC, CSS3, HTML5, AngularJS, SQL.\r\nAgile:\r\n- Suivre la méthodologie Agile Scrum: estimation des tâches, reporting, daily\r\nscrum et démonstration de ön d'itération.\r\n- Participation aux spéciöcations de besoins\r\nJ'ai pratiqué le handball pendant 2 ans et le volleyball pendant 1 an Interessé par les nouvelles\r\ntechnologies et les jeux vidéos\r\nEtant co-fondateur et membre du club \" T3alem ISAMM Club \"\r\nqui organise des événements des compétitions et formations\r\ngratuites dans le domaine de l'informatique, cela m'a beau beaucoup apporter sur le plan\r\nsens de travail en équipe\r\nl'esprit de concurrence et l'organisation.",
+                    "sov:Training": [
+                        {
+                            "sov:Type": "Unknown",
+                            "sov:TrainingName": null,
+                            "sov:Entity": null,
+                            "sov:Description": "Réseau social avec JEE, Hibernate et Spring (öl de partage, proöl et système de chat (avec NodeJS)"
+                        },
+                        {
+                            "sov:Type": "Unknown",
+                            "sov:TrainingName": null,
+                            "sov:Entity": null,
+                            "sov:Description": "Réseau social avec symfony3 (öl de partage, proöl et système de chat (avec NodeJS)"
+                        },
+                        {
+                            "sov:Type": "Unknown",
+                            "sov:TrainingName": null,
+                            "sov:Entity": null,
+                            "sov:Description": "Site web e-commerce avec Django (Python)"
+                        },
+                        {
+                            "sov:Type": "Unknown",
+                            "sov:TrainingName": null,
+                            "sov:Entity": null,
+                            "sov:Description": "Application Android de gestion des événements"
+                        },
+                        {
+                            "sov:Type": "Unknown",
+                            "sov:TrainingName": null,
+                            "sov:Entity": null,
+                            "sov:Description": "Projet en java qui met en place les web services SOAP et REST"
+                        },
+                        {
+                            "sov:Type": "Unknown",
+                            "sov:TrainingName": null,
+                            "sov:Entity": null,
+                            "sov:Description": "Projet qui met en place le web load balancing"
+                        },
+                        {
+                            "sov:Type": "Unknown",
+                            "sov:TrainingName": null,
+                            "sov:Entity": null,
+                            "sov:Description": "Jeu de course 2D avec Unity3D (langage de développement C#)"
+                        },
+                        {
+                            "sov:Type": "Unknown",
+                            "sov:TrainingName": null,
+                            "sov:Entity": null,
+                            "sov:Description": "Projets académiques"
+                        },
+                        {
+                            "sov:Type": "Unknown",
+                            "sov:TrainingName": null,
+                            "sov:Entity": null,
+                            "sov:Description": "Conception et développement d'un jeu video 3D"
+                        },
+                        {
+                            "sov:Type": "Unknown",
+                            "sov:TrainingName": null,
+                            "sov:Entity": null,
+                            "sov:Description": "technologies utilisées: Unity3D, langage de développement: C#"
+                        },
+                        {
+                            "sov:Type": "Unknown",
+                            "sov:TrainingName": null,
+                            "sov:Entity": null,
+                            "sov:Description": "Stage du projet de ön d'études du premier cycle  [ Stellar vf"
+                        },
+                        {
+                            "sov:Type": "Unknown",
+                            "sov:TrainingName": null,
+                            "sov:Entity": null,
+                            "sov:Description": "Février 2014 - Mai 2014",
+                            "sov:StartDate": {
+                                "YearMonth": "2014-02"
+                            },
+                            "sov:EndDate": {
+                                "YearMonth": "2014-05"
+                            }
+                        },
+                        {
+                            "sov:Type": "Unknown",
+                            "sov:TrainingName": null,
+                            "sov:Entity": null,
+                            "sov:Description": "o Module de gestion des absences dans l'espace salarié et dans l'espace manager et gestionnaire RH"
+                        },
+                        {
+                            "sov:Type": "Unknown",
+                            "sov:TrainingName": null,
+                            "sov:Entity": null,
+                            "sov:Description": "o Module de gestion des temps et activités dans l'espace salarié et dans l'espace"
+                        },
+                        {
+                            "sov:Type": "Unknown",
+                            "sov:TrainingName": null,
+                            "sov:Entity": null,
+                            "sov:Description": "manager et gestionnaire RH"
+                        },
+                        {
+                            "sov:Type": "Unknown",
+                            "sov:TrainingName": null,
+                            "sov:Entity": null,
+                            "sov:Description": "o Workøow pour automatiser le traitement des absences et des activités saisies par les salariés et validés par les manager et gestionnaires RH (changements"
+                        },
+                        {
+                            "sov:Type": "Unknown",
+                            "sov:TrainingName": null,
+                            "sov:Entity": null,
+                            "sov:Description": "de st   de statuts, mailing, notiöcations"
+                        },
+                        {
+                            "sov:Type": "Unknown",
+                            "sov:TrainingName": null,
+                            "sov:Entity": null,
+                            "sov:Description": "o Gestion et sécurisations des différents rôles"
+                        },
+                        {
+                            "sov:Type": "Unknown",
+                            "sov:TrainingName": null,
+                            "sov:Entity": null,
+                            "sov:Description": "Mots clés: Symfony 3, Javascript, MVC, CSS3, HTML5, AngularJS, SQL"
+                        },
+                        {
+                            "sov:Type": "Unknown",
+                            "sov:TrainingName": null,
+                            "sov:Entity": null,
+                            "sov:Description": "Agile"
+                        },
+                        {
+                            "sov:Type": "Unknown",
+                            "sov:TrainingName": null,
+                            "sov:Entity": null,
+                            "sov:Description": "Suivre la méthodologie Agile Scrum: estimation des tâches, reporting, daily"
+                        },
+                        {
+                            "sov:Type": "Unknown",
+                            "sov:TrainingName": null,
+                            "sov:Entity": null,
+                            "sov:Description": "scrum et démonstration de ön d'itération"
+                        },
+                        {
+                            "sov:Type": "Unknown",
+                            "sov:TrainingName": null,
+                            "sov:Entity": null,
+                            "sov:Description": "Participation aux spéciöcations de besoins"
+                        },
+                        {
+                            "sov:Type": "Unknown",
+                            "sov:TrainingName": null,
+                            "sov:Entity": null,
+                            "sov:Description": "J'ai pratiqué le handball pendant 2 ans et le volleyball pendant 1 an Interessé par les nouvelles"
+                        },
+                        {
+                            "sov:Type": "Unknown",
+                            "sov:TrainingName": null,
+                            "sov:Entity": null,
+                            "sov:Description": "technologies et les jeux vidéos"
+                        },
+                        {
+                            "sov:Type": "Unknown",
+                            "sov:TrainingName": null,
+                            "sov:Entity": "club \" T3alem ISAMM Club \"",
+                            "sov:Description": "Etant co-fondateur et membre du club \" T3alem ISAMM Club \""
+                        },
+                        {
+                            "sov:Type": "Unknown",
+                            "sov:TrainingName": null,
+                            "sov:Entity": null,
+                            "sov:Description": "qui organise des événements des compétitions et formations"
+                        },
+                        {
+                            "sov:Type": "Unknown",
+                            "sov:TrainingName": null,
+                            "sov:Entity": null,
+                            "sov:Description": "gratuites dans le domaine de l'informatique, cela m'a beau beaucoup apporter sur le plan"
+                        },
+                        {
+                            "sov:Type": "Unknown",
+                            "sov:TrainingName": null,
+                            "sov:Entity": null,
+                            "sov:Description": "sens de travail en équipe"
+                        },
+                        {
+                            "sov:Type": "Unknown",
+                            "sov:TrainingName": null,
+                            "sov:Entity": null,
+                            "sov:Description": "l'esprit de concurrence et l'organisation"
+                        }
+                    ]
+                },
+                "sov:Sections": {
+                    "sov:Section": [
+                        {
+                            "@starts": "6",
+                            "@ends": "6",
+                            "@sectionType": "SKILLS",
+                            "#text": "COMPETENCES"
+                        },
+                        {
+                            "@starts": "7",
+                            "@ends": "41",
+                            "@sectionType": "WORK HISTORY",
+                            "#text": "CERTIFICATIONS"
+                        },
+                        {
+                            "@starts": "42",
+                            "@ends": "70",
+                            "@sectionType": "WORK HISTORY",
+                            "#text": "Expérience professionnelle"
+                        },
+                        {
+                            "@starts": "71",
+                            "@ends": "113",
+                            "@sectionType": "EDUCATION",
+                            "#text": "Formation"
+                        },
+                        {
+                            "@starts": "114",
+                            "@ends": "114",
+                            "@sectionType": "HOBBIES",
+                            "#text": "CENTRES D'INTERET"
+                        }
+                    ]
+                },
+                "sov:ReservedData": {
+                    "sov:Phones": {
+                        "sov:Phone": [
+                            "+216 24 48 15 57"
+                        ]
+                    },
+                    "sov:EmailAddresses": {
+                        "sov:EmailAddress": [
+                            "touatimoutii@gmail.com"
+                        ]
+                    },
+                    "sov:Urls": {
+                        "sov:Url": [
+                            "https://www.linkedin.com/in/moutii-touati"
+                        ]
+                    }
+                },
+                "sov:ParsedTextLength": "4680",
+                "sov:ParseTime": "891",
+                "sov:ResumeQuality": {
+                    "sov:Assessments": {
+                        "sov:Assessment": [
+                            {
+                                "sov:Level": "Major Issues Found",
+                                "sov:Findings": {
+                                    "sov:Information": [
+                                        "[Sovren:302;] A first and last name was not found in the contact information. A resume should always include the candidate's first and last name.",
+                                        "[Sovren:323;WORK HISTORY] The following section type appeared multiple times in the resume: WORK HISTORY (2 occurrences). Each section type should only appear once in a resume.",
+                                        "[Sovren:324;0,4] The following sections do not have any text: 'COMPETENCES', 'CENTRES D'INTERET'. Every section should have text associated with it. This usually indicates an error with the section headers or format used in the resume."
+                                    ]
+                                }
+                            },
+                            {
+                                "sov:Level": "Data Missing",
+                                "sov:Findings": {
+                                    "sov:Information": [
+                                        "[Sovren:213;] A street level address was not found in the contact information. A full contact address should always be included in a resume as it allows for location based searches.",
+                                        "[Sovren:221;POS-3,POS-1] We could not find a job title for: POS-3, POS-1. Every position in a resume should have a job title."
+                                    ]
+                                }
+                            },
+                            {
+                                "sov:Level": "Suggested Improvements",
+                                "sov:Findings": {
+                                    "sov:Information": [
+                                        "[Sovren:112;] The following section was identified as a skills section type: 'COMPETENCES'. Skills should not be in a separate section, but instead, each skill should be included in the descriptions of work history or education."
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                },
+                "sov:LicenseSerialNumber": "MONEYCORE:a2af15e7-0bf8-44e4-ae19-b7e87f434cbe",
+                "sov:ParserConfigurationString": "Coverage.PersonalAttributes = True; Coverage.Training = True; Culture.CountryCodeForUnitedKingdomIsUK = True; Culture.DefaultCountryCode = FR; Culture.DefaultCultureIsFrance = True; Culture.Language = French; Culture.PreferEnglishVersionIfTwoLanguagesInDocument = False; Data.UserDefinedParsing = False; OutputFormat.AssumeCompanyNameFromPrecedingJob = False; OutputFormat.ContactMethod.PackStyle = Split; OutputFormat.DateOutputStyle = ExplicitlyKnownDateInfoOnly; OutputFormat.NestJobsBasedOnDateRanges = True; OutputFormat.NormalizeRegions = False; OutputFormat.SkillsStyle = Default; OutputFormat.StripParsedDataFromPositionHistoryDescription = True; OutputFormat.TelcomNumber.Style = Raw; OutputFormat.XmlFormat = HrXmlResume25",
+                "sov:ParserVersion": "9.1.3.0",
+                "sov:DigitalSignature": "BlUAAAAAAAA="
+            }
+        }
+    }
+}

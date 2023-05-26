@@ -1,0 +1,68 @@
+<app-candidate-header *ngIf="isUserConnected" ></app-candidate-header>
+<div class="page-container">
+  <div class="row white"></div>
+  <div *ngIf="isUserConnected" class="container col-md-7" >
+
+    <div class="row my-form rounded">
+      <div class="col">
+        <div style="overflow: hidden">
+          <div style="float: left;color:#9A2828;margin-left:15em">
+
+            <h3 class="title"><br>Entretien {{interview}} </h3><br>
+          </div>
+        </div>
+        <section>
+          <table class=" table btn-table table-active table-responsive-md ">
+            <thead>
+              <tr>
+                <th class="h6" style="width:25%;">Questions</th>
+                <th class="h6" style="width:25%;text-align:center;">Video</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let video of videos">
+                <th class="h6" style="width:25%;"> {{video.question.questionBody}} </th>
+                <th class="h6" style="width:25%;text-align:center;"> <a (click)="open(content, video)" class="btn btn-danger btn-sm">
+                    Voir </a> </th>
+              </tr>
+            </tbody>
+
+          </table>
+        </section>
+        <ng-template #content let-c="close" let-d="dismiss">
+          <div class="modal-header">
+            <h4 class="modal-title">Video </h4>
+            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <video width="auto" height="240" controls style=" margin-left: auto; margin-right: auto; display: block;">
+                <source src="{{file}}" type="video/webm">
+              </video>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" (click)="c('Close click')">VUE</button>
+          </div>
+        </ng-template>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div *ngIf="!isUserConnected" class="container col-md-7" >
+    <section>
+        <div class="alert alert-warning" role="alert" style="text-align:center;margin-top:5em;">
+          <br>
+          <p>Vous n'êtes pas connecté .. </p>
+          <p>Pour pouvoir accéder à cette page, il faut 
+              <button mat-raised-button class="mySimpleButton" (click)="  redirectLogin()">se connecter</button>
+          </p>
+          <br>
+        </div>
+      </section>
+</div>
+</div>

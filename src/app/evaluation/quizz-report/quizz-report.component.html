@@ -1,0 +1,56 @@
+<app-eval-navbar></app-eval-navbar>
+<div class="page-container">
+  <div class="row white"></div>
+    <div class="container col-md-7">
+    
+      <div class="row  my-form rounded">
+          <div class="col">
+                <div style="text-align:right"  *ngIf="!uuid" >
+                        <button class="myButton3"  tooltip="Ajouter un quizz">
+                        <a (click)="redirectNewQuizz()" ><i class="fa fa-reorder" aria-hidden="true"></i></a>
+                        </button>
+                        
+                </div>  
+                 
+                  <div style="text-align:center;color:#9A2828;" *ngIf="!uuid">
+                  
+                      <h3 class="title"><br> Liste des quizzs technique </h3>
+                     
+                 </div>
+                 <div style="text-align:center;color:#9A2828;" *ngIf="uuid">
+                  
+                    <h5 class="title"><br> Séléctionner le(s) quizz à envoyer </h5>
+                   
+               </div>
+                
+                <section>
+                    <table class=" table btn-table table-active table-responsive-md ">
+                        <thead>
+                      <tr>
+                        <th class="h6" style="width:25%;">Quizz</th>
+                        <th class="h6" style="width:25%;" >Compétences</th>
+                        <th class="h6" style="width:25%;text-align:center;">Niveau</th>
+                        <th class="h6" *ngIf="uuid" style="width:25%;text-align:center;">Sélectionner le quizz</th>
+                        <th class="h6" *ngIf="!uuid" style="width:25%;text-align:center;">Envoyer le quizz</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    
+
+                    </tbody>
+                      
+                    </table>
+                    
+                </section>
+                <section *ngIf="uuid" style="text-align:right;margin-bottom:1em">
+                    <button class="myButton3" (click)="sendQuizz()"> Envoyer</button>
+                </section>
+
+             
+      </div>
+        
+    </div>
+  </div>
+</div>
+    
+

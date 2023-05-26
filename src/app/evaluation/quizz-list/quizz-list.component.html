@@ -1,0 +1,89 @@
+<app-eval-navbar></app-eval-navbar>
+<div class="page-container">
+    <div class="row white"></div>
+    <div class="container col-md-7">
+
+        <div class="row  my-form rounded">
+            <div class="col">
+                <div style="text-align:right" *ngIf="!uuid">
+
+
+                </div>
+                <div style="overflow: hidden" *ngIf="!uuid">
+                    <div style="float: left;color:#9A2828;margin-left:15em">
+
+                        <h3 class="title"><br> Liste des quizzs technique </h3><br>
+                    </div>
+                    <div style="float: right;margin-top:0.8em;">
+                        <button class="myButton3" (click)="redirectNewQuizz()">
+                            <a><i class="fa fa-plus" aria-hidden="true"></i></a>
+                        </button>
+                    </div>
+                </div>
+                <div style="text-align:center;color:#9A2828;" *ngIf="uuid">
+
+                    <h5 class="title"><br> Séléctionner le(s) quizz à envoyer </h5>
+
+                </div>
+
+                <section>
+                    <table class=" table btn-table table-active table-responsive-md ">
+                        <thead>
+                            <tr>
+                                <th class="h6" style="width:25%;">Quizz</th>
+                                <th class="h6" style="width:25%;">Compétences</th>
+                                <th class="h6" style="width:25%;text-align:center;">Niveau</th>
+                                <th class="h6" *ngIf="uuid" style="width:25%;text-align:center;">Sélectionner le quizz</th>
+                                <th class="h6" *ngIf="!uuid" style="width:25%;text-align:center;">Envoyer le quizz</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let quizz of pagedItems">
+                                <th><span>{{quizz.name | titlecase}} </span></th>
+                                <th><span>{{quizz.description | titlecase}}</span></th>
+                                <th style='text-align:center;'><span> {{quizz.level }} </span></th>
+                                <th style='text-align:center;'>
+                                    <span *ngIf="!uuid"><a (click)="sendTocandidates(quizz)"><i class="fa fa-mail-forward"
+                                                style="color:#9A2828" aria-hidden="true"></i></a></span>
+                                    <span *ngIf="uuid">
+                                        <mat-checkbox type="checkbox" [ngModel]="filter" (ngModelChange)="onFilterChange(event,quizz)"></mat-checkbox>
+                                    </span>
+
+                                </th>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                    <div class="d-flex justify-content-center">
+                        <nav aria-label="pagination example" style="text-align:center;">
+                            <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+                                <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
+                                    <a class="page-link" (click)="setPage(1)">Première</a>
+                                </li>
+                                <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
+                                    <a class="page-link" (click)="setPage(pager.currentPage - 1)">Précedente</a>
+                                </li>
+                                <li class="page-item" *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                                    <a class="page-link" (click)="setPage(page)">{{page}}</a>
+
+                                </li>
+                                <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                                    <a class="page-link" (click)="setPage(pager.currentPage + 1)">Suivante</a>
+                                </li>
+                                <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                                    <a class="page-link" (click)="setPage(pager.totalPages)">Dernière</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </section>
+                <section *ngIf="uuid" style="text-align:right;margin-bottom:1em">
+                    <button class="myButton3" (click)="sendQuizz()"> Envoyer</button>
+                </section>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+<app-rh-header></app-rh-header>
+
+<div class="page-container">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <section>
+          <header class="header">
+            <div style="text-align:right;">
+              <div style="text-align:center;color:#9A2828;">
+                <h4>
+                  <br>Ajouter  Arrets</h4>
+              </div>
+            </div>
+
+          </header>
+        </section>
+        <section class="main rounded">
+
+          <form novalidate [formGroup]="arretForm" (ngSubmit)="onSubmit()">
+
+            <div class="example-container row">
+            <mat-form-field class="col-sm-3">
+                <mat-select placeholder="Type Arret" formControlName="typeArret">
+                  <mat-option value="option1">Repos</mat-option>
+                  <mat-option value="option2">Congé</mat-option>
+                  <mat-option value="option3">Malade</mat-option>
+                  <mat-option value="option4">Autre</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+            <mat-form-field class="col-sm-3" >
+                <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="dateDem" placeholder="Date Démarrage"  formControlName="dateDem">
+                <mat-datepicker-toggle matSuffix [for]="dateDem"></mat-datepicker-toggle>
+                <mat-datepicker #dateDem></mat-datepicker>
+                <mat-error>Champs obligatoire</mat-error>
+              </mat-form-field>
+              <mat-form-field class="col-sm-3" >
+                <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="dateFin" placeholder="Date Fin"  formControlName="dateFin">
+                <mat-datepicker-toggle matSuffix [for]="dateFin"></mat-datepicker-toggle>
+                <mat-datepicker #dateFin></mat-datepicker>
+                <mat-error>Champs obligatoire</mat-error>
+              </mat-form-field>
+
+              <mat-form-field  class="col-sm-3" >
+                <input matInput placeholder="Nombre du Jours" formControlName="nbrjrs"  required>
+                <mat-error>Champs obligatoire</mat-error>
+              </mat-form-field>
+
+            </div>
+            <div class="text-center mt-4 mb-2">
+
+              <button type="button" mat-raised-button class="mySimpleButton" (click)="cancel()">Annuler
+                <i class="fa fa-times-circle ml-3"></i> </button>
+              <button mat-raised-button type="submit" class="mySuccessButton" [disabled]="!arretForm.valid"
+                      *ngIf="!editing">Envoyer la demande  <i class="fa fa-plus ml-3"></i> </button>
+            </div>
+          </form>
+
+        </section>
+      </div>
+    </div>
+  </div>
+</div>

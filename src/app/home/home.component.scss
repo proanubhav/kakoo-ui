@@ -1,0 +1,125 @@
+@import "../../assets/sass/var";
+.empty{
+    padding-bottom: 3em;
+}
+.kakoo-color{
+    color:	$defaultColor;
+    background-color: #ececec;
+}
+img {
+    width : 1.5em;
+    height : 1.5em;
+    margin-top:-0.8em;
+   
+}
+.fa{
+    color:#434142;
+}
+
+.mySimpleButton{
+    @extend %myButton;
+    border: 1px solid $defaultColor;
+    color: $defaultColor;
+}
+.myWarningButton{
+    @extend %myButton;
+    border: 1px solid $warning;
+    color: $warning;
+}
+.myDangerButton{
+    @extend %myButton;
+    border: 1px solid $danger;
+    color: $danger;
+}
+
+.myInfoButton{
+    @extend %myButton;
+    border: 1px solid $info;
+    color: $info;
+}
+
+.chat-box{
+    z-index: 2147483002;
+    position: fixed;
+    top: 18%;
+    right: 45px;
+    overflow-y: auto;
+    background: #fff;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    
+
+}
+.open-chat-box{
+    z-index: 2147483002;
+    position: fixed;
+    top: 89%;
+    right: 45px;
+}
+.joinfalse{
+    width:200px;
+    padding:13px 13px 13px 13px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+
+}
+.jointrue{
+    width:80px;
+    padding:13px 0 14px 13px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+
+}
+.row {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+}
+
+.txt {
+    position: relative;
+    z-index: 1;
+    min-height: 800px;
+    padding-top: 115px;
+  
+}
+.txt:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url('../../assets/home/images/hr.jpg');
+    background-size: cover;
+    opacity: .2;
+}
+.fa {
+    color: #9a2828;
+}
+.text-muted{
+    color: #010204 !important;
+    background: #edeae7;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #c6c6c6;
+}
+
+.animate {
+    position: relative; 
+}
+.animate:hover{
+    -webkit-animation:spin 1s linear infinite;
+    -moz-animation:spin 1s linear infinite;
+    animation:spin 1s linear infinite;
+
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }

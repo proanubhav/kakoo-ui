@@ -1,0 +1,77 @@
+<app-user-navbar></app-user-navbar>
+<div class="page-container">
+  <div class="container profile">
+    <div class="container-fluid" *ngIf="!isUnsubcribe">
+      <div class="container-fluid">
+        <div align="center" class="mysub-title">
+          <h3>Mon Abonnement</h3>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <p class="h6" style="color:#9A2828;margin-left:0.4em;">
+          <mat-icon>person</mat-icon> Données personnelles
+        </p>
+        <table class=" table btn-table table-active table-responsive ">
+          <tr>
+            <th class="item " style="width:30%;">Nom
+            <th>
+            <th style="width:70%;"> {{firstName | titlecase}} {{lastName | uppercase}}</th>
+          </tr>
+          <tr>
+            <th class="item ">Email
+            <th>
+            <th>{{mail}}</th>
+          </tr>
+          <tr>
+            <th class="item ">Téléphone
+            <th>
+            <th>{{phone}}</th>
+          </tr>
+        </table>
+        <p class="h6" style="color:#9A2828;margin-left:0.4em;">
+          <mat-icon>subscriptions</mat-icon> Données d' Abonnement
+        </p>
+        <table class="table btn-table table-active ">
+
+          <tr>
+            <th class="item " style="width:30%;">Type Abonnement
+            <th>
+            <th style="width:70%;"><strong>{{type | uppercase}}</strong> {{typepayment}} </th>
+          </tr>
+          <tr>
+            <th class="item ">Date d'Abonnement
+            <th>
+            <th>{{dateDebut}}</th>
+          </tr>
+
+          <tr>
+            <th class="item ">Nombre de jours Restants
+            <th>
+            <th>{{numberPeriod}} </th>
+          </tr>
+          <tr>
+            <th class="item ">
+            <th>
+            <th>
+              <mat-progress-bar mode="determinate" value="{{numberPeriod}}"></mat-progress-bar>
+            </th>
+          </tr>
+        </table>
+      </div>
+
+
+    </div>
+    <div class="container-fluid" *ngIf="isUnsubcribe">
+      <div align="center" class="col-md-12">
+        <section>
+          <div class="alert alert-warning" role="alert">
+            <strong>Vous êtes Désabonné !</strong>
+            <br>
+            <button mat-raised-button class="btn btn-success" (click)="goAbonnement()">S'Abonner?</button>
+          </div>
+        </section>
+      </div>
+
+    </div>
+  </div>
+</div>

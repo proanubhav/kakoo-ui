@@ -1,0 +1,1178 @@
+{
+    "Resume": {
+        "@xml:lang": "fr",
+        "@xmlns": "http://ns.hr-xml.org/2006-02-28",
+        "@xmlns:sov": "http://sovren.com/hr-xml/2006-02-28",
+        "ResumeId": {
+            "IdValue": null
+        },
+        "StructuredXMLResume": {
+            "ContactInfo": {
+                "PersonName": {
+                    "FormattedName": "Suivi de Tramway",
+                    "GivenName": "Suivi",
+                    "FamilyName": "de Tramway"
+                },
+                "ContactMethod": [
+                    {
+                        "Use": "personal",
+                        "Location": "onPerson",
+                        "WhenAvailable": "anytime",
+                        "InternetEmailAddress": "med.elbadri@hotmail.com"
+                    }
+                ]
+            },
+            "EmploymentHistory": {
+                "EmployerOrg": [
+                    {
+                        "EmployerOrgName": "",
+                        "PositionHistory": [
+                            {
+                                "OrgName": {
+                                    "OrganizationName": null
+                                },
+                                "Description": "JAVA / C#\r\n\r\n• Stage technique (durée 2 mois):\r\nANGULAR 4\tCréation du site web de la société (Front & Back end)\r\nConception et Développement d'une GMAO personnalisée\r\nANDROID\t(gestion de maintenance assistée par ordinateur)\r\n\r\n• Stage ouvrier (durée 1 mois):\r\nPYTHON\tDéveloppement d'un site web avec Bootstrap\r\n\r\n\r\nPHOTOSHOP\r\n\r\nLANGUES ET DIVERS\r\nModélisation: UML et BPMN.\r\n•   Arabe: Maternelle\r\nRéseaux: Modèle OSI et TCP/IP.\t•   Français: Courant\r\nBase de données: MySQL, SQLite, SQL\t•   Anglais: Courant\r\nserver.\r\nEconomie: comptabilité générale et\t•   Centres d'intérêt: Football, Musique et membre du Club\r\nanalytique, gestion des entreprises,\tÉlectronique et Systèmes Embarqués (CESE): cellule robotique\r\nmicroéconomie, analyse financière et\r\nMarketing.",
+                                "StartDate": {
+                                    "AnyDate": "notKnown"
+                                },
+                                "JobCategory": [
+                                    {
+                                        "TaxonomyName": "Skills taxonomy",
+                                        "CategoryCode": "Technologies Informatique → Programmation",
+                                        "Comments": "Technologies Informatique describes 27% of this job"
+                                    },
+                                    {
+                                        "TaxonomyName": "Job Level",
+                                        "CategoryCode": "Entry Level"
+                                    }
+                                ],
+                                "UserArea": {
+                                    "sov:PositionHistoryUserArea": {
+                                        "sov:Id": "POS-1"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "EducationHistory": {
+                "SchoolOrInstitution": [
+                    {
+                        "@schoolType": "secondary",
+                        "School": [
+                            {
+                                "SchoolName": "lycée Omar Ibn Abdelaziz"
+                            }
+                        ],
+                        "Degree": [
+                            {
+                                "@degreeType": "secondary",
+                                "DegreeDate": {
+                                    "Year": "2016"
+                                },
+                                "DatesOfAttendance": [
+                                    {
+                                        "StartDate": {
+                                            "Year": "2014"
+                                        },
+                                        "EndDate": {
+                                            "Year": "2016"
+                                        }
+                                    }
+                                ],
+                                "Comments": "2014-2016: Classes préparatoires aux grandes écoles CPGE filière\r\nTSI à lycée Omar Ibn Abdelaziz, Oujda.",
+                                "UserArea": {
+                                    "sov:DegreeUserArea": {
+                                        "sov:Id": "DEG-1",
+                                        "sov:NormalizedDegreeType": "secondary"
+                                    }
+                                }
+                            }
+                        ],
+                        "UserArea": {
+                            "sov:SchoolOrInstitutionTypeUserArea": {
+                                "sov:NormalizedSchoolName": "lycée Omar Ibn Abdelaziz"
+                            }
+                        }
+                    },
+                    {
+                        "@schoolType": "highschool",
+                        "School": [
+                            {
+                                "SchoolName": "lycée technique Bouarfa"
+                            }
+                        ],
+                        "Degree": [
+                            {
+                                "@degreeType": "high school or equivalent",
+                                "DegreeName": "Baccalauréat en sciences et technologies électriques",
+                                "DegreeDate": {
+                                    "Year": "2014"
+                                },
+                                "DegreeMajor": [
+                                    {
+                                        "Name": [
+                                            "sciences et technologies électriques"
+                                        ]
+                                    }
+                                ],
+                                "DatesOfAttendance": [
+                                    {
+                                        "StartDate": {
+                                            "Year": "2013"
+                                        },
+                                        "EndDate": {
+                                            "Year": "2014"
+                                        }
+                                    }
+                                ],
+                                "Comments": "EL BADRI MOHAMED\t2013-2014: Baccalauréat en sciences et technologies électriques\r\n(mention: très bien), lycée technique Bouarfa.\r\nCONTACT\r\nPROJETS ACADEMIQUES\r\nmed.elbadri@hotmail.com\r\n\r\nRéalisation d'une application web de suivi du tramway",
+                                "UserArea": {
+                                    "sov:DegreeUserArea": {
+                                        "sov:Id": "DEG-2",
+                                        "sov:NormalizedDegreeName": "highSchoolOrEquivalent",
+                                        "sov:NormalizedDegreeType": "highSchoolOrEquivalent"
+                                    }
+                                }
+                            }
+                        ],
+                        "UserArea": {
+                            "sov:SchoolOrInstitutionTypeUserArea": {
+                                "sov:NormalizedSchoolName": "lycée technique Bouarfa"
+                            }
+                        }
+                    },
+                    {
+                        "@schoolType": "UNSPECIFIED",
+                        "School": [
+                            {
+                                "SchoolName": "L'Institut National des Postes et en JEE"
+                            }
+                        ],
+                        "Degree": [
+                            {
+                                "DegreeMajor": [
+                                    {
+                                        "Name": [
+                                            "Télécommunications"
+                                        ]
+                                    }
+                                ],
+                                "Comments": "L'Institut National des Postes et en JEE et JavaScript (Front end: Bootstrap)\r\nTélécommunications, Rue Allal El\r\nFassi, • Gestion des interventions:\r\nRABAT\tConception et développement d'une application de gestion des interventions de maintenance au sein de\r\n+212634352413\tl'INPT (MEAN STACK)\r\n\r\n• Gestion de location de voitures:\r\nDéveloppement d'une application web de gestion de",
+                                "UserArea": {
+                                    "sov:DegreeUserArea": {
+                                        "sov:Id": "DEG-3"
+                                    }
+                                }
+                            }
+                        ],
+                        "UserArea": {
+                            "sov:SchoolOrInstitutionTypeUserArea": {
+                                "sov:NormalizedSchoolName": "LInstitut National des Postes et en JEE"
+                            }
+                        }
+                    }
+                ]
+            },
+            "Qualifications": {
+                "QualificationSummary": "COMPETENCES\tlocation de voitures en PHP et MySQL.\r\nTE ch no lo gies d e\r\ne\t• Administration de système:\r\nprogrammation: Projet en administration de système: Installation de\r\nJEE\tlinux à l'aide de NFS et HTTP\r\n• Outils Big Data:\r\nHTML / CSS / JavaScript\tProjet sur les outils de traitement Big Data (Hadoop)."
+            },
+            "Languages": {
+                "Language": [
+                    {
+                        "LanguageCode": "ar",
+                        "Read": "true",
+                        "Write": "false",
+                        "Speak": "false",
+                        "Comments": "• Arabe: Maternelle"
+                    },
+                    {
+                        "LanguageCode": "fr",
+                        "Read": "true",
+                        "Write": "true",
+                        "Speak": "true",
+                        "Comments": "• Français: Courant"
+                    },
+                    {
+                        "LanguageCode": "en",
+                        "Read": "true",
+                        "Write": "true",
+                        "Speak": "true",
+                        "Comments": "données: MySQL, SQLite, SQL\t• Anglais: Courant"
+                    }
+                ]
+            },
+            "RevisionDate": "2018-12-03"
+        },
+        "NonXMLResume": {
+            "TextResume": "Elève ingénieur en ingénierie\r\ninformatique à L'INPT\r\n\r\nFORMATIONS\r\n2016-2019: cycle d'ingénieur à l'INPT, Option Ingénierie des\r\nSystèmes Web, Mobiles et Décisionnels.\r\n2014-2016: Classes préparatoires aux grandes écoles CPGE filière\r\nTSI à lycée Omar Ibn Abdelaziz, Oujda.\r\nEL BADRI MOHAMED\t2013-2014: Baccalauréat en sciences et technologies électriques\r\n(mention: très bien), lycée technique Bouarfa.\r\nCONTACT\r\nPROJETS ACADEMIQUES\r\nmed.elbadri@hotmail.com\r\n• Suivi de Tramway:\r\nRéalisation d'une application web de suivi du tramway\r\nL'Institut National des Postes et\r\nen JEE et JavaScript (Front end: Bootstrap)\r\nTélécommunications, Rue Allal El\r\nFassi,\t• Gestion des interventions:\r\nRABAT\tConception et développement d'une application de\r\ngestion des interventions de maintenance au sein de\r\n+212634352413\tl'INPT (MEAN STACK)\r\n• Gestion de location de voitures:\r\nDéveloppement d'une application web de gestion de\r\nCOMPETENCES\tlocation de voitures en PHP et MySQL.\r\nTE ch no lo gies d e\r\ne\t• Administration de système:\r\nprogrammation: Projet en administration de système: Installation de\r\nJEE\tlinux à l'aide de NFS et HTTP\r\n• Outils Big Data:\r\nHTML / CSS / JavaScript\tProjet sur les outils de traitement Big Data (Hadoop).\r\n\r\n\r\nEXPERIENCES PROFESSIONNELLES\r\nJAVA / C#\r\n\r\n• Stage technique (durée 2 mois):\r\nANGULAR 4\tCréation du site web de la société (Front & Back end)\r\nConception et Développement d'une GMAO personnalisée\r\nANDROID\t(gestion de maintenance assistée par ordinateur)\r\n\r\n• Stage ouvrier (durée 1 mois):\r\nPYTHON\tDéveloppement d'un site web avec Bootstrap\r\n\r\n\r\nPHOTOSHOP\r\n\r\nLANGUES ET DIVERS\r\nModélisation: UML et BPMN.\r\n•   Arabe: Maternelle\r\nRéseaux: Modèle OSI et TCP/IP.\t•   Français: Courant\r\nBase de données: MySQL, SQLite, SQL\t•   Anglais: Courant\r\nserver.\r\nEconomie: comptabilité générale et\t•   Centres d'intérêt: Football, Musique et membre du Club\r\nanalytique, gestion des entreprises,\tÉlectronique et Systèmes Embarqués (CESE): cellule robotique\r\nmicroéconomie, analyse financière et\r\nMarketing."
+        },
+        "UserArea": {
+            "sov:ResumeUserArea": {
+                "sov:Culture": {
+                    "sov:Language": "fr",
+                    "sov:Country": "FR",
+                    "sov:CultureInfo": "fr-FR"
+                },
+                "sov:ExperienceSummary": {
+                    "sov:Description": "[Suivi de Tramway] Expérience principale : quelque peu avec une expérience secondaire dans Technologies Informatique / Programmation. [Suivi de Tramway] Niveau d'expérience : Débutant, avec 0 mois d'expérience .",
+                    "sov:MonthsOfWorkExperience": "0",
+                    "sov:FulltimeDirectHirePredictiveIndex": "0",
+                    "sov:MonthsOfManagementExperience": "0",
+                    "sov:HighestManagementScore": "0",
+                    "sov:ExecutiveType": "none",
+                    "sov:ManagementStory": null,
+                    "sov:SkillsTaxonomyOutput": {
+                        "sov:TaxonomyRoot": [
+                            {
+                                "@name": "Sovren.fr",
+                                "sov:Taxonomy": [
+                                    {
+                                        "@name": "Technologies Informatique",
+                                        "@id": "10",
+                                        "@percentOfOverall": "24",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Programmation",
+                                                "@id": "204",
+                                                "@percentOfOverall": "6",
+                                                "@percentOfParentTaxonomy": "26",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "BACK END",
+                                                        "@id": "025118.en",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    },
+                                                    {
+                                                        "@name": "C#",
+                                                        "@id": "012275",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    },
+                                                    {
+                                                        "@name": "HADOOP",
+                                                        "@id": "1004744",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in SKILLS"
+                                                    },
+                                                    {
+                                                        "@name": "HTML",
+                                                        "@id": "019115",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in SKILLS"
+                                                    },
+                                                    {
+                                                        "@name": "PHP",
+                                                        "@id": "004736",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in SKILLS"
+                                                    },
+                                                    {
+                                                        "@name": "PYTHON",
+                                                        "@id": "006120",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    },
+                                                    {
+                                                        "@name": "SYSTÈMES EMBARQUÉS",
+                                                        "@id": "016186",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Architecture",
+                                                "@id": "201",
+                                                "@percentOfOverall": "5",
+                                                "@percentOfParentTaxonomy": "22",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "BASE DE DONNÉES",
+                                                        "@id": "022486",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    },
+                                                    {
+                                                        "@name": "INGÉNIERIE DES SYSTÈMES",
+                                                        "@id": "009123",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in EDUCATION"
+                                                    },
+                                                    {
+                                                        "@name": "UML",
+                                                        "@id": "010148",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Java",
+                                                "@id": "339",
+                                                "@percentOfOverall": "3",
+                                                "@percentOfParentTaxonomy": "15",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "JAVA",
+                                                        "@id": "023328",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    },
+                                                    {
+                                                        "@name": "JAVASCRIPT",
+                                                        "@id": "025394",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in EDUCATION; SKILLS; DEG-3"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Base de Données",
+                                                "@id": "193",
+                                                "@percentOfOverall": "3",
+                                                "@percentOfParentTaxonomy": "15",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "MYSQL",
+                                                        "@id": "003243",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in SKILLS; WORK HISTORY; POS-1"
+                                                    },
+                                                    {
+                                                        "@name": "SQL",
+                                                        "@id": "008481",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Embarqués et Temps Réel",
+                                                "@id": "340",
+                                                "@percentOfOverall": "2",
+                                                "@percentOfParentTaxonomy": "8",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "CE/INTÉGRÉE",
+                                                        "@id": "024895",
+                                                        "@existsInText": "false",
+                                                        "sov:ChildSkill": [
+                                                            {
+                                                                "@name": "SYSTÈMES EMBARQUÉS",
+                                                                "@id": "012823",
+                                                                "@existsInText": "true",
+                                                                "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Normes et Protocoles",
+                                                "@id": "253",
+                                                "@percentOfOverall": "2",
+                                                "@percentOfParentTaxonomy": "8",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "HTTP",
+                                                        "@id": "019117",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in SKILLS"
+                                                    },
+                                                    {
+                                                        "@name": "TCP/IP",
+                                                        "@id": "009204",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Reseau",
+                                                "@id": "198",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "4",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "IP",
+                                                        "@id": "020132",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    },
+                                                    {
+                                                        "@name": "NFS",
+                                                        "@id": "003446",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in SKILLS"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Internet",
+                                                "@id": "196",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "3",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "CSS",
+                                                        "@id": "014705",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in SKILLS"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "@name": "Ingénierie",
+                                        "@id": "5",
+                                        "@percentOfOverall": "17",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Ingénierie Generale",
+                                                "@id": "307",
+                                                "@percentOfOverall": "5",
+                                                "@percentOfParentTaxonomy": "27",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "FANUC",
+                                                        "@id": "080522",
+                                                        "@existsInText": "false",
+                                                        "sov:ChildSkill": [
+                                                            {
+                                                                "@name": "ROBOTIQUE",
+                                                                "@id": "007187",
+                                                                "@existsInText": "true",
+                                                                "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "@name": "INGÉNIERIE DES SYSTÈMES",
+                                                        "@id": "080517",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in EDUCATION"
+                                                    },
+                                                    {
+                                                        "@name": "INGÉNIEUR",
+                                                        "@id": "080540",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in EDUCATION"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Conception",
+                                                "@id": "134",
+                                                "@percentOfOverall": "4",
+                                                "@percentOfParentTaxonomy": "24",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "CONCEPTION",
+                                                        "@id": "025590",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in EDUCATION; WORK HISTORY; DEG-3; POS-1"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Techniques",
+                                                "@id": "264",
+                                                "@percentOfOverall": "3",
+                                                "@percentOfParentTaxonomy": "17",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "SYSTÈME DE DOSAGE",
+                                                        "@id": "023892",
+                                                        "@existsInText": "false",
+                                                        "sov:ChildSkill": [
+                                                            {
+                                                                "@name": "INGÉNIERIE DES SYSTÈMES",
+                                                                "@id": "009086",
+                                                                "@existsInText": "true",
+                                                                "@whereFound": "Found in EDUCATION"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Matériel Informatique",
+                                                "@id": "144",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "8",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "INGÉNIERIE DES SYSTÈMES",
+                                                        "@id": "080779",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in EDUCATION"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Autres",
+                                                "@id": "263",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "8",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "INGÉNIERIE DES SYSTÈMES",
+                                                        "@id": "080646",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in EDUCATION"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Air et Aérospatiale",
+                                                "@id": "311",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "7",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "CELLULE",
+                                                        "@id": "023022",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Telecommunications",
+                                                "@id": "146",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "7",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "TÉLÉCOMMUNICATIONS",
+                                                        "@id": "022168",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in EDUCATION; DEG-3"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "@name": "Fabrication",
+                                        "@id": "13",
+                                        "@percentOfOverall": "8",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Equipements",
+                                                "@id": "364",
+                                                "@percentOfOverall": "5",
+                                                "@percentOfParentTaxonomy": "62",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "ROBOTIQUE",
+                                                        "@id": "007173",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Usinage, Travail des Métaux, Outils et Matrices",
+                                                "@id": "206",
+                                                "@percentOfOverall": "2",
+                                                "@percentOfParentTaxonomy": "23",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "FANUC",
+                                                        "@id": "022363",
+                                                        "@existsInText": "false",
+                                                        "sov:ChildSkill": [
+                                                            {
+                                                                "@name": "ROBOTIQUE",
+                                                                "@id": "007186",
+                                                                "@existsInText": "true",
+                                                                "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Air et Aérospatiale",
+                                                "@id": "363",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "15",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "CELLULE",
+                                                        "@id": "016826",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "@name": "Telecommunications",
+                                        "@id": "16",
+                                        "@percentOfOverall": "7",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Materiel Informatique",
+                                                "@id": "319",
+                                                "@percentOfOverall": "4",
+                                                "@percentOfParentTaxonomy": "60"
+                                            },
+                                            {
+                                                "@name": "Normes, Protocoles, Technologies",
+                                                "@id": "317",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "22",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "IP",
+                                                        "@id": "020131",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    },
+                                                    {
+                                                        "@name": "TÉLÉCOMMUNICATIONS",
+                                                        "@id": "022166",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in EDUCATION; DEG-3"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Qualifiés",
+                                                "@id": "323",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "18",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "TÉLÉCOMMUNICATIONS",
+                                                        "@id": "022284",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in EDUCATION; DEG-3"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "@name": "Comptabilité Diplômée",
+                                        "@id": "32",
+                                        "@percentOfOverall": "5",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Tenue des Livres",
+                                                "@id": "944",
+                                                "@percentOfOverall": "4",
+                                                "@percentOfParentTaxonomy": "76",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "COMPTABILITÉ",
+                                                        "@id": "022499",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    },
+                                                    {
+                                                        "@name": "TENUE DE LIVRES",
+                                                        "@id": "024207",
+                                                        "@existsInText": "false",
+                                                        "sov:ChildSkill": [
+                                                            {
+                                                                "@name": "COMPTABILITÉ",
+                                                                "@id": "0118352",
+                                                                "@existsInText": "true",
+                                                                "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Comptabilité",
+                                                "@id": "932",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "24",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "COMPTABILITÉ GÉNÉRALE",
+                                                        "@id": "018240",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "@name": "Achats et Approvisionnement",
+                                        "@id": "97",
+                                        "@percentOfOverall": "4",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Logistique",
+                                                "@id": "460",
+                                                "@percentOfOverall": "4",
+                                                "@percentOfParentTaxonomy": "100",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "ÉPANOUISSEMENT",
+                                                        "@id": "018024",
+                                                        "@existsInText": "false",
+                                                        "@childrenTotalMonths": "12",
+                                                        "@childrenLastUsed": "2014-01-01",
+                                                        "sov:ChildSkill": [
+                                                            {
+                                                                "@name": "RÉALISATION",
+                                                                "@id": "0180241",
+                                                                "@existsInText": "true",
+                                                                "@totalMonths": "12",
+                                                                "@lastUsed": "2014-01-01",
+                                                                "@whereFound": "Found in EDUCATION; DEG-2"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "@name": "Finance",
+                                        "@id": "7",
+                                        "@percentOfOverall": "4",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Analyse",
+                                                "@id": "235",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "33",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "ANALYSE FINANCIÈRE",
+                                                        "@id": "080203",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Valeurs Mobilières",
+                                                "@id": "236",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "33",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "ANALYSE FINANCIÈRE",
+                                                        "@id": "080196",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Administration et Service aux Clients",
+                                                "@id": "242",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "33",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "COMPTABILITÉ GÉNÉRALE",
+                                                        "@id": "022405",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "@name": "Logiciel Commun Utilisateur Final",
+                                        "@id": "0",
+                                        "@percentOfOverall": "4",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Donnees",
+                                                "@id": "228",
+                                                "@percentOfOverall": "2",
+                                                "@percentOfParentTaxonomy": "67",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "BASE DE DONNÉES",
+                                                        "@id": "015022",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Bureau",
+                                                "@id": "108",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "33",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "PHOTOSHOP",
+                                                        "@id": "004729",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "@name": "Tenue des Livres, Bureau",
+                                        "@id": "89",
+                                        "@percentOfOverall": "2",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Taches de Tenue des Livres",
+                                                "@id": "533",
+                                                "@percentOfOverall": "2",
+                                                "@percentOfParentTaxonomy": "100",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "COMPTABILITÉ",
+                                                        "@id": "005856",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    },
+                                                    {
+                                                        "@name": "COMPTABILITÉ GÉNÉRALE",
+                                                        "@id": "022406",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "@name": "Gestion Generale",
+                                        "@id": "80",
+                                        "@percentOfOverall": "2",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Gestions et Taches",
+                                                "@id": "519",
+                                                "@percentOfOverall": "2",
+                                                "@percentOfParentTaxonomy": "100",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "MANAGÉRIALES",
+                                                        "@id": "021109",
+                                                        "@existsInText": "false",
+                                                        "sov:ChildSkill": [
+                                                            {
+                                                                "@name": "DE GESTION",
+                                                                "@id": "0211091",
+                                                                "@existsInText": "true",
+                                                                "@whereFound": "Found in EDUCATION; DEG-3"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "@name": "Marketing",
+                                        "@id": "14",
+                                        "@percentOfOverall": "1",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "General",
+                                                "@id": "249",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "100",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "MARKETING",
+                                                        "@id": "021241.en",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "@name": "Sovren",
+                                "sov:Taxonomy": [
+                                    {
+                                        "@name": "Information Technology",
+                                        "@id": "10",
+                                        "@percentOfOverall": "18",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Mobile Applications",
+                                                "@id": "552",
+                                                "@percentOfOverall": "5",
+                                                "@percentOfParentTaxonomy": "29",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "ANDROID",
+                                                        "@id": "5520503",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    },
+                                                    {
+                                                        "@name": "BOOTSTRAP",
+                                                        "@id": "5520522",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in EDUCATION; WORK HISTORY; DEG-3; POS-1"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Programming",
+                                                "@id": "204",
+                                                "@percentOfOverall": "4",
+                                                "@percentOfParentTaxonomy": "22"
+                                            },
+                                            {
+                                                "@name": "Network",
+                                                "@id": "198",
+                                                "@percentOfOverall": "2",
+                                                "@percentOfParentTaxonomy": "14",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "TCP",
+                                                        "@id": "1980003",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    },
+                                                    {
+                                                        "@name": "TCP/IP",
+                                                        "@id": "1980004",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Enterprise Storage",
+                                                "@id": "555",
+                                                "@percentOfOverall": "2",
+                                                "@percentOfParentTaxonomy": "11",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "NETWORK FILE SYSTEM",
+                                                        "@id": "5551172",
+                                                        "@existsInText": "false",
+                                                        "sov:ChildSkill": [
+                                                            {
+                                                                "@name": "NFS",
+                                                                "@id": "555117201",
+                                                                "@existsInText": "true",
+                                                                "@whereFound": "Found in SKILLS"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "User Interface",
+                                                "@id": "731",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "7",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "ANDROID",
+                                                        "@id": "7310008",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Operations, Monitoring and Software Management",
+                                                "@id": "349",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "7",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "TCP/IP",
+                                                        "@id": "3490043",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Database",
+                                                "@id": "193",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "7",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "SQLITE",
+                                                        "@id": "3391131",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Big Data",
+                                                "@id": "553",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "4",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "HADOOP",
+                                                        "@id": "5530761",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in SKILLS"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "@name": "User Experience",
+                                        "@id": "93",
+                                        "@percentOfOverall": "2",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Information Architect",
+                                                "@id": "567",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "50",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "FRONT END",
+                                                        "@id": "5570300",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in EDUCATION; DEG-3"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Human Computer Interaction",
+                                                "@id": "561",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "50",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "FRONT END",
+                                                        "@id": "5570217",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in EDUCATION; DEG-3"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "@name": "Marketing",
+                                        "@id": "14",
+                                        "@percentOfOverall": "1",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Data & Analytics",
+                                                "@id": "588",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "100",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "HADOOP",
+                                                        "@id": "1400328",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in SKILLS"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "sov:Sections": {
+                    "sov:Section": [
+                        {
+                            "@starts": "3",
+                            "@ends": "23",
+                            "@sectionType": "EDUCATION",
+                            "#text": "FORMATIONS"
+                        },
+                        {
+                            "@starts": "24",
+                            "@ends": "32",
+                            "@sectionType": "SKILLS",
+                            "#text": "COMPETENCES"
+                        },
+                        {
+                            "@starts": "33",
+                            "@ends": "56",
+                            "@sectionType": "WORK HISTORY",
+                            "#text": "EXPERIENCES PROFESSIONNELLES"
+                        }
+                    ]
+                },
+                "sov:ReservedData": {
+                    "sov:Phones": {
+                        "sov:Phone": [
+                            "+212634352413"
+                        ]
+                    },
+                    "sov:Names": {
+                        "sov:Name": [
+                            "Suivi de Tramway",
+                            "• Suivi de Tramway:"
+                        ]
+                    },
+                    "sov:EmailAddresses": {
+                        "sov:EmailAddress": [
+                            "med.elbadri@hotmail.com"
+                        ]
+                    }
+                },
+                "sov:ParsedTextLength": "1967",
+                "sov:ParseTime": "688",
+                "sov:ResumeQuality": {
+                    "sov:Assessments": {
+                        "sov:Assessment": [
+                            {
+                                "sov:Level": "Data Missing",
+                                "sov:Findings": {
+                                    "sov:Information": [
+                                        "[Sovren:212;] A phone number was not found in the contact information. A resume should always include a phone number.",
+                                        "[Sovren:213;] A street level address was not found in the contact information. A full contact address should always be included in a resume as it allows for location based searches.",
+                                        "[Sovren:221;POS-1] We could not find a job title for: POS-1. Every position in a resume should have a job title.",
+                                        "[Sovren:222;POS-1] No employer name was found for:  POS-1. Every position in a resume should have an employer name.",
+                                        "[Sovren:224;POS-1] The following work history position does not have a start date: POS-1. Every position in a resume should have a start date.",
+                                        "[Sovren:225;POS-1] The following work history position does not have an end date: POS-1. Every position in a resume should have an end date, unless it is a currently held position.",
+                                        "[Sovren:226;] We found no work history positions within the past year. A resume should include work history information, including time off, for the most recent year.",
+                                        "[Sovren:231;DEG-1,DEG-3] The following educational degrees do not have a degree name: DEG-1, DEG-3. Every degree in a resume should have a name or type associated with it, such as 'B.S.' or 'M.S.'."
+                                    ]
+                                }
+                            },
+                            {
+                                "sov:Level": "Suggested Improvements",
+                                "sov:Findings": {
+                                    "sov:Information": [
+                                        "[Sovren:112;] The following section was identified as a skills section type: 'COMPETENCES'. Skills should not be in a separate section, but instead, each skill should be included in the descriptions of work history or education.",
+                                        "[Sovren:151;1] The following section does not have the header on a separate line: 'COMPETENCES'. Every section should have a header on a separate line directly above the content associated with it."
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                },
+                "sov:LicenseSerialNumber": "MONEYCORE:298fd974-d469-4f0b-a742-82cb20fdc995",
+                "sov:ParserConfigurationString": "Coverage.PersonalAttributes = True; Coverage.Training = True; Culture.CountryCodeForUnitedKingdomIsUK = True; Culture.DefaultCountryCode = FR; Culture.DefaultCultureIsFrance = True; Culture.Language = French; Culture.PreferEnglishVersionIfTwoLanguagesInDocument = False; Data.UserDefinedParsing = False; OutputFormat.AssumeCompanyNameFromPrecedingJob = False; OutputFormat.ContactMethod.PackStyle = Split; OutputFormat.DateOutputStyle = ExplicitlyKnownDateInfoOnly; OutputFormat.NestJobsBasedOnDateRanges = True; OutputFormat.NormalizeRegions = False; OutputFormat.SkillsStyle = Default; OutputFormat.StripParsedDataFromPositionHistoryDescription = True; OutputFormat.TelcomNumber.Style = Raw; OutputFormat.XmlFormat = HrXmlResume25",
+                "sov:ParserVersion": "9.1.3.0",
+                "sov:DigitalSignature": "XdQAAAAAAAA="
+            }
+        }
+    }
+}

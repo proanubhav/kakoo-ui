@@ -1,0 +1,82 @@
+@import '../../../../assets/sass/var';
+
+.white {
+  margin-bottom: 3em;
+  background-color: white;
+}
+
+.page-container {
+  background-color: white;
+}
+
+.my-form {
+  background-color: white;
+}
+
+.modal-header {
+  background-color:	#9A2828;
+}
+
+.mySimpleButton {
+  @extend %myButton;
+  border: 1px solid $defaultColor;
+  color: $defaultColor;
+  background: white;
+}
+
+.myWarningButton {
+  @extend %myButton;
+  border: 1px solid $warning;
+  color: $warning;
+}
+
+.myDangerButton {
+  @extend %myButton;
+  border: 1px solid $danger;
+  color: $danger;
+  background: white;
+}
+
+.myInfoButton {
+  @extend %myButton;
+  border: 1px solid $info;
+  color: $info;
+  background: white;
+}
+
+.mySuccessButton {
+  @extend %myButton;
+  border: 1px solid $success;
+  background: white;
+  color: $success;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  box-shadow: 5px 5px 10px #e0e0e0;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #9A2828;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

@@ -1,0 +1,18 @@
+<li class="list-group-item">
+  <div class="example-container row" *ngIf="!next">
+    <!-- <img [src]="message.avatar" class="avatar col-sm-2" />-->
+
+    <div class="message{{message.userMessage}} col-sm-9" style="width:100px">
+      <p>
+        {{message.content}}
+      </p>
+    </div>
+    <!--
+    <div class="timeform ">
+      <i class="fa fa-clock-o" aria-hidden="true"></i>
+      <span class="timestamp">at {{message.timestamp | date :
+        'dd/MM/yyyy' }}</span>
+    </div>
+    -->
+  </div>
+</li>

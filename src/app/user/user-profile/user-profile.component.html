@@ -1,0 +1,79 @@
+<app-user-navbar></app-user-navbar>
+<div class="page-container">
+  <div class="container ">
+
+    <div class="row  profile rounded">
+        <div class="col">
+                <div style="margin-top:0.5em;"> 
+                    <a><img [src]="imageUrl" (click)="fileInput.click()" class="rounded-circle bordered img-responsive"></a>
+                </div>
+                <input style="display:none" type="file" (change)="selectFile($event)" #fileInput accept="image/*">
+                <div style="text-align:center;color:#555;margin-top:0.5em">
+                <h4>{{firstName | titlecase}} {{lastName | uppercase}} </h4>
+                <h6><strong>{{companyName | titlecase}}</strong></h6>
+                </div>        
+        </div>
+       <!-- <div class="col-sm-12">
+            <div class= "text-center mt-4 mb-2">
+                    <div class="sm-form mt-2" style="margin-bottom:0.8em;">
+                        <button class="myButton2" (click)="addnewRhPage()" *ngIf="isAdmin()" tooltip="Ajouter un utilisateur" ><i class="fa fa-user-plus" ></i></button>
+                        <button class="myButton2" (click)="redirectSettings()" tooltip="Paramètres" ><i class="fa fa-cog" aria-hidden="true"></i></button>
+                        <button class="myButton2" (click)="redirectAllUsers()" tooltip="Liste des utilisateurs" ><i class="fa fa-list-ul" aria-hidden="true"></i></button>
+
+                    </div>
+            </div>
+
+        </div>   --> 
+        
+        <div class="col-sm-12" >
+          <p class="h6" style="color:#9A2828;margin-left:0.4em;"><i class="fa fa-user"></i>  Données personnelles</p>
+          <table class=" table btn-table table-active table-responsive ">
+            <tr>
+              <th class="item "style="width:30%;">Nom<th>
+              <th style="width:70%;"> {{firstName | titlecase}} {{lastName | uppercase}}</th>
+            </tr>
+            <tr>
+                <th class="item " >Email<th>
+                <th >{{mail}}</th>
+            </tr>
+            <tr>
+                <th class="item ">Téléphone<th>
+                <th >{{phone}}</th>
+            </tr>
+            <tr>
+                <th class="item " >Nom d'utilisateur<th>
+                <th >{{username}}</th>
+            </tr>
+            <tr>
+                <th class="item ">Poste<th>
+                <th >{{role | titlecase}}</th>
+            </tr>
+          </table>
+          <p class="h6" style="color:#9A2828;margin-left:0.4em;"><i class="fa fa-bank"></i>  Données de la société</p>
+          <table class="table btn-table table-active ">
+            <tr>
+              <th class="item "style="width:30%;">Nom<th>
+              <th style="width:70%;"> {{companyName | titlecase}}</th>
+            </tr>
+            <tr>
+                <th class="item " >Adresse<th>
+                <th >{{companyAddress}}</th>
+            </tr>
+            <tr>
+                <th class="item ">Téléphone<th>
+                <th >{{companyPhone}}</th>
+            </tr>
+
+            <tr>
+                <th class="item " >Type de société<th>
+                <th >{{companyType}}</th>
+            </tr>
+          </table>
+              
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+

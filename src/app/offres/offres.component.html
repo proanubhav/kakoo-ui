@@ -1,0 +1,329 @@
+<div *ngIf="!isHome">
+  <app-header></app-header>
+</div>
+<div id="generic_price_table">
+  <section class="pricingSection">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <!--PRICE HEADING START-->
+          <div class="price-heading clearfix">
+            <h3>
+              <span class="meilleurs">Faites</span>
+              <span class="meilleurs">partie</span>
+              <span class="meilleurs">de l'aventure!</span>
+              <span class="meilleurs">c'est</span>
+              <span class="meilleurs">pour</span>
+              <span class="meilleurs">le prix</span>
+              <span class="meilleurs">d'un</span>
+              <span class="meilleurs">café</span>
+              <span class="meilleurs">par</span>
+              <span class="meilleurs">jour!</span>
+
+            </h3>
+          </div>
+          <!--//PRICE HEADING END-->
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!isHome">
+      <div class="container">
+        <div align="center">
+          <div class="prospections">
+            <h3>
+              Devenez <span class="tenx"><img src="assets/home/images/10x.jpg" alt="10x" width="80" height="40" /></span>
+              plus
+              humains grâce à l'Intelligence
+              Artificiel et au deeplearning!
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div align="center">
+      <div class="container-fluid switching">
+        <div class="">
+          <span class="col-md-5 annl">
+            <span [class.selectedAbnt]="switchabnt === true">
+              Prix Annuel
+            </span>
+          </span>
+          <span class="col-md-2">
+            <mat-slide-toggle [(ngModel)]="switchabnt" (click)="switchPrice(switchabnt)"></mat-slide-toggle>
+
+          </span>
+          <span class="col-md-5 mnsl">
+            <span [class.selectedAbnt]="switchabnt !== true">
+              Prix Mensuel
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <!--BLOCK ROW START-->
+      <div class="row">
+        <div class="col-md-4">
+
+          <!--PRICE CONTENT START-->
+          <div class="generic_content clearfix">
+
+            <!--HEAD PRICE DETAIL START-->
+            <div class="generic_head_price clearfix">
+
+              <!--HEAD CONTENT START-->
+              <div class="generic_head_content clearfix">
+
+                <!--HEAD START-->
+                <div class="head_bg"></div>
+                <div class="headsilver">
+
+                  <span class="headeroffre">Silver</span>
+                  <div>
+                    <strong>Adaptée pour les petites entreprises</strong>
+                  </div>
+                </div>
+                <!--//HEAD END-->
+
+              </div>
+              <!--//HEAD CONTENT END-->
+
+              <!--PRICE START-->
+              <div class="generic_price_tag clearfix silver">
+                <span class="price">
+                  <span class="sign">€</span>
+                  <span class="currency">
+                    <span *ngIf="switchabnt">
+                      <span style="color: green">{{priceValues.price_1}}</span>
+                    </span>
+                    <span *ngIf="!switchabnt">
+                      <span style="color: green">{{priceValues.price_1}}</span>
+                    </span>
+                  </span>
+                  <span class="cent">.00</span>
+                  <span class="month">/Mois</span>
+                </span>
+              </div>
+              <!--//PRICE END-->
+
+            </div>
+            <!--//HEAD PRICE DETAIL END-->
+
+            <!--FEATURE LIST START-->
+            <div class="generic_feature_list">
+              <ul>
+                <li>
+                  <span class="rubriques">300 candidats automatisés</span>
+                  <i class="fa fa-check" style="color: green; float:right; margin-right: 2px">
+
+                  </i>
+                </li>
+                <li class="libackground">
+                  <span class="rubriques">Pré-paramétrage des tests techniques</span>
+                  <i class="fa fa-check" style="color: green; float:right; margin-right: 2px">
+
+                  </i>
+                </li>
+                <li>
+                  <span class="rubriques">Envoie de mailing en masse</span>
+                  <i class="fa fa-check" style="color: green; float:right; margin-right: 2px">
+
+                  </i>
+                </li>
+                <li class="libackground">
+                  <span class="rubriques">Accès rapide grâce à la reconnaissance vocale</span>
+                  <i class="fa fa-check" style="color: green; float:right; margin-right: 2px">
+
+                  </i>
+                </li>
+                <li>
+                  <span class="rubriques">Un seul Compte RH</span>
+                  <i class="fa fa-check" style="color: green; float:right; margin-right: 2px">
+
+                  </i>
+                </li>
+
+              </ul>
+            </div>
+            <!--//FEATURE LIST END-->
+
+            <!--BUTTON START-->
+            <div align="center">
+              <button mat-raised-button class="btnSilver" (click)="goSignUpTpe()"> Je me lance </button>
+
+            </div>
+            <!--//BUTTON END-->
+
+          </div>
+          <!--//PRICE CONTENT END-->
+
+        </div>
+
+        <div class="col-md-4">
+
+          <!--PRICE CONTENT START-->
+          <div class="generic_content active clearfix">
+
+            <!--HEAD PRICE DETAIL START-->
+            <div class="generic_head_price clearfix">
+
+              <!--HEAD CONTENT START-->
+              <div class="generic_head_content clearfix">
+
+                <!--HEAD START-->
+                <div class="head_bg"></div>
+                <div class="headgold">
+                  <span class="headeroffre">Gold</span>
+                  <div>
+                    <strong>Adaptée pour les moyennes entreprises</strong>
+                  </div>
+                </div>
+                <!--//HEAD END-->
+
+              </div>
+              <!--//HEAD CONTENT END-->
+
+              <!--PRICE START-->
+              <div class="generic_price_tag clearfix">
+                <span class="price">
+                  <span class="sign">€</span>
+                  <span class="currency">
+                    <span *ngIf="switchabnt">
+                      <span style="color: green">{{priceValues.price_2}}</span>
+                    </span>
+                    <span *ngIf="!switchabnt">
+                      <span style="color: green">{{priceValues.price_2}}</span>
+                    </span>
+                  </span>
+                  <span class="cent">.00</span>
+                  <span class="month">/Mois</span>
+                </span>
+              </div>
+              <!--//PRICE END-->
+
+            </div>
+            <!--//HEAD PRICE DETAIL END-->
+
+            <!--FEATURE LIST START-->
+            <div class="generic_feature_list">
+              <ul>
+                <li>
+                  <span class="rubriques"> 1000 candidats automatisés</span>
+                  <i class="fa fa-check" style="color: green; float:right; margin-right: 2px"></i>
+                </li>
+                <li class="libackground">
+                  <span class="rubriques">Accès à 500 questions techniques</span>
+                  <i class="fa fa-check" style="color: green; float:right; margin-right: 2px"></i>
+                </li>
+                <li>
+                  <span class="rubriques">Entretiens en videos automatisées</span>
+                  <i class="fa fa-check" style="color: green; float:right; margin-right: 2px"></i>
+                </li>
+                <li class="libackground">
+                  <span class="rubriques">Utilisation de l'API Cortex de deeplearning </span>
+                  <i class="fa fa-check" style="color: green; float:right; margin-right: 2px"></i>
+                </li>
+                <li>
+                  <span class="rubriques">jusqu'à
+                    <strong>05</strong> Comptes RH</span>
+                  <i class="fa fa-check" style="color: green; float:right; margin-right: 2px"></i>
+                </li>
+              </ul>
+            </div>
+            <!--//FEATURE LIST END-->
+            <!--BUTTON START-->
+            <div align="center">
+              <button mat-raised-button class="btnGold" (click)="goSignUpPme()"> Je me lance </button>
+
+            </div>
+            <!--//BUTTON END-->
+
+          </div>
+          <!--//PRICE CONTENT END-->
+
+        </div>
+        <div class="col-md-4">
+
+          <!--PRICE CONTENT START-->
+          <div class="generic_content clearfix">
+
+            <!--HEAD PRICE DETAIL START-->
+            <div class="generic_head_price clearfix">
+
+              <!--HEAD CONTENT START-->
+              <div class="generic_head_content clearfix">
+
+                <!--HEAD START-->
+                <div class="head_bg"></div>
+                <div class="headplatinium">
+                  <span class="headeroffre">Platinium</span>
+                  <div class="">
+                    <strong>Adaptée pour les grandes entreprises</strong>
+                  </div>
+                </div>
+                <!--//HEAD END-->
+
+              </div>
+              <!--//HEAD CONTENT END-->
+
+              <!--PRICE START-->
+              <div class="generic_price_tag clearfix">
+                <span class="price">
+                  <span class="cent">Nous contacter</span>
+                </span>
+              </div>
+              <!--//PRICE END-->
+
+            </div>
+            <!--//HEAD PRICE DETAIL END-->
+
+            <!--FEATURE LIST START-->
+            <div class="generic_feature_list">
+              <ul>
+                <li>
+                  <span class="rubriques">Gestion automatisés en illimités </span>
+                  <i class="fa fa-check" style="color: green; float:right; margin-right: 2px"></i>
+                </li>
+                <li class="libackground">
+                  <span class="rubriques">2000 questions techniques et logiques</span>
+                  <i class="fa fa-check" style="color: green; float:right; margin-right: 2px"></i>
+                </li>
+                <li>
+                  <span class="rubriques">Notre ChatBot sur votre site </span>
+                  <i class="fa fa-check" style="color: green; float:right; margin-right: 2px"></i>
+                </li>
+                <li class="libackground">
+                  <span class="rubriques">
+                    <span class="preco">Préconisation des meilleurs candidats grâces</span>
+                    <span class="preco">aux algorithmes de deeplearning</span></span>
+                  <i class="fa fa-check" style="color: green; float:right; margin-right: 0px"></i>
+                </li>
+                <li>
+                  <span class="rubriques">jusqu'à
+                    <strong>100</strong> Comptes RH</span>
+                  <i class="fa fa-check" style="color: green; float:right; margin-right: 2px"></i>
+                </li>
+              </ul>
+            </div>
+            <!--//FEATURE LIST END-->
+
+            <!--BUTTON START-->
+            <div align="center">
+              <button mat-raised-button class="btnPlatinium" (click)="goSignUpEti()"> Je me lance </button>
+            </div>
+
+            <!--//BUTTON END-->
+
+          </div>
+          <!--//PRICE CONTENT END-->
+
+        </div>
+      </div>
+      <!--//BLOCK ROW END-->
+
+    </div>
+  </section>
+</div>

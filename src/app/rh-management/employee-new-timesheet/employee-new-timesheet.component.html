@@ -1,0 +1,153 @@
+<app-rh-header (adminRole)="onAdminRole($event)" >
+</app-rh-header>
+<div class="page-container">
+    <div *ngIf="employee != null" style=" padding: 15px;">
+       <span>
+          {{employee.lastName}} {{ employee.firstName }} - 
+      </span>
+      <span style="color: #32c5d2"> Période : </span> <span> {{currentMonthYear}} - </span>
+      <span style="color: #32c5d2"> Agence : </span> <span> {{employee.company.name}} </span>
+      <button *ngIf="timesheetsOfThisMonth?.length > 0 && ((adminRole && isCurrentMonthValidatedByEmp && !isCurrentMonthValidatedByAdmin) || (!adminRole && !isCurrentMonthValidatedByEmp))"mat-raised-button style="float : right"
+       (click)="validateTimesheets(true)">
+        <i class="fa fa-check"></i> Valider
+      </button>
+      
+
+      <button *ngIf="timesheetsOfThisMonth?.length > 0 && adminRole && isCurrentMonthValidatedByEmp && isCurrentMonthValidatedByAdmin"mat-raised-button style="float : right"
+        (click)="validateTimesheets(false)">
+         <i class="fa fa-calendar-times-o"></i> Dévalider
+       </button>
+
+       <button *ngIf="timesheetsOfThisMonth?.length > 0 && !adminRole && isCurrentMonthValidatedByEmp && !isCurrentMonthValidatedByAdmin"mat-raised-button style="float : right"
+        (click)="validateTimesheets(false)">
+         <i class="fa fa-calendar-times-o"></i> Dévalider
+       </button>
+    </div>
+    <div *ngIf="adminRole && timesheetsOfThisMonth?.length == 0" style=" padding: 15px; color: red;">
+      La feuille de temps n'est pas encore saisie par <span >{{employee.lastName}} {{ employee.firstName }}</span>
+    </div>
+    <div *ngIf="!adminRole && timesheetsOfThisMonth?.length > 0 && isAnyTimesheetRefused" style=" padding: 15px; color: red;">
+      Pour <span style="color: blue">valider</span>, Vous devez modifier ou supprimer les feuilles de temps refusées .. 
+    </div>
+    <div *ngIf="adminRole && timesheetsOfThisMonth?.length > 0 && isAnyTimesheetRefused" style=" padding: 15px; color: red;">
+      Pour <span style="color: blue">valider</span>, Vous devez attendre la modification par le colloborateur des feuilles de temps que vous avez refusées .. 
+    </div>
+    <form novalidate [formGroup]="timeSheetForm" >
+      <div class="table-responsive">
+      <table class="table " >
+        <thead>
+          <tr>
+            <th  *ngIf="!adminRole" style="width: 5%; padding-left: 0px; padding-right: 0px;  "></th>
+            <th ></th>
+            <th class="h6" style="width:40%; padding-top: 0px; padding-bottom: 0px ; text-align: center ">Projet/Type d'activité</th>
+            <th class="h6" style="width:5%" *ngFor="let i of daysInCurrentMonth" [ngClass]="{'day-weekend': isWeekend(i), 'day-ferie' : isFerie(i)}" >{{i}} </th>
+         </tr>
+        </thead>
+        <tbody>
+          <tr *ngIf="!adminRole && !isCurrentMonthValidatedByEmp " style="background-color: white;" >
+              <td style="padding-left: 0px; padding-right: 0px;">
+                  <button  mat-raised-button (click)="onSubmit(null)" class="myInfoButton" type="submit" style="min-width: 0px!important;width:3rem" title="créer">
+                      <i class="fa fa-calendar-plus-o"></i> 
+                  </button>
+              </td>
+              <td style="padding-left: 0px; padding-right: 0px; padding-top: 1.7rem; text-align: center ">
+                  <input type="checkbox"  id="checkAll" (change)="selectAll()" />
+                </td>
+            <td>
+              <mat-form-field>
+                <mat-select placeholder="Type"  formControlName="type" required>
+                    <mat-option value="Mission">Mission</mat-option>
+                    <mat-option value="Interne">Interne</mat-option>
+                    <mat-option value="Congé">Congé</mat-option>
+                    <mat-option value="Absence">Absence</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-select placeholder="Désignation"  formControlName="designation" required> 
+                    <mat-option value="Normale">Normale</mat-option>
+                    <mat-option value="Autorisation">Autorisation</mat-option>
+                    <mat-option value="Maladie">Maladie</mat-option>
+                    <mat-option value="RTT">RTT</mat-option>
+                    <mat-option value="Congés Sans Solde">Congés Sans Solde</mat-option>
+                </mat-select> 
+              </mat-form-field>
+            </td>
+            <td *ngFor="let i of daysInCurrentMonth"
+                [ngClass]="{'day-weekend': isWeekend(i) , 'day-ferie' : isFerie(i)}" >
+                <input class="bday_input" *ngIf="isWorking(i)" matInput type="text" placeholder="" value="" [id]=i>
+            </td>            
+          </tr>
+          <tr *ngFor="let timeSheet of timesheetsOfThisMonth; let i = index" id="feuille{{i}}">
+              <td *ngIf="!adminRole" class="table_col">
+                
+                  <a title="Supprimer" *ngIf="!timeSheet.approvedByEmp || (timeSheet.approvedByEmp  && timeSheet.raisonIfRefused != null)"  style="min-width: 0px!important;width:3rem" (click)="deleteTimeSheet(timeSheet)">
+                      <i class="fa fa-trash"></i> 
+                  </a>
+              </td>
+              <td class="table_col" >
+                  <i title="Attente de la validation de l'admin"  *ngIf="!adminRole && timeSheet.approvedByEmp && !timeSheet.approvedByAdmin &&  timeSheet.raisonIfRefused == null" class="fa fa-hourglass-half"></i>
+                  <i title="Feuille de temps validée"  *ngIf="timeSheet.approvedByEmp && timeSheet.approvedByAdmin" class="fa fa-calendar-check-o"></i>
+                  <a title="Refuser"  *ngIf="adminRole && (isCurrentMonthValidatedByEmp || isAnyTimesheetRefused) && !isCurrentMonthValidatedByAdmin && timeSheet.raisonIfRefused == null"  (click)="openDialog(timeSheet)" >
+                    <i class="fa fa-calendar-minus-o"></i> 
+                  </a>
+                  <a title="Modifier"  (click)="onSubmit(timeSheet)" *ngIf="(!adminRole && !timeSheet.approvedByEmp) || (!adminRole && timeSheet.approvedByEmp  && timeSheet.raisonIfRefused != null)"  style="min-width: 0px!important;width:3rem;">
+                    <i class="fa fa-pencil"></i> 
+                  </a>
+                </td>
+              <td style="padding-top: 0px; padding-bottom: 0px; text-align: center  " [ngClass]="{'table-danger': timeSheet.raisonIfRefused != null}">
+                <span [title]="timeSheet.raisonIfRefused">{{ timeSheet.type }} / {{ timeSheet.designation }}</span>
+                
+              </td>
+              <td *ngFor="let day of daysInCurrentMonth"  [ngClass]="{'day-weekend': isWeekend(day) , 'day-ferie' : isFerie(day)}" style="padding-top: 0px; padding-bottom: 0px " >
+                <input  *ngIf="isWorking(day) && !adminRole" class="b-day bday_input" matInput type="text" placeholder="" [value]="isDayWorked(timeSheet, day)" id="t{{timeSheet.id}}{{day}}">
+                <div *ngIf="isWorking(day) && adminRole">
+                  <div *ngFor="let bDay of timeSheet.businessDays">
+                      <span  *ngIf="bDay.day == day && bDay.hoursNumber != 0"  class="b-day"> {{ bDay.hoursNumber }} </span>
+                  </div> 
+                </div>
+            </td>
+          </tr>
+          <tr>
+            <td  *ngIf="!adminRole" class="table_col"></td>
+            <td  class="table_col">
+            </td>
+            <td  class="table_col" > 
+              <b *ngIf="!isDaysNbrSup" >Total Jouranlier ({{workingDays.length}} j.o) </b>
+              <b *ngIf="isDaysNbrSup" class="bday_danger" title="Le nombre de jours saisis est supérieur au nombre de jours ouvrés total!">Total Jouranlier ({{workingDays.length}} j.o) </b>
+            </td>
+            <td *ngFor="let i of daysInCurrentMonth"  [ngClass]="{'day-weekend': isWeekend(i) , 'day-ferie' : isFerie(i)}" style="padding-top: 0px; padding-bottom: 0px " >
+                <span *ngIf="isWorking(i)" >
+                  <b [ngClass]="{'bday_danger': !isDayInf[i - 1]}">
+                     {{ dailyTotal[i-1] }}
+                  </b>
+                </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </form>
+    <div *ngIf="timesheetsOfThisMonth?.length > 0">
+      <div style=" padding-top: 15px;padding-left: 15px;">
+        <p>Activité remontée :</p>
+      </div>
+      <table class="table table-responsive">
+        <thead>
+          <tr>
+            <th class="table_col " style="width:25%;"> Production </th>
+            <th class="table_col " style="width:25%;"> Interne </th>
+            <th class="table_col " style="width:25%;"> Congé </th>
+            <th class="table_col " style="width:25%;"> Absence </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr >
+            <td class="table_col "> {{ activity.get('production') }} </td>
+            <td class="table_col "> {{ activity.get('interne') }} </td>
+            <td class="table_col "> {{ activity.get('conge') }} </td>
+            <td class="table_col "> {{ activity.get('absence') }} </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>

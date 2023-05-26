@@ -1,0 +1,174 @@
+<div class="page-container">
+  <div class="row white"></div>
+  <div *ngIf="!isUserConnected">
+    <div class="container col-md-7" *ngIf="!started">
+
+      <div class="row my-form rounded">
+        <div class="col">
+          <!--
+          <div style="text-align:right">
+            <button class="myButton3" tooltip="Liste des quizz">
+            <a (click)="redirectAlltests()" ><i class="fa fa-file-text-o" aria-hidden="true"></i></a></button>
+          </div>  -->
+          <div>
+            <div style="overflow: hidden">
+              <div style="float: left; color:#9A2828;margin-left:10em;">
+                <br>
+                <h3 class="" style="align-content: center">Consigne</h3>
+              </div>
+            </div>
+            <section>
+              <br>
+              <!--   <div style="color:#9A2828" class="h6">Etape 1 :</div> -->
+              <div class="row">
+                <div class="col-sm-12">
+                  <ul>
+                    <li> L'entretien est un ensemble des questions </li>
+                    <li> Pour chaque question vous avez une minute pour répondre </li>
+                    <li> Chaque validation de passage à la question suivante entrainera l'envoi du video</li>
+                  </ul>
+                </div>
+
+              </div>
+
+              <div style="text-align:center;margin-bottom:3em">
+                <button type="button" class="myButton3" (click)="start()">Démarrer</button>
+                <br>
+              </div>
+              <p> En cliquant sur<em> <strong>Démarrer</strong> </em>, vous acceptez notre<a class="politique" (click)="goPolitiqeAudioVisuel()">
+                  Politique de l’audiovisuel et des médias </a></p>
+            </section>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    <div class="container" *ngIf="started && !finished">
+      <div class="row">
+        <div class="col-md-12 form-inline">
+          <div class="col-md-5">
+            <div class="row my-form rounded">
+              <div class="col">
+                <div style="text-align:right" *ngIf="!uuid">
+
+
+                </div>
+                <div style="overflow: hidden" *ngIf="!uuid">
+                  <div style="float: left;color:#9A2828;margin-left:5em">
+
+                    <h3 class="title"><br> Liste des questions</h3><br>
+                  </div>
+                </div>
+                <section>
+                  <div style="margin-bottom:0.7em">
+                    <mat-progress-bar class="my-color" mode="determinate" [value]="questionProgress"></mat-progress-bar>
+                  </div>
+
+                  <div style="overflow: hidden;">
+                    <p style="float: right;color:#9A2828" class="h6">{{ displayTimeElapsed()}} </p>
+                  </div>
+                  <table class=" table btn-table table-active table-responsive-md ">
+                    <thead>
+                      <tr>
+                        <th class="h6" style="width:25%;">Question {{next + 1}} / {{questions?.length}} </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th> {{question.questionBody}} </th>
+                      </tr>
+                    </tbody>
+                  </table>
+                </section>
+                <section style="text-align:right;margin-bottom:1em">
+                  <button class="myButton3" (click)="nextQuestion()"> Suivant</button>
+                </section>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 offset-md-1 pull-right">
+            <div class="">
+              <div class="col">
+                <div style="overflow: hidden">
+                  <div style="float: left; color:#9A2828;margin-left:10em;">
+                    <br>
+                    <h3 class="" style="align-content: center">Entretien en ligne </h3>
+                  </div>
+                </div>
+                <section>
+                  <br>
+                  <!--   <div style="color:#9A2828" class="h6">Etape 1 :</div> -->
+                  <div class="row" style="text-align:center;margin-left:1em">
+                    <video #video class="video"></video>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="container col-md-7" *ngIf="started && finished">
+
+      <div class="row my-form rounded">
+        <div class="col">
+          <!--
+          <div style="text-align:right">
+            <button class="myButton3" tooltip="Liste des quizz">
+            <a (click)="redirectAlltests()" ><i class="fa fa-file-text-o" aria-hidden="true"></i></a></button>
+          </div>  -->
+          <div>
+            <div style="overflow: hidden">
+              <div style="float: left; color:#9A2828;margin-left:10em;">
+                <br>
+                <h3 class="" style="align-content: center">Fin entretien</h3>
+              </div>
+            </div>
+            <section>
+              <div class="alert alert-info" role="alert" style="text-align:center;margin-top:5em;">
+                <br><br><br>
+                Merci d'avoir passé l'entretien, nous vous communiquerons vos résultats le plus vite possible
+                <br><br><br>
+              </div>
+            </section>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="container col-md-7" *ngIf="isUserConnected">
+
+    <div class="row my-form rounded">
+      <div class="col">
+        <!--
+        <div style="text-align:right">
+          <button class="myButton3" tooltip="Liste des quizz">
+          <a (click)="redirectAlltests()" ><i class="fa fa-file-text-o" aria-hidden="true"></i></a></button>
+        </div>  -->
+        <div>
+          <div style="overflow: hidden">
+            <div style="float: left; color:#9A2828;margin-left:10em;">
+              <br>
+              <h3 class="" style="align-content: center">Utilisateur Connecté</h3>
+            </div>
+          </div>
+          <section>
+            <div class="alert alert-warning" role="alert" style="text-align:center;margin-top:5em;">
+              <br>
+              <p>Un utilisateur est déjà connecté sur cet navigateur .. </p>
+              <p>Pour pouvoir accéder à cette page, il faut se déconnecter ou utiliser un autre navigateur .. </p>
+              <br>
+            </div>
+          </section>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

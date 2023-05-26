@@ -1,0 +1,134 @@
+@import '../../../assets/sass/var';
+
+.white{
+    margin-bottom: 3em;
+    background-color:white;   
+}
+.page-container{
+    background-color:white;
+}
+.my-form{
+    background-color: white;
+    animation: myanim 1s;
+}
+.modal-header{
+    background-color:#9A2828;
+    text-align:center;
+}
+#success-signup{
+    padding-top:2.5em;
+    padding-bottom:2.5em;
+}
+.white{
+    margin-bottom: 3em;
+    background-color:white;
+}
+.page-container{
+    background-color:white;
+    margin-bottom:3em;
+}
+.my-form{
+    background-color: white;
+}
+.modal-header{
+    background-color:	#9A2828;
+    text-align:center;
+}
+img {
+    width : 1.5em;
+    height : 1.5em;
+    margin-top:-0.8em;
+}
+.messages{
+    height:3em;
+    text-align:center;
+}
+.reset{
+    margin-left:-1em;
+    width:104.5%;
+    height:7em;
+}
+.col{
+    margin-bottom:3.8em;
+}
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #9A2828;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+    margin-left:40%;
+  }
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+      // animation
+
+      @-webkit-keyframes myanim {
+        0%   { opacity: 0; }
+        100% { opacity: 1; }
+      }
+      @-moz-keyframes myanim  {
+        0%   { opacity: 0; }
+        100% { opacity: 1; }
+      }
+      @-o-keyframes myanim {
+        0%   { opacity: 0; }
+        100% { opacity: 1; }
+      }
+      @keyframes myanim {
+        0%   { opacity: 0; }
+        100% { opacity: 1; }
+      }
+      
+    .mySimpleButton{
+        @extend %myButton;
+        border: 1px solid $defaultColor;
+        color: $defaultColor;
+        background: white;
+    }
+    .myWarningButton{
+        @extend %myButton;
+        border: 1px solid $warning;
+        color: $warning;
+        background: white;
+
+    }
+    .myDangerButton{
+        @extend %myButton;
+        border: 1px solid $danger;
+        color: $danger;
+    }
+    
+    .myInfoButton{
+        @extend %myButton;
+        border: 1px solid $info;
+        color: $info;
+    }
+
+    .img {
+        width: 1.5em;
+        height: 1.5em;
+        margin-top: 0.0em;
+        margin-right: 7px;
+    }
+
+    .signupform{
+        margin-bottom: 4em;
+        border: 1px solid gainsboro;
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        box-shadow: 2px 2px 15px darkgrey;
+        -moz-box-shadow:2px 2px 15px darkgrey;
+        -webkit-box-shadow: 2px 2px 15px darkgrey;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .titlesignup{
+        margin: 1em;
+    }

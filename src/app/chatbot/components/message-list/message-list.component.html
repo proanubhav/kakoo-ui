@@ -1,0 +1,16 @@
+<div class="chatlist" #chatlist>
+  <ul class="list-group">
+    <message-item *ngFor="let msg of messages" [message]="msg"></message-item>
+  </ul>
+
+</div>
+<div class="dropFile" *ngIf="showDragDrop && messages?.length ==2">
+  <label for="files" style="background-color: transparent">Drop your resume &nbsp;<i class="fa fa-paperclip"></i></label>
+  <input id="files" style="visibility:hidden;" type="file" (change)="selectFile($event)" accept="application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint,text/plain, application/pdf">
+</div>
+
+<div class="dropFile2" *ngIf="showDragDrop && messages?.length ==2">
+  <file-drop customstyle="cl" headertext="" (onFileDrop)="dropped($event)" (onFileOver)="fileOver($event)"
+    (onFileLeave)="fileLeave($event)">
+  </file-drop>
+</div>

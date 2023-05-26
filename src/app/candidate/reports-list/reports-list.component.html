@@ -1,0 +1,48 @@
+<app-candidate-header></app-candidate-header>
+<div class="page-container">
+  <div class="row white"></div>
+  <div class="container col-md-7">
+
+    <div class="row my-form rounded">
+      <div class="col">
+        <div style="overflow: hidden">
+          <div align="center" style="color:#9A2828;">
+
+            <h3 class="title">
+              <br>Resultats des tests technique du candidat
+              <br>{{firstName}} {{lastName | uppercase}}</h3>
+            <br>
+          </div>
+        </div>
+        <section>
+          <table class=" table btn-table table-active table-responsive-md ">
+            <thead>
+              <tr>
+                <th class="h6" style="width:25%;">Nom des Tests</th>
+                <th class="h6" style="width:25%;">Score globale</th>
+                <th class="h6" style="width:25%;text-align:center;">resultat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let gassessement of array">
+                <th class="h6" style="width:25%;"> {{gassessement.title}} </th>
+                <th class="h6" style="width:25%;"> {{ gassessement.score * (100/gassessement.questions) |
+                  number:'2.0-2'
+                  }} %
+                </th>
+
+                <th class="h6" style="width:25%;text-align:center;">
+                  <a (click)="open(gassessement.id, gassessement.token)" class="btn btn-danger btn-sm">
+                    Voir Rapport detaille </a>
+                </th>
+              </tr>
+            </tbody>
+
+          </table>
+        </section>
+
+      </div>
+
+    </div>
+  </div>
+</div>

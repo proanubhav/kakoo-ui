@@ -1,0 +1,79 @@
+<app-user-navbar></app-user-navbar>
+<div class="page-container">
+  <div class="container profile">
+    <div class="container-fluid">
+      <div align="center" class="mysub-title">
+        <h3>Désabonnement</h3>
+      </div>
+      <hr>
+      <h3></h3>
+      <div class="row form">
+        <div class="loader" *ngIf="loader"></div>
+        <div align="center" class="col-md-12">
+          <section *ngIf="messageSuccess">
+            <div class="alert alert-success" role="alert">
+              <strong>Votre demande de désabonnement est envoyée .</strong>
+              <br>
+              <button mat-raised-button class="mySuccessButton" (click)="back()">Retour</button>
+            </div>
+          </section>
+        </div>
+
+
+        <div class="col-md-12" *ngIf="form">
+          <strong>Si vous avez un moment, Merci de nous transmettre la raison de votre désabonnement : </strong>
+          <br>
+          <br>
+          <form>
+            <label class="form-check-inline">
+              <input class="form-check-input" type="radio" name="mode" [value]="1" [(ngModel)]="valuechooser">
+            </label>
+            <label>Le service n'est pas professionnel</label>
+            <br>
+            <label class="form-check-inline">
+              <input class="form-check-input" type="radio" name="mode" [value]="2" [(ngModel)]="valuechooser">
+            </label>
+            <label>La recherche par mot clé donne des résultats erronés </label>
+            <br>
+            <label class="form-check-inline">
+              <input class="form-check-input" type="radio" name="mode" [value]="3" [(ngModel)]="valuechooser">
+            </label>
+            <label>Nous ne somme pas satisfaits par l'application KAKOO</label>
+            <br>
+            <label class="form-check-inline">
+              <input class="form-check-input" type="radio" name="mode" [value]="4" [(ngModel)]="valuechooser">
+            </label>
+            <label>Nous avons cessé nos activités</label>
+            <br>
+            <label class="form-check-inline">
+              <input class="form-check-input" type="radio" name="mode" [value]="0" [(ngModel)]="valuechooser">
+            </label>
+            <label>Autre raison?</label>
+            <div *ngIf="valuechooser == 0">
+              <textarea MatInput name="raison" [(ngModel)]="txtraison" maxlength="255"></textarea>
+
+
+            </div>
+            <div align="center">
+              <button mat-raised-button class="mySimpleButton" (click)="back()">Annuller</button>
+              <button mat-raised-button class="myInfoButton" type="submit" (click)="unsubscribed()">Envoyer</button>
+            </div>
+
+
+
+
+            <section *ngIf="selectValue && valuechooser===undefined">
+              <div class="alert alert-warning" role="alert">
+                <strong>choisir un raison de désabonnement svp</strong>
+              </div>
+            </section>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+
+</footer>

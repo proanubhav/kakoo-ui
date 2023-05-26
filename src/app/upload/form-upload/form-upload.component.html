@@ -1,0 +1,68 @@
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg navbar-light changed-color lighten-4 ">
+  <a class="navbar-brand" routerLink="">
+    <img src="./assets/home/images/newlogokako.png" height="30" alt="">
+  </a>
+</nav>
+<!--end of navbar-->
+
+
+<!---  -->
+<div class="page-container">
+  <div class="row white">
+  </div>
+  <div class="container col-md-7">
+
+    <div class="row  my-form">
+      <div class="col">
+        <div style="text-align:center;color:#9A2828;">
+          <h3 class="title">
+            <br>Télécharger un CV</h3>
+        </div>
+        <section class="upload-div">
+
+          <fieldset>
+
+
+            <div *ngIf="currentFileUpload" class="progress" style="height: 15px">
+              <div class="progress-bar bg-mdb-color progress-bar-info progress-bar-striped" role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
+                aria-valuemin="0" aria-valuemax="100" [ngStyle]="{width:progress.percentage+'%'}" style="width:150%;height:50px">
+                {{progress.percentage}}%</div>
+            </div>
+            <div class="center">
+
+              <label for="files" mat-raised-button class="upload">Choisir un fichier</label>
+              <input id="files" style="visibility:hidden;" type="file" (change)="selectFile($event)" accept="application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint,text/plain, application/pdf">
+
+              <button mat-raised-button class="mySimpleButton" [disabled]="!selectedFiles" (click)="upload()">Télécharger</button>
+
+              <button mat-raised-button class="mySuccessButton" *ngIf="alpha" [disabled]="selectedFiles" (click)="go()">Extraire</button>
+
+            </div>
+          </fieldset>
+          <div class=" white"></div>
+          <div class="alert alert-warning" *ngIf="errorMessageMxSize != undefined">
+            {{errorMessageMxSize}}
+          </div>
+          <div class="alert alert-warning" *ngIf="errorMessageMaxCv != undefined">
+            {{errorMessageMaxCv}}
+          </div>
+          <div class="alert alert-warning" *ngIf="errorMessageTypeFormatt != undefined">
+            {{errorMessageTypeFormatt}}
+          </div>
+          <div *ngIf="alpha" class="upload-success">
+            <strong>Téléchargement Terminé
+              <i class="fa fa-check" style="font-size:25px"></i>
+            </strong>
+          </div>
+          <div class=" white"></div>
+          <div class="upload-success">
+            <button mat-raised-button class="mySimpleButton" (click)="goBackCandidate(this.uuid)">Retour au candidat</button>
+          </div>
+        </section>
+
+      </div>
+
+    </div>
+  </div>
+</div>

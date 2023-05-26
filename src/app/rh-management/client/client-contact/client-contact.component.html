@@ -1,0 +1,122 @@
+<app-client-header></app-client-header>
+
+<div class="page-container">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+
+        <section class="main-rounded">
+          <div class="row">
+            <div class="col-sm-12">
+              <div style="margin-top: 1em;">
+                <a>
+                  <img id="client-image" alt="" class="rounded-circle bordered" *ngIf="imgSrc" [src]="imgSrc"
+                       (click)="fileInput.click()"/>
+                </a>
+              </div>
+              <input type="file" style="display: none;" (change)="selectFile($event)" #fileInput accept="image/*"/>
+              <div style="text-align: center; color: #555; margin-top: 0.5em;">
+                <h6><strong>{{ name | uppercase}}</strong></h6>
+                <h4>{{ activityArea | customTitleCase}}</h4>
+              </div>
+
+              <div style="text-align: center;">
+                <button class="myButton2" tooltip="Modifier" (click)="redirectEditPageClient(client)">
+                  <i class="fa fa-pencil-square-o"></i>
+                </button>
+
+                <button class="myButton2" tooltip="Ajouter contact" (click)="redirectNewContact(client)">
+                  <i class="fa fa-plus-square"></i>
+                </button>
+
+                <button class="myButton2" tooltip="Supprimer le client" (click)="deleteClientConfirm = true">
+                  <i class="fa fa fa-trash-o"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <section class="delete-box">
+            <div *ngIf="deleteClientConfirm" class="client-delete rounded">
+              <div style="overflow: hidden; margin-top: 0.5em;">
+                <p style="float: left; margin-left: 0.8em;">
+                  <img id="delete-img" class="img-responsive" [src]="deleteImg" alt=""/>
+                </p>
+                <p class="h6" style="margin-left:-0.5em; margin-top:0.3em;">
+                  Voulez-vous vraiment supprimer définitivement ce client ? <br>
+                  <button class="myButton4" type="button" (click)="deleteClient(client); deleteClientConfirm=false">
+                    Supprimer
+                  </button>
+                  <button class="myButton4" type="button" (click)="deleteClientConfirm=false">Annuler</button>
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <div class="row white"></div>
+
+          <table matSort class="table table-responsive-md btn-table table-hover">
+            <thead>
+            <tr>
+              <th>
+                <mat-checkbox type="checkbox" color="warn"></mat-checkbox>
+              </th>
+              <th class="h6" style="width: 30%;">Contact</th>
+              <th class="h6" style="width: 20%;">Poste</th>
+              <th class="h6" style="width: 20%;">Service</th>
+              <th class="h6" style="width: 20%">État</th>
+              <th class="h6" style="width: 50%;">Coordonnées</th>
+              <th class="h6" style="width: 20%">Responsable</th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr *ngFor="let contact of pagedItems">
+              <td><mat-checkbox type="checkbox" color="warn"></mat-checkbox></td>
+
+              <td>
+                <strong style="color: #434142;">{{ contact.firstName | uppercase }} {{ contact.lastName | customTitleCase }}</strong>
+              </td>
+
+              <td>
+                <strong style="color: #434142;">{{ contact.poste | customTitleCase }}</strong>
+              </td>
+
+              <td>
+                <strong style="color: #434142;">{{ contact.service | customTitleCase }}</strong>
+              </td>
+
+              <td>
+                <strong style="color: #434142;">{{ contact.state | customTitleCase }}</strong>
+              </td>
+
+              <td>
+                <strong style="color: #434142;">{{ contact.email }} {{contact.phone}}</strong>
+              </td>
+
+              <td>
+                <strong style="color: #434142;">{{ contact.hrName }}</strong>
+              </td>
+
+              <td>
+                <a (click)="redirectEditPageContact(contact.id)" tooltip="Modifier contact"><i class="fa fa-pencil"></i></a>
+              </td>
+
+              <td>
+                <a (click)="redirectNewTask(contact.id)" tooltip="Ajouter une mission"><i class="fa fa-briefcase"></i></a>
+              </td>
+
+              <td>
+                <a (click)="deleteContact(contact.id)" tooltip="Supprimer contact"><i class="fa fa-trash"></i></a>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>

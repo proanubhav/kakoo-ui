@@ -1,0 +1,59 @@
+@import '../../../../assets/sass/var';
+
+
+.profile{
+    background-color:white;
+    margin-top:3em;
+    margin-bottom:3em;
+}
+.mysub-title{
+    margin-top: 1em;
+    color: #9a2828;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+
+}
+.form{
+    padding-bottom: 1.5em;
+}
+
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #9A2828;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+    margin-left:44%;
+  }
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  .footer{
+    flex-shrink: 0;
+  }
+  .mySimpleButton{
+    @extend %myButton;
+    border: 1px solid $defaultColor;
+    color: $defaultColor;
+    background: white;
+  }
+  .myInfoButton{
+    @extend %myButton;
+    border: 1px solid $info;
+    color: $info;
+    background: white;
+    margin-bottom:  5px;
+
+}
+.mySuccessButton{
+    @extend %myButton;
+    border: 1px solid $success;
+    color: success;
+    background: white;
+
+}
+  

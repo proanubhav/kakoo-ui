@@ -1,0 +1,192 @@
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg navbar-light changed-color lighten-4 ">
+  <a class="navbar-brand" routerLink="">
+    <img src="./assets/home/images/newlogokako.png" style="margin-top:-0.3em" height="30" alt="">
+    <strong style="position:absolute">akoo Software</strong>
+  </a>
+
+
+
+  <!-- Collapsible content -->
+  <div class="collapse navbar-collapse" id="basicExampleNav">
+
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto" *ngIf="this.jwtToken">
+      <!--  <li class="nav-item">
+          <a class="nav-link " routerLink=""><i class="fa fa-home"></i> Acceuil
+              <span class="sr-only">(current)</span>
+          </a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" routerLink="/candidate/list" routerLinkActive="active"> <i class="fa fa-th-list" aria-hidden="true"></i> Candidats</a>
+      </li>
+      <li>
+           
+            <a class="nav-link"  routerLink="/user/profile" ><i class="fa fa-user"></i> Mon Profil</a>
+      </li>
+    -->
+      <li class="nav-item" style="margin-left:40em;">
+        <strong class="nav-link " style="color:#9A2828"> Espace Collaborateur {{companyName | uppercase}}
+        </strong>
+      </li>
+
+
+
+
+    </ul>
+
+
+
+  </div>
+  <!-- Collapsible content -->
+  <!--
+<ul class="navbar-nav nav-flex-icons" *ngIf="!this.jwtToken"> 
+
+           <form class="form-inline ">
+                   <div id="right"> <a (click)="  redirectRegistration()" style="color:#9A2828;" class="myButton">Inscription</a></div>
+                   <div> <a (click)="  redirectLogin()" style="color:#9A2828;" class="myButton">Connexion</a></div>
+
+            </form>
+           
+       </ul>-->
+  <!-- Links -->
+  <div class="menu" *ngIf="this.jwtToken">
+    <span>
+      <div>
+        <button mat-icon-button [matMenuTriggerFor]="menu1">
+          <mat-icon class="maticon">notifications</mat-icon>
+          <span class="badge" *ngIf="notifs.length!==0"> {{notifs.length}}</span>
+        </button>
+      </div>
+    </span>
+    <mat-menu #menu1="matMenu">
+      <button mat-menu-item class="dropdown-item" *ngFor="let notif of notifs" (click)="checkNotif(notif)">
+        <mat-icon>description</mat-icon>
+        <span>{{notif['message']}}</span>
+      </button>
+      <button mat-menu-item class="dropdown-item" *ngIf="notifs.length==0">
+        <span>Aucune nouvelle notification </span>
+      </button>
+    </mat-menu>
+
+  </div>
+
+  <div class="menu" *ngIf="jwtToken && !isEmployee">
+    <button mat-icon-button [matMenuTriggerFor]="menu1">
+      <mat-icon mat-button class="maticon">apps</mat-icon>
+    </button>
+
+    <mat-menu #menu1="matMenu">
+      <button *ngIf="isAdmin" mat-menu-item class="dropdown-item" (click)="viewUsers()">
+        <mat-icon>group_work</mat-icon>
+        <span>Espace Utilisateurs</span>
+      </button>
+
+      <button mat-menu-item class="dropdown-item" (click)="goCandidates()">
+        <mat-icon>supervisor_account</mat-icon>
+        Espace Candidats
+      </button>
+      <button mat-menu-item class="dropdown-item" (click)="goRecrutement()">
+        <mat-icon>card_travel</mat-icon>
+        <span>Espace Recrutement</span>
+      </button>
+
+      <span>
+        <button mat-menu-item class="dropdown-item" [matMenuTriggerFor]="menu2">
+          <mat-icon>card_travel</mat-icon>
+          Espace RH
+        </button>
+      </span>
+      <mat-menu #menu2="matMenu">
+        <button mat-menu-item class="dropdown-item" (click)="goRH()">
+          <mat-icon>card_travel</mat-icon>
+          Employés
+        </button>
+
+        <button mat-menu-item class="dropdown-item" (click)="goClients()">
+          <mat-icon>business</mat-icon>
+          Clients
+        </button>
+
+        <button mat-menu-item class="dropdown-item" (click)="goTasks()">
+          <mat-icon>business_center</mat-icon>
+          Missions
+        </button>
+      </mat-menu>
+    </mat-menu>
+  </div>
+
+  <div class="menu" *ngIf="jwtToken && isEmployee">
+    <button mat-icon-button [matMenuTriggerFor]="menu1">
+      <mat-icon mat-button class="maticon">apps</mat-icon>
+    </button>
+
+    <mat-menu #menu1="matMenu">
+      <button mat-menu-item class="dropdown-item" (click)="toDashboard()">
+        <mat-icon>dashboard</mat-icon>
+        <span>Tableau de bord</span>
+      </button>
+
+      <button mat-menu-item class="dropdown-item"  (click)="goMyTasks(userId)">
+          <mat-icon>business_center</mat-icon>
+          <span>Mes projets</span>
+      </button>
+
+      <button mat-menu-item class="dropdown-item">
+        <mat-icon>access_time</mat-icon>
+        <span>Mes temps</span>
+      </button>
+
+      <button mat-menu-item class="dropdown-item">
+        <mat-icon>calendar_today</mat-icon>
+        <span>Mes absences</span>
+      </button>
+    </mat-menu>
+  </div>
+
+  <div *ngIf="jwtToken">
+    <span>
+      <a>
+        <img id="user-image" [src]="imageUrl" mat-button [matMenuTriggerFor]="menu" height="30" alt="" class="rounded-circle img-fluid">
+      </a>
+    </span>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item class="dropdown-item" (click)=" goProfile()">
+        <mat-icon>
+          <img id="user-image" [src]="imageUrl" style="height:1.2em;" class="rounded-circle img-fluid">
+        </mat-icon>
+        {{firstName | titlecase}} {{lastName | uppercase}}
+      </button>
+      <!-- <strong  mat-menu-item class="dropdown-item"><p >Mon Profil</p></strong>-->
+
+      <button mat-menu-item class="dropdown-item" (click)=" goSettings()">
+        <mat-icon>settings</mat-icon>
+        Paramètres
+      </button>
+      <button *ngIf="isAdmin" mat-menu-item [matMenuTriggerFor]="payment" class="dropdown-item">
+        <mat-icon>subscriptions</mat-icon>
+        Abonnement
+      </button>
+      <button mat-menu-item class="dropdown-item" (click)="disconnect()">
+        <mat-icon>power_settings_new</mat-icon>Déconnexion
+      </button>
+    </mat-menu>
+    <mat-menu #payment="matMenu">
+      <button mat-menu-item (click)="goMySubscribed()">
+        <mat-icon>subscriptions</mat-icon>
+        Mon Abonnement
+      </button>
+      <button mat-menu-item (click)="goUnsubscribed()">
+        <mat-icon>unsubscribed</mat-icon>
+        Désabonnement
+      </button>
+      <button mat-menu-item (click)="goSubscriptions()">
+        <mat-icon>attach_money</mat-icon>
+        Nos Abonnments
+      </button>
+
+    </mat-menu>
+  </div>
+
+</nav>
+<!--/.Navbar-->

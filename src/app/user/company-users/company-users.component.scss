@@ -1,0 +1,152 @@
+@import '../../../assets/sass/var';
+.profile{
+    background-color:white;
+   // margin-top:3em;
+}///tooltips
+
+
+[tooltip] {
+  position: relative;
+  z-index: 4;
+  cursor: pointer;
+}
+
+[tooltip] {
+  border-width: 0px;
+}
+
+[tooltip]:focus {
+  outline: none;
+}
+
+[tooltip]::before,
+[tooltip]::after {
+  opacity: 0;
+  -webkit-transition: opacity 200ms ease-out;
+  -moz-transition: opacity 200ms ease-out;
+  transition: opacity 200ms ease-out;
+  pointer-events: none;
+  overflow: visible;
+}
+
+[tooltip]::before {
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  margin-bottom: 5px;
+  margin-left: -80px;
+  padding: 7px;
+  width: 160px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #9A2828;
+  color: #fff;
+  content: attr(tooltip);
+  //text-transform: uppercase;
+  text-align: center;
+  font-size: .8rem;
+  line-height: 1.2;
+}
+
+[tooltip]::after {
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -5px;
+  width: 0;
+  border-top: 5px solid #9A2828;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  content: " ";
+  font-size: 0;
+  line-height: 0;
+}
+
+[tooltip]:hover::before,
+[tooltip]:hover::after {
+  pointer-events: auto;
+  opacity: 1;
+}
+.MySimpleButton{
+  @extend %myButton;
+  border: 1px solid $defaultColor;
+  background: $defaultBackGround; 
+}
+
+.mat-iconButton{
+  @extend %myButton;
+  border: 1px solid $danger;
+  background: #fbfbfb;
+  color: $danger;
+  width: 31px;
+  height: 31px;
+  padding: 0px;
+  border-radius: 50%;
+}
+mat-icon{
+  position: relative;
+  top: -5px;
+  bottom: 4px;
+  right: 6px;
+  left: 0px;
+}
+.table{
+ 
+  margin-bottom:1.5em;
+  margin-top:1em;
+}
+.item{
+  font-size:1em;
+  color:#555;
+  
+}
+th{
+  text-align:center;
+}
+.fa-pencil {
+  color :	#9A2828;
+  font-size: 1.15rem;
+  line-height: 2rem;
+    
+  &:hover {
+      color: rgb(32, 109, 197);
+   }
+}
+.fa-trash {
+  color :	#9A2828;
+  font-size: 1.15rem;
+  line-height: 2rem;
+    
+  &:hover {
+      color: rgb(32, 109, 197);
+   }
+}
+.fa-eye {
+  color :	#297909;
+  font-size: 1rem;
+  line-height: 2rem;
+    
+  &:hover {
+      color: #1d5706;
+   }
+}
+.page-container{
+  min-height: 500px;
+  
+}
+.fa-user-plus{
+  color: green;
+}
+.pencil_icon, .trash_icon {
+  border: 1px solid;
+    border-radius: 30px;
+    width: 34px;
+    height: 34px;
+}
+.pencil_icon, .trash_icon {
+  border: 1px solid;
+    border-radius: 30px;
+    width: 34px;
+    height: 34px;
+}

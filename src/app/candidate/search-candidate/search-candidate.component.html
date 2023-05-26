@@ -1,0 +1,201 @@
+<app-candidate-header></app-candidate-header>
+<div class="page-container">
+<div class="row white"></div>
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <section>
+          <header class="header">
+            <div class="row">
+                <div class="col-sm-11"></div>
+                <div class="col-sm-1">
+                    <form class="form-inline">
+                        <div class="sm-form mt-2" style="margin-bottom:0.8em;">
+                            <button class="myButton2" (click)="redirectNewCandidatePage()" tooltip="Ajouter un candidat" ><i class="fa fa-user-plus" ></i></button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm-1">
+                    <form class="form-inline">
+                        <div class="sm-form mt-2" style="margin-bottom:0.8em;" *ngIf="false">
+                            <button class="myButton2" type="submit"(click)="redirectSearchPage()" tooltip="Trouver des candidats" > <i class="fa fa-search"></i></button>
+                        </div>
+                    </form>
+                </div>
+
+
+            </div>
+  
+          </header>
+        </section>
+  
+        <section class="main rounded">
+                <div class="search-container">
+                      <form [formGroup]="searchForm">
+                        <mat-form-field class="col-sm-12" >
+                            <input matInput placeholder="Trouver un candidat" formControlName="searchItem">
+                            <mat-icon matSuffix (click)="this.advanced=!this.advanced;">
+                              <i *ngIf="!this.advanced" class="fa fa-sort-down" style="color:#9A2828" ></i>  
+                            </mat-icon>
+                            <mat-icon matSuffix  class="myButton3" (click)="sendSearch()"><i class="fa fa-search" style="color:#9A2828"></i></mat-icon>
+                        </mat-form-field> 
+                    </form>                
+                </div>
+                <div class="search-container" *ngIf="this.advanced">
+                    <div class="advanced-search">
+                        <div class="row">
+                            <div class="col-sm-1"></div>
+                            <div  class="col-sm-10 h6" style="text-align:center;" >Recherche avancée</div>
+                            <div class="col-sm-1" style="text-align:right;"><a><i (click)="this.advanced=!this.advanced;" class="fa fa-close" style="color:#9A2828" ></i></a></div>
+                        </div>    
+                            <form [formGroup]="advancedForm">
+                              <div class="row">
+                                <div class="search-items col-sm-6">
+                                    <mat-form-field>
+                                            <input matInput placeholder="Nom" formControlName="name">
+                                    </mat-form-field>
+                                    
+                                   
+                                </div>
+                                <div class="search-items col-sm-6">
+                                    <mat-form-field>
+                                        <input matInput placeholder="Mobilité" formControlName="mobility">
+                                    </mat-form-field>
+                                </div>
+                                <div class="search-items col-sm-6">
+                                    <mat-form-field >
+                                        <input matInput placeholder="Compétence" formControlName="skill">
+                                    </mat-form-field>
+                                </div>
+                                <div class=" col-sm-6 row">
+                                    <div class="col-sm-7">
+                                        <mat-form-field >
+                                            <mat-select placeholder="Evaluation" formControlName="evaluation">
+                                            <mat-option  value="0">Non évalué </mat-option>
+                                            <mat-option  value="1"> Débutant </mat-option>
+                                            <mat-option  value="2">Intermédiaire</mat-option>
+                                            <mat-option  value="3">Confirmé</mat-option>
+                                            <mat-option  value="4">Expert</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                    <div>
+                                        <mat-form-field >
+                                            <input matInput placeholder="Années d'expérience" formControlName="yearsOfExperience">
+                                        </mat-form-field>
+                                    </div>
+                                   
+                                </div>
+                                <div class="search-items col-sm-6">
+                                    <mat-form-field>
+                                        <input matInput placeholder="Poste Actuel" formControlName="currentPosition">
+                                    </mat-form-field>
+                                </div>
+                                <div class="search-items col-sm-6">      
+                                    <mat-form-field>
+                                        <input matInput placeholder="Poste souhaité" formControlName="desiredPosition">
+                                    </mat-form-field>
+                                </div>
+                                <div class="search-items col-sm-6">
+                                        <mat-form-field>
+                                                <input matInput placeholder="Salaire min" formControlName="salaryMin">
+                                        </mat-form-field>
+                                </div>
+                                <div class="search-items col-sm-6">
+                                        <mat-form-field>
+                                                <input matInput placeholder="Salaire min" formControlName="salaryMax"  min="0">
+                                        </mat-form-field>
+                                </div>
+                                <div class=" search-items cols-sm-1 send-search">
+                                        <div class="myButton4"  (click)="this.advanced=false;searchAdvanced()"><i class="fa fa-search" style="color:#9A2828"></i></div>
+                                </div>
+                            </div>
+                                
+                            </form>
+                            <pre>{{advancedForm.value | json}}</pre>
+                    </div>
+                </div>
+
+                
+                <table  class="table  table-responsive-md btn-table  table-hover" *ngIf="candidates" >
+                    <tr *ngIf="candidates.length >= 1">
+                        <th></th>
+                        <th>Nom </th>
+                        <th>Email</th>
+                        <th>Poste</th>
+                      </tr>
+                <tr *ngFor="let candidate of candidates">
+                    <th>
+                        <a (click)="goCandidatePage(candidate)"><img  src="./assets/home/images/user.png" height="40" class="rounded-circle img-fluid"></a>
+                    </th>
+                  <th> {{candidate.firstName | titlecase}} {{candidate.lastName | uppercase}}</th>
+                  <th>{{candidate.email}}</th>
+                  <th *ngIf="candidate.actualPoste">{{candidate.actualPoste.name}}</th>
+                  <th *ngIf="!candidate.actualPoste"></th>
+                </tr>
+                </table>
+                <div *ngIf="!candidates" style="text-align:center">Chercher des candidats </div>
+                <div *ngIf=" candidates && candidates.length==0" style="text-align:center">Aucun candidat répondant à vos critères de recherche</div>
+     
+     
+
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<app-candidate-header></app-candidate-header>
+<div class="page-container">
+<div class="row white"></div>
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <section class="main rounded">
+            
+  
+        
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+-->
+
+
+

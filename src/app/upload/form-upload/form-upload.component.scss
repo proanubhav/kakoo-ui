@@ -1,0 +1,64 @@
+@import '../../../assets/sass/var';
+.white{
+   
+    margin-bottom: 3em;
+    background-color:white;
+
+   
+}
+.page-container{
+    background-color:white;
+}
+
+.center {
+    margin: auto;
+    text-align: center;
+    //background: $defaultBackGround;
+    border-radius: 5px;
+    
+
+}
+.upload-success {
+    margin: auto;
+    padding-left :35%;
+}
+
+.kakoo-color{
+    background-color:	#9A2828;
+    color: white;
+}
+.upload-div{
+    padding-top:2em;
+    background-color:rgb(218, 218, 218);
+    padding-bottom:2em;
+}
+.my-form{
+    background-color: white;
+}
+.mySimpleButton{
+    @extend %myButton;
+    border: 1px solid $defaultColor;
+    color: $defaultColor;
+    background: white;
+  }
+
+ .mySuccessButton{
+    @extend %myButton;
+    border: 1px solid $success;
+    background: white;
+    color: $success;
+    }
+
+    .upload{
+    @extend %myButton;
+    border: 1px solid $defaultColor;
+    color: $defaultColor;
+    background: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    }
+    
+ 
+    #files{
+        width: 0px;
+    }

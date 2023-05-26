@@ -1,0 +1,140 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~ng-pick-datetime/assets/style/picker.min.css";
+@import "./assets/sass/var";
+html,
+body {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+
+.my-mat-dialog-container .mat-dialog-container {
+  background: rgba(0, 0, 0, 0.2);
+  display: block;
+  box-sizing: border-box;
+  outline: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  padding: 24px;
+}
+
+// icons fontawsome
+.red-text {
+  color: #b11414 !important;
+}
+
+.toggle .switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+}
+
+.toggle .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.toggle .slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.toggle input:checked + .slider {
+  background-color: #2196f3;
+}
+
+.toggle input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+.toggle input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.toggle .slider.round {
+  border-radius: 34px;
+}
+
+.toggle .slider.round:before {
+  border-radius: 50%;
+}
+#jitsi-iframe iframe {
+  width: 100% !important;
+  height: 85vh !important;
+}
+body {
+  .btn {
+    border-radius: 30px;
+    font-size: 1.15rem;
+    padding: 0.75rem 1.75rem;
+    &.btn-danger {
+      background-color: #9a2828;
+      border-color: #9a2828;
+      text-transform: uppercase;
+      &:hover,
+      &:focus {
+        background-color: #641818 !important;
+        border-color: #641818 !important;
+      }
+    }
+  }
+  input.form-control {
+    border: 2px solid rgba(0, 0, 0, 0.08);
+    font-size: 0.9375rem;
+    font-weight: 400;
+    line-height: 1.75;
+    padding: 0.65rem 1rem;
+    border-radius: 30px;
+    height: auto;
+    margin: 0;
+    width: calc(100% - 2rem);
+    &:focus {
+      box-shadow: none !important;
+      border: 2px solid #9a2828 !important;
+    }
+  }
+}
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.mat-button,
+.mat-fab,
+.mat-flat-button,
+.mat-icon-button,
+.mat-mini-fab,
+.mat-raised-button,
+.mat-stroked-button {
+  font-family: "Poppins", sans-serif !important;
+}

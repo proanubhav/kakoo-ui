@@ -1,0 +1,93 @@
+<app-eval-navbar></app-eval-navbar>
+<div class="page-container">
+    <div class="row white"></div>
+    <div class="container col-md-7">
+
+        <div class="row  my-form rounded">
+            <div class="col">
+                <!--  <button class="myButton3" tooltip="Consulter les quizz">
+            <a (click)="redirectAlltests()" ><i class="fa fa-upload"></i></a></button>-->
+
+
+                <div style="text-align:center;color:#9A2828; ">
+
+                    <h3 class="title" *ngIf="true">
+                        <br>Quizz technique </h3>
+                    <br>
+                </div>
+                <section *ngIf="!startTest && !quizzEnd">
+                    <table class=" table btn-table table-active table-responsive-md ">
+                        <tr>
+                            <th class="h6" style="width:25%;">Quizz</th>
+                            <th style="width:25%;">{{quizzName}}</th>
+                        </tr>
+                        <tr>
+                            <th class="h6" style="width:25%;">Compétence examinées</th>
+                            <th style="width:25%;">{{quizzSkills}}</th>
+                        </tr>
+                        <tr>
+                            <th class="h6" style="width:25%;">Niveau</th>
+                            <th style="width:25%;">{{quizzExperience}}</th>
+                        </tr>
+
+                    </table>
+                    <div style="text-align:center;">
+                        <br>
+                        <button style="margin-bottom:1em;" class="myButton3" (click)="getTest()"> Commencer le test</button>
+                    </div>
+                </section>
+                <section *ngIf="startTest && !quizzEnd">
+                    <div style="text-align:center;color:#9A2828" class="h6"> Partie {{partNum}} : {{partName}}</div>
+                    <!-- <div style="color:#9A2828" class="h6">Question {{index}} :</div> 
+                    <div style="color:#9A2828;text-align:right;font-size:2em;">{{ displayTimeElapsed()}}</div>-->
+                    <div style="margin-bottom:0.7em">
+                        <mat-progress-bar class="my-color" mode="determinate" [value]="questionProgress"></mat-progress-bar>
+                    </div>
+
+                    <div style="overflow: hidden;">
+                        <div style="float: left;margin-left:0.8em;color:#9A2828" class="h6">Question {{index}} :</div>
+                        <p style="float: right;color:#9A2828" class="h6">{{ displayTimeElapsed()}} </p>
+                    </div>
+                    <!--
+                        <div style="overflow: hidden;">
+                          <p style="float: left;margin-left:0.8em" ></p>
+                          <p  style="float: right;"> </p>
+                         </div>
+                    -->
+                    <table class=" table btn-table table-active table-responsive-md ">
+                        <tr>
+                            <th style="width:100%">
+                                <div>{{questions[index-1]}}</div>
+                            </th>
+                        </tr>
+                    </table>
+                    <table class=" table btn-table table-active table-hover table-responsive-md ">
+                        <tr *ngFor="let answer of answers">
+                            <th style="width:90%">{{answer['name']}}</th>
+                            <th style="width:10%">
+                                <mat-checkbox type="checkbox" [ngModel]="filter" (ngModelChange)="onFilterChange(event,answer)"></mat-checkbox>
+                        </tr>
+
+                    </table>
+                    <div style="text-align:right;margin-bottom:1em;">
+                        <button class="myButton3" (click)="skipQuestion()" style="float: left;">Sauter</button>
+                        <button class="myButton3" (click)="answerQuestion()">Répondre</button>
+                    </div>
+                </section>
+                <section *ngIf="quizzEnd">
+                    <br>
+                    <div class="alert alert-info" role="alert" style="text-align:center;margin-top:5em;">
+                        <br>
+                        <br>
+                        <br> Merci d'avoir passé ce quizz , on vous communiquera votre résultat le plus proche possible
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                </section>
+
+            </div>
+
+        </div>
+    </div>
+</div>

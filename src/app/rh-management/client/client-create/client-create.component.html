@@ -1,0 +1,86 @@
+<app-client-header></app-client-header>
+
+<div class="page-container" *ngIf="!loader">
+  <div class="row white"></div>
+  <div class="container col-md-7">
+    <div class="row  my-form rounded">
+      <div class="col">
+
+        <div style="text-align:center;color:#9A2828;">
+          <h3 class="title" *ngIf="!editing">
+            <br>Ajout d'un client</h3>
+
+          <h3 class="title" *ngIf="editing">
+            <br>Modification d'un client</h3>
+        </div>
+
+        <section>
+          <form novalidate [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+            <div class="example-container row">
+
+              <mat-form-field class="col-sm-2">
+                <mat-select placeholder="État" formControlName="state" required>
+                  <mat-option value="client">Client</mat-option>
+                  <mat-option value="prospect">Prospect</mat-option>
+                </mat-select>
+                <mat-error>Champs invalide</mat-error>
+              </mat-form-field>
+
+              <div class="col-sm-1"></div>
+
+              <mat-form-field class="col-sm-4">
+                <input matInput placeholder="Nom de la société" formControlName="name" required/>
+                <mat-error>Champs obligatoire</mat-error>
+              </mat-form-field>
+
+              <mat-form-field class="col-sm-5">
+                <input matInput placeholder="Secteur d'activité" formControlName="activityArea" required/>
+                <mat-error>Champs obligatoire</mat-error>
+              </mat-form-field>
+
+              <mat-form-field class="col-sm-4">
+                <input matInput placeholder="Téléphone" formControlName="phone" required/>
+                <mat-error>Numéro invalide</mat-error>
+              </mat-form-field>
+
+              <mat-form-field class="col-sm-4">
+                <input matInput placeholder="Web Site" formControlName="webSite"/>
+                <mat-error>Lien invalide</mat-error>
+              </mat-form-field>
+
+              <mat-form-field class="col-sm-4">
+                <input matInput placeholder="Email" formControlName="email"/>
+                <mat-error>Email invalide</mat-error>
+              </mat-form-field>
+
+              <mat-form-field class="col-sm-4">
+                <input matInput placeholder="Lieu" formControlName="locality" required/>
+                <mat-error>Champs obligatoire</mat-error>
+              </mat-form-field>
+
+              <div class="col-sm-12">
+                <textarea matInput placeholder="Informations sur la société" formControlName="description" cols="30" rows="10"></textarea>
+              </div>
+            </div>
+
+            <div class="text-center mt-4 mb-2">
+              <button type="button" mat-raised-button class="mySimpleButton" (click)="cancelOperation()">
+                Annuler <i class="fa fa-times-circle ml-3"></i>
+              </button>
+
+              <button mat-raised-button type="submit" class="mySuccessButton" *ngIf="!editing">
+                Ajouter <i class="fa fa-user-plus ml-3"></i>
+              </button>
+
+              <button mat-raised-button type="submit" class="myInfoButton" *ngIf="editing">
+                Modifier <i class="fa fa-pencil ml-3"></i>
+              </button>
+            </div>
+          </form>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="loader" *ngIf="loader"></div>

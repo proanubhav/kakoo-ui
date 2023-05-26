@@ -1,0 +1,1438 @@
+{
+    "Resume": {
+        "@xml:lang": "fr",
+        "@xmlns": "http://ns.hr-xml.org/2006-02-28",
+        "@xmlns:sov": "http://sovren.com/hr-xml/2006-02-28",
+        "ResumeId": {
+            "IdValue": null
+        },
+        "StructuredXMLResume": {
+            "ContactInfo": {
+                "PersonName": {
+                    "FormattedName": "Said BAHAOUARY",
+                    "GivenName": "Said",
+                    "FamilyName": "BAHAOUARY"
+                },
+                "ContactMethod": [
+                    {
+                        "WhenAvailable": "anytime",
+                        "PostalAddress": {
+                            "CountryCode": "MA",
+                            "Municipality": "Rabat"
+                        }
+                    },
+                    {
+                        "Telephone": {
+                            "FormattedNumber": "06.06.20.40.57"
+                        }
+                    },
+                    {
+                        "Use": "personal",
+                        "Location": "onPerson",
+                        "WhenAvailable": "anytime",
+                        "InternetEmailAddress": "said.bahaouary@gmail.com"
+                    }
+                ]
+            },
+            "EmploymentHistory": {
+                "EmployerOrg": [
+                    {
+                        "EmployerOrgName": "Societe Multinational Moneycore de Rabat",
+                        "PositionHistory": [
+                            {
+                                "@positionType": "directHire",
+                                "@currentEmployer": "true",
+                                "Title": "Ingénieur Etudes et Développement",
+                                "OrgName": {
+                                    "OrganizationName": "Societe Multinational Moneycore de Rabat"
+                                },
+                                "OrgInfo": [
+                                    {
+                                        "PositionLocation": {
+                                            "CountryCode": "MA",
+                                            "Municipality": "Rabat"
+                                        }
+                                    }
+                                ],
+                                "Description": "Projet: \"refonte d'une application de CVThèque\": Moneycore\r\nPoste occupé: Ingénieur Etudes et Développement\r\nDescription: Projet dédié Resources humain de Traitement des CV\r\nMission et Tâches réalisées:\r\n* Analyser les besoins client, concevoir, développer et tester;\r\n* Développement Front-end et Back-end de API Stripe\r\n* Correction des anomalies UX,\r\n* Gestion des versions avec Git.\r\nMots Clés: Angular 4, Spring boot, Spring Security, JPA, Hibernate, API Stripe\r\nFévrier au Septembre 2018: DovaSoft \"Freelance\"\r\nProjet: \"Gestion des dossiers Avocats\"\r\nPoste occupé: Ingénieur Etudes et Développement\r\nDescription: Développement d'une application Web de gestion d'Avocats de traitement des dossiers.\r\nMission et Tâches réalisées:\r\n* Analyse et Conception;\r\n* Collect des besoins client;\r\n* Développement Front-end et Back-end;\r\nMots Clés: Angular 4, Spring boot, Spring Security, JPA, Hibernate\r\nMars au Juillet 2017:\r\nDescription: Développement d'une application web de gestion de stock des produits alimentaires 'Freelance'.\r\nMission et Tâches réalisées:\r\n* Collect des client;\r\n* Définition de l'architecture applicative et des standards/outils de développement;\r\n* Concevoir, développer et tester des fonctionnalités;\r\nMots Clés: Java EE( Struts2, Spring IOC, Hibernate), Junit, Serveur d'application glassfish, base de données JavaDB.\r\n\r\nEXPERIENCES PERSONNEL\r\n12/09/ 18 au 26/09/18:\r\nDescription: Développement d'une application web/mobile de suivie des activités des Techniciens.\r\nMission et Tâches réalisées:\r\n* Analyse et conception du diagramme de classe;\r\n* Développement Front-end et Back-end;\r\n* Hebergement au Heroku Cloud Server avec Git.\r\nMots Clés: Java, Angular 4, Spring boot, JPA, Hibernate, Heroku, Cordova. Git\r\n01/12/ 17 au 03/02/18:\r\nDescription: Développement d'un  API Rest pour \" Tour Of Hero \".\r\nMission et Tâches réalisées:\r\n* Analyse et conception du diagramme de classe;\r\n* Integration des dernieres technologie JavaEE/Angular 4;\r\n* Développement Front-end et Back-end;\r\n* Gestion des versions avec Git.\r\nMots Clés: Java, Angular 4, Spring boot, JPA, Hibernate.\r\n01/04/ 17 au 29/09/17:\r\nDescription: Développement d'un système de recommandation (plugin) en php 'PFE'.\r\nMission et Tâches réalisées:\r\n* Rédactions du cahier des charges et des documents de conception technique;\r\n* Élaborer des maquettes et prototypes;\r\n* Respect les bonnes pratiques de développement;\r\n* Rédiger les documentations et les guides Développeur.\r\nMots Clés: wordnet, mongodb, php7, python, wordpress (simulation du plugin).\r\nProjet Android:\r\n01/05/ 17 au 29/05/17:\r\nDescription: Développement d'une app multilingue de détection des profils basé sur QCM.\r\nMission et Tâches réalisées:\r\n* Définir l'architecture logicielle;\r\n* Monter en compétences;\r\n* Analyser des besoin, concevoir, développer et tester.\r\nMots Clés: Android Studio (java, XML, WebView, Jquery, Google Maps API, MySql, Php).\r\n01/03/ 17 au 29/03/17:\r\nDescription: Jeux mobile de dé disponible sur playstore et Amazone (Dice Play).\r\n01/01/ 17 au 01/02/17:\r\nDescription: Application de cryptage et sécurité des données échangées via l'internet/SMS.",
+                                "StartDate": {
+                                    "YearMonth": "2018-09"
+                                },
+                                "EndDate": {
+                                    "StringDate": "current"
+                                },
+                                "JobCategory": [
+                                    {
+                                        "TaxonomyName": "Skills taxonomy",
+                                        "CategoryCode": "Technologies Informatique → Programmation",
+                                        "Comments": "Technologies Informatique describes 36% of this job"
+                                    },
+                                    {
+                                        "TaxonomyName": "Job Level",
+                                        "CategoryCode": "Entry Level"
+                                    }
+                                ],
+                                "UserArea": {
+                                    "sov:PositionHistoryUserArea": {
+                                        "sov:Id": "POS-1",
+                                        "sov:CompanyNameProbabilityInterpretation": {
+                                            "@internalUseOnly": "BN",
+                                            "#text": "Confident"
+                                        },
+                                        "sov:PositionTitleProbabilityInterpretation": {
+                                            "@internalUseOnly": "SQ",
+                                            "#text": "Confident"
+                                        },
+                                        "sov:NormalizedOrganizationName": "Societe Multinational Moneycore de Rabat",
+                                        "sov:NormalizedTitle": "Ingénieur Etudes et Développement"
+                                    }
+                                }
+                            }
+                        ],
+                        "UserArea": {
+                            "sov:EmployerOrgUserArea": {
+                                "sov:NormalizedEmployerOrgName": "Societe Multinational Moneycore de Rabat"
+                            }
+                        }
+                    },
+                    {
+                        "EmployerOrgName": "fin d'Étude",
+                        "PositionHistory": [
+                            {
+                                "@positionType": "directHire",
+                                "Title": "Développer et tester",
+                                "OrgName": {
+                                    "OrganizationName": "fin d'Étude"
+                                },
+                                "Description": "01/04/ 16 au 29/09/16:\r\nDescription: Développement d'un site web E-Commerce des produits des bébés.\r\nMission et Tâches réalisées:\r\n* Analyse et conception des diagrammes;\r\n* Élaborer des maquettes et prototypes.\r\n* Définir l'architecture applicative.\r\n* Développer et tester.\r\nMots Clés: Java EE( JSF et le composant primefaces, JPA), bootstrap, Maven, Serveur d'application glassfish, base de données",
+                                "StartDate": {
+                                    "AnyDate": "2016-04-01"
+                                },
+                                "EndDate": {
+                                    "AnyDate": "2016-09-29"
+                                },
+                                "JobCategory": [
+                                    {
+                                        "TaxonomyName": "Skills taxonomy",
+                                        "CategoryCode": "Technologies Informatique → Java",
+                                        "Comments": "Technologies Informatique describes 38% of this job"
+                                    },
+                                    {
+                                        "TaxonomyName": "Job Level",
+                                        "CategoryCode": "Entry Level"
+                                    }
+                                ],
+                                "UserArea": {
+                                    "sov:PositionHistoryUserArea": {
+                                        "sov:Id": "POS-2",
+                                        "sov:CompanyNameProbabilityInterpretation": {
+                                            "@internalUseOnly": "BT",
+                                            "#text": "Confident"
+                                        },
+                                        "sov:PositionTitleProbabilityInterpretation": {
+                                            "@internalUseOnly": "SS",
+                                            "#text": "Confident"
+                                        },
+                                        "sov:NormalizedOrganizationName": "fin dÉtude",
+                                        "sov:NormalizedTitle": "Développer et tester"
+                                    }
+                                }
+                            }
+                        ],
+                        "UserArea": {
+                            "sov:EmployerOrgUserArea": {
+                                "sov:NormalizedEmployerOrgName": "fin dÉtude"
+                            }
+                        }
+                    },
+                    {
+                        "EmployerOrgName": "JavaDB",
+                        "PositionHistory": [
+                            {
+                                "@positionType": "directHire",
+                                "Title": "Développer et tester",
+                                "OrgName": {
+                                    "OrganizationName": "JavaDB"
+                                },
+                                "Description": "Projet Android de fin de Cycle;\r\n01/04/ 15 au 01/08/15:\r\nDescription: Mise en place d'une application mobile Ehealth qui reçoit des flux de données à partir d'un serveur distant.\r\nMission et Tâches réalisées:\r\n* Analyse et conception des diagrammes;\r\n* Développer et tester;\r\n* Respect les bonnes pratiques de développement.\r\nMots Clés: Android Studio  (java, XML, WebView, Jquery, Google Maps API, MySql, Php).\r\n\r\nLinks: sololearn github",
+                                "StartDate": {
+                                    "AnyDate": "2015-04-01"
+                                },
+                                "EndDate": {
+                                    "AnyDate": "2015-08-01"
+                                },
+                                "JobCategory": [
+                                    {
+                                        "TaxonomyName": "Skills taxonomy",
+                                        "CategoryCode": "Technologies Informatique → Programmation",
+                                        "Comments": "Technologies Informatique describes 58% of this job"
+                                    },
+                                    {
+                                        "TaxonomyName": "Job Level",
+                                        "CategoryCode": "Entry Level"
+                                    }
+                                ],
+                                "UserArea": {
+                                    "sov:PositionHistoryUserArea": {
+                                        "sov:Id": "POS-3",
+                                        "sov:CompanyNameProbabilityInterpretation": {
+                                            "@internalUseOnly": "BS",
+                                            "#text": "Confident"
+                                        },
+                                        "sov:PositionTitleProbabilityInterpretation": {
+                                            "@internalUseOnly": "SS",
+                                            "#text": "Confident"
+                                        },
+                                        "sov:NormalizedOrganizationName": "JavaDB",
+                                        "sov:NormalizedTitle": "Développer et tester"
+                                    }
+                                }
+                            }
+                        ],
+                        "UserArea": {
+                            "sov:EmployerOrgUserArea": {
+                                "sov:NormalizedEmployerOrgName": "JavaDB"
+                            }
+                        }
+                    }
+                ]
+            },
+            "EducationHistory": {
+                "SchoolOrInstitution": [
+                    {
+                        "@schoolType": "UNSPECIFIED",
+                        "School": [
+                            {
+                                "SchoolName": "Ecole SupMTI Rabat"
+                            }
+                        ],
+                        "Degree": [
+                            {
+                                "DegreeDate": {
+                                    "Year": "2017"
+                                },
+                                "DegreeMajor": [
+                                    {
+                                        "Name": [
+                                            "Ingénieur en Système"
+                                        ]
+                                    }
+                                ],
+                                "DatesOfAttendance": [
+                                    {
+                                        "StartDate": {
+                                            "Year": "2014"
+                                        },
+                                        "EndDate": {
+                                            "Year": "2017"
+                                        }
+                                    }
+                                ],
+                                "Comments": "❏ 2014-2017: Cycle d'Ingénieur en Système d'Information à l'Ecole SupMTI Rabat (Mention Bien).",
+                                "UserArea": {
+                                    "sov:DegreeUserArea": {
+                                        "sov:Id": "DEG-1"
+                                    }
+                                }
+                            }
+                        ],
+                        "UserArea": {
+                            "sov:SchoolOrInstitutionTypeUserArea": {
+                                "sov:NormalizedSchoolName": "Ecole SupMTI Rabat"
+                            }
+                        }
+                    },
+                    {
+                        "@schoolType": "UNSPECIFIED",
+                        "Degree": [
+                            {
+                                "@degreeType": "high school or equivalent",
+                                "DegreeName": "Baccalaureat",
+                                "DegreeDate": {
+                                    "Year": "2008"
+                                },
+                                "DegreeMajor": [
+                                    {
+                                        "Name": [
+                                            "Science Physique"
+                                        ]
+                                    }
+                                ],
+                                "DatesOfAttendance": [
+                                    {
+                                        "StartDate": {
+                                            "AnyDate": "notKnown"
+                                        },
+                                        "EndDate": {
+                                            "Year": "2008"
+                                        }
+                                    }
+                                ],
+                                "Comments": "❏ 2008: Baccalaureat Science Experimental Option Science Physique.",
+                                "UserArea": {
+                                    "sov:DegreeUserArea": {
+                                        "sov:Id": "DEG-2",
+                                        "sov:NormalizedDegreeName": "highSchoolOrEquivalent",
+                                        "sov:NormalizedDegreeType": "highSchoolOrEquivalent"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "Qualifications": {
+                "QualificationSummary": "PRINCIPALES COMPETENCES\r\n❖ Niveaux d'Intervention:\r\n❏ Rédaction des spécifications techniques.\r\n❏ Définition de l'architecture applicative et des standards/outils de développement.\r\n❏ Conception, Développement.\r\n❏ Rédaction de la documentation technique.\r\n❖ Competences:\r\n-Analyse: Merise, UML;\t-Web service: REST;\r\n-Languages: JAVA, C, C++, C#, python, Programmation Shell, PHP;-Mobile: Android;\r\n-Méthodologie: Agile(SCRUM);\t-Building: Maven, Composer, Npm;\r\n-Versioning et Integration continue: Git;\t-Base de données: MySQL, MangoDB;\r\n-Technologies web:HTML5, XHTML, XML, CSS3, JavaScript TypeScript, JQuery, Ajax, Bootstrap ¾;\r\n-ORM: Entity Framework, Hibernate/JPA, , Doctrine;\r\n-Serveurs d'Applications: Apache;\t-Conteneur JAVA/JEE: Tomcat."
+            },
+            "Languages": {
+                "Language": [
+                    {
+                        "LanguageCode": "ar",
+                        "Read": "true",
+                        "Write": "false",
+                        "Speak": "false",
+                        "Comments": "❏ Arabe: Maternelle."
+                    },
+                    {
+                        "LanguageCode": "fr",
+                        "Read": "true",
+                        "Write": "true",
+                        "Speak": "true",
+                        "Comments": "Français: Courant."
+                    },
+                    {
+                        "LanguageCode": "en",
+                        "Read": "true",
+                        "Write": "true",
+                        "Speak": "true",
+                        "Comments": "Anglais: Courant."
+                    }
+                ]
+            },
+            "RevisionDate": "2018-11-24"
+        },
+        "NonXMLResume": {
+            "TextResume": "Said BAHAOUARY\r\n\r\nAdresse: Rabat;\tDéveloppeur\r\nEmail: said.bahaouary@gmail.com\tSpring boot/Angular 4\r\nTel: 06.06.20.40.57\r\n\r\nEXPERIENCES PROFESSIONNELLES\r\nDepuis Septembre 2018: Societe Multinational Moneycore de Rabat.\r\nProjet: \"refonte d'une application de CVThèque\": Moneycore\r\nPoste occupé: Ingénieur Etudes et Développement\r\nDescription: Projet dédié Resources humain de Traitement des CV\r\nMission et Tâches réalisées:\r\n* Analyser les besoins client, concevoir, développer et tester;\r\n* Développement Front-end et Back-end de API Stripe\r\n* Correction des anomalies UX,\r\n* Gestion des versions avec Git.\r\nMots Clés: Angular 4, Spring boot, Spring Security, JPA, Hibernate, API Stripe\r\nFévrier au Septembre 2018: DovaSoft \"Freelance\"\r\nProjet: \"Gestion des dossiers Avocats\"\r\nPoste occupé: Ingénieur Etudes et Développement\r\nDescription: Développement d'une application Web de gestion d'Avocats de traitement des dossiers.\r\nMission et Tâches réalisées:\r\n* Analyse et Conception;\r\n* Collect des besoins client;\r\n* Développement Front-end et Back-end;\r\nMots Clés: Angular 4, Spring boot, Spring Security, JPA, Hibernate\r\nMars au Juillet 2017:\r\nDescription: Développement d'une application web de gestion de stock des produits alimentaires 'Freelance'.\r\nMission et Tâches réalisées:\r\n* Collect des client;\r\n* Définition de l'architecture applicative et des standards/outils de développement;\r\n* Concevoir, développer et tester des fonctionnalités;\r\nMots Clés: Java EE( Struts2, Spring IOC, Hibernate), Junit, Serveur d'application glassfish, base de données JavaDB.\r\n\r\nEXPERIENCES PERSONNEL\r\n12/09/ 18 au 26/09/18:\r\nDescription: Développement d'une application web/mobile de suivie des activités des Techniciens.\r\nMission et Tâches réalisées:\r\n* Analyse et conception du diagramme de classe;\r\n* Développement Front-end et Back-end;\r\n* Hebergement au Heroku Cloud Server avec Git.\r\nMots Clés: Java, Angular 4, Spring boot, JPA, Hibernate, Heroku, Cordova. Git\r\n01/12/ 17 au 03/02/18:\r\nDescription: Développement d'un  API Rest pour \" Tour Of Hero \".\r\nMission et Tâches réalisées:\r\n* Analyse et conception du diagramme de classe;\r\n* Integration des dernieres technologie JavaEE/Angular 4;\r\n* Développement Front-end et Back-end;\r\n* Gestion des versions avec Git.\r\nMots Clés: Java, Angular 4, Spring boot, JPA, Hibernate.\r\n01/04/ 17 au 29/09/17:\r\nDescription: Développement d'un système de recommandation (plugin) en php 'PFE'.\r\nMission et Tâches réalisées:\r\n* Rédactions du cahier des charges et des documents de conception technique;\r\n* Élaborer des maquettes et prototypes;\r\n* Respect les bonnes pratiques de développement;\r\n* Rédiger les documentations et les guides Développeur.\r\nMots Clés: wordnet, mongodb, php7, python, wordpress (simulation du plugin).\r\nProjet Android:\r\n01/05/ 17 au 29/05/17:\r\nDescription: Développement d'une app multilingue de détection des profils basé sur QCM.\r\nMission et Tâches réalisées:\r\n* Définir l'architecture logicielle;\r\n* Monter en compétences;\r\n* Analyser des besoin, concevoir, développer et tester.\r\nMots Clés: Android Studio (java, XML, WebView, Jquery, Google Maps API, MySql, Php).\r\n01/03/ 17 au 29/03/17:\r\nDescription: Jeux mobile de dé disponible sur playstore et Amazone (Dice Play).\r\n01/01/ 17 au 01/02/17:\r\nDescription: Application de cryptage et sécurité des données échangées via l'internet/SMS.\r\nProjet JavaEE de fin d'Étude:\r\n01/04/ 16 au 29/09/16:\r\nDescription: Développement d'un site web E-Commerce des produits des bébés.\r\nMission et Tâches réalisées:\r\n* Analyse et conception des diagrammes;\r\n* Élaborer des maquettes et prototypes.\r\n* Définir l'architecture applicative.\r\n* Développer et tester.\r\nMots Clés: Java EE( JSF et le composant primefaces, JPA), bootstrap, Maven, Serveur d'application glassfish, base de données\r\nJavaDB.\r\nProjet Android de fin de Cycle;\r\n01/04/ 15 au 01/08/15:\r\nDescription: Mise en place d'une application mobile Ehealth qui reçoit des flux de données à partir d'un serveur distant.\r\nMission et Tâches réalisées:\r\n* Analyse et conception des diagrammes;\r\n* Développer et tester;\r\n* Respect les bonnes pratiques de développement.\r\nMots Clés: Android Studio  (java, XML, WebView, Jquery, Google Maps API, MySql, Php).\r\n\r\nLinks: sololearn github\r\nPRINCIPALES COMPETENCES\r\n❖ Niveaux d'Intervention:\r\n❏ Rédaction des spécifications techniques.\r\n❏ Définition de l'architecture applicative et des standards/outils de développement.\r\n❏ Conception, Développement.\r\n❏ Rédaction de la documentation technique.\r\n❖ Competences:\r\n-Analyse: Merise, UML;\t-Web service: REST;\r\n-Languages: JAVA, C, C++, C#, python, Programmation Shell, PHP;-Mobile: Android;\r\n-Méthodologie: Agile(SCRUM);\t-Building: Maven, Composer, Npm;\r\n-Versioning et Integration continue: Git;\t-Base de données: MySQL, MangoDB;\r\n-Technologies web:HTML5, XHTML, XML, CSS3, JavaScript TypeScript, JQuery, Ajax, Bootstrap ¾;\r\n-ORM: Entity Framework, Hibernate/JPA, , Doctrine;\r\n-Serveurs d'Applications: Apache;\t-Conteneur JAVA/JEE: Tomcat.\r\n❖ Formation:\r\n❏ 2014-2017: Cycle d'Ingénieur en Système d'Information à l'Ecole SupMTI Rabat (Mention Bien).\r\n❏ 2012-2014: Technicien spécialisé: Développement Informatique à ProSystem de Salé.\r\n❏ 2008: Baccalaureat Science Experimental Option Science Physique.\r\n❖ Langues:\r\n❏ Arabe: Maternelle.\tFrançais: Courant.\tAnglais: Courant."
+        },
+        "UserArea": {
+            "sov:ResumeUserArea": {
+                "sov:Culture": {
+                    "sov:Language": "fr",
+                    "sov:Country": "MA",
+                    "sov:CultureInfo": "fr-MA"
+                },
+                "sov:PersonalInformation": {
+                    "sov:Gender": {
+                        "@inferred": "true",
+                        "#text": "Male"
+                    }
+                },
+                "sov:ExperienceSummary": {
+                    "sov:Description": "[Said BAHAOUARY] Expérience principale : quelque peu avec une expérience secondaire dans Technologies Informatique / Programmation. [Said BAHAOUARY] Niveau d'expérience : Débutant, avec 13 mois d'expérience .",
+                    "sov:MonthsOfWorkExperience": "13",
+                    "sov:AverageMonthsPerEmployer": "4",
+                    "sov:FulltimeDirectHirePredictiveIndex": "50",
+                    "sov:MonthsOfManagementExperience": "0",
+                    "sov:HighestManagementScore": "0",
+                    "sov:ExecutiveType": "none",
+                    "sov:ManagementStory": null,
+                    "sov:SkillsTaxonomyOutput": {
+                        "sov:TaxonomyRoot": [
+                            {
+                                "@name": "Sovren.fr",
+                                "sov:Taxonomy": [
+                                    {
+                                        "@name": "Technologies Informatique",
+                                        "@id": "10",
+                                        "@percentOfOverall": "40",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Programmation",
+                                                "@id": "204",
+                                                "@percentOfOverall": "14",
+                                                "@percentOfParentTaxonomy": "33",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "API",
+                                                        "@id": "021194",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "7",
+                                                        "@lastUsed": "2018-11-24",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1; POS-3"
+                                                    },
+                                                    {
+                                                        "@name": "C#",
+                                                        "@id": "012275",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in SKILLS"
+                                                    },
+                                                    {
+                                                        "@name": "C++",
+                                                        "@id": "012287",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in SKILLS"
+                                                    },
+                                                    {
+                                                        "@name": "FRONT-END",
+                                                        "@id": "017986.en",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "3",
+                                                        "@lastUsed": "2018-11-24",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    },
+                                                    {
+                                                        "@name": "GIT",
+                                                        "@id": "1004755",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "3",
+                                                        "@lastUsed": "2018-11-24",
+                                                        "@whereFound": "Found in SKILLS; WORK HISTORY; POS-1"
+                                                    },
+                                                    {
+                                                        "@name": "ORM",
+                                                        "@id": "1004741",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in SKILLS"
+                                                    },
+                                                    {
+                                                        "@name": "PHP",
+                                                        "@id": "004736",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "7",
+                                                        "@lastUsed": "2018-11-24",
+                                                        "@whereFound": "Found in SKILLS; WORK HISTORY; POS-1; POS-3"
+                                                    },
+                                                    {
+                                                        "@name": "SERVEUR D'APPLICATION",
+                                                        "@id": "024219",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "9",
+                                                        "@lastUsed": "2018-11-24",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1; POS-2"
+                                                    },
+                                                    {
+                                                        "@name": "XML",
+                                                        "@id": "011476",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "7",
+                                                        "@lastUsed": "2018-11-24",
+                                                        "@whereFound": "Found in SKILLS; WORK HISTORY; POS-1; POS-3"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Architecture",
+                                                "@id": "201",
+                                                "@percentOfOverall": "9",
+                                                "@percentOfParentTaxonomy": "22",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "ARCHITECTURE LOGICIELLE",
+                                                        "@id": "008204",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "3",
+                                                        "@lastUsed": "2018-11-24",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    },
+                                                    {
+                                                        "@name": "BASE DE DONNÉES",
+                                                        "@id": "022486",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "9",
+                                                        "@lastUsed": "2018-11-24",
+                                                        "@whereFound": "Found in SKILLS; WORK HISTORY; POS-1; POS-2"
+                                                    },
+                                                    {
+                                                        "@name": "CONCEPTION TECHNIQUE",
+                                                        "@id": "025754",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "3",
+                                                        "@lastUsed": "2018-11-24",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    },
+                                                    {
+                                                        "@name": "UML",
+                                                        "@id": "010148",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in SKILLS"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Java",
+                                                "@id": "339",
+                                                "@percentOfOverall": "7",
+                                                "@percentOfParentTaxonomy": "18",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "JAVA",
+                                                        "@id": "023328",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "9",
+                                                        "@lastUsed": "2018-11-24",
+                                                        "@whereFound": "Found in SKILLS; WORK HISTORY; POS-1; POS-2"
+                                                    },
+                                                    {
+                                                        "@name": "JAVASCRIPT",
+                                                        "@id": "025394",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in SKILLS"
+                                                    },
+                                                    {
+                                                        "@name": "JQUERY",
+                                                        "@id": "339048",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "7",
+                                                        "@lastUsed": "2018-11-24",
+                                                        "@whereFound": "Found in SKILLS; WORK HISTORY; POS-1; POS-3"
+                                                    },
+                                                    {
+                                                        "@name": "JSF",
+                                                        "@id": "339034",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "6",
+                                                        "@lastUsed": "2016-09-29",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-2"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Base de Données",
+                                                "@id": "193",
+                                                "@percentOfOverall": "4",
+                                                "@percentOfParentTaxonomy": "11",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "FLUX DE DONNÉES",
+                                                        "@id": "014982",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "4",
+                                                        "@lastUsed": "2015-08-01",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-3"
+                                                    },
+                                                    {
+                                                        "@name": "MYSQL",
+                                                        "@id": "003243",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "7",
+                                                        "@lastUsed": "2018-11-24",
+                                                        "@whereFound": "Found in SKILLS; WORK HISTORY; POS-1; POS-3"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Gestion de Projet",
+                                                "@id": "199",
+                                                "@percentOfOverall": "2",
+                                                "@percentOfParentTaxonomy": "5",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "GESTION DES VERSIONS",
+                                                        "@id": "023286",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "3",
+                                                        "@lastUsed": "2018-11-24",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Internet",
+                                                "@id": "196",
+                                                "@percentOfOverall": "2",
+                                                "@percentOfParentTaxonomy": "5",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "AJAX",
+                                                        "@id": "196001",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in SKILLS"
+                                                    },
+                                                    {
+                                                        "@name": "COMMERCE ÉLECTRONIQUE",
+                                                        "@id": "026768",
+                                                        "@existsInText": "false",
+                                                        "@childrenTotalMonths": "6",
+                                                        "@childrenLastUsed": "2016-09-29",
+                                                        "sov:ChildSkill": [
+                                                            {
+                                                                "@name": "E-COMMERCE",
+                                                                "@id": "0267681",
+                                                                "@existsInText": "true",
+                                                                "@totalMonths": "6",
+                                                                "@lastUsed": "2016-09-29",
+                                                                "@whereFound": "Found in WORK HISTORY; POS-2"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "@name": "SECURITY",
+                                                        "@id": "022110.en",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "3",
+                                                        "@lastUsed": "2018-11-24",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    },
+                                                    {
+                                                        "@name": "TOMCAT",
+                                                        "@id": "009664.en",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in SKILLS"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Operations, Surveillance, Gestion de Logiciels",
+                                                "@id": "349",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "3",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "SMS",
+                                                        "@id": "081178",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "3",
+                                                        "@lastUsed": "2018-11-24",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Sécurité",
+                                                "@id": "338",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "3",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "CRYPTAGE",
+                                                        "@id": "026706",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "3",
+                                                        "@lastUsed": "2018-11-24",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "UNIX et LINUX",
+                                                "@id": "203",
+                                                "@percentOfOverall": "0",
+                                                "@percentOfParentTaxonomy": "1",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "APACHE",
+                                                        "@id": "021093",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in SKILLS"
+                                                    },
+                                                    {
+                                                        "@name": "UNIX",
+                                                        "@id": "01026309",
+                                                        "@existsInText": "false",
+                                                        "@childrenTotalMonths": "3",
+                                                        "@childrenLastUsed": "2018-11-24",
+                                                        "sov:ChildSkill": [
+                                                            {
+                                                                "@name": "UX",
+                                                                "@id": "010377",
+                                                                "@existsInText": "true",
+                                                                "@totalMonths": "3",
+                                                                "@lastUsed": "2018-11-24",
+                                                                "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "@name": "Ingénierie",
+                                        "@id": "5",
+                                        "@percentOfOverall": "15",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Conception",
+                                                "@id": "134",
+                                                "@percentOfOverall": "7",
+                                                "@percentOfParentTaxonomy": "46",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "CONCEPTION",
+                                                        "@id": "025590",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "13",
+                                                        "@lastUsed": "2018-11-24",
+                                                        "@whereFound": "Found in SKILLS; WORK HISTORY; POS-1; POS-2; POS-3"
+                                                    },
+                                                    {
+                                                        "@name": "CONCEPTION TECHNIQUE",
+                                                        "@id": "025755",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "3",
+                                                        "@lastUsed": "2018-11-24",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Autres",
+                                                "@id": "263",
+                                                "@percentOfOverall": "3",
+                                                "@percentOfParentTaxonomy": "22",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "INGÉNIEUR",
+                                                        "@id": "080650",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "13",
+                                                        "@lastUsed": "2018-11-24",
+                                                        "@whereFound": "Found in EDUCATION; WORK HISTORY; DEG-1; POS-1"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Ingénierie Generale",
+                                                "@id": "307",
+                                                "@percentOfOverall": "3",
+                                                "@percentOfParentTaxonomy": "22",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "INGÉNIEUR",
+                                                        "@id": "080540",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "13",
+                                                        "@lastUsed": "2018-11-24",
+                                                        "@whereFound": "Found in EDUCATION; WORK HISTORY; DEG-1; POS-1"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Matériel Informatique",
+                                                "@id": "144",
+                                                "@percentOfOverall": "2",
+                                                "@percentOfParentTaxonomy": "10",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "CRYPTAGE",
+                                                        "@id": "026707",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "3",
+                                                        "@lastUsed": "2018-11-24",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    },
+                                                    {
+                                                        "@name": "JSF",
+                                                        "@id": "020356",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "6",
+                                                        "@lastUsed": "2016-09-29",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-2"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Air et Aérospatiale",
+                                                "@id": "311",
+                                                "@percentOfOverall": "0",
+                                                "@percentOfParentTaxonomy": "1",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "APACHE",
+                                                        "@id": "025565",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in SKILLS"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "@name": "Ingenierie Alimentation",
+                                        "@id": "26",
+                                        "@percentOfOverall": "3",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Alimentation Non-Nucléaire",
+                                                "@id": "924",
+                                                "@percentOfOverall": "3",
+                                                "@percentOfParentTaxonomy": "100",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "API",
+                                                        "@id": "021195",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "7",
+                                                        "@lastUsed": "2018-11-24",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1; POS-3"
+                                                    },
+                                                    {
+                                                        "@name": "CONCEPTION D'INGÉNIERIE",
+                                                        "@id": "015245",
+                                                        "@existsInText": "false",
+                                                        "@childrenTotalMonths": "3",
+                                                        "@childrenLastUsed": "2018-11-24",
+                                                        "sov:ChildSkill": [
+                                                            {
+                                                                "@name": "CONCEPTION TECHNIQUE",
+                                                                "@id": "0152451",
+                                                                "@existsInText": "true",
+                                                                "@totalMonths": "3",
+                                                                "@lastUsed": "2018-11-24",
+                                                                "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "@name": "Administrative ou  de Bureau",
+                                        "@id": "1",
+                                        "@percentOfOverall": "2",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Sténographie, Dactylographie,Dépôt",
+                                                "@id": "109",
+                                                "@percentOfOverall": "2",
+                                                "@percentOfParentTaxonomy": "100",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "DOCUMENTATION TECHNIQUE",
+                                                        "@id": "016628",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in SKILLS"
+                                                    },
+                                                    {
+                                                        "@name": "JUNIT",
+                                                        "@id": "020369",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "3",
+                                                        "@lastUsed": "2018-11-24",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    },
+                                                    {
+                                                        "@name": "REVISER",
+                                                        "@id": "025021",
+                                                        "@existsInText": "false",
+                                                        "@childrenTotalMonths": "3",
+                                                        "@childrenLastUsed": "2018-11-24",
+                                                        "sov:ChildSkill": [
+                                                            {
+                                                                "@name": "CORRECTION",
+                                                                "@id": "0250212",
+                                                                "@existsInText": "true",
+                                                                "@totalMonths": "3",
+                                                                "@lastUsed": "2018-11-24",
+                                                                "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "@name": "Gestion Generale",
+                                        "@id": "80",
+                                        "@percentOfOverall": "1",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Gestions et Taches",
+                                                "@id": "519",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "100",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "MANAGÉRIALES",
+                                                        "@id": "021109",
+                                                        "@existsInText": "false",
+                                                        "@childrenTotalMonths": "3",
+                                                        "@childrenLastUsed": "2018-11-24",
+                                                        "sov:ChildSkill": [
+                                                            {
+                                                                "@name": "DE GESTION",
+                                                                "@id": "0211091",
+                                                                "@existsInText": "true",
+                                                                "@totalMonths": "3",
+                                                                "@lastUsed": "2018-11-24",
+                                                                "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "@name": "Finance",
+                                        "@id": "7",
+                                        "@percentOfOverall": "1",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Analyse",
+                                                "@id": "235",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "50",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "COMMERCE",
+                                                        "@id": "080204",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "6",
+                                                        "@lastUsed": "2016-09-29",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-2"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Conformité",
+                                                "@id": "245",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "50",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "COMMERCE",
+                                                        "@id": "080179",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "6",
+                                                        "@lastUsed": "2016-09-29",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-2"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "@name": "Techniques / Métiers / Main-d'Oeuvre Qualifiée",
+                                        "@id": "27",
+                                        "@percentOfOverall": "1",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Machinage",
+                                                "@id": "287",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "100",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "TOUR",
+                                                        "@id": "024018",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "3",
+                                                        "@lastUsed": "2018-11-24",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "@name": "Fabrication",
+                                        "@id": "13",
+                                        "@percentOfOverall": "1",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Usinage, Travail des Métaux, Outils et Matrices",
+                                                "@id": "206",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "100",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "TOUR",
+                                                        "@id": "024017",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "3",
+                                                        "@lastUsed": "2018-11-24",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "@name": "Securite",
+                                        "@id": "98",
+                                        "@percentOfOverall": "1",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Physique",
+                                                "@id": "465",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "100",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "SÉCURITÉ",
+                                                        "@id": "022111",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "3",
+                                                        "@lastUsed": "2018-11-24",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "@name": "Redaction Technique",
+                                        "@id": "31",
+                                        "@percentOfOverall": "0",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Spécifications et Documentation",
+                                                "@id": "429",
+                                                "@percentOfOverall": "0",
+                                                "@percentOfParentTaxonomy": "100",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "DOCUMENTATION",
+                                                        "@id": "022620",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in SKILLS"
+                                                    },
+                                                    {
+                                                        "@name": "DOCUMENTATION TECHNIQUE",
+                                                        "@id": "009242",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in SKILLS"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "@name": "Sovren",
+                                "sov:Taxonomy": [
+                                    {
+                                        "@name": "Information Technology",
+                                        "@id": "10",
+                                        "@percentOfOverall": "20",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Mobile Applications",
+                                                "@id": "552",
+                                                "@percentOfOverall": "6",
+                                                "@percentOfParentTaxonomy": "28",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "ANDROID",
+                                                        "@id": "5520503",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "7",
+                                                        "@lastUsed": "2018-11-24",
+                                                        "@whereFound": "Found in SKILLS; WORK HISTORY; POS-1; POS-3"
+                                                    },
+                                                    {
+                                                        "@name": "APACHE CORDOVA",
+                                                        "@id": "5520507",
+                                                        "@existsInText": "false",
+                                                        "@childrenTotalMonths": "3",
+                                                        "@childrenLastUsed": "2018-11-24",
+                                                        "sov:ChildSkill": [
+                                                            {
+                                                                "@name": "CORDOVA",
+                                                                "@id": "552050701",
+                                                                "@existsInText": "true",
+                                                                "@totalMonths": "3",
+                                                                "@lastUsed": "2018-11-24",
+                                                                "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "@name": "BOOTSTRAP",
+                                                        "@id": "5520522",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "6",
+                                                        "@lastUsed": "2016-09-29",
+                                                        "@whereFound": "Found in SKILLS; WORK HISTORY; POS-2"
+                                                    },
+                                                    {
+                                                        "@name": "HTML5",
+                                                        "@id": "5520541",
+                                                        "@existsInText": "true",
+                                                        "@whereFound": "Found in SKILLS"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "User Interface",
+                                                "@id": "731",
+                                                "@percentOfOverall": "3",
+                                                "@percentOfParentTaxonomy": "17",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "ANDROID",
+                                                        "@id": "7310008",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "7",
+                                                        "@lastUsed": "2018-11-24",
+                                                        "@whereFound": "Found in SKILLS; WORK HISTORY; POS-1; POS-3"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Java",
+                                                "@id": "339",
+                                                "@percentOfOverall": "3",
+                                                "@percentOfParentTaxonomy": "15"
+                                            },
+                                            {
+                                                "@name": "Programming",
+                                                "@id": "204",
+                                                "@percentOfOverall": "3",
+                                                "@percentOfParentTaxonomy": "15",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "ANDROID STUDIO",
+                                                        "@id": "3391145",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "7",
+                                                        "@lastUsed": "2018-11-24",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1; POS-3"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Distributed Systems",
+                                                "@id": "718",
+                                                "@percentOfOverall": "2",
+                                                "@percentOfParentTaxonomy": "9",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "REST",
+                                                        "@id": "7180010",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "3",
+                                                        "@lastUsed": "2018-11-24",
+                                                        "@whereFound": "Found in SKILLS; WORK HISTORY; POS-1"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Big Data",
+                                                "@id": "553",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "5",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "MONGODB",
+                                                        "@id": "5530805",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "3",
+                                                        "@lastUsed": "2018-11-24",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Cloud Computing",
+                                                "@id": "550",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "5",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "MONGODB",
+                                                        "@id": "5500361",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "3",
+                                                        "@lastUsed": "2018-11-24",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Config Deploy Upgrade Migrate",
+                                                "@id": "251",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "5",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "MAVEN",
+                                                        "@id": "2510001",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "6",
+                                                        "@lastUsed": "2016-09-29",
+                                                        "@whereFound": "Found in SKILLS; WORK HISTORY; POS-2"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Enterprise Storage",
+                                                "@id": "555",
+                                                "@percentOfOverall": "0",
+                                                "@percentOfParentTaxonomy": "2",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "HP-UX",
+                                                        "@id": "5551150",
+                                                        "@existsInText": "false",
+                                                        "@childrenTotalMonths": "3",
+                                                        "@childrenLastUsed": "2018-11-24",
+                                                        "sov:ChildSkill": [
+                                                            {
+                                                                "@name": "UX",
+                                                                "@id": "555115001",
+                                                                "@existsInText": "true",
+                                                                "@totalMonths": "3",
+                                                                "@lastUsed": "2018-11-24",
+                                                                "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "@name": "User Experience",
+                                        "@id": "93",
+                                        "@percentOfOverall": "14",
+                                        "sov:Subtaxonomy": [
+                                            {
+                                                "@name": "Industrial Design",
+                                                "@id": "566",
+                                                "@percentOfOverall": "3",
+                                                "@percentOfParentTaxonomy": "25",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "ARCHITECTURE",
+                                                        "@id": "5570085",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "9",
+                                                        "@lastUsed": "2018-11-24",
+                                                        "@whereFound": "Found in SKILLS; WORK HISTORY; POS-1; POS-2"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Human Computer Interaction",
+                                                "@id": "561",
+                                                "@percentOfOverall": "3",
+                                                "@percentOfParentTaxonomy": "23",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "FRONT END",
+                                                        "@id": "5570217",
+                                                        "@existsInText": "false",
+                                                        "@childrenTotalMonths": "3",
+                                                        "@childrenLastUsed": "2018-11-24",
+                                                        "sov:ChildSkill": [
+                                                            {
+                                                                "@name": "FRONT-END",
+                                                                "@id": "5570218",
+                                                                "@existsInText": "true",
+                                                                "@totalMonths": "3",
+                                                                "@lastUsed": "2018-11-24",
+                                                                "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "@name": "PROTOTYPE",
+                                                        "@id": "5570036",
+                                                        "@existsInText": "false",
+                                                        "@childrenTotalMonths": "9",
+                                                        "@childrenLastUsed": "2018-11-24",
+                                                        "sov:ChildSkill": [
+                                                            {
+                                                                "@name": "PROTOTYPES",
+                                                                "@id": "5570037",
+                                                                "@existsInText": "true",
+                                                                "@totalMonths": "9",
+                                                                "@lastUsed": "2018-11-24",
+                                                                "@whereFound": "Found in WORK HISTORY; POS-1; POS-2"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Web Design",
+                                                "@id": "571",
+                                                "@percentOfOverall": "3",
+                                                "@percentOfParentTaxonomy": "22",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "INTEGRATOR",
+                                                        "@id": "5570146",
+                                                        "@existsInText": "false",
+                                                        "@childrenTotalMonths": "3",
+                                                        "@childrenLastUsed": "2018-11-24",
+                                                        "sov:ChildSkill": [
+                                                            {
+                                                                "@name": "INTEGRATION",
+                                                                "@id": "5570147",
+                                                                "@existsInText": "true",
+                                                                "@totalMonths": "3",
+                                                                "@lastUsed": "2018-11-24",
+                                                                "@whereFound": "Found in SKILLS; WORK HISTORY; POS-1"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "@name": "WORDPRESS",
+                                                        "@id": "3391111",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "3",
+                                                        "@lastUsed": "2018-11-24",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "User Research",
+                                                "@id": "558",
+                                                "@percentOfOverall": "2",
+                                                "@percentOfParentTaxonomy": "14",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "PROTOTYPES",
+                                                        "@id": "5570209",
+                                                        "@existsInText": "true",
+                                                        "@totalMonths": "9",
+                                                        "@lastUsed": "2018-11-24",
+                                                        "@whereFound": "Found in WORK HISTORY; POS-1; POS-2"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Integration Design",
+                                                "@id": "568",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "9",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "FRONT END DESIGN",
+                                                        "@id": "5570111",
+                                                        "@existsInText": "false",
+                                                        "@childrenTotalMonths": "3",
+                                                        "@childrenLastUsed": "2018-11-24",
+                                                        "sov:ChildSkill": [
+                                                            {
+                                                                "@name": "FRONT-END",
+                                                                "@id": "5570112",
+                                                                "@existsInText": "true",
+                                                                "@totalMonths": "3",
+                                                                "@lastUsed": "2018-11-24",
+                                                                "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "@name": "Information Architect",
+                                                "@id": "567",
+                                                "@percentOfOverall": "1",
+                                                "@percentOfParentTaxonomy": "8",
+                                                "sov:Skill": [
+                                                    {
+                                                        "@name": "FRONT END",
+                                                        "@id": "5570300",
+                                                        "@existsInText": "false",
+                                                        "@childrenTotalMonths": "3",
+                                                        "@childrenLastUsed": "2018-11-24",
+                                                        "sov:ChildSkill": [
+                                                            {
+                                                                "@name": "FRONT-END",
+                                                                "@id": "5570301",
+                                                                "@existsInText": "true",
+                                                                "@totalMonths": "3",
+                                                                "@lastUsed": "2018-11-24",
+                                                                "@whereFound": "Found in WORK HISTORY; POS-1"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "sov:Sections": {
+                    "sov:Section": [
+                        {
+                            "@starts": "6",
+                            "@ends": "89",
+                            "@sectionType": "WORK HISTORY",
+                            "#text": "EXPERIENCES PROFESSIONNELLES"
+                        },
+                        {
+                            "@starts": "90",
+                            "@ends": "103",
+                            "@sectionType": "SKILLS",
+                            "#text": "PRINCIPALES COMPETENCES"
+                        },
+                        {
+                            "@starts": "104",
+                            "@ends": "107",
+                            "@sectionType": "EDUCATION",
+                            "#text": "Formation"
+                        },
+                        {
+                            "@starts": "108",
+                            "@ends": "109",
+                            "@sectionType": "LANGUAGES",
+                            "#text": "Langues"
+                        }
+                    ]
+                },
+                "sov:ReservedData": {
+                    "sov:Phones": {
+                        "sov:Phone": [
+                            "Tel: 06.06.20.40.57",
+                            "06.06.20.40.57"
+                        ]
+                    },
+                    "sov:Names": {
+                        "sov:Name": [
+                            "Said BAHAOUARY"
+                        ]
+                    },
+                    "sov:EmailAddresses": {
+                        "sov:EmailAddress": [
+                            "said.bahaouary@gmail.com"
+                        ]
+                    }
+                },
+                "sov:ParsedTextLength": "5201",
+                "sov:ParseTime": "1032",
+                "sov:ResumeQuality": {
+                    "sov:Assessments": {
+                        "sov:Assessment": [
+                            {
+                                "sov:Level": "Data Missing",
+                                "sov:Findings": {
+                                    "sov:Information": [
+                                        "[Sovren:213;] A street level address was not found in the contact information. A full contact address should always be included in a resume as it allows for location based searches.",
+                                        "[Sovren:231;DEG-1] The following educational degree does not have a degree name: DEG-1. Every degree in a resume should have a name or type associated with it, such as 'B.S.' or 'M.S.'.",
+                                        "[Sovren:232;DEG-2] The following educational degree is not associated with a school: DEG-2. Every degree in a resume should be associated with a school."
+                                    ]
+                                }
+                            },
+                            {
+                                "sov:Level": "Suggested Improvements",
+                                "sov:Findings": {
+                                    "sov:Information": [
+                                        "[Sovren:112;] The following section was identified as a skills section type: 'PRINCIPALES COMPETENCES'. Skills should not be in a separate section, but instead, each skill should be included in the descriptions of work history or education.",
+                                        "[Sovren:151;2,3] The following sections do not have the header on a separate line: 'Formation', 'Langues'. Every section should have a header on a separate line directly above the content associated with it."
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                },
+                "sov:LicenseSerialNumber": "MONEYCORE:2ff369e2-2421-48fe-9c9b-d60012f4b494",
+                "sov:ParserConfigurationString": "Coverage.PersonalAttributes = True; Coverage.Training = True; Culture.CountryCodeForUnitedKingdomIsUK = True; Culture.DefaultCountryCode = MA; Culture.DefaultCultureIsFrance = True; Culture.Language = French; Culture.PreferEnglishVersionIfTwoLanguagesInDocument = False; Data.UserDefinedParsing = False; OutputFormat.AssumeCompanyNameFromPrecedingJob = False; OutputFormat.ContactMethod.PackStyle = Split; OutputFormat.DateOutputStyle = ExplicitlyKnownDateInfoOnly; OutputFormat.NestJobsBasedOnDateRanges = True; OutputFormat.NormalizeRegions = False; OutputFormat.SkillsStyle = Default; OutputFormat.StripParsedDataFromPositionHistoryDescription = True; OutputFormat.TelcomNumber.Style = Raw; OutputFormat.XmlFormat = HrXmlResume25",
+                "sov:ParserVersion": "9.1.3.0",
+                "sov:DigitalSignature": "TaYGAAAAAAA="
+            }
+        }
+    }
+}

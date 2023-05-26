@@ -1,0 +1,51 @@
+.messagetrue {
+    font-size: 16px;
+    font-style: italic;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 24px;
+    border-radius: 8px;
+    background-color: #9a2828;
+    position: relative;
+    color:white;
+  }
+  .messagefalse {
+    font-size: 16px;
+    font-style: italic;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 24px;
+    border-radius: 8px;
+    background-color: #f6f6f6;
+    position: relative;
+    color:#6e7a89;
+  }
+  .timeform {
+    float: left;
+    width: 100%;
+  
+    i {
+      margin-left: 20px;
+    }
+  
+    .timestamp{
+      font-size: 0.6em;
+    }
+  }
+  
+  .avatar{
+    border-radius: 50%!important;
+    height: 40px;
+    width: 40px;
+    border: 0px solid #f5f6fa;
+    
+  }
+  .list-group-item{
+    border:none;
+  }
+  .messagefalse p{
+    align:left;
+  }
+  .messagetrue p{
+    align:right;
+  }

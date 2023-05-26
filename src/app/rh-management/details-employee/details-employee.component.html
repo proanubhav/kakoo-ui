@@ -1,0 +1,192 @@
+<app-rh-header></app-rh-header>
+
+<div class="page-container">
+  <div class="row white"></div>
+    <div class="container col-md-9 col-md-offset-5">
+      <div class="row">
+        <div class="col my-employee">
+          <div class="row general rounded">
+            <div class="col">
+              <div style="margin-top: 0.5em;">
+                <a><img id="employee-image" class="rounded-circle bordered" *ngIf="imgSrc" [src]="imgSrc" (click)="fileInput.click()"></a>
+              </div>
+              <input type="file" style="display: none" (change)="selectFile($event)" #fileInput accept="image/*">
+              <div style="text-align:center;color:#555;margin-top:0.5em">
+                <h4>{{ firstName | titlecase }} {{ lastName | uppercase }}</h4>
+                <h6><strong>{{ profile }}</strong></h6>
+              </div>
+
+              <div style="text-align:center;">
+                <button class="myButton2" tooltip="Modifier">
+                  <a (click)="redirectEditPage(employee)"><i class="fa fa-pencil-square-o"></i></a>
+                </button>
+                <button class="myButton2" tooltip="Supprimer l'employé">
+                  <a (click)="deleteEmployeeConfirm=true">
+                    <i class="fa fa fa-trash-o"></i>
+                  </a>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <section class="delete-box">
+            <div *ngIf="deleteEmployeeConfirm" class="employee-delete rounded">
+              <div style="overflow: hidden;margin-top:0.5em;">
+                <p style="float: left; margin-left:0.8em;">
+                  <img id="delete-img" class="img-responsive" [src]="deleteImg">
+                </p>
+                <p class="h6" style="float: center; margin-left:-0.5em; margin-top:0.3em;">
+                  Voulez-vous vraiment supprimer définitivement ce employé ? <br>
+                  <button class="myButton3" type="button" (click)="deleteEmployee(employee); deleteEmployeeConfirm=false">
+                    Supprimer
+                  </button>
+                  <button class="myButton3" type="button" (click)="deleteEmployeeConfirm=false">Annuler</button>
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="main" *ngIf="exist">
+
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="card">
+                  <div class="card-header">
+                    <div class="form-inline">
+                      <mat-icon>contacts</mat-icon>
+                       Contacts :
+                    </div>
+                  </div>
+
+                  <div class="card-body">
+                    <mat-accordion>
+                      <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>Contacts</mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <table class="table table-responsive-md btn-table table-hover" *ngIf="exist">
+                          <tr>
+                            <th class="h6" style="width: 40%;">
+                              <div class="form-inline">
+                                <mat-icon>home</mat-icon>
+                                 Adresse :
+                              </div>
+                            </th>
+                            <th class="h6" style="width: 60%;">{{ address }}</th>
+                          </tr>
+
+                          <tr>
+                            <th class="h6" style="width: 40%;">
+                              <div class="form-inline">
+                                <mat-icon>contact_phone</mat-icon>
+                                 Téléphone :
+                              </div>
+                            </th>
+                            <th class="h6" style="width: 60%;">{{ mobilePhone }}</th>
+                          </tr>
+
+                          <tr>
+                            <th class="h6" style="width: 40%;">
+                              <div class="form-inline">
+                                <mat-icon>contact_mail</mat-icon>
+                                 Email :
+                              </div>
+                            </th>
+                            <th class="h6" style="width: 60%;">{{ email }}</th>
+                          </tr>
+                        </table>
+                      </mat-expansion-panel>
+                    </mat-accordion>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="card">
+                  <div class="card-header">
+                    <span class="h5" style="color :#434142;">
+                      <i class="fas fa-briefcase prefix" aria-hidden="true"></i>
+                      Projets :
+                    </span>
+                    <!--<span class="col-sm-3 modify bordered rounded" style="float: right;">
+                      <a (click)="projectsEdit=true;" *ngIf="!projectsEdit" matTooltip="Modifier les projets">
+                        <strong>
+                          <i class="fa fa-edit prefix" aria-hidden="true"></i>
+                        </strong>
+                      </a>
+                      <a (click)="getEmployee(id); projectsEdit=false;" *ngIf="projectsEdit" matTooltip="Voir les modifications">
+                        <strong>
+                          <i class="fa fa-edit prefix" aria-hidden="true"></i>
+                        </strong>
+                      </a>
+                    </span>-->
+                  </div>
+                  <div class="card-body">
+                    <mat-accordion>
+                      <mat-expansion-panel [expanded]="projectsEdit">
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>
+                            Projets
+                          </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <table class="table table-hover" *ngIf="exist">
+                          <tr>
+
+                          </tr>
+                        </table>
+                      </mat-expansion-panel>
+                    </mat-accordion>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="card">
+                  <div class="card-header">
+                    <span class="h5" style="color :#434142;">
+                      <i class="fas fa-tasks" aria-hidden="true"></i>
+                      Missions :
+                    </span>
+                    <!--<span class="col-sm-3 modify bordered rounded" style="float: right;">
+                      <a (click)="tasksEdit=true;" *ngIf="!tasksEdit" matTooltip="Modifier les missions">
+                        <strong>
+                          <i class="fa fa-edit prefix" aria-hidden="true"></i>
+                        </strong>
+                      </a>
+                      <a (click)="getEmployee(id); tasksEdit=false;" *ngIf="tasksEdit" matTooltip="Voir les modifications">
+                        <strong>
+                          <i class="fa fa-edit prefix" aria-hidden="true"></i>
+                        </strong>
+                      </a>
+                    </span>-->
+                  </div>
+                  <div class="card-body">
+                    <mat-accordion>
+                      <mat-expansion-panel [expanded]="tasksEdit">
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>
+                            Missions
+                          </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <table class="table table-hover" *ngIf="exist">
+                          <tr>
+
+                          </tr>
+                        </table>
+                      </mat-expansion-panel>
+                    </mat-accordion>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </section>
+
+        </div>
+      </div>
+    </div>
+</div>

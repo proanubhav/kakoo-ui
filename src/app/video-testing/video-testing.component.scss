@@ -1,0 +1,150 @@
+@import '../../assets/sass/var';
+.empty{
+    padding-bottom: 3em;
+}
+.kakoo-color{
+    color:	#9A2828;
+    background-color: white;
+}
+img {
+    width : 1.5em;
+    height : 1.5em;
+    margin-top:-0.8em;
+   
+}
+.fa{
+    color:#434142;
+}
+
+
+.divcard-classic {
+    background-color: rgb(209, 171, 171);
+    color: rgba(13, 14, 14, 0.719);
+    animation: myanim 1s;
+  }
+
+.divcard-commercial {
+  background-color: rgb(219, 219, 219);
+  color: rgba(13, 14, 14, 0.719);
+  animation: myanim 2s;
+}
+
+.divcard-premium {
+  background-color: rgb(219, 219, 219);
+  color: rgba(13, 14, 14, 0.719);
+  animation: myanim 3s;
+}
+
+  .header{
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-family: 'Times New Roman', Times, serif, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-shadow: 1px 1px 1px black;
+    width: 100%;
+    height: 100PX;
+    padding-top: 20px;
+    font-size: 20px;
+    border-radius: 2px; 
+  
+  }
+  .classic-header{
+    @extend .header;
+    background-color: rgba(167, 101, 101, 0.836);
+  }
+  .commercial-header{
+    @extend .header;
+    background-color: rgba(140, 179, 145, 0.863);
+  }
+  .premium-header{
+    @extend .header;
+    background-color: rgba(110, 103, 138, 0.863);
+  }
+
+  .title{
+    color: black;
+    box-shadow: 1px 1px 1px gray;
+    -webkit-box-shadow: 1px 1px 1px gray;
+    -moz-box-shadow: 1px 1px 1px gray;
+    -o-box-shadow: 1px 1px 1px gray;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    margin-top: 5px; 
+    margin-bottom: 5px; 
+    padding-top: 5px; 
+    padding-bottom: 5px; 
+
+  }
+  .mybtn{
+    border: 1px solid white; 
+    box-shadow: 1px 1px 1px gray;
+    -webkit-box-shadow: 1px 1px 1px gray;
+    -moz-box-shadow: 1px 1px 1px gray;
+    -o-box-shadow: 1px 1px 1px gray;
+  }
+
+  .footer{
+    text-align: center;
+    color: rgb(6, 117, 99);
+    font-family:'Times New Roman', Times, serif;
+    width: 100%;
+    padding-bottom: 10px;
+    margin-top: 5px; 
+    cursor: pointer;
+  
+  }
+  .content{
+    color: rgb(12, 12, 12);
+  }
+  .tdicon{
+    float: right;
+  }
+.columns{
+  float: right;
+  text-align: right;
+}
+
+  .all-mode{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  // animation
+
+  @-webkit-keyframes myanim {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @-moz-keyframes myanim  {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @-o-keyframes myanim {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @keyframes myanim {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  .container {
+      max-width: 1216px;
+  }
+.euro{
+  font-size: small;
+}
+.mat-icon {
+  background-repeat: no-repeat;
+  display: inline-block;
+  fill: currentColor;
+  height: 24px;
+  width: 14px;
+}
+.mySimpleButton{
+  @extend %myButton;
+  border: 1px solid $defaultColor;
+  color: $defaultColor;
+  
+
+  margin-bottom: 10px ; 
+}

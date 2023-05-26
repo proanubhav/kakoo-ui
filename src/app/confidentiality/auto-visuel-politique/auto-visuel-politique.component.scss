@@ -1,0 +1,40 @@
+.close{
+    float:right;
+    position:relative;
+    margin-top:-23px;
+    margin-right: -23px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: rgb(247, 0, 0);
+    width: 24px;
+    height: 24px;
+  }
+  .mat-icon-close {
+    background-repeat: no-repeat;
+    display: inline-block;
+    fill: currentColor;
+    height: 24px;
+    width: 24px;
+    position: relative;
+    top: -9px;
+    right: -1px;
+    font-size: medium;
+  
+  }
+
+  .scroll{
+    overflow: auto;
+    max-height: 600px;
+    background: rgba(255,255,255, 0.9);
+    height: auto;
+    border-radius: 5px;
+}
+.row {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -2px;
+}

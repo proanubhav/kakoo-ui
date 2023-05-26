@@ -1,0 +1,86 @@
+.day-weekend {
+    background-color: #ADD8E6;
+}
+
+.day-ferie {
+    background-color: #FBF2B9;
+}
+
+input:disabled {
+    cursor : not-allowed!important;
+}
+
+.my-table th, .my-table td{
+    padding-top: 0px; padding-bottom: 0px 
+}
+
+table {
+    border-width:1px; 
+    border-style:solid; 
+    border-color:black;
+    width:50%;
+    }
+   td { 
+    border: 1px solid #a79c9c;
+    }
+.b-day {
+    color: green;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+table>thead>tr>th {
+    border: 1px solid #CECDCD;
+    background: #EAE9E9;
+    border-bottom: 2px solid #f90808;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.fa-calendar-plus-o{
+    color: #083365;
+    font-size: 1.15rem;
+    line-height: 2rem;
+    &:hover {
+      color: rgb(32, 109, 197);
+    }
+  }
+
+  .fa-pencil {
+    color: #9A2828;
+    font-size: 1.15rem;
+    line-height: 2rem;
+    &:hover {
+      color: rgb(32, 109, 197);
+    }
+  }
+  
+  .fa-trash, .fa-calendar-minus-o {
+    color:	#9A2828;
+    font-size: 1.15rem;
+    line-height: 2rem;
+    &:hover {
+      color: rgb(117, 6, 6);
+    }
+  }
+
+  .table-danger {
+    background-color: #f90808 !important;
+  }
+  .table_col {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    text-align: center
+  }
+
+  .bday_input {
+    text-align: center;
+    border: 1px solid #32c5d2;
+    width : 1.5rem;
+  }
+  
+  .bday_danger {
+    color : red;
+  }

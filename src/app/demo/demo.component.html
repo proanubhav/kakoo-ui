@@ -1,0 +1,162 @@
+<div *ngIf="!isHome">
+  <app-header></app-header>
+</div>
+
+
+
+<div id="generic_price_table">
+  <section class="pricingSection">
+    <div *ngIf="!isHome">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <!--PRICE HEADING START-->
+            <div class="price-heading clearfix">
+              <h3>
+
+                <span class="meilleurs">Demander </span>
+                <span class="meilleurs">une </span>
+                <span class="meilleurs">démonstration</span>
+                <span class="meilleurs">pour</span>
+                <span class="meilleurs">la</span>
+                <span class="meilleurs">solution</span>
+                <span class="meilleurs">KAKOO</span>
+              </h3>
+            </div>
+            <!--//PRICE HEADING END-->
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container">
+      <div align="center">
+        <div class="prospections">
+          <!--
+            <h3>
+            Vous êtes un recruteur ? Vous recherchez un ERP pour vous aider à accomplir vos tâches et faciliter votre
+            gestion ? KAKOO
+            est là, n'hésite pas à nous contacter ou faire une demande d’essai 100% gratuite de 10 jours
+          </h3> -->
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container demoform col-md-12">
+
+      <div class="row  my-form rounded">
+        <div class="col">
+
+
+          <div class="alert alert-success" role="alert" *ngIf="done">
+            <strong>Votre demande a été envoyé avec succés !</strong>
+          </div>
+
+          <div style="text-align:center;color:#9A2828;" *ngIf="chooseDate && !done">
+
+            <strong class="h5-responsive">
+              Planifier un rendez-vous avec un commercial</strong>
+
+
+            <center>
+              <div class="col-sm-4" *ngIf="chooseDate">
+                <input class="form-control " [(ngModel)]="myDate" placeholder="Choisissez une date ici"
+                  [owlDateTimeTrigger]="dt" [owlDateTime]="dt">
+                <owl-date-time #dt></owl-date-time>
+              </div>
+            </center>
+          </div>
+
+          <div style="text-align:center;color:#9A2828;" *ngIf="putCode&&!chooseDate">
+
+
+            <div class="alert alert-success" role="alert">
+              <strong>Un mail contient un code vous a été envoyé pour valider votre adresse mail !</strong>
+            </div>
+
+            <center>
+              <div class="col-sm-4" *ngIf="putCode&&!chooseDate">
+                <mat-form-field>
+                  <input matInput placeholder="Code" class="form-control " [(ngModel)]="code" required>
+                  <mat-error>Champs invalide</mat-error>
+                </mat-form-field>
+              </div>
+            </center>
+          </div>
+
+
+
+          <section *ngIf="!chooseDate && !putCode">
+
+
+            <form novalidate [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+              <div class="example-container row">
+                <mat-form-field class="col-sm-6">
+                  <input matInput placeholder="Prénom" formControlName="firstName" required>
+                  <mat-error>Champs invalide</mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="col-sm-6">
+                  <input matInput placeholder="Nom" formControlName="lastName" required>
+                  <mat-error>Champs invalide</mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="col-sm-12">
+                  <input matInput placeholder="Email" formControlName="email" required>
+                  <mat-error *ngIf="emailCompany"> Email invalide</mat-error>
+                  <mat-error *ngIf="!emailCompany">L'email doit être professionnel</mat-error>
+
+                </mat-form-field>
+
+                <mat-form-field class="col-sm-12">
+                  <input matInput placeholder="Nom de votre entreprise" formControlName="companyName" required>
+                  <mat-error>Champs invalide</mat-error>
+                </mat-form-field>
+
+              </div>
+              <div *ngIf="!chooseDate && !putCode" class="example-container row">
+
+                <mat-form-field class="col-sm-12">
+                  <input matInput placeholder="Téléphone" formControlName="companyPhone" required>
+                  <mat-error *ngIf="!registrationForm.controls.companyPhone.value &&!phoneFormatError">Champs
+                    obligatoire</mat-error>
+                  <mat-error *ngIf="phoneFormatError">Numéro de téléphone invalide</mat-error>
+                </mat-form-field>
+              </div>
+            </form>
+          </section>
+          <div class="text-center mt-4 mb-2" *ngIf="chooseDate && !done">
+            <!--
+            <button mat-raised-button class="mySimpleButton2" (click)="next=false;">
+              <i class="fa fa-arrow-left"></i> Précedent
+            </button>
+          -->
+            <button mat-raised-button class="mySimpleButton2" type="submit" (click)="askDemo()" [disabled]="!sendValid()">
+              <i class="fa fa-send"></i> Envoyer
+            </button>
+
+          </div>
+
+          <div class="text-center mt-4 mb-2" *ngIf="!putCode">
+            <button mat-raised-button class="mySimpleButton2" (click)="nextValidToCode();">
+              Suivant
+            </button>
+
+          </div>
+          <div class="text-center mt-4 mb-2" *ngIf="!chooseDate && putCode">
+            <button mat-raised-button class="mySimpleButton2" (click)="nextValidToDate();">
+              Suivant
+            </button>
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+  </section>
+
+</div>

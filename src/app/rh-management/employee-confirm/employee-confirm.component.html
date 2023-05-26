@@ -1,0 +1,64 @@
+<app-rh-header></app-rh-header>
+
+<div class="page-container">
+  <div class="row white"></div>
+  <div class="container col-md-7">
+    <div class="row my-form rounded">
+      <div class="col" *ngIf="!confirmedAccount">
+        <div style="text-align: center; color: #9A2828;">
+          <h3 class="title">Confirmation de compte</h3>
+        </div>
+
+        <section>
+          <form novalidate [formGroup]="confirmationForm" (ngSubmit)="onConfirm()">
+            <div class="form-group md-form form-md">
+              <i class="fa fa-lock prefix"></i>
+              <input type="password" class="form-control" formControlName="password" placeholder="Mot de passe"/>
+            </div>
+
+            <div class="form-group md-form form-md">
+              <i class="fa fa-lock prefix"></i>
+              <input type="password" class="form-control" formControlName="passwordConfirm" placeHolder="Confirmation de mot de passe"/>
+              <div id="password-test">
+                <small class="text-danger" *ngIf="confirmationForm.controls.passwordConfirm.dirty && confirmationForm.controls.passwordConfirm.value!=confirmationForm.controls.password.value">
+                  <i class="fa fa-exclamation-circle"></i>
+                  Les 2 mots de passe doivent être égaux
+                </small>
+              </div>
+            </div>
+
+            <div class="text-center mt-4 mb-2">
+              <button mat-raised-button class="myWarningButton" type="button" (click)="onCancel()">
+                <i class="fa fa-times-circle ml-3"></i>
+                Annuler
+              </button>
+
+              <button mat-raised-button class="mySuccessButton" type="submit"
+                      [disabled]="!checkPassword(confirmationForm.controls.passwordConfirm.value,confirmationForm.controls.password.value)">
+                <i class="fa fa-send ml-3"></i>
+                Confirmer
+              </button>
+            </div>
+          </form>
+        </section>
+      </div>
+
+      <div class="col" *ngIf="confirmedAccount">
+        <section class="messages">
+          <div class="alert alert-success confirm-success" role="alert">
+            <strong class="h5">
+              <br>Félicitations, Votre compte a été activé<br>
+            </strong>
+
+            <div>
+              <br>
+              <button mat-raised-button class="mySuccessButton" (click)="onLogin()">
+                Se connecter
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>

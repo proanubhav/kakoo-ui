@@ -1,0 +1,72 @@
+@import '../../../assets/sass/var';
+
+.white {
+  margin-bottom: 3em;
+  background-color: white;
+}
+
+.page-container {
+  background-color: white;
+  padding-bottom: 4em;
+}
+
+.my-form {
+  background-color: white;
+}
+
+.modal-header {
+  background-color:	#9A2828;
+  text-align: center;
+}
+
+.confirm-success {
+  margin-left: -1em;
+  width: 104.5%;
+  padding-bottom: 4em;
+  margin-bottom: -3em;
+}
+
+.messages {
+  text-align: center;
+}
+
+#password-test {
+  max-height: 2em;
+  min-height: 2em;
+  margin-left: 3em;
+}
+
+.mySimpleButton {
+  @extend %myButton;
+  border: 1px solid $defaultColor;
+  color: $defaultColor;
+  background: white;
+}
+
+.myWarningButton {
+  @extend %myButton;
+  border: 1px solid $warning;
+  color: $warning;
+  background: white;
+}
+
+.myDangerButton  {
+  @extend %myButton;
+  border: 1px solid $danger;
+  color: $danger;
+  background: white;
+}
+
+.myInfoButton {
+  @extend %myButton;
+  border: 1px solid $info;
+  color: $info;
+  background: white;
+}
+
+.mySuccessButton {
+  @extend %myButton;
+  border: 1px solid $success;
+  background: white;
+  color: $success;
+}

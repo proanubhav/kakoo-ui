@@ -1,0 +1,31 @@
+<app-user-navbar>
+</app-user-navbar>
+
+<div class="page-container">
+  <div class="row white"></div>
+
+  <div class="container col-md-7">
+    <div class="row  my-form rounded">
+      <section *ngIf="checktoken">
+        <div class="alert alert-success" role="alert">
+          <h3>
+            vous êtes désabonné et votre compte est désactivé, Merci pour fidelité
+          </h3>
+        </div>
+      </section>
+    </div>
+    <div class="row  my-form rounded">
+      <section *ngIf="!checktoken">
+        <div align="center">
+          <div class="alert alert-success" role="alert">
+            <h3>
+              Votre demande de désabonnement est en cours de traitement, des propostions seront vous envoyé par Email afin d'ameliorer
+              nos Services
+
+            </h3>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

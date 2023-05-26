@@ -1,0 +1,31 @@
+<div *ngIf="conntectedUser; else notConnteted">
+
+</div>
+<ng-template #notConnteted>
+  <app-header></app-header>
+</ng-template>
+
+
+<div class="mycontainer">
+  <div class="page-container">
+    <div class="row white"></div>
+    <div class="container col-md-7">
+      <br>
+      <mat-tab-group mat-align-tabs="center" class="fixedheight">
+        <mat-tab label="Conditions Générales de Vente">
+          <!-- cgv page -->
+          <app-cgv></app-cgv>
+        </mat-tab>
+        <mat-tab label="Politique de confidentialité">
+          <!-- privacy-policy page -->
+          <app-privacy-policy></app-privacy-policy>
+        </mat-tab>
+        <mat-tab label="Conditions Générales d’Utilisation">
+          <!-- cgu page -->
+          <app-cgu></app-cgu>
+        </mat-tab>
+      </mat-tab-group>
+      <br>
+    </div>
+  </div>
+</div>

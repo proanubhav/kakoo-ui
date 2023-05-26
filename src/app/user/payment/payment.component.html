@@ -1,0 +1,194 @@
+<button mat-icon-button class="btn close" (click)="close()">
+  <mat-icon class="mat-icon-close">close</mat-icon>
+</button>
+
+<mat-horizontal-stepper linear #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Type</ng-template>
+      <div align="center" class="titleDiv">
+        <span class="titleTypeMethod">Choisir votre Type d'abonnement {{data.type}}</span>
+
+      </div>
+      <mat-form-field>
+        <!-- if ETI/ge only annuel payemnt-->
+
+        <mat-select *ngIf="data.type != undefined" placeholder="Choix de type d'Abonnment" [(ngModel)]="selectedValue"
+          formControlName="type" name="type" required>
+          <mat-option *ngFor="let type of subscriptionTypes" [value]="type.value">
+            {{type.viewValue}}
+          </mat-option>
+        </mat-select>
+        <mat-select *ngIf="data.mycharge" placeholder="Choix de type d'Abonnment" [(ngModel)]="selectedValue"
+          formControlName="type" name="type" required>
+          <mat-option [value]="data.mycharge.amount">
+            Annuel
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div align="right">
+        <button class="mySimpleButton" mat-raised-button matStepperNext>
+          <mat-icon>redo</mat-icon>
+          suivant
+        </button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <form align="center">
+      <ng-template matStepLabel>Methode</ng-template>
+      <div align="center" class="titleDiv">
+        <span class="titleTypeMethod">Paiement par Carte ou Paypal?</span>
+      </div>
+      <mat-radio-group class="example-radio-group" [(ngModel)]="chooser" name="chooser">
+
+        <div class="row">
+          <div class="col-md-6">
+            <mat-radio-button class="example-radio-button" [value]="true">
+              <div class="form-group text-center">
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <i class="fa fa-cc-visa fa-2x"></i>
+                  </li>
+                  <li class="list-inline-item">
+                    <i class="fa fa-cc-mastercard fa-2x"></i>
+                  </li>
+                </ul>
+              </div>
+            </mat-radio-button>
+          </div>
+          <div class="col-md-6">
+            <mat-radio-button class="example-radio-button" [value]="false">
+              <div class="form-group text-center">
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <i class="fa fa-cc-paypal fa-2x"></i>
+                  </li>
+                </ul>
+              </div>
+            </mat-radio-button>
+          </div>
+        </div>
+
+
+      </mat-radio-group>
+      <hr>
+
+      <div>
+        <button class="myWarningButton" mat-raised-button matStepperPrevious>
+          <mat-icon>undo</mat-icon>
+          retour
+        </button>
+        <button class="mySimpleButton" mat-raised-button matStepperNext>
+          <mat-icon>redo</mat-icon>
+          suivant
+        </button>
+
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Payer</ng-template>
+    <div class="example-selected-value" *ngIf="chooser; else paypal">
+      <div class="">
+
+        <div class="header">
+
+          <!--
+            <div [class.classic]="data.type==='classic'" [class.commercial]="data.type==='commercial'" [class.premium]="data.type==='premium'">
+
+-->
+          <div>
+            <div align="center">
+              <span class="titlepayment">Payer votre abonnement {{data.type}} en <strong>toute sécurité</strong></span>
+
+            </div>
+            <hr>
+            <div class="form-group text-center">
+              <img src="assets/home/images/credit-card-accepted-png-1.png" width="100%" />
+              <!--<ul class="list-inline">
+                <li class="list-inline-item">
+                  <i class="text-muted fa fa-cc-visa fa-2x"></i>
+                </li>
+                <li class="list-inline-item">
+                  <i class="fa fa-cc-mastercard fa-2x"></i>
+                </li>
+                <li class="list-inline-item">
+                  <i class="fa fa-cc-amex fa-2x"></i>
+                </li>
+                <li class="list-inline-item">
+                  <i class="fa fa-cc-discover fa-2x"></i>
+                </li>
+              </ul>-->
+            </div>
+          </div>
+        </div>
+        <div class="">
+
+          <form role="form" (ngSubmit)="f.form.valid && chargeCreditCard()" #f="ngForm" novalidate>
+            <div class="form-group">
+
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <mat-icon>person</mat-icon>
+                  </span>
+                </div>
+                <input type="text" class="form-control" name="username" [(ngModel)]="username" placeholder="Full name (on the card)"
+                  required="">
+              </div>
+              <!-- input-group.// -->
+            </div>
+            <!-- form-group.// -->
+
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <mat-icon>credit_card</mat-icon>
+                  </span>
+                </div>
+                <input type="text" class="form-control" name="cardNumber" placeholder="Card number" [(ngModel)]="cardNumber">
+              </div>
+              <!-- input-group.// -->
+            </div>
+            <!-- form-group.// -->
+
+            <div class="row">
+              <div class="form-group">
+                <div class="input-group">
+                  <input type="text" id="mmyy" class="form-control secrectValues" placeholder="MM / YY" name="mmyy"
+                    (keyup)="pushSlash()" [(ngModel)]="mmyy" maxlength="5" required />
+                  <input type="text" class="form-control secrectValues" placeholder="CVC" name="cvc" [(ngModel)]="cvc"
+                    maxlength="3" required />
+                </div>
+              </div>
+            </div>
+            <!-- row.// -->
+            <div align="center">
+              <button mat-raised-button type="button" class="myInfoButton" type="submit"> Payer {{selectedValue}}
+                <mat-icon class="icon">euro_symbol</mat-icon>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div>
+        <div class="loader" *ngIf="loader"></div>
+        <header></header>
+        <angular4-notify-notifications-container></angular4-notify-notifications-container>
+      </div>
+    </div>
+
+    <ng-template #paypal>
+      <button mat-raised-button class="mySuccessButton">Login to Paypal</button>
+    </ng-template>
+    <div>
+
+      <button class="myWarningButton" mat-raised-button matStepperPrevious>
+        <mat-icon>undo</mat-icon>
+        retour
+      </button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>

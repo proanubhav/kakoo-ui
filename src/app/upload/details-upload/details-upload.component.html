@@ -1,0 +1,564 @@
+<div align="center" class="div-loader" *ngIf="loader">
+  <strong>Chargement ...</strong><br>
+  <div class="loader">
+    <div class="loader__bar"></div>
+    <div class="loader__bar"></div>
+    <div class="loader__bar"></div>
+    <div class="loader__bar"></div>
+    <div class="loader__bar"></div>
+    <div class="loader__ball"></div>
+  </div>
+</div>
+
+<div align="right">
+  <button mat-icon-button class="btn close" (click)="close()" *ngIf="!loader && !errorMessage">
+    <mat-icon class="mat-icon-close">close</mat-icon>
+  </button>
+</div>
+
+
+<div class="scroll" *ngIf="!loader && !errorMessage">
+  <div align="center">
+    <div class="alert alert-success">
+      Récupération <strong>réussi! </strong>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">Informations Personnelles</div>
+    <div class="card-body">
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Informations sur le candidat
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <form novalidate [formGroup]="candidateForm" (ngSubmit)="updateCadidate()">
+
+            <table id="table">
+              <tr>
+                <td>
+                  <div class="form-inline">
+                    <mat-icon class="mat-icon">face</mat-icon>
+                    Civilité
+                  </div>
+                </td>
+                <td>
+                  <mat-form-field>
+                    <mat-select placeholder="{{civility}}" formControlName="civility" [(ngModel)]="civility">
+                      <mat-option value="Femme">Mme</mat-option>
+                      <mat-option value="Homme">Mr</mat-option>
+                    </mat-select>
+                    <mat-error>Champs invalide</mat-error>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="form-inline">
+                    <mat-icon class="mat-icon">person</mat-icon>
+                    Prénom
+                  </div>
+
+                </td>
+                <td>
+                  <mat-form-field>
+                    <input matInput placeholder="{{firstName}}" formControlName="firstName" [(ngModel)]="firstName"
+                      required>
+                    <mat-error>Champs obligatoire</mat-error>
+                  </mat-form-field>
+
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class="form-inline">
+                    <mat-icon class="mat-icon">person</mat-icon>Nom
+                  </div>
+                </td>
+                <td>
+                  <mat-form-field>
+                    <input matInput placeholder="{{lastName}}" formControlName="lastName" [(ngModel)]="lastName"
+                      required>
+                    <mat-error>Champs obligatoire</mat-error>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <!--
+                           <tr>
+                <td>
+                  <div class="form-inline">
+                    <mat-icon class="mat-icon">date_range</mat-icon>
+                    Date de Naissance
+                  </div>
+                </td>
+                <td>{{dateOfBirth}}</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="form-inline">
+                    <mat-icon class="mat-icon">location_on</mat-icon>
+                    Lieu de naissance
+                  </div>
+                </td>
+                <td>{{localBirth}}</td>
+              </tr>  
+               <tr>
+                <td>
+                  <div class="form-inline">
+                    <mat-icon class="mat-icon">flag</mat-icon>
+                    Nationalité
+                  </div>
+                </td>
+                <td>{{nationality}}</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="form-inline">
+                    <mat-icon class="mat-icon">local_atm</mat-icon>
+                    Poste
+                  </div>
+                </td>
+                <td>{{poste}}</td>
+              </tr>  
+              -->
+              <tr>
+                <td>
+                  <div class="form-inline">
+                    <mat-icon class="mat-icon">person</mat-icon>
+                    Profil
+                  </div>
+                </td>
+                <td>
+                  <mat-form-field>
+                    <input matInput placeholder="{{profile}}" formControlName="profile" [(ngModel)]="profile" required>
+                    <mat-error>Champs obligatoire</mat-error>
+                  </mat-form-field>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class="form-inline">
+                    <mat-icon class="mat-icon">person_pin_circle</mat-icon>
+                    Mobilité
+                  </div>
+                </td>
+                <td>
+                  <mat-form-field>
+                    <input matInput placeholder="{{mobility}}" formControlName="mobility" [(ngModel)]="mobility"
+                      required>
+                    <mat-error>Champs obligatoire</mat-error>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="form-inline">
+                    <mat-icon class="mat-icon">show_chart</mat-icon>
+                    Expérience
+                  </div>
+                </td>
+                <td>
+                  <mat-form-field>
+                    <mat-select placeholder="Expérience " formControlName="nexperience" [(ngModel)]="nexperience"
+                      required>
+                      <mat-option *ngFor="let nexperience of nexperiences" [(value)]="nexperience.value">
+                        {{nexperience.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                    <mat-error>Champs obligatoire</mat-error>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="form-inline">
+                    <mat-icon class="mat-icon">my_location</mat-icon>
+                    Adresse
+                  </div>
+                </td>
+                <td>
+                  <mat-form-field>
+                    <input matInput placeholder="{{address}}" formControlName="address" [(ngModel)]="address" required>
+                    <mat-error>Champs obligatoire</mat-error>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="form-inline">
+                    <mat-icon class="mat-icon">email</mat-icon>
+                    Email
+                  </div>
+                </td>
+                <td>
+                  <mat-form-field>
+                    <input matInput placeholder="{{email}}" formControlName="email" [(ngModel)]="email" required>
+                    <mat-error>Champs obligatoire</mat-error>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="form-inline">
+                    <mat-icon class="mat-icon">contact_phone</mat-icon>Téléphone
+                  </div>
+                </td>
+                <td>
+                  <mat-form-field>
+                    <input matInput placeholder="{{mobilePhone}}" formControlName="mobilePhone" [(ngModel)]="mobilePhone"
+                      required>
+                    <mat-error>Champs obligatoire</mat-error>
+                  </mat-form-field>
+                </td>
+              </tr>
+            </table>
+
+            <div align="center">
+              <button mat-raised-button class="mySuccessButton" type="submit">
+                <mat-icon>save</mat-icon> Enregistrer
+              </button>
+            </div>
+
+          </form>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+    </div>
+  </div>
+  <!--
+     <div class="card">
+    <div class="card-header">Experiences:</div>
+    <div class="card-body">
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Experiences
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <table id="table">
+            <tr *ngFor="let res of experiences">
+              <td>{{res.job_title}}</td>
+            </tr>
+          </table>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div> 
+  -->
+
+  <div class="card">
+    <div class="card-header">compétences:</div>
+    <div class="card-body">
+      <div>
+
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                compétences
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <table id="table">
+              <tr>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Evoluation</th>
+                <th>Actions</th>
+              </tr>
+              <tr *ngFor="let skill of skills">
+                <td>
+
+                  <input type="text" matInput [(ngModel)]="skill.name" name="name" required />
+                </td>
+                <td><input type="text" matInput [(ngModel)]="skill.description" name="description" required /></td>
+                <td>
+                  <mat-form-field>
+                    <mat-select placeholder="Evaluation : " [(ngModel)]="skill.evaluation">
+                      <mat-option value="0">Non évalué </mat-option>
+                      <mat-option value="1"> Débutant </mat-option>
+                      <mat-option value="2">Intermédiaire</mat-option>
+                      <mat-option value="3">Confirmé</mat-option>
+                      <mat-option value="4">Expert</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <button mat-icon-button matTooltip="clicker deux foix pour supprimer cette compétences" class="btn btn-danger"
+                    (dblclick)="deleteSkill(skill)">
+                    <mat-icon>delete</mat-icon>
+                  </button></td>
+              </tr>
+            </table>
+
+            <div *ngIf="skills.length !==0">
+              <div align="center">
+                <button mat-raised-button class="mySuccessButton" matTooltip="Ajouter tous les compétences" [disabled]="skillsadded"
+                  (click)="addSkills()">
+                  <mat-icon>save</mat-icon> Enregistrer
+                </button>
+                <div class="alert alert-success" *ngIf="skillsadded">
+                  compétences Ajoutés
+                </div>
+              </div>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- socialNetwork -->
+
+  <div class="card">
+    <div class="card-header">Réseaux Sociaux:</div>
+    <div class="card-body">
+      <div>
+
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Réseaux Sociaux
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <table id="table">
+              <tr>
+                <th>Nom</th>
+                <th>Link</th>
+                <th>Actions</th>
+              </tr>
+              <tr *ngFor="let social of socialNetworks">
+                <td>
+
+                  <input type="text" matInput [(ngModel)]="social.type" name="type" required />
+                </td>
+                <td><input type="text" matInput [(ngModel)]="social.url" name="url" required /></td>
+                <td>
+                  <button mat-icon-button matTooltip="clicker deux foix pour supprimer ce Réseau social" class="btn btn-danger"
+                    (dblclick)="deleteSocial(social)">
+                    <mat-icon>delete</mat-icon>
+                  </button></td>
+              </tr>
+            </table>
+
+            <div *ngIf="socialNetworks.length !==0">
+              <div align="center">
+                <button mat-raised-button class="mySuccessButton" [disabled]="socialNetworksadded" matTooltip="Ajouter tous les Réseaux Sociaux"
+                  (click)="addSocial()">
+                  <mat-icon>save</mat-icon> Enregistrer
+                </button>
+                <div class="alert alert-success" *ngIf="socialNetworksadded">
+                  Réseaux Sociaux Ajoutés
+                </div>
+              </div>
+
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+
+    </div>
+  </div>
+  <!-- langes -->
+  <div class="card">
+    <div class="card-header">Langues:</div>
+    <div class="card-body">
+      <div>
+
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Langues
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <table id="table">
+              <tr>
+                <th>Langue</th>
+                <th>Niveau de compétence</th>
+                <th>Actions</th>
+              </tr>
+              <tr *ngFor="let lg of languages">
+                <td>
+
+                  <input type="text" matInput [(ngModel)]="lg.name" name="name" />
+                </td>
+                <td>
+                  <mat-form-field>
+                    <mat-select [(ngModel)]="lg.type">
+                      <mat-option *ngFor="let competenceName of competenceNames" [(value)]="competenceName.competenceName">{{competenceName.competenceName}}</mat-option>
+                    </mat-select>
+                    <mat-error>Champs invalide</mat-error>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <button mat-icon-button matTooltip="clicker deux foix pour supprimer cette langue" class="btn btn-danger"
+                    (dblclick)="delete(lg)">
+                    <mat-icon>delete</mat-icon>
+                  </button></td>
+              </tr>
+            </table>
+
+            <div *ngIf="languages.length !==0">
+              <div align="center">
+                <button mat-raised-button class="mySuccessButton" [disabled]="languagesadded" matTooltip="Ajouter tous les langues"
+                  (click)="addLanguages()">
+                  <mat-icon>save</mat-icon> Enregistrer
+                </button>
+                <div class="alert alert-success" *ngIf="languagesadded">
+                  Langues Ajoutés
+                </div>
+              </div>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      Poste Actuel
+    </div>
+    <div class="card-body">
+      <div>
+
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Poste Actuel
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <form novalidate [formGroup]="positionForm" class="rounded candidate-cvs" (ngSubmit)="addNewPosition()">
+              <table id="table">
+                <tr>
+                  <td>
+                    <div class="form-inline">
+                      <mat-icon class="mat-icon">work</mat-icon>
+                      <mat-form-field>
+                        <input matInput [(ngModel)]="positionName" formControlName="positionName" placeholder="Poste Actuel"
+                          required>
+                      </mat-form-field>
+                    </div>
+
+                  </td>
+                  <td>
+                    <div class="form-inline">
+                      <mat-icon class="mat-icon">description</mat-icon>
+                      <mat-form-field>
+                        <input matInput formControlName="positionDescription" [(ngModel)]="positionDescription"
+                          placeholder="Description" required />
+                      </mat-form-field>
+                    </div>
+
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="form-inline">
+                      <mat-icon class="mat-icon">euro_symbol</mat-icon>
+                      <mat-form-field>
+                        <input type="number" matInput [(ngModel)]="positionSalary" formControlName="positionSalary"
+                          placeholder="Salaire" required>
+                      </mat-form-field>
+                    </div>
+
+                  </td>
+                  <td>
+                    <div class="form-inline">
+                      <mat-icon class="mat-icon">account_balance</mat-icon>
+                      <mat-form-field>
+                        <input matInput [(ngModel)]="positionCompany" formControlName="positionCompany" placeholder="Société"
+                          required />
+                      </mat-form-field>
+                    </div>
+
+
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="form-inline">
+                      <mat-icon class="mat-icon">money</mat-icon>
+                      <mat-form-field>
+                        <mat-select placeholder="{{positionCurrency}}" formControlName="positionCurrency" [(ngModel)]="positionCurrency">
+                          <mat-option value="" disabled selected>Currency: </mat-option>
+                          <mat-option *ngFor="let country of countries" [(value)]="country.currency_code"><img src="{{country.flag}}"
+                              alt="no" width="20px" height="20px" /> {{country.currency_name}}</mat-option>
+
+                        </mat-select>
+                        <mat-error>Champs invalide</mat-error>
+                      </mat-form-field>
+                    </div>
+
+                  </td>
+                  <td>
+                    <div class="form-inline">
+                      <mat-icon class="mat-icon">import_contacts</mat-icon>
+                      <mat-form-field>
+                        <mat-select placeholder="{{positionType}}" formControlName="positionType" [(ngModel)]="positionType">
+                          <mat-option value="" disabled selected>Type de contrat: </mat-option>
+                          <mat-option value="Stage">Stage</mat-option>
+                          <mat-option value="CDI">CDI</mat-option>
+                          <mat-option value="CDD">CDD</mat-option>
+                          <mat-option value="Alternance">Alternance</mat-option>
+                          <mat-option value="Freelance">Freelance</mat-option>
+                          <mat-option value="Intérim">Intérim</mat-option>
+                          <mat-option value="Autre">Autre</mat-option>
+
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="form-inline">
+                      <mat-icon class="mat-icon">calendar_today</mat-icon>
+                      <mat-form-field color="accent">
+                        <mat-label>Date de début</mat-label>
+                        <input matInput formControlName="positionDate" [(ngModel)]="positionDate" [matDatepicker]="picker1">
+                        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                        <mat-datepicker #picker1></mat-datepicker>
+                      </mat-form-field>
+                    </div>
+
+
+                  </td>
+                </tr>
+              </table>
+
+              <div class="text-center mt-4 mb-2">
+                <button type="submit" mat-raised-button class="mySuccessButton" [disabled]="!positionForm.valid">
+                  <mat-icon>save</mat-icon> Enregistrer
+                </button>
+                <div class="alert alert-success" *ngIf="postActuelAdded">
+                  Poste Acctual Ajoutés
+                </div>
+              </div>
+            </form>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+
+    </div>
+  </div>
+  <div align="center">
+    <button mat-raised-button class="mySuccessButton" (click)="saveAll()">Enregistrez
+      toutes les modifications <mat-icon>save</mat-icon></button>
+  </div>
+
+</div>
+
+<div *ngIf="errorMessage">
+  <div class="alert alert-warning">
+    la récupération des informations du cv <strong>échouer!</strong> Ressayer!.
+  </div>
+</div>

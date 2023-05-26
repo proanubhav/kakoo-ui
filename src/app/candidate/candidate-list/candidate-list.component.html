@@ -1,0 +1,362 @@
+<app-candidate-header></app-candidate-header>
+<div class="page-container">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <section>
+                    <header class="header">
+                        <div style="text-align:right;">
+                            <div style="text-align:center;color:#9A2828;">
+                                <h4>
+                                    <br>Liste des candidats</h4>
+                            </div>
+                            <div class="action-btn">
+                                <button class="myButton2" style="margin-bottom:0.8em;"  routerLink="/candidate/video-call">appel vidéo</button>
+                                <!-- <button class="myButton2" style="margin-bottom:0.8em;" *ngIf="!startSearch" type="submit"(click)="startSearch=!startSearch;" tooltip="Trouver des candidats" > <i class="fa fa-search"></i></button> -->
+                        <!-- <button class="myButton2" style="margin-bottom:0.8em;" (click)="redirectNewCandidatePage()" tooltip="Ajouter un candidat" ><i class="fa fa-user-plus" ></i></button> -->
+                            </div>
+                        </div>
+
+                        <!-- <div class="col-sm-1 action-btn">
+                    <form class="form-inline ">
+                        <div class="sm-form mt-2"  style="margin-bottom:0.8em;">
+                            <button class="myButton2" *ngIf="!startSearch" type="submit"(click)="startSearch=!startSearch;" tooltip="Trouver des candidats" > <i class="fa fa-search"></i></button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm-1 action-btn">
+                    <form class="form-inline">
+                        <div class="sm-form mt-2"  style="margin-bottom:0.8em;">
+                            <button class="myButton2" (click)="redirectNewCandidatePage()" tooltip="Ajouter un candidat" ><i class="fa fa-user-plus" ></i></button>
+                        </div>
+                    </form>
+                </div>
+            -->
+
+
+                    </header>
+                </section>
+
+                <section class="main rounded">
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div *ngIf="true" class="search-container">
+                                <form [formGroup]="searchForm" style="margin-top:0.5em;" (keyup.enter)="sendSearch()">
+                                    <mat-form-field class="col-sm-12">
+                                        <input matInput id="searchItem" placeholder="Trouver un candidat"
+                                            formControlName="searchItem" [(ngModel)]="search">
+                                        <mat-icon matSuffix (click)="this.advanced=!this.advanced;">
+
+                                            <i *ngIf="!this.advanced" class="fa fa-sort-down" style="color:#9A2828"></i>
+
+                                        </mat-icon>
+                                        <mat-icon matSuffix class="myButton3" (click)="sendSearch()">
+                                            <i class="fa fa-search" style="color:#9A2828"></i>
+                                        </mat-icon>
+                                        <mat-icon matSuffix class="myButton3" style="margin-left:0.8em;" matTooltip="Envoyez mail"
+                                            (click)="redirectSendMail()">
+                                            <i class="fa fa-envelope"></i>
+                                        </mat-icon>
+                                        <mat-icon matSuffix class="myButton3" style="margin-left:0.8em;" matTooltip="Ajoutez un candidate manuellement"
+                                            (click)="redirectNewCandidatePage()">
+                                            <i class="fa fa-user-plus" style="color:#9A2828"></i>
+                                        </mat-icon>
+                                        <mat-icon matSuffix class="myButton3" style="margin-left:0.8em;" matTooltip="Ajoutez un candidate automatiquement"
+                                            (click)="redirectToUploadCV()">
+                                            <i class="fa fa-cog"></i>
+                                        </mat-icon>
+                                        <mat-icon matSuffix class="myButton3" id="" style="margin-left:0.8em;"
+                                            matTooltip="Parler " (click)="startDictation()">
+                                            <i class="fa fa-microphone"></i>
+                                        </mat-icon>
+                                    </mat-form-field>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="search-container" *ngIf="this.advanced">
+                        <div class="advanced-search">
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-10 h6" style="text-align:center;margin-top:0.5em">Recherche avancée</div>
+                                <div class="col-sm-1" style="text-align:right;">
+                                    <a>
+                                        <i (click)="this.advanced=!this.advanced;" class="fa fa-close" style="color:#9A2828"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <form [formGroup]="advancedForm">
+                                <div class="row">
+                                    <div class="search-items col-sm-6">
+                                        <mat-form-field>
+                                            <input matInput placeholder="Nom" formControlName="name" (keyup)="searchAdvanced2()">
+                                        </mat-form-field>
+
+
+                                    </div>
+                                    <div class="search-items col-sm-6">
+                                        <mat-form-field>
+                                            <!-- <input matInput placeholder="Mobilité" formControlName="mobility" (keyup)="searchAdvanced2()">-->
+                                            <mat-select placeholder="Mobilité" formControlName="mobility" (change)="searchAdvanced2()">
+                                                <mat-option value="France entière">France entière</mat-option>
+                                                <mat-option value="Auvergne-Rhone-Alpes">Auvergne-Rhone-Alpes</mat-option>
+                                                <mat-option value="Bourgogne-Franche-Comté">Bourgogne-Franche-Comté</mat-option>
+                                                <mat-option value="Bretagne">Bretagne</mat-option>
+                                                <mat-option value="Centre-Val de Loire">Centre-Val de Loire</mat-option>
+                                                <mat-option value="Corse">Corse</mat-option>
+                                                <mat-option value="Grand-Est">Grand-Est</mat-option>
+                                                <mat-option value="Hauts-de-France">Hauts-de-France</mat-option>
+                                                <mat-option value="Ile-de-France">Ile-de-France</mat-option>
+                                                <mat-option value="Normandie">Normandie</mat-option>
+                                                <mat-option value="Nouvelle-Aquitaine">Nouvelle-Aquitaine</mat-option>
+                                                <mat-option value="Occitanie">Occitanie</mat-option>
+                                                <mat-option value="PACA">PACA</mat-option>
+                                                <mat-option value="Pays de La Loire">Pays de La Loire</mat-option>
+                                                <mat-option value="Autre">Autre</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="search-items col-sm-6">
+                                        <mat-form-field class="example-chip-list" style="width: 100%">
+                                            <mat-chip-list #chipList>
+                                                <mat-chip *ngFor="let skill of skills" [selectable]="selectable"
+                                                    [removable]="removable" (removed)="remove(skill)">
+                                                    {{skill.skillName}}
+                                                    <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                                                </mat-chip>
+                                                <input placeholder="Compétence" [matChipInputFor]="chipList"
+                                                    [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                                                    [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="add($event)">
+                                            </mat-chip-list>
+                                        </mat-form-field>
+                                    </div>
+
+                                    <div class=" search-items col-sm-6">
+                                        <mat-form-field style="width:50%;">
+                                            <mat-select placeholder="Evaluation" formControlName="evaluation" (change)="searchAdvanced2()">
+                                                <mat-option value="0">Non évalué </mat-option>
+                                                <mat-option value="1"> Débutant </mat-option>
+                                                <mat-option value="2">Intermédiaire</mat-option>
+                                                <mat-option value="3">Confirmé</mat-option>
+                                                <mat-option value="4">Expert</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                        <mat-form-field style="margin-left:1em;width:50%;">
+                                            <!-- <input matInput placeholder="Années d'expérience" formControlName="yearsOfExperience">-->
+                                            <mat-select placeholder="Années d'expérience" formControlName="yearsOfExperience"
+                                                (change)="searchAdvanced2()">
+                                                <mat-option value="0">Sans expérience</mat-option>
+                                                <mat-option value="1"> 1 année</mat-option>
+                                                <mat-option value="2">2 années</mat-option>
+                                                <mat-option value="3">3 années</mat-option>
+                                                <mat-option value="4">4 années</mat-option>
+                                                <mat-option value="5">5 années</mat-option>
+                                                <mat-option value="6"> 6 années</mat-option>
+                                                <mat-option value="7">7 années</mat-option>
+                                                <mat-option value="8">8 années</mat-option>
+                                                <mat-option value="9">9 années</mat-option>
+                                                <mat-option value="10">10 années</mat-option>
+                                                <mat-option value="11"> 11 années</mat-option>
+                                                <mat-option value="12">12 années</mat-option>
+                                                <mat-option value="13">13 années</mat-option>
+                                                <mat-option value="14">14 années</mat-option>
+                                                <mat-option value="15">15 années</mat-option>
+                                                <mat-option value="16">16 années</mat-option>
+                                                <mat-option value="17"> 17 années</mat-option>
+                                                <mat-option value="18">18 années</mat-option>
+                                                <mat-option value="19">19 années</mat-option>
+                                                <mat-option value="20">+20 années</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+
+                                    </div>
+                                    <div class="search-items col-sm-6">
+                                        <mat-form-field>
+                                            <input matInput placeholder="Poste Actuel" formControlName="currentPosition"
+                                                (keyup)="searchAdvanced2()">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="search-items col-sm-6">
+                                        <mat-form-field>
+                                            <input matInput placeholder="Poste souhaité" formControlName="desiredPosition"
+                                                (keyup)="searchAdvanced2()">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="search-items col-sm-6">
+                                        <mat-form-field>
+                                            <input matInput placeholder="Salaire min" formControlName="salaryMin"
+                                                (keyup)="searchAdvanced2()">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="search-items col-sm-6">
+                                        <mat-form-field>
+                                            <input matInput placeholder="Salaire max" formControlName="salaryMax" min="0"
+                                                (keyup)="searchAdvanced2()">
+                                        </mat-form-field>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class=" col-sm-12"></div>
+                                        <div class="col-sm-1 send-search">
+                                            <!--
+                                            <div class="myButton4" (click)="this.advanced=false;searchAdvanced2()">
+                                                <i class="fa fa-search" style="color:#9A2828"></i>
+                                            </div>
+                                             -->
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+                    <div style="text-align:center;color:#9A2828" *ngIf="!found">
+                        <strong>Aucun candidat correspondant à votre recherche</strong>
+                    </div>
+                    <div style="text-align:center;color:#9A2828" *ngIf="noCandidates">
+                        <strong>Aucun candidat dans la liste , veuillez ajouter un candidat</strong>
+                    </div>
+
+                    <table class="table table-responsive-md btn-table table-hover" *ngIf="!noCandidates && found" matSort
+                        (matSortChange)="sortData($event)">
+                        <thead>
+                            <tr>
+                                <th class="h6" style="width:10%"></th>
+                                <th class="h6" style="width:20%">Nom</th>
+                                <th class="h6" style="width:20%">Email</th>
+                                <th class="h6" style="width:20%"> Profil</th>
+                                <th class="h6" mat-sort-header="nExperience" style="width:10%">Expérience</th>
+                                <th class="h6" mat-sort-header="score" style="width:10%">Score</th>
+                                <th class="h6" style="width:20%"> Créé par</th>
+                                <th class="h6" style="width:10%">
+                                    <mat-checkbox type="checkbox" [ngModel]="selectAllCandidates" (ngModelChange)="selectAll(event)"></mat-checkbox>
+                                </th>
+                                <th style="text-align:left" *ngIf="quizzid">
+                                </th>
+                                <th *ngIf="!quizzid"></th>
+                                <th *ngIf="!quizzid"></th>
+                                <th *ngIf="!quizzid"></th>
+
+                            </tr>
+                        </thead>
+                        <tbody *ngIf="allCandidates">
+                            <tr *ngFor="let candidate of pagedItems">
+                                <td>
+                                    <a (click)=" displayCandidatePage(candidate)">
+                                        <img *ngIf="candidate.photoUrl" [src]="candidate.photoUrl" class="rounded ">
+                                    </a>
+                                    <a (click)=" displayCandidatePage(candidate)">
+                                        <img *ngIf="!candidate.photoUrl" src="./assets/home/images/user.png" class="rounded ">
+                                    </a>
+
+                                    <!-- <div>{{candidate.photoUrl}}</div>-->
+                                </td>
+                                <td>
+                                    <strong style="color:#434142;">
+                                        <a (click)=" displayCandidatePage(candidate)">{{candidate.firstName |
+                                            titlecase}} {{candidate.lastName | uppercase}}</a>
+                                    </strong>
+                                </td>
+                                <td>
+                                    <strong style="color:#434142;">{{candidate.email | lowercase}}</strong>
+                                </td>
+                                <td>
+                                    <strong style="color:#434142;">{{candidate.profile | titlecase}}</strong>
+                                </td>
+
+
+                                <td>
+                                    <strong style="color:#434142;">{{candidate.nExperience}} ans</strong>
+                                </td>
+                                <td>
+                                    <strong style="color:#434142;"><span *ngIf="candidate.score != '9999';">{{candidate.score
+                                            |number:'2.0-2' }}%</span>
+                                        <span *ngIf="candidate.score == '9999';">N/A</span>
+                                    </strong>
+                                </td>
+                                <td>
+                                    <strong style="color:#434142;">{{candidate.hrName}}</strong>
+                                </td>
+                                <td *ngIf="!quizzid">
+                                    <span>
+                                        <mat-checkbox type="checkbox" [ngModel]="filter" (ngModelChange)="onFilterChange(event,candidate)"></mat-checkbox>
+                                    </span>
+
+                                </td>
+
+                                <td *ngIf="!quizzid">
+                                    <a (click)="editCandidatePage(candidate)" tooltip="Modifier le candidat">
+                                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                                    </a>
+                                </td>
+                                <td *ngIf="!quizzid">
+                                    <a (click)="uploadCV(candidate)" tooltip="Télécharger le CV">
+                                        <i class="fa fa-upload" aria-hidden="true"></i>
+                                    </a>
+                                </td>
+                                <td *ngIf="!quizzid">
+                                    <a (click)="dispReports(candidate)" tooltip="Voir résultats tests technique">
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </a>
+                                </td>
+                                <td *ngIf="!quizzid">
+                                    <a (click)="dispVideos(candidate)" tooltip="Voir presentation">
+                                        <i class="fa fa-caret-square-o-right" aria-hidden="true"></i>
+                                    </a>
+                                </td>
+
+                                <td *ngIf="!quizzid">
+                                    <a (click)="deleteCandidate(candidate)" tooltip="Supprimer le candidat">
+                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                    </a>
+                                </td>
+                                <td *ngIf="quizzid">
+                                    <span>
+                                        <mat-checkbox type="checkbox" [ngModel]="filter" (ngModelChange)="onFilterChange(event,candidate)"></mat-checkbox>
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+                    <div class="d-flex justify-content-center">
+                        <nav aria-label="pagination example" style="text-align:center;">
+                            <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+                                <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
+                                    <a class="page-link" (click)="setPage(1)">Première</a>
+                                </li>
+                                <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
+                                    <a class="page-link" (click)="setPage(pager.currentPage - 1)">Précedente</a>
+                                </li>
+                                <li class="page-item" *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                                    <a class="page-link" (click)="setPage(page)">{{page}}</a>
+
+                                </li>
+                                <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                                    <a class="page-link" (click)="setPage(pager.currentPage + 1)">Suivante</a>
+                                </li>
+                                <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                                    <a class="page-link" (click)="setPage(pager.totalPages)">Dernière</a>
+                                </li>
+                            </ul>
+                        </nav>
+
+
+                    </div>
+                    <div *ngIf="quizzid" class="sendbutton">
+                        <button style="margin-bottom:2em;" class="myButton2" (click)="sendQuizz()">Ajouter</button>
+                    </div>
+
+
+
+                </section>
+
+            </div>
+        </div>
+    </div>
+</div>

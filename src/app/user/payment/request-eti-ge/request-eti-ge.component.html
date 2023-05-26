@@ -1,0 +1,34 @@
+<div class="card">
+  <div class="card-header header">
+    <div align="center">
+      Demande d'un Abonnement de type ETI / GE
+    </div>
+  </div>
+  <div class="card-body">
+    <div *ngIf="!loader">
+      <form novalidate [formGroup]="mailSenderGroup" (ngSubmit)="sendRequest()">
+        <div align="center">
+          <ck-editor name="editor1" formControlName="ckeditorContent" [(ngModel)]="ckeditorContent" skin="moono-lisa"
+            language="en" [fullPage]="true"></ck-editor>
+
+          <button mat-raised-button class="mySuccessButton" type="submit" [disabled]="checkMessage()">
+            <i class="fa fa-send"></i> Envoyer
+          </button>
+
+          <button mat-raised-button class="mySimpleButton" (click)="cancel()">
+            <i class="fa fa-undo"></i>
+            Retour
+          </button>
+        </div>
+      </form>
+
+    </div>
+    <div class="loader" *ngIf="loader"></div>
+
+  </div>
+
+
+  <header></header>
+  <angular4-notify-notifications-container></angular4-notify-notifications-container>
+
+</div>
