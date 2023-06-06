@@ -6,7 +6,8 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="KAKOORH est une suite de logiciels interconnectés qui révolutionnent le métier du ressource humaine.">
+  <meta name="description"
+    content="KAKOORH est une suite de logiciels interconnectés qui révolutionnent le métier du ressource humaine.">
   <meta name="keywords" content="data search cv deep learning  maching learning AI IA candidate resources ">
 
   <!-- Font -->
@@ -25,32 +26,37 @@
         <div class="col-md-12">
           <nav class="navbar navbar-dark navbar-expand-lg">
             <a class="navbar-brand" routerLink="">
-              <img width="30px" height="30px" src="assets/home/images/logo.png" class="img-fluid" alt="logo"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
-              aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon">
+              <div class="logo-area">
+                <img width="30px" height="30px" src="assets/home/images/logo.png" class="img-fluid" alt="logo">
+                <p>kakoo Software</p>
+              </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+              aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> <span
+                class="navbar-toggler-icon">
                 <i class="fa fa-navicon"></i>
               </span>
             </button>
             <div class="collapse navbar-collapse" id="navbar">
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item"> <a class="nav-link active" href="#home">
-                    <i class="fa fa-home"></i>
+                    <!-- <i class="fa fa-home"></i> -->
                     Accueil <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item"> <a class="nav-link" href="#features">
-                    <i class="fa fa-cog"></i>
+                    <!-- <i class="fa fa-cog"></i> -->
                     Fonctionnalités</a> </li>
 
                 <li class="nav-item"> <a class="nav-link" (click)="animatePricing()" href="#pricing">
-                    <i class="fa fa-book"></i>
+                    <!-- <i class="fa fa-book"></i> -->
                     Nos offres</a>
                 </li>
                 <li class="nav-item"> <a class="nav-link" href="#essay">
-                    <i class="fa fa-calendar"></i>
+                    <!-- <i class="fa fa-calendar"></i> -->
                     Essai gratuit</a> </li>
 
                 <li class="nav-item"> <a class="nav-link" href="#contact">
-                    <i class="fa fa-phone"></i>
+                    <!-- <i class="fa fa-phone"></i> -->
                     Contact</a> </li>
                 <li class="nav-item"><button (click)="redirectLogin()" class="mySimpleButton">Se
                     Connecter</button></li>
@@ -61,6 +67,9 @@
       </div>
     </div>
   </div>
+
+
+
 
 
   <header class="bg-gradient" id="home">
@@ -81,10 +90,10 @@
     </div>
   </header>
 
-  <div class="container section" id="features">
+  <div class="container section serv-sec mt-5" id="features">
     <div class="row">
-      <div class="col-lg-3 col-md-6 text-center">
-        <div class="service-box mt-5 mx-auto">
+      <div class="col-lg-3 col-md-6 mb-5 text-center">
+        <div class="service-box mx-auto">
           <i class="fa fa-4x fa-users animate mb-3 sr-icons"></i>
           <h3 class="mb-3">Gestion des RH</h3>
           <p class="text-muted mb-0">
@@ -92,8 +101,8 @@
           </p>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6 text-center">
-        <div class="service-box mt-5 mx-auto">
+      <div class="col-lg-3 col-md-6  mb-5 text-center">
+        <div class="service-box mx-auto">
           <i class="fa fa-4x fa-user-circle-o animate mb-3 sr-icons"></i>
           <h3 class="mb-3">Recrutement</h3>
           <p class="text-muted mb-0">
@@ -103,8 +112,8 @@
           </p>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6 text-center">
-        <div class="service-box mt-5 mx-auto">
+      <div class="col-lg-3 col-md-6 mb-5 text-center">
+        <div class="service-box mx-auto">
           <i class="fa fa-4x fa-id-card animate mb-3 sr-icons"></i>
           <h3 class="mb-3">Connectivité</h3>
           <p class="text-muted mb-0">
@@ -112,8 +121,8 @@
           </p>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6 text-center">
-        <div class="service-box mt-5 mx-auto">
+      <div class="col-lg-3 col-md-6 mb-5 text-center">
+        <div class="service-box mx-auto">
           <i class="fa fa-4x fa-video-camera animate mb-3 sr-icons"></i>
           <h3 class="mb-3">Entretien en ligne</h3>
           <p class="text-muted mb-0">
@@ -121,10 +130,8 @@
           </p>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-3 col-md-6 text-center">
-        <div class="service-box mt-5 mx-auto">
+      <div class="col-lg-3 col-md-6 mb-5 text-center">
+        <div class="service-box mx-auto">
           <i class="fa fa-4x fa-database animate mb-3 sr-icons"></i>
           <h3 class="mb-3">Big Data</h3>
           <p class="text-muted mb-0">
@@ -132,8 +139,8 @@
           </p>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6 text-center">
-        <div class="service-box mt-5 mx-auto">
+      <div class="col-lg-3 col-md-6 mb-5 text-center">
+        <div class="service-box mx-auto">
           <i class="fa fa-4x fa-connectdevelop animate mb-3 sr-icons"></i>
           <h3 class="mb-3">Cortex</h3>
           <p class="text-muted mb-0">
@@ -142,8 +149,8 @@
           </p>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6 text-center">
-        <div class="service-box mt-5 mx-auto">
+      <div class="col-lg-3 col-md-6 mb-5 text-center">
+        <div class="service-box mx-auto">
           <i class="fa fa-4x fa-superpowers animate mb-3 sr-icons"></i>
           <h3 class="mb-3">Performance</h3>
           <p class="text-muted mb-0">
@@ -151,14 +158,69 @@
           </p>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6 text-center">
-        <div class="service-box mt-5 mx-auto">
+      <div class="col-lg-3 col-md-6 mb-5 text-center">
+        <div class="service-box mx-auto">
           <i class="fa fa-4x fa-shopping-bag animate mb-3 sr-icons"></i>
           <h3 class="mb-3">Marketplace</h3>
           <p class="text-muted mb-0">
             <strong>Un inter-contrat ! Un projet en forfait ! Partagez le tout sur notre
               Marketplace.</strong>
           </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="services-sec">
+    <div class="container section mt-5" id="features">
+      <div class="row">
+        <div class="col-lg-2 col-md-6 mb-5 text-center">
+          <!-- <h5 class="mt-5">Services</h5> -->
+          <h2>Residential Cleaning</h2>
+        </div>
+        <div class="col-lg-10 col-md-6 mb-5 text-center">
+          <div class="left-grey-box">
+            <div class="row">
+              <div class="col-lg-3 col-md-6 mb-5 text-center">
+                <div class="service-box mx-auto">
+                  <i class="fa fa-4x fa-users animate mb-3 sr-icons"></i>
+                  <h3 class="mb-3">Gestion des RH</h3>
+                  <p class="text-muted mb-0">
+                    <strong>Une gestion intelligente du capital humain.</strong>
+                  </p>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6  mb-5 text-center">
+                <div class="service-box mx-auto">
+                  <i class="fa fa-4x fa-user-circle-o animate mb-3 sr-icons"></i>
+                  <h3 class="mb-3">Recrutement</h3>
+                  <p class="text-muted mb-0">
+                    <strong>Gagner du temps grâce à notre système intelligent qui qualifie, challenge et
+                      prévoie même les
+                      disponibilités des candidats.</strong>
+                  </p>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 mb-5 text-center">
+                <div class="service-box mx-auto">
+                  <i class="fa fa-4x fa-id-card animate mb-3 sr-icons"></i>
+                  <h3 class="mb-3">Connectivité</h3>
+                  <p class="text-muted mb-0">
+                    <strong>Un lieu d'échange riche à forte valeur ajoutée.</strong>
+                  </p>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 mb-5 text-center">
+                <div class="service-box mx-auto">
+                  <i class="fa fa-4x fa-video-camera animate mb-3 sr-icons"></i>
+                  <h3 class="mb-3">Entretien en ligne</h3>
+                  <p class="text-muted mb-0">
+                    <strong>Gagner du temps grâce aux entretiens en ligne.</strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -208,7 +270,8 @@
       <div class="tab-content">
         <div class="tab-pane fade show active" id="entretienvideo">
           <div class="d-flex flex-column flex-lg-row">
-            <img src="assets/home/images/visioconf.jpg" alt="graphic" class="img-fluid rounded align-self-start mr-lg-5 mb-5 mb-lg-0">
+            <img src="assets/home/images/visioconf.jpg" alt="graphic"
+              class="img-fluid rounded align-self-start mr-lg-5 mb-5 mb-lg-0">
             <div>
 
               <h3>Entretien visioconférence</h3>
@@ -237,12 +300,14 @@
                 de nos produits avec nos expert technique 24/24;
               </p>
             </div>
-            <img src="assets/home/images/PLANNINGTIME.jpg" alt="graphic" class="img-fluid rounded align-self-start mr-lg-5 mb-5 mb-lg-0">
+            <img src="assets/home/images/PLANNINGTIME.jpg" alt="graphic"
+              class="img-fluid rounded align-self-start mr-lg-5 mb-5 mb-lg-0">
           </div>
         </div>
         <div class="tab-pane fade" id="test_technique">
           <div class="d-flex flex-column flex-lg-row">
-            <img src="assets/home/images/testtechnique.jpg" alt="graphic" class="img-fluid rounded align-self-start mr-lg-5 mb-5 mb-lg-0">
+            <img src="assets/home/images/testtechnique.jpg" alt="graphic"
+              class="img-fluid rounded align-self-start mr-lg-5 mb-5 mb-lg-0">
             <div>
               <h3>Test Technique de votre choix</h3>
               <p class="lead">Plusieur Test Technique disponible sur notre plateform.
@@ -267,7 +332,8 @@
                 Learning pour analyser rapidement les CV en masse des candidats
               </p>
             </div>
-            <img src="assets/home/images/cvparsing.png" alt="graphic" class="img-fluid rounded align-self-start mr-lg-5 mb-5 mb-lg-0">
+            <img src="assets/home/images/cvparsing.png" alt="graphic"
+              class="img-fluid rounded align-self-start mr-lg-5 mb-5 mb-lg-0">
           </div>
         </div>
       </div>
