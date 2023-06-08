@@ -43,7 +43,7 @@
 .example-container > * {
   width: 100%;
 }
-#forgot-password {
+#forgot-password, #back-btn-link {
   text-decoration: underline;
   font-size: bolder;
   color: #9a2828;
@@ -197,4 +197,10 @@ input.example-right-align {
       }
   }
   
+}
+.d-block {
+  display: block !important;
+}
+.text-right {
+  text-align: right !important;
 }

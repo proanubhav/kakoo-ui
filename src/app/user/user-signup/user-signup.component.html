@@ -1,152 +1,160 @@
 <app-user-navbar></app-user-navbar>
 <div class="page-container">
-  <div class="row white"></div>
-  <div class="container signupform col-md-4">
-    <div style="text-align:right;">
-      <strong>Vous avez déjà un compte ?
-        <span style="color:#9A2828;">
-          <a (click)="redirectLogin()">Connectez-vous</a>
-        </span>
-      </strong>
-    </div>
-
-    <div class="row  my-form rounded">
-      <div class="col">
-        <div style="text-align:center;color:#9A2828;">
-          <p class="titlesignup">
-            <strong *ngIf="!confirmEmail && !loader" class="h5-responsive">
-              Inscrivez vous facilement pour bénéficier des services de Kakoo : </strong>
-          </p>
-        </div>
-        <!-- <div class="alert alert-danger" role="alert" *ngIf="errorBoolean">
-                <strong>Echec d'inscription , Vous devez compléter/corriger les champs en rouge : </strong>
-                 <strong *ngIf="emailFormatError">L'adresse e-mail  est invalide</strong>
-                  <strong *ngIf="phoneFormatError">Le numéro de téléphone doit contenir uniquement des chiffres entre 0 et 9 et ne doit pas dépasser 20 caractères</strong>
-           
-                </div>-->
-        <div style="text-align:left;" *ngIf="!next">
-          <p>
-            <strong class="title"> (1/2) Coordonnées du manager :</strong>
-
-          </p>
-        </div>
-        <div style="text-align:left;" *ngIf="next && !loader && !confirmEmail">
-          <p>
-            <strong class="title">(2/2) Coordonnées de la société :</strong>
-          </p>
-        </div>
-        <div class="loader" *ngIf="loader"></div>
-        <section *ngIf="!confirmEmail && !loader">
-          <form novalidate [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
-            <div class="example-container row" *ngIf="!next">
-              <mat-form-field class="col-sm-6">
-                <input matInput placeholder="Prénom" formControlName="firstName" required>
-                <mat-error>Champs invalide</mat-error>
-              </mat-form-field>
-
-              <mat-form-field class="col-sm-6">
-                <input matInput placeholder="Nom" formControlName="lastName" required>
-                <mat-error>Champs invalide</mat-error>
-              </mat-form-field>
-
-              <mat-form-field class="col-sm-12">
-                <input matInput placeholder="Email" formControlName="email" required>
-                <mat-error>Champs invalide 
-                  <span *ngIf="registrationForm.controls['email']?.errors?.required "> : Veuillez entrer une adresse mail</span>
-                  <span *ngIf="registrationForm.controls['email']?.errors?.emailTaken  "> : Un utilisateur avec cet email existe déjà</span>
-                </mat-error>
-                <!--<mat-error *ngIf="!emailExist">Email invalide</mat-error>-->
-                <div *ngIf="registrationForm.controls['email']?.status === 'PENDING'">
-                  <span class="text-info">Vérification...</span>
-                </div>
-              </mat-form-field>
-              <mat-form-field class="col-sm-12">
-                <input matInput placeholder="Identifiant" formControlName="username" required>
-                <mat-error>Champs invalide
-                    <span *ngIf="registrationForm.controls['username']?.errors?.required "> : Veuillez entrer un identifiant</span>
-                    <span *ngIf="registrationForm.controls['username']?.errors?.usernameTaken  "> : Un utilisateur avec cet identifiant existe déjà</span>
-                </mat-error>
-                <div *ngIf="registrationForm.controls['username']?.status === 'PENDING'">
-                  <span class="text-info">Vérification...</span>
-                </div>
-              </mat-form-field>
-
+  <!-- <div class="row white"></div> -->
+  <div class="container signup-sec">
+    <div class="row align-items-center">
+      <div class="col-md-5">
+        <div class="my-form">
+          <div class="">
+            <div style="text-align:right; margin-bottom: 3rem;">
+              <strong>Vous avez déjà un compte ?
+                <span style="color:#9A2828;">
+                  <a (click)="redirectLogin()">Connectez-vous</a>
+                </span>
+              </strong>
             </div>
-            <div *ngIf="next" class="example-container row">
-              <mat-form-field class="col-sm-12">
-                <input matInput placeholder="Raison sociale" formControlName="companyName" required>
-                <mat-error>Champs invalide</mat-error>
-              </mat-form-field>
-
-              <mat-form-field class="col-sm-12">
-                <mat-select placeholder="Type de société" formControlName="companyType">
-                  <mat-option *ngFor="let companyType of this.companyTypes" [value]="companyType">{{companyType}}</mat-option>
-                </mat-select>
-                <mat-error *ngIf="!noCompanyError">Champs invalide</mat-error>
-                <mat-error *ngIf="noCompanyError">Types de société introuvables</mat-error>
-              </mat-form-field>
-
-              <mat-form-field class="col-sm-12">
-                <input matInput placeholder="Adresse" formControlName="companyAddress" required>
-                <mat-error>Champs invalide</mat-error>
-              </mat-form-field>
-
-              <mat-form-field class="col-sm-12">
-                <input matInput placeholder="Téléphone" formControlName="companyPhone" required>
-
-                <mat-error *ngIf="!registrationForm.controls.companyPhone.value &&!phoneFormatError">Champs obligatoire</mat-error>
-                <mat-error *ngIf="phoneFormatError">Numéro de téléphone invalide</mat-error>
-              </mat-form-field>
-
-              <mat-form-field class="col-sm-3">
-                <input matInput placeholder="Code postal" formControlName="companyPostalCode" required>
-                <mat-error>Champs invalide</mat-error>
-              </mat-form-field>
-
-              <mat-form-field class="col-sm-3">
-                <input matInput placeholder="Ville" formControlName="companyCity" required>
-                <mat-error>Champs invalide</mat-error>
-              </mat-form-field>
-              <mat-form-field class="col-sm-6">
-                <mat-select placeholder="Pays" formControlName="companyCountry" [(ngModel)]="country.name">
-                  <!--<mat-option>-None -</mat-option>-->
-                  <mat-option *ngFor="let country of countries" [value]="country.name"><img class="img" src="{{country.flag}}"
-                      alf="no flag" width="30px" height="30px" /> {{country.name}}</mat-option>
-                </mat-select>
-                <mat-error *ngIf="!noCountryError">Champs invalide</mat-error>
-                <mat-error *ngIf="noCountryError">Liste de pays introuvable</mat-error>
-              </mat-form-field>
-
+            <div style="text-align:center;color:#9A2828;">
+              <p class="titlesignup">
+                <strong *ngIf="!confirmEmail && !loader" class="h5-responsive">
+                  Inscrivez vous facilement pour bénéficier des services de Kakoo : </strong>
+              </p>
             </div>
-
-            <div class="text-center mt-4 mb-2">
-              <button *ngIf="!next" mat-raised-button class="mySimpleButton" (click)="next=true;" [disabled]="!nextValid()">Suivant</button>
-              <!---->
-              <button *ngIf="next" mat-raised-button class="myWarningButton" (click)="next=false;">
-                <i class="fa fa-reply" aria-hidden="true"></i> Précédent</button>
-              <button *ngIf="next" (click)="onSubmit()" mat-raised-button class="mySimpleButton" [disabled]="false">S'inscrire
-                <i class="fa fa-send ml-3"></i>
-              </button>
-              <div *ngIf="next">
-                <br>
-                <p> En cliquant sur<em> S'inscrire </em>, vous acceptez notre<a routerLink="" (click)="goTerms()">
-                    Conditions
-                    d'utilisation </a></p>
+            <!-- <div class="alert alert-danger" role="alert" *ngIf="errorBoolean">
+                    <strong>Echec d'inscription , Vous devez compléter/corriger les champs en rouge : </strong>
+                     <strong *ngIf="emailFormatError">L'adresse e-mail  est invalide</strong>
+                      <strong *ngIf="phoneFormatError">Le numéro de téléphone doit contenir uniquement des chiffres entre 0 et 9 et ne doit pas dépasser 20 caractères</strong>
+               
+                    </div>-->
+            <div style="text-align:left;" *ngIf="!next">
+              <p>
+                <strong class="title"> (1/2) Coordonnées du manager :</strong>
+    
+              </p>
+            </div>
+            <div style="text-align:left;" *ngIf="next && !loader && !confirmEmail">
+              <p>
+                <strong class="title">(2/2) Coordonnées de la société :</strong>
+              </p>
+            </div>
+            <div class="loader" *ngIf="loader"></div>
+            <section *ngIf="!confirmEmail && !loader">
+              <form novalidate [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+                <div class="example-container row" *ngIf="!next">
+                  <mat-form-field class="col-sm-6">
+                    <input matInput placeholder="Prénom" formControlName="firstName" required>
+                    <mat-error>Champs invalide</mat-error>
+                  </mat-form-field>
+    
+                  <mat-form-field class="col-sm-6">
+                    <input matInput placeholder="Nom" formControlName="lastName" required>
+                    <mat-error>Champs invalide</mat-error>
+                  </mat-form-field>
+    
+                  <mat-form-field class="col-sm-12">
+                    <input matInput placeholder="Email" formControlName="email" required>
+                    <mat-error>Champs invalide 
+                      <span *ngIf="registrationForm.controls['email']?.errors?.required "> : Veuillez entrer une adresse mail</span>
+                      <span *ngIf="registrationForm.controls['email']?.errors?.emailTaken  "> : Un utilisateur avec cet email existe déjà</span>
+                    </mat-error>
+                    <!--<mat-error *ngIf="!emailExist">Email invalide</mat-error>-->
+                    <div *ngIf="registrationForm.controls['email']?.status === 'PENDING'">
+                      <span class="text-info">Vérification...</span>
+                    </div>
+                  </mat-form-field>
+                  <mat-form-field class="col-sm-12">
+                    <input matInput placeholder="Identifiant" formControlName="username" required>
+                    <mat-error>Champs invalide
+                        <span *ngIf="registrationForm.controls['username']?.errors?.required "> : Veuillez entrer un identifiant</span>
+                        <span *ngIf="registrationForm.controls['username']?.errors?.usernameTaken  "> : Un utilisateur avec cet identifiant existe déjà</span>
+                    </mat-error>
+                    <div *ngIf="registrationForm.controls['username']?.status === 'PENDING'">
+                      <span class="text-info">Vérification...</span>
+                    </div>
+                  </mat-form-field>
+    
+                </div>
+                <div *ngIf="next" class="example-container row">
+                  <mat-form-field class="col-sm-12">
+                    <input matInput placeholder="Raison sociale" formControlName="companyName" required>
+                    <mat-error>Champs invalide</mat-error>
+                  </mat-form-field>
+    
+                  <mat-form-field class="col-sm-12">
+                    <mat-select placeholder="Type de société" formControlName="companyType">
+                      <mat-option *ngFor="let companyType of this.companyTypes" [value]="companyType">{{companyType}}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="!noCompanyError">Champs invalide</mat-error>
+                    <mat-error *ngIf="noCompanyError">Types de société introuvables</mat-error>
+                  </mat-form-field>
+    
+                  <mat-form-field class="col-sm-12">
+                    <input matInput placeholder="Adresse" formControlName="companyAddress" required>
+                    <mat-error>Champs invalide</mat-error>
+                  </mat-form-field>
+    
+                  <mat-form-field class="col-sm-12">
+                    <input matInput placeholder="Téléphone" formControlName="companyPhone" required>
+    
+                    <mat-error *ngIf="!registrationForm.controls.companyPhone.value &&!phoneFormatError">Champs obligatoire</mat-error>
+                    <mat-error *ngIf="phoneFormatError">Numéro de téléphone invalide</mat-error>
+                  </mat-form-field>
+    
+                  <mat-form-field class="col-sm-3">
+                    <input matInput placeholder="Code postal" formControlName="companyPostalCode" required>
+                    <mat-error>Champs invalide</mat-error>
+                  </mat-form-field>
+    
+                  <mat-form-field class="col-sm-3">
+                    <input matInput placeholder="Ville" formControlName="companyCity" required>
+                    <mat-error>Champs invalide</mat-error>
+                  </mat-form-field>
+                  <mat-form-field class="col-sm-6">
+                    <mat-select placeholder="Pays" formControlName="companyCountry" [(ngModel)]="country.name">
+                      <!--<mat-option>-None -</mat-option>-->
+                      <mat-option *ngFor="let country of countries" [value]="country.name"><img class="img" src="{{country.flag}}"
+                          alf="no flag" width="30px" height="30px" /> {{country.name}}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="!noCountryError">Champs invalide</mat-error>
+                    <mat-error *ngIf="noCountryError">Liste de pays introuvable</mat-error>
+                  </mat-form-field>
+    
+                </div>
+    
+                <div class="text-center mt-4 mb-2">
+                  <button *ngIf="!next" mat-raised-button class="btn btn-danger" (click)="next=true;" [disabled]="!nextValid()">Suivant</button>
+                  <!---->
+                  <button *ngIf="next" mat-raised-button class="myWarningButton" (click)="next=false;">
+                    <i class="fa fa-reply" aria-hidden="true"></i> Précédent</button>
+                  <button *ngIf="next" (click)="onSubmit()" mat-raised-button class="mySimpleButton" [disabled]="false">S'inscrire
+                    <i class="fa fa-send ml-3"></i>
+                  </button>
+                  <div *ngIf="next">
+                    <br>
+                    <p> En cliquant sur<em> S'inscrire </em>, vous acceptez notre<a routerLink="" (click)="goTerms()">
+                        Conditions
+                        d'utilisation </a></p>
+                  </div>
+                </div>
+              </form>
+              <!--<pre>{{registrationForm.value | json}}</pre>-->
+    
+            </section>
+            <section *ngIf="confirmEmail && typeoffre == undefined" id="success-signup">
+              <div class="alert alert-success" role="alert">
+                <strong>Votre demande a été envoyée, nous vous recontacterons dans les meilleurs délais</strong>
               </div>
-            </div>
-          </form>
-          <!--<pre>{{registrationForm.value | json}}</pre>-->
-
-        </section>
-        <section *ngIf="confirmEmail && typeoffre == undefined" id="success-signup">
-          <div class="alert alert-success" role="alert">
-            <strong>Votre demande a été envoyée, nous vous recontacterons dans les meilleurs délais</strong>
+    
+            </section>
+    
           </div>
-
-        </section>
-
+    
+        </div>
       </div>
-
+      <div class="col-md-7">
+        <div class="signup-left-area">
+          <img src="assets/home/images/img-20.png" alt="">
+        </div>
+      </div>
     </div>
   </div>
 </div>

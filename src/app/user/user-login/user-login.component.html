@@ -49,8 +49,10 @@
                     <button type="submit" class="btn btn-danger" *ngIf="!getPassword" [disabled]="false">Se
                       connecter
                     </button>
-                    <button class="btn btn-danger" *ngIf="getPassword"
-                      (click)="getPassword=false;resetFailure=false">Annuler</button>
+                    <a class="back-btn-link d-block text-right my-4" *ngIf="getPassword" id="back-btn-link"
+                      (click)="getPassword=false;resetFailure=false">
+                      <strong>Annuler</strong>
+                    </a>
                     <button class="btn btn-danger" *ngIf="getPassword"
                       (click)="loader=true;setupPassword(loginForm.controls.username.value)">Récupérer
                       mon compte</button>
