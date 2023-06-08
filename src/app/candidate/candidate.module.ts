@@ -53,7 +53,6 @@ import { CandidateSidebarComponent } from './candidate-sidebar/candidate-sidebar
     MatFormFieldModule,
     MatTooltipModule,
     MatSortModule,
-    CandidateSidebarComponent,
 
   ],
   exports: [
@@ -64,6 +63,7 @@ import { CandidateSidebarComponent } from './candidate-sidebar/candidate-sidebar
     CandidateCreateComponent,
     DetailsCandidateComponent,
     CandidateHeaderComponent,
+    CandidateSidebarComponent,
     SearchCandidateComponent,
     CandidateVideoComponent,
     CandidateinterviewListComponent,
