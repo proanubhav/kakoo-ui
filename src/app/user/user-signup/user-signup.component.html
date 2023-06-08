@@ -6,13 +6,18 @@
       <div class="col-md-5">
         <div class="my-form">
           <div class="">
-            <div style="text-align:right; margin-bottom: 3rem;">
+            <!-- <div style="text-align:right; margin-bottom: 3rem;">
               <strong>Vous avez déjà un compte ?
                 <span style="color:#9A2828;">
                   <a (click)="redirectLogin()">Connectez-vous</a>
                 </span>
               </strong>
-            </div>
+            </div> -->
+            <p class="welcome-text">Welcome to</p>
+          <div class="logo-area">
+            <img src="assets/home/images/logo.png" alt="">
+            <p>kakoo Software</p>
+          </div>
             <div style="text-align:center;color:#9A2828;">
               <p class="titlesignup">
                 <strong *ngIf="!confirmEmail && !loader" class="h5-responsive">
@@ -121,13 +126,21 @@
                 </div>
     
                 <div class="text-center mt-4 mb-2">
-                  <button *ngIf="!next" mat-raised-button class="btn btn-danger" (click)="next=true;" [disabled]="!nextValid()">Suivant</button>
+                  <button *ngIf="!next" class="btn btn-danger" (click)="next=true;" [disabled]="!nextValid()">Suivant</button>
                   <!---->
-                  <button *ngIf="next" mat-raised-button class="myWarningButton" (click)="next=false;">
+                  <button *ngIf="next" mat-raised-button class="btn myWarningButton" (click)="next=false;">
                     <i class="fa fa-reply" aria-hidden="true"></i> Précédent</button>
                   <button *ngIf="next" (click)="onSubmit()" mat-raised-button class="mySimpleButton" [disabled]="false">S'inscrire
                     <i class="fa fa-send ml-3"></i>
                   </button>
+                  <div class="messages mt-4" *ngIf="!next">
+                    <p>Vous avez déjà un compte ?<br>
+                      <span style="color:#9A2828;">
+                        <a (click)="redirectLogin()">Inscrivez-vous</a>
+                      </span>
+                    </p>
+                  </div>
+
                   <div *ngIf="next">
                     <br>
                     <p> En cliquant sur<em> S'inscrire </em>, vous acceptez notre<a routerLink="" (click)="goTerms()">
@@ -152,7 +165,7 @@
       </div>
       <div class="col-md-7">
         <div class="signup-left-area">
-          <img src="assets/home/images/img-20.png" alt="">
+          <img src="assets/home/images/signup.png" alt="">
         </div>
       </div>
     </div>
