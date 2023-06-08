@@ -11,14 +11,6 @@
   cursor: pointer;
 }
 
-[tooltip] {
-  border-width: 0px;
-}
-
-[tooltip]:focus {
-  outline: none;
-}
-
 [tooltip]::before,
 [tooltip]::after {
   opacity: 0;
@@ -135,9 +127,7 @@ th{
   min-height: 500px;
   
 }
-.fa-user-plus{
-  color: green;
-}
+
 .pencil_icon, .trash_icon {
   border: 1px solid;
     border-radius: 30px;
@@ -149,4 +139,14 @@ th{
     border-radius: 30px;
     width: 34px;
     height: 34px;
+}
+
+.page-container.page-wrap {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-color: #f3f3f3 !important;
+  min-height: 80vh !important;
+}
+.table-active, .table-active>td, .table-active>th {
+  background-color: #fff;
 }
