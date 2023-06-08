@@ -24,6 +24,7 @@ import { ReportsListComponent } from './reports-list/reports-list.component';
 import { CKEditorModule } from 'ngx-ckeditor';
 import { CandidateEmailComponent } from './candidate-email/candidate-email.component';
 import { VideoCallComponent } from './video-call/video-call.component';
+import { CandidateSidebarComponent } from './candidate-sidebar/candidate-sidebar.component';
 
 
 
@@ -62,6 +63,7 @@ import { VideoCallComponent } from './video-call/video-call.component';
     CandidateCreateComponent,
     DetailsCandidateComponent,
     CandidateHeaderComponent,
+    CandidateSidebarComponent,
     SearchCandidateComponent,
     CandidateVideoComponent,
     CandidateinterviewListComponent,

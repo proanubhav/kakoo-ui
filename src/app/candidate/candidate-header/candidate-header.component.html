@@ -4,49 +4,22 @@
     <img src="./assets/home/images/newlogokako.png" style="margin-top:-0.3em" height="30" alt="">
     <strong style="position:absolute">akoo Software</strong>
   </a>
-
-
-  <!-- Collapse button -->
-
   <!-- Collapsible content -->
   <div class="collapse navbar-collapse" id="basicExampleNav">
-
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
-      <!-- <li class="nav-item">
-          <a class="nav-link " routerLink=""><i class="fa fa-home"></i> Acceuil
-              <span class="sr-only">(current)</span>
-          </a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" routerLink="/candidate/list" routerLinkActive="active"><i class="fa fa-th-list"></i> Candidats</a>
-      </li>
-      <li>
-           
-            <a class="nav-link"  routerLink="/user/profile" ><i class="fa fa-user"></i> Mon Profil</a>
-      </li>
-    -->
       <li class="nav-item" style="margin-left:40em;">
         <strong class="nav-link " style="color:#9A2828"> Espace Candidat {{companyName | uppercase}}
         </strong>
       </li>
-
-
-
     </ul>
     <div>
-
     </div>
-
-
-
-
   </div>
   <!-- Collapsible content -->
   <!--menu-->
   <div class="menu">
     <span>
-
       <div>
         <button mat-icon-button [matMenuTriggerFor]="menun">
           <mat-icon class="maticon">notifications</mat-icon>
@@ -63,11 +36,9 @@
         <span>Aucune nouvelle notification </span>
       </button>
     </mat-menu>
-
   </div>
   <div class="menu">
     <span>
-
       <button mat-icon-button [matMenuTriggerFor]="menu1">
         <mat-icon mat-button class="maticon">apps</mat-icon>
       </button>
@@ -77,7 +48,6 @@
         <mat-icon>group_work</mat-icon>
         <span>Espace Utilisateurs</span>
       </button>
-
       <button mat-menu-item class="dropdown-item" (click)="goCandidates()">
         <mat-icon>supervisor_account</mat-icon>
         Espace Candidats
@@ -86,7 +56,6 @@
         <mat-icon>card_travel</mat-icon>
         <span>Espace Recrutement</span>
       </button>
-
       <span>
         <button mat-menu-item class="dropdown-item" [matMenuTriggerFor]="menu2">
           <mat-icon>card_travel</mat-icon>
@@ -98,12 +67,10 @@
           <mat-icon>card_travel</mat-icon>
           Employés
         </button>
-
         <button mat-menu-item class="dropdown-item" (click)="goClients()">
           <mat-icon>business</mat-icon>
           Clients
         </button>
-
         <button mat-menu-item class="dropdown-item" (click)="goTasks()">
           <mat-icon>business_center</mat-icon>
           Missions
@@ -121,7 +88,8 @@
   <div>
     <span>
       <a>
-        <img id="user-image" [src]="imageUrl" mat-button [matMenuTriggerFor]="menu" height="30" alt="" class="rounded-circle img-fluid">
+        <img id="user-image" [src]="imageUrl" mat-button [matMenuTriggerFor]="menu" height="30" alt=""
+          class="rounded-circle img-fluid">
       </a>
     </span>
     <mat-menu #menu="matMenu">
