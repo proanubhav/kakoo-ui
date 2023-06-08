@@ -31,12 +31,12 @@
             </div>
             <div class="center">
 
-              <label for="files" mat-raised-button class="upload">Choisir un fichier</label>
+              <label for="files" class="btn btn-outline-danger">Choisir un fichier</label>
               <input id="files" style="visibility:hidden;" type="file" (change)="selectFile($event)" accept="application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint,text/plain, application/pdf">
 
-              <button mat-raised-button class="mySimpleButton" [disabled]="!selectedFiles" (click)="upload()">Télécharger</button>
+              <button class="btn btn-danger" [disabled]="!selectedFiles" (click)="upload()">Télécharger</button>
 
-              <button mat-raised-button class="mySuccessButton" *ngIf="alpha" [disabled]="selectedFiles" (click)="go()">Extraire</button>
+              <button class="btn btn-outline-danger" *ngIf="alpha" [disabled]="selectedFiles" (click)="go()">Extraire</button>
 
             </div>
           </fieldset>
@@ -57,7 +57,7 @@
           </div>
           <div class=" white"></div>
           <div class="upload-success">
-            <button mat-raised-button class="mySimpleButton" (click)="goBackCandidate(this.uuid)">Retour au candidat</button>
+            <button class="btn btn-outline-danger" (click)="goBackCandidate(this.uuid)">Retour au candidat</button>
           </div>
         </section>
 
