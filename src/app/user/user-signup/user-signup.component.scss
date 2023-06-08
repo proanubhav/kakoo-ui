@@ -222,6 +222,7 @@ img {
             box-shadow: 0 5px 20px 0 rgba(210, 210, 245, .5);
             border-radius: 1rem !important;
             background-color: #fff;
+            margin: 3rem 0;
 
             .welcome-text {
                 font-size: 14px;
@@ -243,9 +244,29 @@ img {
 
                 h3 {
                     font-size: 22px;
+                    color: #000;
                 }
             }
         }
     }
 
+}
+.def-font-color {
+    color: #9a2828 !important;
+}
+.btn-outline {
+    font-weight: bolder;
+    color: #9a2828 !important;
+    font-size: 0.8em;
+    text-align: center;
+    border: 1px solid #9a2828;
+    padding: 0.925rem 1.75rem;
+    i {
+        color: #9a2828;
+        font-size: 1.5rem;
+    }
+}
+.small-footer-text {
+    font-size: 14px;
+    font-weight: 400;
 }
