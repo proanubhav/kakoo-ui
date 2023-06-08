@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CandidateSidebarComponent implements OnInit {
 
+  toggleFlag = false;
   constructor() { }
 
   ngOnInit() {
 
+  }
+  toggleMenu() {
+    this.toggleFlag = !this.toggleFlag
   }
 }

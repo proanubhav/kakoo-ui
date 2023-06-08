@@ -1,15 +1,15 @@
 <section class="sidebar-wrapper">
   <div class="sidebar-wrap">
     <ul>
-      <li>profil de l'utilisateur</li>
-      <li>Espace Utilisateurs</li>
-      <li class="active">Espace Candidats</li>
-      <li>Espace Recrutement</li>
-      <li>Espace RH</li>
-      <ol>
-        <li>Employés</li>
-        <li>Clients</li>
-        <li>Missions</li>
+      <li routerLink="/user/profile">profil de l'utilisateur</li>
+      <li routerLink="/company/allusers">Espace Utilisateurs</li>
+      <li class="active" routerLink="/candidate/list">Espace Candidats</li>
+      <li routerLink="quizz/create">Espace Recrutement</li>
+      <li (click)="toggleMenu()" class="d-flex justify-content-between align-items-center">Espace RH <i class="fa fa-angle-down"></i></li>
+      <ol *ngIf="this.toggleFlag">
+        <li routerLink="rh/list">Employés</li>
+        <li routerLink="client/list">Clients</li>
+        <li routerLink="task/list">Missions</li>
       </ol>
     </ul>
   </div>
