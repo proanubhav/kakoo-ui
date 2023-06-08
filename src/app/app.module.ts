@@ -53,7 +53,6 @@ import { RhManagementModule } from './rh-management/rh-management.module';
 import {RhManagementService} from "./rh-management/rh-management.service";
 import {MatDialogModule} from '@angular/material/dialog';
 import { RefuseTimesheetDialog } from './rh-management/employee-new-timesheet/employee-new-timesheet.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
 
 // here is the default text string
 export class DefaultIntl extends OwlDateTimeIntl {
@@ -136,13 +135,9 @@ export class DefaultIntl extends OwlDateTimeIntl {
     MessageListComponent,
     MessageItemComponent,
     MessageFormComponent,
-    SidebarComponent,
     AccueilComponent,
     AutoVisuelPolitiqueComponent
 
-  ],
-  exports: [
-    SidebarComponent
   ],
   imports: [
     BrowserModule,

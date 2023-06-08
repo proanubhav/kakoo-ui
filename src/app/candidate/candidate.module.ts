@@ -24,7 +24,7 @@ import { ReportsListComponent } from './reports-list/reports-list.component';
 import { CKEditorModule } from 'ngx-ckeditor';
 import { CandidateEmailComponent } from './candidate-email/candidate-email.component';
 import { VideoCallComponent } from './video-call/video-call.component';
-import { SidebarComponent } from '../sidebar/sidebar.component';
+import { CandidateSidebarComponent } from './candidate-sidebar/candidate-sidebar.component';
 
 
 
@@ -53,7 +53,7 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
     MatFormFieldModule,
     MatTooltipModule,
     MatSortModule,
-    SidebarComponent,
+    CandidateSidebarComponent,
 
   ],
   exports: [
