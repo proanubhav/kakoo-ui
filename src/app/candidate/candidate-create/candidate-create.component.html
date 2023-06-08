@@ -1,18 +1,16 @@
 <app-candidate-header></app-candidate-header>
-<div class="page-container">
-  <div class="row white"></div>
-  <div class="container col-md-7">
-
-    <div class="row  my-form rounded">
-      <div class="col">
-
-        <div style="text-align:center;color:#9A2828; ">
-          <h3 class="title" *ngIf="!editing">
-            <br> Ajout d'un candidat</h3>
-          <h3 class="title" *ngIf="editing">
-            <br> Modification de candidat</h3>
+<div class="page-container page-wrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <app-candidate-sidebar></app-candidate-sidebar>
+      </div>
+      <div class="col-md-9">
+        <div class="form-group">
+          <h2 class="title" *ngIf="!editing">Ajout d'un candidat</h2>
+          <h2 class="title" *ngIf="editing">Modification de candidat</h2>
         </div>
-        <section>
+        <section class="white-card">
           <form novalidate [formGroup]="candidateForm" (ngSubmit)="onSubmit()">
 
             <div class="example-container row">
@@ -96,13 +94,12 @@
 
             </div>
             <div class="text-center mt-4 mb-2">
-
-              <button type="button" mat-raised-button class="mySimpleButton" (click)="cancelOperation()">Annuler
-                <i class="fa fa-times-circle ml-3"></i> </button>
-              <button mat-raised-button type="submit" class="mySuccessButton" [disabled]="!candidateForm.valid"
-                *ngIf="!editing">Ajouter <i class="fa fa-user-plus ml-3"></i> </button>
-              <button mat-raised-button type="submit" class="myInfoButton" [disabled]="!candidateForm.valid"
-                *ngIf="editing">Modifier <i class="fa fa-pencil ml-3"></i> </button>
+              <button type="button" class="btn btn-outline-danger" (click)="cancelOperation()">Annuler
+                </button>
+              <button type="submit" class="btn btn-danger" [disabled]="!candidateForm.valid"
+                *ngIf="!editing">Ajouter </button>
+              <button type="submit" class="btn btn-danger" [disabled]="!candidateForm.valid"
+                *ngIf="editing">Modifier </button>
             </div>
             <!--<pre>{{candidateForm.value | json}}</pre>-->
           </form>

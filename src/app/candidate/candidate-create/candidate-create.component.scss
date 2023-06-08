@@ -1,65 +1,44 @@
-@import '../../../assets/sass/var';
+@import "../../../assets/sass/var";
 
-.white{
-   
-    margin-bottom: 3em;
-    background-color:white;
+.white {
+  margin-bottom: 3em;
+  background-color: white;
+}
 
-   
-}
-.page-container{
-    background-color:white;
-}
-.my-form{
-    background-color: white;
-}
-.modal-header{
-    background-color:	#9A2828;
-
+.modal-header {
+  background-color: #9a2828;
 }
 #idinout.key {
-    font-family: 'password';
-  }
-  
-  .mySimpleButton{
-    @extend %myButton;
-    border: 1px solid $defaultColor;
-    color: $defaultColor;
-    background: white;
-   
-  }
-  .myWarningButton{
-    @extend %myButton;
-    border: 1px solid $warning;
-    color: $warning;
-  }
-  .myDangerButton{
-    @extend %myButton;
-    border: 1px solid $danger;
-    color: $danger;
-    background: white;
-  
-  }
-  
-  .myInfoButton{
-    @extend %myButton;
-    border: 1px solid $info;
-    color: $info;
-    background: white;
-  
-  }
-  .mySuccessButton{
+  font-family: "password";
+}
+
+.mySimpleButton {
+  @extend %myButton;
+  border: 1px solid $defaultColor;
+  color: $defaultColor;
+  background: white;
+}
+.myWarningButton {
+  @extend %myButton;
+  border: 1px solid $warning;
+  color: $warning;
+}
+.myDangerButton {
+  @extend %myButton;
+  border: 1px solid $danger;
+  color: $danger;
+  background: white;
+}
+
+.myInfoButton {
+  @extend %myButton;
+  border: 1px solid $info;
+  color: $info;
+  background: white;
+}
+.mySuccessButton {
   @extend %myButton;
   border: 1px solid $success;
   background: white;
   color: $success;
-  
-  }
-  .container {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-    box-shadow: 5px 5px 10px #e0e0e0;
 }

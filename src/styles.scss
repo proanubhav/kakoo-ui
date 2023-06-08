@@ -211,6 +211,11 @@ h6,
 }
 
 body {
+  .white-card {
+    padding: 1rem;
+    border-radius: 0.25rem;
+    background-color: #fff;
+  }
   .pagination {
     margin-top: 1.5rem;
     .page-item {

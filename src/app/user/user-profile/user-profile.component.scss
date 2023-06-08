@@ -87,23 +87,7 @@
 }
 $break-small: 574px;
 $break-large: 1200px;
-img {
-  border:solid 1px black;
-  @media screen and (max-width: 500px) {
-    margin-left: 30%;
-    width: 40%;
-    min-width:40%;
-    max-width:40%;
-   
-}
-@media screen and (min-width: 501px) {
-    margin-left:43%;
-    width:14%;
-    min-width:14%;
-    max-width:14%;
-}
- 
-}
+
 .myButton2:hover {
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e9e9e9), color-stop(1, #f9f9f9));
 	background:-moz-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
@@ -115,12 +99,43 @@ img {
 	background-color:#e9e9e9;
 }
 .table{
- 
   margin-bottom:1.5em;
   margin-top:1em;
+  tr {
+    td, th {
+      background-color: #fff;
+    }
+  }
 }
 .item{
   font-size:1em;
   color:#555;
   
+}
+.user-profile-card {
+  display: flex;
+  margin-bottom: 1.5rem;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 50%;
+  .profile-image {
+    margin-right: 1rem;
+    img {
+      width: 50px;
+    }
+  }
+  .profile-info {
+    text-align: left;
+    h4 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 0;
+    }
+    h6 {
+      font-weight: 400;
+      font-size: 1rem;
+      margin: 0;
+    }
+  }
 }
