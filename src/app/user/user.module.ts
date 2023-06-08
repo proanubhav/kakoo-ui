@@ -39,6 +39,7 @@ import { RhdeletedComponent } from './rhdeleted/rhdeleted.component';
 import { MessageDialogUnsubscribeComponent } from './payment/message-dialog-unsubscribe/message-dialog-unsubscribe.component';
 import { EtiGePaymentComponent } from './payment/eti-ge-payment/eti-ge-payment.component';
 import { InternationalPhoneModule } from 'ng4-intl-phone';
+import { UserSidebarComponent } from './user-sidebar/user-sidebar.component';
 
 
 
@@ -76,6 +77,7 @@ import { InternationalPhoneModule } from 'ng4-intl-phone';
     UserLoginComponent,
     UserSignupComponent,
     UserNavbarComponent,
+    UserSidebarComponent,
     UserConfirmComponent,
     PasswordResetComponent,
     AddRhComponent,
