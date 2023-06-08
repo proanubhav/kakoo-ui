@@ -1,28 +1,27 @@
 <app-client-header></app-client-header>
-
-<div class="page-container">
+<div class="page-container page-wrap">
   <div class="container">
     <div class="row">
-      <div class="col">
-
+      <div class="col-md-3">
+        <app-client-sidebar></app-client-sidebar>
+      </div>
+      <div class="col-md-9">
         <section>
           <header class="header">
-            <div style="text-align: right;">
-              <div style="text-align: center; color: #9A2828;">
-                <h4><br>Liste des clients</h4>
-              </div>
+            <div class="form-group">
+              <h2>Liste des clients</h2>
             </div>
           </header>
         </section>
 
-        <section class="main-rounded">
+        <section class="white-card">
           <div class="row">
             <div class="col-sm-12">
               <div class="search-container">
                 <form [formGroup]="searchForm" style="margin-top:0.5em;" (keyup.enter)="sendSearch()">
                   <mat-form-field class="col-sm-12">
                     <input matInput id="searchItem" placeholder="Trouver un client" formControlName="searchItem"
-                           [(ngModel)]="search"/>
+                      [(ngModel)]="search" />
 
                     <mat-icon matSuffix (click)="advanced = !advanced">
                       <i class="fa fa-sort-down" *ngIf="advanced" style="color: #9A2828;"></i>
@@ -32,7 +31,7 @@
                     </mat-icon>
 
                     <mat-icon matSuffix class="myButton3" style="margin-left: 0.8em" matTooltip="Ajouter un client"
-                              (click)="redirectNewClientPage()">
+                      (click)="redirectNewClientPage()">
                       <i class="fa fa-user-plus" style="color: #9A2828"></i>
                     </mat-icon>
                   </mat-form-field>
@@ -44,93 +43,96 @@
           <div style="text-align: center; color: #9A2828;" *ngIf="noClients">
             <strong>Aucun client dans la liste, veuillez ajouter un client.</strong>
           </div>
+          <div class="table-responsive">
+            <table matSort class="table btn-table table-hover" *ngIf="!noClients" (matSortChange)="sortData($event)">
+              <thead>
+                <tr>
+                  <th>
+                    <mat-checkbox type="checkbox" color="warn" [ngModel]="selectAllClient"
+                      (ngModelChange)="selectAll()">
+                    </mat-checkbox>
+                  </th>
+                  <th class="h6" style="width: 10%;"></th>
+                  <th class="h6" style="width: 20%;">Société</th>
+                  <th class="h6" style="width: 20%;">Secteur d'activité</th>
+                  <th class="h6" style="width: 50%;">Informations</th>
+                  <th class="h6" style="width: 20%">État</th>
+                  <th class="h6" style="width: 20%;">Coordonnées</th>
+                  <th class="h6" style="width: 20%;">Lieu</th>
+                  <th class="h6" style="width: 20%;">Responsable</th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
 
-          <table matSort class="table table-responsive-md btn-table table-hover" *ngIf="!noClients"
-                 (matSortChange)="sortData($event)">
-            <thead>
-            <tr>
-              <th>
-                <mat-checkbox type="checkbox" color="warn" [ngModel]="selectAllClient" (ngModelChange)="selectAll()">
-                </mat-checkbox>
-              </th>
-              <th class="h6" style="width: 10%;"></th>
-              <th class="h6" style="width: 20%;">Société</th>
-              <th class="h6" style="width: 20%;">Secteur d'activité</th>
-              <th class="h6" style="width: 50%;">Informations</th>
-              <th class="h6" style="width: 20%">État</th>
-              <th class="h6" style="width: 20%;">Coordonnées</th>
-              <th class="h6" style="width: 20%;">Lieu</th>
-              <th class="h6" style="width: 20%;">Responsable</th>
-              <th></th>
-              <th></th>
-            </tr>
-            </thead>
+              <tbody>
+                <tr *ngFor="let client of pagedItems">
+                  <td>
+                    <mat-checkbox type="checkbox" color="warn" [ngModel]="filter"
+                      (ngModelChange)="onFilterChange(client)">
+                    </mat-checkbox>
+                  </td>
 
-            <tbody>
-            <tr *ngFor="let client of pagedItems">
-              <td>
-                <mat-checkbox type="checkbox" color="warn" [ngModel]="filter" (ngModelChange)="onFilterChange(client)">
-                </mat-checkbox>
-              </td>
+                  <td>
+                    <a (click)="displayClientContact(client)">
+                      <img *ngIf="client.photoUrl" [src]="client.photoUrl" class="rounded " alt="" />
+                    </a>
 
-              <td>
-                <a (click)="displayClientContact(client)">
-                  <img *ngIf="client.photoUrl" [src]="client.photoUrl" class="rounded " alt=""/>
-                </a>
+                    <a (click)="displayClientContact(client)">
+                      <img *ngIf="!client.photoUrl" src="./assets/home/images/logo-default.png" class="rounded "
+                        alt="" />
+                    </a>
+                  </td>
 
-                <a (click)="displayClientContact(client)">
-                  <img *ngIf="!client.photoUrl" src="./assets/home/images/logo-default.png" class="rounded " alt=""/>
-                </a>
-              </td>
+                  <td>
+                    <strong style="color: #434142;">
+                      <a (click)="displayClientContact(client)">{{ client.name | uppercase }}</a>
+                    </strong>
+                  </td>
 
-              <td>
-                <strong style="color: #434142;">
-                  <a (click)="displayClientContact(client)">{{ client.name | uppercase }}</a>
-                </strong>
-              </td>
+                  <td>
+                    <strong style="color: #434142;">{{ client.activityArea | customTitleCase }}</strong>
+                  </td>
 
-              <td>
-                <strong style="color: #434142;">{{ client.activityArea | customTitleCase }}</strong>
-              </td>
+                  <td>
+                    <strong style="color: #434142;">{{ client.description }}</strong>
+                  </td>
 
-              <td>
-                <strong style="color: #434142;">{{ client.description }}</strong>
-              </td>
+                  <td>
+                    <strong style="color: #434142;"> {{ client.state | customTitleCase }}</strong>
+                  </td>
 
-              <td>
-                <strong style="color: #434142;"> {{ client.state | customTitleCase }}</strong>
-              </td>
+                  <td>
+                    <strong style="color: #434142;">
+                      {{ client.webSite }}
+                      {{ client.phone }}
+                      {{ client.email }}
+                    </strong>
+                  </td>
 
-              <td>
-                <strong style="color: #434142;">
-                  {{ client.webSite }}
-                  {{ client.phone }}
-                  {{ client.email }}
-                </strong>
-              </td>
+                  <td>
+                    <strong style="color: #434142;">{{ client.locality | customTitleCase }}</strong>
+                  </td>
 
-              <td>
-                <strong style="color: #434142;">{{ client.locality | customTitleCase }}</strong>
-              </td>
+                  <td>
+                    <strong style="color: #434142">{{ client.hrName | customTitleCase }}</strong>
+                  </td>
 
-              <td>
-                <strong style="color: #434142">{{ client.hrName | customTitleCase }}</strong>
-              </td>
+                  <td>
+                    <a (click)="editClientPage(client)" tooltip="Modifier le client">
+                      <i class="fa fa-pencil" aria-hidden="true"></i>
+                    </a>
+                  </td>
 
-              <td>
-                <a (click)="editClientPage(client)" tooltip="Modifier le client">
-                  <i class="fa fa-pencil" aria-hidden="true"></i>
-                </a>
-              </td>
-
-              <td>
-                <a (click)="deleteClient(client)" tooltip="Supprimer le client">
-                  <i class="fa fa-trash" aria-hidden="true"></i>
-                </a>
-              </td>
-            </tr>
-            </tbody>
-          </table>
+                  <td>
+                    <a (click)="deleteClient(client)" tooltip="Supprimer le client">
+                      <i class="fa fa-trash" aria-hidden="true"></i>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
           <div class="loader" id="loader-5" *ngIf="loader.isLoading">
             <span></span>

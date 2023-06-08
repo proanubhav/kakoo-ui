@@ -1,38 +1,38 @@
 <app-rh-header></app-rh-header>
-
-<div class="page-container">
+<div class="page-container page-wrap">
   <div class="container">
     <div class="row">
-      <div class="col">
+      <div class="col-md-3">
+        <app-rh-sidebar></app-rh-sidebar>
+      </div>
+      <div class="col-md-9">
         <section>
           <header class="header">
-            <div style="text-align:right;">
-              <div style="text-align:center;color:#9A2828;">
-                <h4><br>Liste des Employés</h4>
-              </div>
+            <div class="form-group">
+              <h2>Liste des Employés</h2>
             </div>
           </header>
         </section>
-        
+
         <section class="main rounded">
           <div class="row">
             <div class="col-sm-12">
               <div *ngIf="true" class="search-container">
                 <form [formGroup]="searchForm" style="margin-top:0.5em;" (keyup.enter)="sendSearch()">
                   <mat-form-field class="col-sm-12">
-                    <input matInput id="searchItem" placeholder="Trouver un employé" formControlName="searchItem" 
-                           [(ngModel)]="search" (keyup)="sendSearch()"/>
-                    
+                    <input matInput id="searchItem" placeholder="Trouver un employé" formControlName="searchItem"
+                      [(ngModel)]="search" (keyup)="sendSearch()" />
+
                     <mat-icon matSuffix (click)="advanced=!advanced;">
                       <i *ngIf="!advanced" class="fa fa-sort-down" style="color:#9A2828"></i>
                     </mat-icon>
-                    
+
                     <mat-icon matSuffix class="myButton3" (click)="sendSearch()">
                       <i class="fa fa-search" style="color:#9A2828"></i>
                     </mat-icon>
-                    
-                    <mat-icon matSuffix class="myButton3" style="margin-left:0.8em;" matTooltip="Ajoutez un employé" 
-                              (click)="redirectNewEmployeePage()">
+
+                    <mat-icon matSuffix class="myButton3" style="margin-left:0.8em;" matTooltip="Ajoutez un employé"
+                      (click)="redirectNewEmployeePage()">
                       <i class="fa fa-user-plus" style="color:#9A2828"></i>
                     </mat-icon>
                   </mat-form-field>
@@ -40,7 +40,7 @@
               </div>
             </div>
           </div>
-          
+
           <div class="search-container" *ngIf="advanced">
             <div class="advanced-search">
               <div class="row">
@@ -50,30 +50,31 @@
                   <a><i (click)="advanced=!advanced;" class="fa fa-close" style="color:#9A2828"></i></a>
                 </div>
               </div>
-              
+
               <form [formGroup]="advancedForm">
                 <div class="row">
                   <div class="search-items col-sm-6">
                     <mat-form-field>
-                      <input matInput placeholder="Nom" formControlName="name" (keyup)="advancedSearch()"/>
+                      <input matInput placeholder="Nom" formControlName="name" (keyup)="advancedSearch()" />
                     </mat-form-field>
                   </div>
 
                   <div class="search-items col-sm-6">
                     <mat-form-field>
-                      <input matInput placeholder="Matricule" formControlName="matricule" (keyup)="advancedSearch()"/>
+                      <input matInput placeholder="Matricule" formControlName="matricule" (keyup)="advancedSearch()" />
                     </mat-form-field>
                   </div>
 
                   <div class="search-items col-sm-6">
                     <mat-form-field>
-                      <input matInput placeholder="Service" formControlName="service" (keyup)="advancedSearch()"/>
+                      <input matInput placeholder="Service" formControlName="service" (keyup)="advancedSearch()" />
                     </mat-form-field>
                   </div>
 
                   <div class="search-items col-sm-6">
                     <mat-form-field>
-                      <mat-select placeholder="Années d'expérience" formControlName="yearsOfExperience" (change)="advancedSearch()">
+                      <mat-select placeholder="Années d'expérience" formControlName="yearsOfExperience"
+                        (change)="advancedSearch()">
                         <mat-option value="0">Sans expérience</mat-option>
                         <mat-option value="1">1 année</mat-option>
                         <mat-option value="2">2 années</mat-option>
@@ -101,26 +102,28 @@
 
                   <div class="search-items col-sm-6">
                     <mat-form-field style="margin-top: 17px">
-                      <input matInput placeholder="Poste" formControlName="job" (keyup)="advancedSearch()"/>
-                    </mat-form-field>
-                  </div>
-                  
-                  <div class="search-items col-sm-6">
-                    <mat-form-field>
-                      <input matInput placeholder="Date de recrutement" formControlName="recruitmentDate" type="date" 
-                             (change)="advancedSearch()"/>
+                      <input matInput placeholder="Poste" formControlName="job" (keyup)="advancedSearch()" />
                     </mat-form-field>
                   </div>
 
                   <div class="search-items col-sm-6">
                     <mat-form-field>
-                      <input matInput placeholder="Salaire min" formControlName="salaryMin" (keyup)="advancedSearch()"/>
+                      <input matInput placeholder="Date de recrutement" formControlName="recruitmentDate" type="date"
+                        (change)="advancedSearch()" />
                     </mat-form-field>
                   </div>
-                  
+
                   <div class="search-items col-sm-6">
                     <mat-form-field>
-                      <input matInput placeholder="Salaire max" formControlName="salaryMax" min="0" (keyup)="advancedSearch()"/>
+                      <input matInput placeholder="Salaire min" formControlName="salaryMin"
+                        (keyup)="advancedSearch()" />
+                    </mat-form-field>
+                  </div>
+
+                  <div class="search-items col-sm-6">
+                    <mat-form-field>
+                      <input matInput placeholder="Salaire max" formControlName="salaryMax" min="0"
+                        (keyup)="advancedSearch()" />
                     </mat-form-field>
                   </div>
 
@@ -128,7 +131,7 @@
               </form>
             </div>
           </div>
-          
+
           <div style="text-align:center;color:#9A2828" *ngIf="!found">
             <strong>Aucun employé correspondant à votre recherche</strong>
           </div>
@@ -136,118 +139,123 @@
           <div style="text-align:center;color:#9A2828" *ngIf="noEmployees">
             <strong>Aucun employé dans la liste, veuillez ajouter un employé</strong>
           </div>
+          <div class="table-responsive">
+            <table class="table btn-table table-hover" *ngIf="!noEmployees && found" matSort
+              (matSortChange)="sortData($event)">
+              <thead>
+                <tr>
+                  <th class="h6" style="width:10%"></th>
+                  <th class="h6" style="width:20%">Nom</th>
+                  <th class="h6" style="width:20%">Email</th>
+                  <th class="h6" style="width:20%"> Phone</th>
+                  <th class="h6" style="width:20%"> Adresse</th>
+                  <th class="h6" style="width:20%">Service</th>
+                  <th class="h6" style="width:20%">Poste</th>
+                  <th class="h6" mat-sort-header="experienceNbr" style="width:10%">Expérience</th>
+                  <th class="h6" style="width:20%"> Crée par</th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
 
-          <table class="table table-responsive-md btn-table table-hover" *ngIf="!noEmployees && found" matSort 
-                 (matSortChange)="sortData($event)">
-            <thead>
-            <tr>
-              <th class="h6" style="width:10%"></th>
-              <th class="h6" style="width:20%">Nom</th>
-              <th class="h6" style="width:20%">Email</th>
-              <th class="h6" style="width:20%"> Phone</th>
-              <th class="h6" style="width:20%"> Adresse</th>
-              <th class="h6" style="width:20%">Service</th>
-              <th class="h6" style="width:20%">Poste</th>
-              <th class="h6" mat-sort-header="experienceNbr" style="width:10%">Expérience</th>
-              <th class="h6" style="width:20%"> Crée par</th>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
-            </tr>
-            </thead>
+              <tbody *ngIf="allEmployees">
+                <tr *ngFor="let employee of pagedItems">
+                  <td>
+                    <a (click)=" displayEmployeePage(employee)">
+                      <img *ngIf="employee.photoUrl" [src]="employee.photoUrl" class="rounded " alt="" />
+                    </a>
 
-            <tbody *ngIf="allEmployees">
-            <tr *ngFor="let employee of pagedItems">
-              <td>
-                <a (click)=" displayEmployeePage(employee)">
-                  <img *ngIf="employee.photoUrl" [src]="employee.photoUrl" class="rounded " alt=""/>
-                </a>
-                
-                <a (click)=" displayEmployeePage(employee)">
-                  <img *ngIf="!employee.photoUrl" src="./assets/home/images/user.png" class="rounded " alt=""/>
-                </a>
-              </td>
-              
-              <td>
-                <strong style="color: #434142;">
-                  <a (click)=" displayEmployeePage(employee)">
-                    {{employee.firstName | titlecase}} {{employee.lastName | uppercase}}
-                  </a>
-                </strong>
-              </td>
-              
-              <td>
-                <strong style="color:#434142;">{{employee.email | lowercase}}</strong>
-              </td>
-              
-              <td>
-                <strong style="color:#434142;">{{employee.phone | titlecase}}</strong>
-              </td>
-              
-              <td>
-                <strong style="color:#434142;">{{employee.address | lowercase}}</strong>
-              </td>
-              
-              <td>
-                <strong style="color:#434142;" *ngIf="employee.service != null">{{ employee.service.name }}</strong>
-              </td>
-              
-              <td>
-                <strong style="color:#434142;">{{ employee.profile }}</strong>
-              </td>
-              
-              <td>
-                <strong style="color:#434142;" *ngIf="employee.experienceNbr == 0;else first">Sans expérience</strong>
-                
-                <ng-template #first>
-                  <strong style="color:#434142;" *ngIf="employee.experienceNbr == 1;else second">
-                    {{ employee.experienceNbr }} année
-                  </strong>
-                </ng-template>
-                
-                <ng-template #second>
-                  <strong style="color:#434142;" *ngIf="employee.experienceNbr > 1 && employee.experienceNbr < 20;else third">
-                    {{ employee.experienceNbr }} années
-                  </strong>
-                </ng-template>
-                
-                <ng-template #third>
-                  <strong style="color:#434142;">+20 années</strong>
-                </ng-template>
-                                
-              </td>
-              <td>
-                <strong style="color:#434142;">{{employee.hrName}}</strong>
-              </td>
-              
-              <td>
-                <a (click)="manageTasks(employee)" tooltip="Gérer l'employé">
-                  <i class="fa fa-briefcase" aria-hidden="true"></i>
-                </a>
-              </td>
-              <td>
-                <a (click)="editEmployeePage(employee)" tooltip="Modifier l'employé">
-                  <i class="fa fa-pencil" aria-hidden="true"></i>
-                </a>
-              </td>
-              
-              <td>
-                <a (click)="deleteEmployee(employee)" tooltip="Supprimer l'employé">
-                  <i class="fa fa-trash" aria-hidden="true"></i>
-                </a>
-              </td>
-              <td class="table-info">
-                  <a *ngIf="timesheetsValidation.get(employee.id)" (click)="goToTimeSheetOf(employee.id)" tooltip="feuille de temps validée">
+                    <a (click)=" displayEmployeePage(employee)">
+                      <img *ngIf="!employee.photoUrl" src="./assets/home/images/user.png" class="rounded " alt="" />
+                    </a>
+                  </td>
+
+                  <td>
+                    <strong style="color: #434142;">
+                      <a (click)=" displayEmployeePage(employee)">
+                        {{employee.firstName | titlecase}} {{employee.lastName | uppercase}}
+                      </a>
+                    </strong>
+                  </td>
+
+                  <td>
+                    <strong style="color:#434142;">{{employee.email | lowercase}}</strong>
+                  </td>
+
+                  <td>
+                    <strong style="color:#434142;">{{employee.phone | titlecase}}</strong>
+                  </td>
+
+                  <td>
+                    <strong style="color:#434142;">{{employee.address | lowercase}}</strong>
+                  </td>
+
+                  <td>
+                    <strong style="color:#434142;" *ngIf="employee.service != null">{{ employee.service.name }}</strong>
+                  </td>
+
+                  <td>
+                    <strong style="color:#434142;">{{ employee.profile }}</strong>
+                  </td>
+
+                  <td>
+                    <strong style="color:#434142;" *ngIf="employee.experienceNbr == 0;else first">Sans
+                      expérience</strong>
+
+                    <ng-template #first>
+                      <strong style="color:#434142;" *ngIf="employee.experienceNbr == 1;else second">
+                        {{ employee.experienceNbr }} année
+                      </strong>
+                    </ng-template>
+
+                    <ng-template #second>
+                      <strong style="color:#434142;"
+                        *ngIf="employee.experienceNbr > 1 && employee.experienceNbr < 20;else third">
+                        {{ employee.experienceNbr }} années
+                      </strong>
+                    </ng-template>
+
+                    <ng-template #third>
+                      <strong style="color:#434142;">+20 années</strong>
+                    </ng-template>
+
+                  </td>
+                  <td>
+                    <strong style="color:#434142;">{{employee.hrName}}</strong>
+                  </td>
+
+                  <td>
+                    <a (click)="manageTasks(employee)" tooltip="Gérer l'employé">
+                      <i class="fa fa-briefcase" aria-hidden="true"></i>
+                    </a>
+                  </td>
+                  <td>
+                    <a (click)="editEmployeePage(employee)" tooltip="Modifier l'employé">
+                      <i class="fa fa-pencil" aria-hidden="true"></i>
+                    </a>
+                  </td>
+
+                  <td>
+                    <a (click)="deleteEmployee(employee)" tooltip="Supprimer l'employé">
+                      <i class="fa fa-trash" aria-hidden="true"></i>
+                    </a>
+                  </td>
+                  <td class="table-info">
+                    <a *ngIf="timesheetsValidation.get(employee.id)" (click)="goToTimeSheetOf(employee.id)"
+                      tooltip="feuille de temps validée">
                       <i class="fa fa-check" aria-hidden="true" style="color:green"></i>
-                  </a>
-                  <a *ngIf="!timesheetsValidation.get(employee.id)" (click)="goToTimeSheetOf(employee.id)" tooltip="feuille de temps non validée">
+                    </a>
+                    <a *ngIf="!timesheetsValidation.get(employee.id)" (click)="goToTimeSheetOf(employee.id)"
+                      tooltip="feuille de temps non validée">
                       <i class="fa fa-hourglass-half" aria-hidden="true"></i>
-                  </a>
-                </td>
-            </tr>
-            </tbody>
-          </table>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
           <div class="loader" id="loader-5" *ngIf="loader.isLoading">
             <span></span>
@@ -262,19 +270,19 @@
                 <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
                   <a class="page-link" (click)="setPage(1)">Première</a>
                 </li>
-                
+
                 <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
                   <a class="page-link" (click)="setPage(pager.currentPage - 1)">Précédente</a>
                 </li>
-                
+
                 <li class="page-item" *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
                   <a class="page-link" (click)="setPage(page)">{{page}}</a>
                 </li>
-                
+
                 <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
                   <a class="page-link" (click)="setPage(pager.currentPage + 1)">Suivante</a>
                 </li>
-                
+
                 <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
                   <a class="page-link" (click)="setPage(pager.totalPages)">Dernière</a>
                 </li>

@@ -33,6 +33,7 @@ import { DashboardEmployeeComponent } from './dashboard-employee/dashboard-emplo
 import { ArretCreateComponent } from './arret-create/arret-create.component';
 import { EmployeeTasksManagementComponent } from './employee-tasks-management/employee-tasks-management.component';
 import { EmployeeNewTimesheetComponent, RefuseTimesheetDialog } from './employee-new-timesheet/employee-new-timesheet.component';
+import { RhSidebarComponent } from './rh-sidebar/rh-sidebar.component';
 
 @NgModule({
   imports: [
@@ -63,6 +64,7 @@ import { EmployeeNewTimesheetComponent, RefuseTimesheetDialog } from './employee
     RhListComponent,
     RhHeaderComponent,
     RhCreateComponent,
+    RhSidebarComponent,
     DetailsEmployeeComponent,
     EmployeeConfirmComponent,
     DashboardEmployeeComponent,

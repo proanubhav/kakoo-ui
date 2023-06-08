@@ -1,24 +1,20 @@
 <app-user-navbar></app-user-navbar>
-<div class="page-container">
-    <div class="row white"></div>
-
-    <div class="container col-md-7">
-
-
-        <div class="row  my-form rounded">
-
-            <div class="col">
-                <br>
+<div class="page-container page-wrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <app-user-sidebar></app-user-sidebar>
+      </div>
+      <div class="col-md-9">
                 <!--  <div class="alert alert-danger" role="alert" *ngIf="errorMessage && !loader &&!confirmEmail ">
                     <strong>Echec dajout de collaborateur , Réessayer!</strong>
                   </div>-->
-                <div style="text-align:left;color:#9A2828;" *ngIf="!confirmEmail && !loader">
-                    <h5><br>Remplissez ce formulaire pour ajouter un nouveau collaborateur </h5>
+                <div class="form-group" *ngIf="!confirmEmail && !loader">
+                    <h2>Ajouter un nouvel employé</h2>
                 </div>
 
-                <section *ngIf="!confirmEmail && !loader">
+                <section class="white-card" *ngIf="!confirmEmail && !loader">
                     <form novalidate [formGroup]="rhForm">
-                        <br>
                         <div class="example-container row">
 
                             <mat-form-field class="col-sm-6">
@@ -59,10 +55,8 @@
                         </div>
                         <div class="text-center mt-4 mb-2">
 
-                            <button type="button" mat-raised-button class="mySimpleButton" (click)="redirectAllUsersPage()">Annuler
-                                <i class="fa fa-times-circle ml-3"></i> </button>
-                            <button mat-raised-button type="button" class="mySuccessButton" [disabled]="false" (click)="createRh()">Ajouter
-                                <i class="fa fa-user-plus ml-3"></i> </button>
+                            <button type="button" mat-raised-button class="btn btn-outline-danger" (click)="redirectAllUsersPage()">Annuler</button>
+                            <button mat-raised-button type="button" class="btn btn-danger" [disabled]="false" (click)="createRh()">Ajouter</button>
                         </div>
                         <!-- <pre>{{rhForm.value | json}}</pre>-->
                     </form>

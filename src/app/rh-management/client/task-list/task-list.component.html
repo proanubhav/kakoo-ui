@@ -1,28 +1,28 @@
 <app-client-header></app-client-header>
-
-<div class="page-container">
+<div class="page-container page-wrap">
   <div class="container">
     <div class="row">
-      <div class="col">
+      <div class="col-md-3">
+        <app-client-sidebar></app-client-sidebar>
+      </div>
+      <div class="col-md-9">
 
         <section>
           <header class="header">
-            <div style="text-align: right;">
-              <div style="text-align: center; color: #9A2828;">
-                <h4>
-                  <br>Liste des missions</h4>
-              </div>
+            <div class="form-group">
+              <h2>Liste des missions</h2>
             </div>
           </header>
         </section>
 
-        <section class="main-rounded">
+        <section class="white-card">
           <div class="row">
             <div class="col-sm-12">
               <div class="search-container">
                 <form [formGroup]="searchForm" style="margin-top:0.5em;" (keyup.enter)="sendSearch()">
                   <mat-form-field class="col-sm-12">
-                    <input matInput id="searchItem" placeholder="Trouver une mission" formControlName="searchItem" [(ngModel)]="search" />
+                    <input matInput id="searchItem" placeholder="Trouver une mission" formControlName="searchItem"
+                      [(ngModel)]="search" />
 
                     <mat-icon matSuffix (click)="advanced = !advanced">
                       <i class="fa fa-sort-down" *ngIf="advanced" style="color: #9A2828;"></i>
@@ -31,7 +31,8 @@
                       <i class="fa fa-search" style="color: #9A2828"></i>
                     </mat-icon>
 
-                    <mat-icon matSuffix class="myButton3" style="margin-left: 0.8em" matTooltip="Ajouter une mission" (click)="redirectNewTaskPage()">
+                    <mat-icon matSuffix class="myButton3" style="margin-left: 0.8em" matTooltip="Ajouter une mission"
+                      (click)="redirectNewTaskPage()">
                       <i class="fa fa-plus" aria-hidden="true"></i>
                     </mat-icon>
                   </mat-form-field>
@@ -43,91 +44,93 @@
           <div style="text-align: center; color: #9A2828;" *ngIf="noTasks">
             <strong>Aucune mission dans la liste, veuillez ajouter une mission.</strong>
           </div>
+          <div class="table-responsive">
+            <table matSort class="table btn-table table-hover" *ngIf="!noTasks" (matSortChange)="sortData($event)">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th class="h6" style="width: 20%;">Titre</th>
+                  <th class="h6" style="width: 10%;">Client</th>
+                  <th class="h6" style="width: 20%;">
+                    <!-- Pos. Actif -->
+                    Collaborateur
+                  </th>
+                  <th class="h6" style="width: 15%;">Démarrage</th>
+                  <th class="h6" style="width: 10%;">Durée</th>
+                  <th class="h6" style="width: 5%;">TJM</th>
+                  <th class="h6" style="width: 20%;">Status</th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
 
-          <table matSort class="table table-responsive-md btn-table table-hover" *ngIf="!noTasks" (matSortChange)="sortData($event)">
-            <thead>
-              <tr>
-                <th></th>
-                <th class="h6" style="width: 20%;">Titre</th>
-                <th class="h6" style="width: 10%;">Client</th>
-                <th class="h6" style="width: 20%;">
-                  <!-- Pos. Actif -->
-                  Collaborateur
-                </th>
-                <th class="h6" style="width: 15%;">Démarrage</th>
-                <th class="h6" style="width: 10%;">Durée</th>
-                <th class="h6" style="width: 5%;">TJM</th>
-                <th class="h6" style="width: 20%;">Status</th>
-                <th></th>
-                <th></th>
-              </tr>
-            </thead>
+              <tbody>
+                <tr *ngFor="let task of pagedItems">
+                  <td>
+                    <mat-checkbox type="checkbox" color="warn" [ngModel]="filter"
+                      (ngModelChange)="onFilterChange(task)">
+                    </mat-checkbox>
+                  </td>
 
-            <tbody>
-              <tr *ngFor="let task of pagedItems">
-                <td>
-                  <mat-checkbox type="checkbox" color="warn" [ngModel]="filter" (ngModelChange)="onFilterChange(task)">
-                  </mat-checkbox>
-                </td>
+                  <td style="width: 20%;">
+                    <strong style="color: #434142;">
+                      {{ task.name | customTitleCase }}
+                    </strong>
+                  </td>
 
-                <td style="width: 20%;">
-                  <strong style="color: #434142;">
-                    {{ task.name | customTitleCase }}
-                  </strong>
-                </td>
+                  <td style="width: 30%;">
+                    <strong style="color: #434142;" *ngIf="task.client != null">
+                      <!-- {{ task.contact.hrName + ' - ' + task.contact.client.name  }} -->
+                      {{ task.client.name }}
+                    </strong>
+                  </td>
 
-                <td style="width: 30%;">
-                  <strong style="color: #434142;" *ngIf="task.client != null">
-                    <!-- {{ task.contact.hrName + ' - ' + task.contact.client.name  }} -->
-                    {{ task.client.name }}
-                  </strong>
-                </td>
+                  <td>
+                    <strong style="color: #434142;" *ngIf="task.employee != null">
+                      <!-- {{ task.employees.length }} -->
+                      {{ task.employee.lastName }} {{ task.employee.firstName }}
+                    </strong>
+                  </td>
 
-                <td>
-                  <strong style="color: #434142;" *ngIf="task.employee != null">
-                    <!-- {{ task.employees.length }} -->
-                    {{ task.employee.lastName }} {{ task.employee.firstName }}
-                  </strong>
-                </td>
+                  <td>
+                    <strong style="color: #434142;">
+                      <div *ngIf="task.startDate == null">immédiate</div>
+                      <div *ngIf="task.startDate != null">{{ task.startDate }}</div>
+                    </strong>
+                  </td>
 
-                <td>
-                  <strong style="color: #434142;">
-                    <div *ngIf="task.startDate == null">immédiate</div>
-                    <div *ngIf="task.startDate != null">{{ task.startDate }}</div>
-                  </strong>
-                </td>
+                  <td>
+                    <strong style="color: #434142;">
+                      {{ task.duration }}
+                    </strong>
+                  </td>
 
-                <td>
-                  <strong style="color: #434142;">
-                    {{ task.duration }}
-                  </strong>
-                </td>
+                  <td>
+                    <strong style="color: #434142;">
+                      {{ task.cjm }}
+                    </strong>
+                  </td>
+                  <td>
+                    <strong style="color: #434142;">
+                      -
+                    </strong>
+                  </td>
 
-                <td>
-                  <strong style="color: #434142;">
-                    {{ task.cjm }}
-                  </strong>
-                </td>
-                <td>
-                  <strong style="color: #434142;">
-                    -
-                  </strong>
-                </td>
+                  <td>
+                    <a tooltip="Modifier la mission" (click)="editTask(task)">
+                      <i class="fa fa-pencil" aria-hidden="true"></i>
+                    </a>
+                  </td>
 
-                <td>
-                  <a tooltip="Modifier la mission" (click)="editTask(task)">
-                    <i class="fa fa-pencil" aria-hidden="true"></i>
-                  </a>
-                </td>
-
-                <td>
-                  <a (click)="deleteTask(task)"  tooltip="Supprimer la mission">
-                    <i class="fa fa-trash" aria-hidden="true"></i>
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+                  <td>
+                    <a (click)="deleteTask(task)" tooltip="Supprimer la mission">
+                      <i class="fa fa-trash" aria-hidden="true"></i>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
           <div class="loader" id="loader-5" *ngIf="loader.isLoading">
             <span></span>
@@ -147,7 +150,8 @@
                   <a class="page-link" (click)="setPage(pager.currentPage - 1)">Précédente</a>
                 </li>
 
-                <li class="page-item" *ngFor="let page of pager.pages" [ngClass]="{ active: pager.currentPage === page }">
+                <li class="page-item" *ngFor="let page of pager.pages"
+                  [ngClass]="{ active: pager.currentPage === page }">
                   <a class="page-link" (click)="setPage(page)">{{ page }}</a>
                 </li>
 

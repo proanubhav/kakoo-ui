@@ -25,6 +25,7 @@ import { RouterModule } from "@angular/router";
 import { TaskListComponent } from './task-list/task-list.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ClientSidebarComponent } from './client-sidebar/client-sidebar.component';
 
 @NgModule({
 	imports: [
@@ -50,6 +51,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 		ClientHeaderComponent,
 		ClientCreateComponent,
 		ClientContactComponent,
+		ClientSidebarComponent,
 		ContactCreateComponent,
 		CustomTitleCase,
 		AssignTaskComponent,
