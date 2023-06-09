@@ -147,6 +147,8 @@ input.example-right-align {
   min-height: 90vh;
   background-color: #ffebee;
   .login-sec {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
       .logo-area {
         display: flex;
         justify-content: center;
@@ -160,7 +162,7 @@ input.example-right-align {
           font-weight: 600;
           color: #9a2828;
           margin: 0;
-          margin-left: 1rem;
+          margin-left: 0;
         }
       }
       .login-left-area {

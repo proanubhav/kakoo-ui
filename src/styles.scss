@@ -160,7 +160,12 @@ h6,
 .mat-icon-button,
 .mat-mini-fab,
 .mat-raised-button,
-.mat-stroked-button {
+.mat-stroked-button,
+.mat-option,
+.mat-select,
+.mat-input-element,
+.mat-form-field,
+.mat-form-field-label {
   font-family: "Poppins", sans-serif !important;
 }
 .page-container {
@@ -174,7 +179,7 @@ h6,
 .sidebar-wrapper {
   border-radius: 10px;
   box-shadow: 0 4px 5px 0 #a9a9a924, 0 1px 10px 0 #0000001f, 0 2px 4px -1px #a5a5a54d;
-  padding: 1rem;
+  padding: 1rem 0.5rem;
   background-color: #fff;
   .sidebar-wrap {
     ul {
@@ -232,6 +237,42 @@ body {
           background-color: #9a2828;
           color: #fff;
         }
+      }
+    }
+  }
+}
+body {
+  .row {
+    .col-lg-3 {
+      @media screen and (min-width: 992px) {
+        -ms-flex: 0 0 25%;
+        -webkit-box-flex: 0;
+        flex: 0 0 25%;
+        max-width: 25%;
+      }
+    }
+    .col-lg-9 {
+      @media screen and (min-width: 992px) {
+        -ms-flex: 0 0 75%;
+        -webkit-box-flex: 0;
+        flex: 0 0 75%;
+        max-width: 75%;
+      }
+    }
+    .col-xl-2 {
+      @media screen and (min-width: 1440px) {
+        -ms-flex: 0 0 16.66667%;
+        -webkit-box-flex: 0;
+        flex: 0 0 16.666667%;
+        max-width: 16.666667%;
+      }
+    }
+    .col-xl-10 {
+      @media screen and (min-width: 1440px) {
+        -ms-flex: 0 0 83.33333%;
+        -webkit-box-flex: 0;
+        flex: 0 0 83.333333%;
+        max-width: 83.333333%;
       }
     }
   }

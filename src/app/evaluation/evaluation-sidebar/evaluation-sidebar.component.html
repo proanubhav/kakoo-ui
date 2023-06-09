@@ -1,0 +1,16 @@
+<section class="sidebar-wrapper">
+  <div class="sidebar-wrap">
+    <ul>
+      <li routerLinkActive="active" routerLink="/user/profile">profil de l'utilisateur</li>
+      <li routerLinkActive="active" routerLink="/company/allusers">Espace Utilisateurs</li>
+      <li routerLinkActive="active" routerLink="/candidate/list">Espace Candidats</li>
+      <li  routerLinkActive="active" routerLink="/quizz/create">Espace Recrutement</li>
+      <li (click)="toggleMenu()" class="d-flex justify-content-between align-items-center">Espace RH <i class="fa fa-angle-down"></i></li>
+      <ol *ngIf="this.toggleFlag">
+        <li routerLinkActive="active" routerLink="/rh/list">Employés</li>
+        <li routerLink="/client/list">Clients</li>
+        <li routerLink="/task/list">Missions</li>
+      </ol>
+    </ul>
+  </div>
+</section> 

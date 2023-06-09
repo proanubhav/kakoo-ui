@@ -1,198 +1,194 @@
 <app-eval-navbar></app-eval-navbar>
-<div class="page-container">
-  <div class="row white"></div>
-  <div class="container col-md-7">
-    <ngb-tabset>
-      <ngb-tab title="Quizz QCM" style="color:#9A2828">
-        <ng-template ngbTabContent>
-
-          <div class="row  my-form rounded">
-            <div class="col">
-              <!--
+<div class="page-container page-wrap">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 col-lg-3 col-xl-2">
+        <app-evaluation-sidebar></app-evaluation-sidebar>
+      </div>
+      <div class="col-md-9 col-lg-9 col-xl-10">
+        <ngb-tabset>
+          <ngb-tab title="Quizz QCM">
+            <ng-template ngbTabContent>
+              <div class="white-card">
+                <!--
                 <div style="text-align:right">
                   <button class="myButton3" tooltip="Liste des quizz">
                   <a (click)="redirectAlltests()" ><i class="fa fa-file-text-o" aria-hidden="true"></i></a></button>
                 </div>  -->
-              <div style="overflow: hidden">
-                <div style="float: left; color:#9A2828;margin-left:10em;">
-                  <br>
-                  <h3 class="title" style="text-align:center;" *ngIf="!created">
-                    Création d'un quizz technique (1/2) </h3>
-                  <h3 class="title" *ngIf="created">
-                    Création d'un quizz technique (2/2) </h3>
-                </div>
-                <div style="float: right;">
-                  <button class="myButton3" tooltip="Liste des quizz" (click)="redirectAlltests()">
+                <div class="d-flex justify-content-between align-items-center form-group">
+                  <div>
+                    <h2 class="title" *ngIf="!created">
+                      Création d'un quizz technique (1/2) </h2>
+                    <h2 class="title" *ngIf="created">
+                      Création d'un quizz technique (2/2) </h2>
+                  </div>
+                  <button class="btn btn-outline-danger" tooltip="Liste des quizz" (click)="redirectAlltests()">
                     <a><i class="fa fa-file-text-o" aria-hidden="true"></i></a></button>
                 </div>
-              </div>
-              <section *ngIf="!created">
-                <form novalidate [formGroup]="testForm">
-                  <br>
-                  <!--   <div style="color:#9A2828" class="h6">Etape 1 :</div> -->
-                  <div class="row">
-                    <mat-form-field class="col-sm-6">
-                      <input matInput placeholder="Nom du Test" formControlName="name">
-                    </mat-form-field>
+                <section *ngIf="!created">
+                  <form novalidate [formGroup]="testForm">
+                    <br>
+                    <!--   <div style="color:#9A2828" class="h6">Etape 1 :</div> -->
+                    <div class="row">
+                      <mat-form-field class="col-sm-6">
+                        <input matInput placeholder="Nom du Test" formControlName="name">
+                      </mat-form-field>
 
 
 
-                    <mat-form-field class="col-sm-6">
-                      <!-- add more experiences -->
-                      <mat-select placeholder="Niveau d'éxperience" [formControl]="experienceSelected" multiple>
-                        <mat-option *ngFor="let experienceSelected of dataSource" [value]="experienceSelected">{{experienceSelected}}</mat-option>
-                      </mat-select>
-                      <!-- end more experiences-->
-                      <!--
+                      <mat-form-field class="col-sm-6">
+                        <!-- add more experiences -->
+                        <mat-select placeholder="Niveau d'éxperience" [formControl]="experienceSelected" multiple>
+                          <mat-option *ngFor="let experienceSelected of dataSource" [value]="experienceSelected">
+                            {{experienceSelected}}</mat-option>
+                        </mat-select>
+                        <!-- end more experiences-->
+                        <!--
                       <mat-select placeholder="Niveau d'éxperience" formControlName="exp">
                         <mat-option value="Expérimenté">Expérimenté</mat-option>
                         <mat-option value="Confirmé">Confirmé</mat-option>
                         <mat-option value="Débutant">Débutant</mat-option>
                         <mat-option value="Intermédiaire">Intermédiaire</mat-option>
                       </mat-select>-->
-                    </mat-form-field>
-                    <mat-form-field class="col-sm-12">
-                      <textarea matInput placeholder="Compétences exigées" matTextareaAutosize formControlName="description"
-                        matAutosizeMinRows="0" matAutosizeMaxRows="5"></textarea>
-                    </mat-form-field>
+                      </mat-form-field>
+                      <mat-form-field class="col-sm-12">
+                        <textarea matInput placeholder="Compétences exigées" matTextareaAutosize
+                          formControlName="description" matAutosizeMinRows="0" matAutosizeMaxRows="5"></textarea>
+                      </mat-form-field>
 
-                  </div>
-                  <div style="text-align:center;margin-bottom:3em">
-                    <button type="button" class="myButton3" (click)="createQuizz()">Créer le quizz</button>
-                    <br>
-                  </div>
-                  <!--  <pre>{{quizzForm.value | json}}</pre>-->
-                </form>
-              </section>
-              <section *ngIf="created ">
-                <div>
-                  <form novalidate [formGroup]="partForm">
-                    <mat-form-field class="col-sm-6" class="example-full-width">
-                      <input matInput [placeholder]="numPartie()" formControlName="name">
-                    </mat-form-field>
+                    </div>
+                    <div style="text-align:center;margin-bottom:3em">
+                      <button type="button" class="btn btn-danger" (click)="createQuizz()">Créer le quizz</button>
+                      <br>
+                    </div>
+                    <!--  <pre>{{quizzForm.value | json}}</pre>-->
                   </form>
-                </div>
-                <form novalidate [formGroup]="quizzForm">
-                  <br>
-                  <!--  <div style="color:#9A2828" class="h6">Etape 1:</div> -->
-                  <div style="color:#9A2828" class="h6">Question {{index}} :</div>
+                </section>
+                <section *ngIf="created ">
                   <div>
-                    <mat-form-field class="example-full-width">
-                      <textarea matInput placeholder="Enoncé de la question" matTextareaAutosize formControlName="enonce"
-                        matAutosizeMinRows="0" matAutosizeMaxRows="5"></textarea>
-                    </mat-form-field>
+                    <form novalidate [formGroup]="partForm">
+                      <mat-form-field class="col-sm-6" class="example-full-width">
+                        <input matInput [placeholder]="numPartie()" formControlName="name">
+                      </mat-form-field>
+                    </form>
                   </div>
+                  <form novalidate [formGroup]="quizzForm">
+                    <br>
+                    <!--  <div style="color:#9A2828" class="h6">Etape 1:</div> -->
+                    <div style="color:#9A2828" class="h6">Question {{index}} :</div>
+                    <div>
+                      <mat-form-field class="example-full-width">
+                        <textarea matInput placeholder="Enoncé de la question" matTextareaAutosize
+                          formControlName="enonce" matAutosizeMinRows="0" matAutosizeMaxRows="5"></textarea>
+                      </mat-form-field>
+                    </div>
 
-                  <div style="color:#9A2828" class="h6"> les propositions de réponse </div>
-                  <div style="color:#9A2828"></div>
-                  <div class="row">
-                    <mat-form-field class="example-full-width" class="col-sm-8">
-                      <textarea matInput placeholder="" matTextareaAutosize placeholder="Proposition 1" formControlName="choice1"
-                        matAutosizeMinRows="0" matAutosizeMaxRows="5"> </textarea>
-                    </mat-form-field>
-                    <mat-form-field class="col-sm-3">
-                      <mat-select placeholder="Réponse" formControlName="bchoice1">
-                        <mat-option [value]=true>Vraie</mat-option>
-                        <mat-option [value]=false>Fausse</mat-option>
-                      </mat-select>
-                    </mat-form-field>
-                  </div>
-                  <div style="color:#9A2828"></div>
-                  <div class="row">
-                    <mat-form-field class="incomplete-full-width" class="col-sm-8">
-                      <textarea matInput matTextareaAutosize placeholder="Proposition 2" formControlName="choice2"
-                        matAutosizeMinRows="0" matAutosizeMaxRows="5"></textarea>
-                    </mat-form-field>
-                    <mat-form-field class="col-sm-3">
-                      <mat-select placeholder="Réponse" formControlName="bchoice2">
-                        <mat-option [value]=true>Vraie</mat-option>
-                        <mat-option [value]=false>Fausse</mat-option>
-                      </mat-select>
-                    </mat-form-field>
-                  </div>
-                  <div *ngIf="last(-1)">
-                    <button class="myButton3" (click)="show[0]=true" tooltip="Plus de propositions"><i class="fa fa-plus"></i></button>
-                  </div>
-                  <div *ngFor="let iter of show;let i = index">
-                    <div style="color:#9A2828" *ngIf="iter"></div>
-                    <div *ngIf="iter">
-                      <div class="row">
-                        <mat-form-field class="example-full-width" class="col-sm-8">
-                          <textarea matInput matTextareaAutosize [placeholder]="proposition(i)" [formControlName]="choice(i)"
-                            matAutosizeMinRows="0" matAutosizeMaxRows="5">
+                    <div style="color:#9A2828" class="h6"> les propositions de réponse </div>
+                    <div style="color:#9A2828"></div>
+                    <div class="row">
+                      <mat-form-field class="example-full-width" class="col-sm-8">
+                        <textarea matInput placeholder="" matTextareaAutosize placeholder="Proposition 1"
+                          formControlName="choice1" matAutosizeMinRows="0" matAutosizeMaxRows="5"> </textarea>
+                      </mat-form-field>
+                      <mat-form-field class="col-sm-3">
+                        <mat-select placeholder="Réponse" formControlName="bchoice1">
+                          <mat-option [value]=true>Vraie</mat-option>
+                          <mat-option [value]=false>Fausse</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+                    <div style="color:#9A2828"></div>
+                    <div class="row">
+                      <mat-form-field class="incomplete-full-width" class="col-sm-8">
+                        <textarea matInput matTextareaAutosize placeholder="Proposition 2" formControlName="choice2"
+                          matAutosizeMinRows="0" matAutosizeMaxRows="5"></textarea>
+                      </mat-form-field>
+                      <mat-form-field class="col-sm-3">
+                        <mat-select placeholder="Réponse" formControlName="bchoice2">
+                          <mat-option [value]=true>Vraie</mat-option>
+                          <mat-option [value]=false>Fausse</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+                    <div *ngIf="last(-1)">
+                      <button class="btn btn-outline-danger" (click)="show[0]=true" tooltip="Plus de propositions"><i
+                          class="fa fa-plus"></i></button>
+                    </div>
+                    <div *ngFor="let iter of show;let i = index">
+                      <div style="color:#9A2828" *ngIf="iter"></div>
+                      <div *ngIf="iter">
+                        <div class="row">
+                          <mat-form-field class="example-full-width" class="col-sm-8">
+                            <textarea matInput matTextareaAutosize [placeholder]="proposition(i)"
+                              [formControlName]="choice(i)" matAutosizeMinRows="0" matAutosizeMaxRows="5">
                                         </textarea>
-                        </mat-form-field>
-                        <mat-form-field class="col-sm-3">
-                          <mat-select placeholder="Réponse" [formControlName]="bchoice(i)">
-                            <mat-option [value]=true>Vraie</mat-option>
-                            <mat-option [value]=false>Fausse</mat-option>
-                          </mat-select>
-                        </mat-form-field>
-                        <div class="col-sm-1">
-                          <a tooltip="Supprimer"><i style="color:#9A2828;font-size:2em;margin-top:0.5em;" class="fa fa fa-times-circle "
-                              (click)="show[i]=false;"></i></a>
+                          </mat-form-field>
+                          <mat-form-field class="col-sm-3">
+                            <mat-select placeholder="Réponse" [formControlName]="bchoice(i)">
+                              <mat-option [value]=true>Vraie</mat-option>
+                              <mat-option [value]=false>Fausse</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                          <div class="col-sm-1">
+                            <a tooltip="Supprimer"><i style="color:#9A2828;font-size:2em;margin-top:0.5em;"
+                                class="fa fa fa-times-circle " (click)="show[i]=false;"></i></a>
+                          </div>
+                        </div>
+                        <div *ngIf="last(i) && i<10">
+                          <button (click)="show[i+1]=true" class="myButton3" tooltip="Plus de propositions"><i
+                              class="fa fa-plus"></i></button>
                         </div>
                       </div>
-                      <div *ngIf="last(i) && i<10">
-                        <button (click)="show[i+1]=true" class="myButton3" tooltip="Plus de propositions"><i class="fa fa-plus"></i></button>
-                      </div>
                     </div>
+                    <div style="text-align:center;margin-bottom:1em;">
+                      <button type="button" class="btn btn-outline-danger" (click)="sendQuestion()">Ajouter la question
+                        {{index}}</button>
+                      <button type="button" class="btn btn-outline-danger" (click)="sendTest()">valider la
+                        partie</button>
+                      <button type="button" class="btn btn-danger" (click)="sendOverAllTest()">Valider le quizz</button>
+
+                    </div>
+
+                    <!--  <pre>{{quizzForm.value | json}}</pre>-->
+                  </form>
+                </section>
+              </div>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab>
+            <ng-template ngbTabTitle style="color:#9A2828">Entretien vidéo</ng-template>
+            <ng-template ngbTabContent>
+              <div class="white-card">
+                <div class="row">
+                  <div class="col">
+                    <div class="d-flex justify-content-between align-items-center form-group">
+                      <div>
+                        <h2 *ngIf="!created">
+                          Création d'un entretien vidéo </h2>
+                      </div>
+                      <button class="btn btn-outline-danger" tooltip="Liste des entretiens"
+                        (click)="redirectAllinterviews()">
+                        <a><i class="fa fa-file-text-o" aria-hidden="true"></i></a></button>
+                    </div>
+                    <section>
+                      <!--   <div style="color:#9A2828" class="h6">Etape 1 :</div> -->
+                      <div class="row">
+                        <mat-form-field class="col-sm-12">
+                          <input matInput placeholder="Nom d'entretien" [(ngModel)]="interview" #ctrl="ngModel">
+                        </mat-form-field>
+                      </div>
+                      <div style="text-align:center;margin-bottom:3em">
+                        <button type="button" class="btn btn-danger" (click)="createInterview()">Créer
+                          l'entretien</button>
+                      </div>
+                    </section>
                   </div>
-                  <div style="text-align:center;margin-bottom:1em;">
-                    <button type="button" class="myButton3" (click)="sendQuestion()">Ajouter la question {{index}}</button>
-                    <button type="button" class="myButton3" (click)="sendTest()">valider la partie</button>
-                    <button type="button" class="myButton3" (click)="sendOverAllTest()">Valider le quizz</button>
-
-                  </div>
-
-                  <!--  <pre>{{quizzForm.value | json}}</pre>-->
-                </form>
-              </section>
-
-            </div>
-
-          </div>
-
-        </ng-template>
-      </ngb-tab>
-
-      <ngb-tab>
-        <ng-template ngbTabTitle style="color:#9A2828">Entretien vidéo</ng-template>
-        <ng-template ngbTabContent>
-          <div class="row  my-form rounded">
-            <div class="col">
-              <div style="overflow: hidden">
-                <div style="float: left; color:#9A2828;margin-left:10em;">
-                  <br>
-                  <h3 class="title" style="text-align:center;" *ngIf="!created">
-                    Création d'un entretien vidéo </h3>
-
-                </div>
-                <div style="float: right;">
-                  <button class="myButton3" tooltip="Liste des entretiens" (click)="redirectAllinterviews()">
-                    <a><i class="fa fa-file-text-o" aria-hidden="true"></i></a></button>
                 </div>
               </div>
-              <section>
-                <br>
-                <!--   <div style="color:#9A2828" class="h6">Etape 1 :</div> -->
-                <div class="row">
-                  <mat-form-field class="col-sm-12">
-                    <input matInput placeholder="Nom d'entretien" [(ngModel)]="interview" #ctrl="ngModel">
-                  </mat-form-field>
-                </div>
-                <div style="text-align:center;margin-bottom:3em">
-                  <button type="button" class="myButton3" (click)="createInterview()">Créer l'entretien</button>
-                  <br>
-                </div>
-              </section>
-            </div>
-          </div>
-
-        </ng-template>
-      </ngb-tab>
-
-    </ngb-tabset>
-
+            </ng-template>
+          </ngb-tab>
+        </ngb-tabset>
+      </div>
+    </div>
   </div>
 </div>

@@ -24,6 +24,7 @@ import { InterviewCreateComponent } from './interview-create/interview-create.co
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { InterviewListComponent } from './interview-list/interview-list.component';
 import { CKEditorModule } from 'ngx-ckeditor';
+import { EvaluationSidebarComponent } from './evaluation-sidebar/evaluation-sidebar.component';
 
 
 
@@ -52,6 +53,6 @@ import { CKEditorModule } from 'ngx-ckeditor';
     NgbModule,
     CKEditorModule
   ],
-  declarations: [QuizzCreateComponent, QuizzListComponent, TakeTestComponent, EvalNavbarComponent, QuizzPageComponent, QuizzReportComponent, InterviewCreateComponent, InterviewListComponent]
+  declarations: [QuizzCreateComponent, EvaluationSidebarComponent, QuizzListComponent, TakeTestComponent, EvalNavbarComponent, QuizzPageComponent, QuizzReportComponent, InterviewCreateComponent, InterviewListComponent]
 })
 export class EvaluationModule { }
