@@ -1,46 +1,56 @@
 <app-candidate-header></app-candidate-header>
-<div class="page-container">
-    <div class="container">
+<div class="page-container page-wrap">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col">
+            <div class="col-md-3 col-lg-3 col-xl-2">
+                <app-candidate-sidebar></app-candidate-sidebar>
+            </div>
+            <div class="col-md-9 col-lg-9 col-xl-10">
                 <section>
                     <header class="header">
                         <div style="text-align:right;">
-                            <div style="text-align:center;color:#9A2828;">
-                                <h4><br>Liste des candidats</h4>
+                            <div class="d-flex justify-content-between align-items-center form-group">
+                                <h2 class="m-b-0">Liste des candidats1</h2>
+                                <div class="action-btn">
+                                    <!--         <button class="myButton2" style="margin-bottom:0.8em;" *ngIf="!startSearch" type="submit"(click)="startSearch=!startSearch;" tooltip="Trouver des candidats" > <i class="fa fa-search"></i></button>
+                                     <button class="myButton2" style="margin-bottom:0.8em;" (click)="redirectNewCandidatePage()" tooltip="Ajouter un candidat" ><i class="fa fa-user-plus" ></i></button>-->
+                                </div>
                             </div>
-                            <div class="action-btn">
-                                <!--         <button class="myButton2" style="margin-bottom:0.8em;" *ngIf="!startSearch" type="submit"(click)="startSearch=!startSearch;" tooltip="Trouver des candidats" > <i class="fa fa-search"></i></button>
-                        <button class="myButton2" style="margin-bottom:0.8em;" (click)="redirectNewCandidatePage()" tooltip="Ajouter un candidat" ><i class="fa fa-user-plus" ></i></button>-->
-                            </div>
                         </div>
-
-                        <!-- <div class="col-sm-1 action-btn">
-                    <form class="form-inline ">
-                        <div class="sm-form mt-2"  style="margin-bottom:0.8em;">
-                            <button class="myButton2" *ngIf="!startSearch" type="submit"(click)="startSearch=!startSearch;" tooltip="Trouver des candidats" > <i class="fa fa-search"></i></button>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-sm-1 action-btn">
-                    <form class="form-inline">
-                        <div class="sm-form mt-2"  style="margin-bottom:0.8em;">
-                            <button class="myButton2" (click)="redirectNewCandidatePage()" tooltip="Ajouter un candidat" ><i class="fa fa-user-plus" ></i></button>
-                        </div>
-                    </form>
-                </div>
-            -->
-
-
                     </header>
                 </section>
+                <!-- <section>
+                                            <header class="header">
+                                                <div style="text-align:right;">
+                                                    <div style="text-align:center;color:#9A2828;">
+                                                        <h4><br>Liste des candidats</h4>
+                                                    </div>
 
+                                                </div> -->
+
+                <!-- <div class="col-sm-1 action-btn">
+                                                <form class="form-inline ">
+                                                    <div class="sm-form mt-2"  style="margin-bottom:0.8em;">
+                                                        <button class="myButton2" *ngIf="!startSearch" type="submit"(click)="startSearch=!startSearch;" tooltip="Trouver des candidats" > <i class="fa fa-search"></i></button>
+                                                    </div>
+                                                </form>
+                                                </div>
+                                                <div class="col-sm-1 action-btn">
+                                                    <form class="form-inline">
+                                                        <div class="sm-form mt-2"  style="margin-bottom:0.8em;">
+                                                            <button class="myButton2" (click)="redirectNewCandidatePage()" tooltip="Ajouter un candidat" ><i class="fa fa-user-plus" ></i></button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                -->
+                <!-- </header>
+                                        </section> -->
                 <section class="main rounded">
                     <!--             <div class="row">
-              <video width="auto" height="240" controls style=" margin-left: auto; margin-right: auto; display: block;">
-                  <source src="http://localhost:8090/candidates/download/Interview/1194071854" type="video/webm">
-              </video>              
-            </div>  -->
+                                                <video width="auto" height="240" controls style=" margin-left: auto; margin-right: auto; display: block;">
+                                                    <source src="http://localhost:8090/candidates/download/Interview/1194071854" type="video/webm">
+                                                </video>              
+                                                </div>  -->
                     <div class="row">
                         <div class="col-sm-12">
                             <div *ngIf="true" class="search-container">
@@ -50,10 +60,11 @@
                                         <mat-icon matSuffix (click)="this.advanced=!this.advanced;">
                                             <i *ngIf="!this.advanced" class="fa fa-sort-down" style="color:#9A2828"></i>
                                         </mat-icon>
-                                        <mat-icon matSuffix class="myButton3" (click)="sendSearch()"><i class="fa fa-search"
+                                        <mat-icon matSuffix class="myButton3" (click)="sendSearch()"><i
+                                                class="fa fa-search" style="color:#9A2828"></i></mat-icon>
+                                        <mat-icon matSuffix class="myButton3" style="margin-left:0.8em;"
+                                            (click)="redirectNewCandidatePage()"><i class="fa fa-user-plus"
                                                 style="color:#9A2828"></i></mat-icon>
-                                        <mat-icon matSuffix class="myButton3" style="margin-left:0.8em;" (click)="redirectNewCandidatePage()"><i
-                                                class="fa fa-user-plus" style="color:#9A2828"></i></mat-icon>
 
                                     </mat-form-field>
                                 </form>
@@ -64,9 +75,13 @@
                         <div class="advanced-search">
                             <div class="row">
                                 <div class="col-sm-1"></div>
-                                <div class="col-sm-10 h6" style="text-align:center;margin-top:0.5em">Recherche avancée</div>
-                                <div class="col-sm-1" style="text-align:right;"><a><i (click)="this.advanced=!this.advanced;"
-                                            class="fa fa-close" style="color:#9A2828"></i></a></div>
+                                <div class="col-sm-10 h6" style="text-align:center;margin-top:0.5em">
+                                    Recherche avancée
+                                </div>
+                                <div class="col-sm-1" style="text-align:right;"><a><i
+                                            (click)="this.advanced=!this.advanced;" class="fa fa-close"
+                                            style="color:#9A2828"></i></a>
+                                </div>
                             </div>
                             <form [formGroup]="advancedForm">
                                 <div class="row">
@@ -98,18 +113,21 @@
                                             </mat-select>
                                         </mat-form-field>
                                         <mat-form-field style="margin-left:1em;width:50%;">
-                                            <input matInput placeholder="Années d'expérience" formControlName="yearsOfExperience">
+                                            <input matInput placeholder="Années d'expérience"
+                                                formControlName="yearsOfExperience">
                                         </mat-form-field>
 
                                     </div>
                                     <div class="search-items col-sm-6">
                                         <mat-form-field>
-                                            <input matInput placeholder="Poste Actuel" formControlName="currentPosition">
+                                            <input matInput placeholder="Poste Actuel"
+                                                formControlName="currentPosition">
                                         </mat-form-field>
                                     </div>
                                     <div class="search-items col-sm-6">
                                         <mat-form-field>
-                                            <input matInput placeholder="Poste souhaité" formControlName="desiredPosition">
+                                            <input matInput placeholder="Poste souhaité"
+                                                formControlName="desiredPosition">
                                         </mat-form-field>
                                     </div>
                                     <div class="search-items col-sm-6">
@@ -119,14 +137,17 @@
                                     </div>
                                     <div class="search-items col-sm-6">
                                         <mat-form-field>
-                                            <input matInput placeholder="Salaire min" formControlName="salaryMax" min="0">
+                                            <input matInput placeholder="Salaire min" formControlName="salaryMax"
+                                                min="0">
                                         </mat-form-field>
                                     </div>
                                     <div class="row">
                                         <div class=" col-sm-12"></div>
                                         <div class="col-sm-1 send-search">
-                                            <div class="myButton4" (click)="this.advanced=false;searchAdvanced()"><i
-                                                    class="fa fa-search" style="color:#9A2828"></i></div>
+                                            <div class="btn btn-outline-danger"
+                                                (click)="this.advanced=false;searchAdvanced()">
+                                                <i class="fa fa-search" style="color:#9A2828"></i>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -139,7 +160,8 @@
                         <strong>Aucun candidat correspondant à votre recherche</strong>
                     </div>
                     <div style="text-align:center;color:#9A2828" *ngIf="noCandidates">
-                        <strong>Aucun candidat dans la liste , veullez ajouter un candidat</strong>
+                        <strong>Aucun candidat dans la liste , veullez ajouter un
+                            candidat</strong>
                     </div>
                     <table class="table table-responsive-md btn-table table-hover" *ngIf="!noCandidates">
                         <thead>
@@ -156,25 +178,31 @@
                         <tbody *ngIf="allCandidates">
                             <tr *ngFor="let candidate of pagedItems">
                                 <td>
-                                    <a (click)=" displayCandidatePage(candidate)"><img *ngIf="candidate.photoUrl" [src]="candidate.photoUrl"
-                                            class="rounded "></a>
-                                    <a (click)=" displayCandidatePage(candidate)"><img *ngIf="!candidate.photoUrl" src="./assets/home/images/user.png"
-                                            class="rounded "></a>
+                                    <a (click)=" displayCandidatePage(candidate)"><img *ngIf="candidate.photoUrl"
+                                            [src]="candidate.photoUrl" class="rounded "></a>
+                                    <a (click)=" displayCandidatePage(candidate)"><img *ngIf="!candidate.photoUrl"
+                                            src="./assets/home/images/user.png" class="rounded "></a>
 
                                     <!-- <div>{{candidate.photoUrl}}</div>-->
                                 </td>
-                                <td><strong style="color:#434142;"><a (click)=" displayCandidatePage(candidate)">{{candidate.firstName
-                                            | titlecase}} {{candidate.lastName | uppercase}}</a></strong></td>
-                                <td><strong style="color:#434142;">{{candidate.email | lowercase}}</strong></td>
-                                <td><strong style="color:#434142;">{{candidate.profile | titlecase}}</strong></td>
+                                <td><strong style="color:#434142;"><a
+                                            (click)=" displayCandidatePage(candidate)">{{candidate.firstName
+                                            | titlecase}} {{candidate.lastName |
+                                            uppercase}}</a></strong></td>
+                                <td><strong style="color:#434142;">{{candidate.email |
+                                        lowercase}}</strong></td>
+                                <td><strong style="color:#434142;">{{candidate.profile |
+                                        titlecase}}</strong></td>
 
 
                                 <td>
-                                    <strong style="color:#434142;">{{candidate.nExperience}} ans</strong>
+                                    <strong style="color:#434142;">{{candidate.nExperience}}
+                                        ans</strong>
                                 </td>
 
                                 <td><span>
-                                        <mat-checkbox type="checkbox" [ngModel]="filter" (ngModelChange)="onFilterChange(event,candidate)"></mat-checkbox>
+                                        <mat-checkbox type="checkbox" [ngModel]="filter"
+                                            (ngModelChange)="onFilterChange(event,candidate)"></mat-checkbox>
                                     </span>
                                 </td>
 
@@ -192,7 +220,8 @@
                                 <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
                                     <a class="page-link" (click)="setPage(pager.currentPage - 1)">Précedente</a>
                                 </li>
-                                <li class="page-item" *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                                <li class="page-item" *ngFor="let page of pager.pages"
+                                    [ngClass]="{active:pager.currentPage === page}">
                                     <a class="page-link" (click)="setPage(page)">{{page}}</a>
 
                                 </li>
@@ -208,7 +237,7 @@
 
                     </div>
                     <div class="sendbutton">
-                        <button style="margin-bottom:2em;" class="myButton2" (click)="sendInterview()">Envoyer</button>
+                        <button style="margin-bottom:2em;" class="btn btn-outline-danger" (click)="sendInterview()">Envoyer</button>
                     </div>
                     <div align="center" class="div-loader" *ngIf="loader">
                         <strong>Chargement ...</strong><br>
@@ -221,9 +250,7 @@
                             <div class="loader__ball"></div>
                         </div>
                     </div>
-
                 </section>
-
             </div>
         </div>
     </div>

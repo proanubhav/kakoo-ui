@@ -12,11 +12,6 @@
 }
 .main{
     background-color: white;
-
-}
-.header{
-  //display: flex;
-  //flex-direction: row;
 }
 
   .white{
@@ -229,11 +224,14 @@ img {
   text-align:center;
   padding-left:0.6em;
 }
+
+
+
 .myButton3{
   color:#9A2828;
   border:1px solid #9a2828;
   
-  background-color:#f9f9f9;
+  background-color:#fff;
   -moz-border-radius:6px;
   -webkit-border-radius:6px;
   border-radius:6px;
@@ -245,8 +243,6 @@ img {
   padding-left:1em;
   padding-right:2em;
   padding-top:2px;
-
-
 }
 .myButton3:hover {
   background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e9e9e9), color-stop(1, #f9f9f9));

@@ -13,8 +13,8 @@
   background-color: white;
 }
 
-.modal-header{
-  background-color:	#9A2828;
+.modal-header {
+  background-color: #9A2828;
 }
 
 .mySimpleButton {
@@ -66,7 +66,8 @@
   border-top: 16px solid #9A2828;
   width: 120px;
   height: 120px;
-  -webkit-animation: spin 2s linear infinite; /* Safari */
+  -webkit-animation: spin 2s linear infinite;
+  /* Safari */
   animation: spin 2s linear infinite;
   margin: auto;
   position: absolute;
@@ -77,8 +78,13 @@
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .titleContainer {
@@ -94,7 +100,32 @@
   color: #434142;
 }
 
-.mySuccessButton [disabled = true] {
+.mySuccessButton [disabled=true] {
   border: 1px solid gray;
   background: white;
+}
+
+.main {
+  background-color: white;
+}
+
+body .btn.btn-outline-danger {
+  border-color: #9a2828;
+  text-transform: uppercase;
+  background-color: #fff;
+  color: #9a2828 !important;
+}
+
+body .btn.btn-danger {
+  border-color: #9a2828;
+  text-transform: uppercase;
+  background-color: #9a2828;
+  color: #fff !important;
+
+  &:hover,
+  &:active {
+    border-color: #9a2828;
+    background-color: #fff;
+    color: #9a2828 !important;
+  }
 }

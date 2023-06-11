@@ -1,817 +1,888 @@
 <!--<app-head-candidate></app-head-candidate>-->
-
-
 <app-candidate-header></app-candidate-header>
-<!-- test-->
-<div class="page-container">
-  <div class="row white"></div>
-  <div class="container col-md-9 col-md-offset-5">
+<div class="page-container page-wrap">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col my-candidate">
-        <!-- <div class="modal-header  white-text ">
+      <div class="col-md-3 col-lg-3 col-xl-2">
+        <app-candidate-sidebar></app-candidate-sidebar>
+      </div>
+      <div class="col-md-9 col-lg-9 col-xl-10">
+        <section class="main rounded">
+
+
+          <!-- test-->
+          <!-- <div class="page-container">
+  <div class="row white"></div>
+  <div class="container col-md-9 col-md-offset-5"> -->
+          <div class="row">
+            <div class="col my-candidate">
+              <!-- <div class="modal-header  white-text ">
                         <h4 class="title">
                                 <i class="fa fa-info-circle"></i> Informations du Candidat :  {{this.firstName}} {{this.lastName}}</h4>
                       </div>-->
-        <div class="row general rounded">
-          <div class="col">
-            <div style="margin-top:0.5em;">
-              <a><img id="candidate-image" *ngIf="imageSrc" [src]="imageSrc" (click)="fileInput.click()" class="rounded-circle bordered "></a>
-            </div>
-            <input style="display:none" type="file" (change)="selectFile($event)" #fileInput accept="image/*">
-            <div style="text-align:center;color:#555;margin-top:0.5em">
-              <h4>{{firstName | titlecase}} {{lastName | uppercase}} </h4>
-              <h6><strong>{{profile | titlecase}}</strong></h6>
-            </div>
-            <div style="text-align:center;">
-              <button class="myButton2" tooltip="Modifier"><a (click)="redirectEditPage(candidate)"><i class="fa  fa-pencil-square-o"></i></a></button>
-              <button class="myButton2" tooltip="Télécharger le CV"><a (click)="redirectCvUpload(candidate)"><i class="fa fa-upload"></i></a></button>
-              <button class="myButton2" tooltip="Supprimer le candidat"><a (click)="deleteCandidateConfirm=true"><i
-                    class="fa fa-trash-o"></i></a></button>
-              <button class="myButton2" tooltip="Envoyer un test"><a (click)="goTest()"><i class="fa fa-share-square-o"></i></a></button>
-              <button class="myButton2" tooltip="Envoyer un entretien"><a (click)="goEntretien(candidate)"><i class="fa fa-caret-square-o-right"></i></a></button>
+              <div class="row general rounded">
+                <div class="col">
+                  <div style="margin-top:0.5em;">
+                    <a class="d-flex-center"><img id="candidate-image" *ngIf="imageSrc" [src]="imageSrc"
+                        (click)="fileInput.click()" class="rounded-circle bordered "></a>
+                  </div>
+                  <input style="display:none" type="file" (change)="selectFile($event)" #fileInput accept="image/*">
+                  <div style="text-align:center;color:#555;margin-top:0.5em">
+                    <h4>{{firstName | titlecase}} {{lastName | uppercase}} </h4>
+                    <h6><strong>{{profile | titlecase}}</strong></h6>
+                  </div>
+                  <div style="text-align:center;">
+                    <button class="myButton2" tooltip="Modifier"><a (click)="redirectEditPage(candidate)"><i
+                          class="fa  fa-pencil-square-o"></i></a></button>
+                    <button class="myButton2" tooltip="Télécharger le CV"><a (click)="redirectCvUpload(candidate)"><i
+                          class="fa fa-upload"></i></a></button>
+                    <button class="myButton2" tooltip="Supprimer le candidat"><a
+                        (click)="deleteCandidateConfirm=true"><i class="fa fa-trash-o"></i></a></button>
+                    <button class="myButton2" tooltip="Envoyer un test"><a (click)="goTest()"><i
+                          class="fa fa-share-square-o"></i></a></button>
+                    <button class="myButton2" tooltip="Envoyer un entretien"><a (click)="goEntretien(candidate)"><i
+                          class="fa fa-caret-square-o-right"></i></a></button>
 
 
-            </div>
-          </div>
-
-        </div>
-
-        <section class=" delete-box">
-          <div *ngIf="deleteCandidateConfirm" class="candidate-delete rounded">
-
-            <div style="overflow: hidden;margin-top:0.5em;">
-              <p style="float: left;margin-left:0.8em"><img id="delete-img" [src]="deleteImg" class=" img-responsive"></p>
-              <p class="h6" style="float: center;margin-left:-0.5em;margin-top:0.3em">
-                Voulez-vous vraiment supprimer définitivement ce candidat ? <br>
-                <button type="button" class="myButton3" (click)="deleteCandidate(candidate);deleteCandidateConfirm=false;">Supprimer</button>
-                <button type="button" class="myButton3" (click)="deleteCandidateConfirm=false">Annuler</button>
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section class="main" *ngIf="exist">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="card">
-                <div class="card-header">
-                  <div class="form-inline">
-                    <mat-icon>contacts</mat-icon>
-                    Contacts
                   </div>
                 </div>
-                <div class="card-body">
-                  <mat-accordion>
-                    <mat-expansion-panel>
-                      <mat-expansion-panel-header>
-                        <mat-panel-title>
+
+              </div>
+
+              <section class=" delete-box">
+                <div *ngIf="deleteCandidateConfirm" class="candidate-delete rounded">
+
+                  <div style="overflow: hidden;margin-top:0.5em;">
+                    <p style="float: left;margin-left:0.8em"><img id="delete-img" [src]="deleteImg"
+                        class=" img-responsive"></p>
+                    <p class="h6" style="float: center;margin-left:-0.5em;margin-top:0.3em">
+                      Voulez-vous vraiment supprimer définitivement ce candidat ? <br>
+                      <button type="button" class="myButton3"
+                        (click)="deleteCandidate(candidate);deleteCandidateConfirm=false;">Supprimer</button>
+                      <button type="button" class="myButton3" (click)="deleteCandidateConfirm=false">Annuler</button>
+                    </p>
+                  </div>
+                </div>
+              </section>
+
+              <section class="main" *ngIf="exist">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="card">
+                      <div class="card-header">
+                        <div class="form-inline">
+                          <mat-icon>contacts</mat-icon>
                           Contacts
-                        </mat-panel-title>
-                      </mat-expansion-panel-header>
-                      <table class="table  table-responsive-md btn-table  table-hover" *ngIf="exist">
-                        <tr>
-                          <th class="h6" style="width:40%">
-                            <div class="form-inline">
-                              <mat-icon>home</mat-icon>Adresse
-                            </div>
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <mat-accordion>
+                          <mat-expansion-panel>
+                            <mat-expansion-panel-header>
+                              <mat-panel-title>
+                                Contacts
+                              </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <table class="table  table-responsive-md btn-table  table-hover" *ngIf="exist">
+                              <tr>
+                                <th class="h6" style="width:40%">
+                                  <div class="form-inline">
+                                    <mat-icon>home</mat-icon>Adresse
+                                  </div>
 
-                          </th>
-                          <th class="h6" style="width:60%">{{this.address}}</th>
-                        </tr>
-                        <tr>
-                          <th class="h6">
-                            <div class="form-inline">
-                              <mat-icon>contact_phone</mat-icon>Téléphone
-                            </div>
-                          </th>
-                          <th class="h6">{{this.mobilePhone}}</th>
-                        </tr>
-                        <tr>
-                          <th class="h6">
-                            <div class="form-inline">
-                              <mat-icon>contact_mail</mat-icon>Email
-                            </div>
-                          </th>
-                          <th class="h6">{{this.email}}</th>
-                        </tr>
-                      </table>
-                    </mat-expansion-panel>
-                  </mat-accordion>
+                                </th>
+                                <th class="h6" style="width:60%">{{this.address}}</th>
+                              </tr>
+                              <tr>
+                                <th class="h6">
+                                  <div class="form-inline">
+                                    <mat-icon>contact_phone</mat-icon>Téléphone
+                                  </div>
+                                </th>
+                                <th class="h6">{{this.mobilePhone}}</th>
+                              </tr>
+                              <tr>
+                                <th class="h6">
+                                  <div class="form-inline">
+                                    <mat-icon>contact_mail</mat-icon>Email
+                                  </div>
+                                </th>
+                                <th class="h6">{{this.email}}</th>
+                              </tr>
+                            </table>
+                          </mat-expansion-panel>
+                        </mat-accordion>
+                      </div>
+                    </div>
+
+                  </div>
+
                 </div>
-              </div>
 
-            </div>
+                <!-- Cvs Section-->
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="card">
+                      <div class="card-header">
+                        <div class="form-inline">
+                          <mat-icon>
+                            library_books
+                          </mat-icon>
+                          CVs :
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <mat-accordion>
+                          <mat-expansion-panel>
+                            <mat-expansion-panel-header>
+                              <mat-panel-title>
+                                CVs
+                              </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <table class="table table-hover" *ngIf="exist">
+                              <tr>
+                                <th>
+                                  <div *ngIf="this.cvs && this.cvs.length==0" style="text-align:center;"><em> Ce
+                                      candidat
+                                      n'as
+                                      pas encore
+                                      de Cvs </em></div>
+                                  <div>
+                                    <div *ngFor="let mycv of this.cvs " class="candidate-cvs rounded "
+                                      style="text-align:center;">
+                                      <div style="overflow: hidden;margin-bottom:-1.2em;">
+                                        <p class="h6" style="float: left;margin-left:0.5em;">{{mycv.cv}}</p>
+                                        <p style="float: right;margin-right:0.5em;">
+                                          <a (click)="getCv(mycv)"> <i class="fa fa-download "></i></a>
+                                          <a (click)="deleteCv(mycv)"> <i class="fa fa-times-circle-o"></i></a>
+                                        </p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div style="text-align:center;margin-bottom:1em;"> <a
+                                      (click)="redirectCvUpload(candidate)" tooltip="Télécharger un autre CV">
+                                      <i class="fa fa-cloud-upload"></i> </a></div>
+                                </th>
+                              </tr>
+                            </table>
+                          </mat-expansion-panel>
+                        </mat-accordion>
 
-          </div>
-
-          <!-- Cvs Section-->
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="card">
-                <div class="card-header">
-                  <div class="form-inline">
-                    <mat-icon>
-                      library_books
-                    </mat-icon>
-                    CVs :
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="card-body">
-                  <mat-accordion>
-                    <mat-expansion-panel>
-                      <mat-expansion-panel-header>
-                        <mat-panel-title>
-                          CVs
-                        </mat-panel-title>
-                      </mat-expansion-panel-header>
-                      <table class="table table-hover" *ngIf="exist">
-                        <tr>
-                          <th>
-                            <div *ngIf="this.cvs && this.cvs.length==0" style="text-align:center;"><em> Ce candidat
-                                n'as
-                                pas encore
-                                de Cvs </em></div>
-                            <div>
-                              <div *ngFor="let mycv of this.cvs " class="candidate-cvs rounded " style="text-align:center;">
-                                <div style="overflow: hidden;margin-bottom:-1.2em;">
-                                  <p class="h6" style="float: left;margin-left:0.5em;">{{mycv.cv}}</p>
-                                  <p style="float: right;margin-right:0.5em;">
-                                    <a (click)="getCv(mycv)"> <i class="fa fa-download "></i></a>
-                                    <a (click)="deleteCv(mycv)"> <i class="fa fa-times-circle-o"></i></a>
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                            <div style="text-align:center;margin-bottom:1em;"> <a (click)="redirectCvUpload(candidate)"
-                                tooltip="Télécharger un autre CV">
-                                <i class="fa fa-cloud-upload"></i> </a></div>
-                          </th>
-                        </tr>
-                      </table>
-                    </mat-expansion-panel>
-                  </mat-accordion>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="card">
+                      <div class="card-header">
 
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="card">
-                <div class="card-header">
+                        <span class="h5" style="color :#434142;">
+                          <i class="fa fa-group prefix" aria-hidden="true" id="social"></i> Réseaux Sociaux :</span>
+                        <span class="col-sm-3 modify bordered rounded " style="float:right">
+                          <a *ngIf="!contactEdit" (click)="contactEdit=true; " matTooltip="Modifier cette section">
+                            <strong><i class="fa fa-edit prefix" aria-hidden="true"></i></strong></a>
+                          <a *ngIf="contactEdit" (click)="getOneCandidate(this.id);contactEdit=false;"
+                            matTooltip="Voir les modifications">
+                            <strong><i class="fa fa-edit prefix" aria-hidden="true"></i></strong></a>
+                        </span>
+                      </div>
+                      <div class="card-body">
+                        <mat-accordion>
+                          <mat-expansion-panel [expanded]="contactEdit">
+                            <mat-expansion-panel-header>
+                              <mat-panel-title>
+                                Réseaux Sociaux
+                              </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <table class="table table-hover" *ngIf="exist">
+                              <tr>
+                                <th>
+                                  <div *ngFor="let socialNetwork of socialNetworks" class="candidate-cvs  rounded"
+                                    style="text-align:center;">
+                                    <div style="overflow: hidden">
+                                      <p class="h6" style="float: left;margin-left:0.5em;">
+                                        <i class="{{iconSocial(socialNetwork)}}"></i> &nbsp; <a
+                                          href="{{socialNetwork.url}}" target="_blank">{{socialNetwork.url}}</a>
+                                      </p>
+                                      <p class="h6" style="float: right;margin-right:0.5em;margin-bottom:-0.5em;">
 
-                  <span class="h5" style="color :#434142;">
-                    <i class="fa fa-group prefix" aria-hidden="true" id="social"></i> Réseaux Sociaux :</span>
-                  <span class="col-sm-3 modify bordered rounded " style="float:right">
-                    <a *ngIf="!contactEdit" (click)="contactEdit=true; " matTooltip="Modifier cette section">
-                      <strong><i class="fa fa-edit prefix" aria-hidden="true"></i></strong></a>
-                    <a *ngIf="contactEdit" (click)="getOneCandidate(this.id);contactEdit=false;" matTooltip="Voir les modifications">
-                      <strong><i class="fa fa-edit prefix" aria-hidden="true"></i></strong></a>
-                  </span>
-                </div>
-                <div class="card-body">
-                  <mat-accordion>
-                    <mat-expansion-panel [expanded]="contactEdit">
-                      <mat-expansion-panel-header>
-                        <mat-panel-title>
-                          Réseaux Sociaux
-                        </mat-panel-title>
-                      </mat-expansion-panel-header>
-                      <table class="table table-hover" *ngIf="exist">
-                        <tr>
-                          <th>
-                            <div *ngFor="let socialNetwork of socialNetworks" class="candidate-cvs  rounded" style="text-align:center;">
-                              <div style="overflow: hidden">
-                                <p class="h6" style="float: left;margin-left:0.5em;">
-                                  <i class="{{iconSocial(socialNetwork)}}"></i> &nbsp; <a href="{{socialNetwork.url}}"
-                                    target="_blank">{{socialNetwork.url}}</a>
-                                </p>
-                                <p class="h6" style="float: right;margin-right:0.5em;margin-bottom:-0.5em;">
+                                        <em *ngIf="contactEdit"><a
+                                            (click)="socialNetwork.removeOption=!socialNetwork.removeOption"
+                                            data-toggle="tooltip" data-placement="top" title="Supprimer ce lien"><i
+                                              class="fa fa-times-circle-o"></i></a></em>
+                                      </p>
 
-                                  <em *ngIf="contactEdit"><a (click)="socialNetwork.removeOption=!socialNetwork.removeOption"
-                                      data-toggle="tooltip" data-placement="top" title="Supprimer ce lien"><i class="fa fa-times-circle-o"></i></a></em>
-                                </p>
-
-                              </div>
-
-                              <div *ngIf="socialNetwork.removeOption" class="delete-confirmation bordered">
-                                <p class="h6">Voulez-vous vraiment supprimer définitivement ce réseau social ?</p>
-                                <button type="button" class="btn btn-outline-elegant waves-effect btn-md" (click)="removeSocialNetwork(socialNetwork,candidate)">Supprimer</button>
-                                <button type="button" class="btn btn-outline-deep-orange waves-effect btn-md" (click)="socialNetwork.removeOption=false">Annuler</button>
-                              </div>
-
-
-                            </div>
-                            <!--new Social Network adding-->
-
-                            <div style="text-align:center;"><a tooltip="Ajouter un réseau social" (click)="newSocialNetworkAdd=true"
-                                *ngIf="!newSocialNetworkAdd && contactEdit">
-                                <i class="fa fa-plus-square-o "></i></a></div>
-                            <section>
-                              <form *ngIf="newSocialNetworkAdd" novalidate [formGroup]="socialNetworkForm" class=" rounded candidate-cvs">
-                                <div class="">
-                                  <br>
-                                  <div class="row">
-
-                                    <div class="col-sm-1"></div>
-                                    <div class="col-sm-3">
-                                      <mat-form-field>
-                                        <mat-select formControlName="socialNetworkType" placeholder="Réseau Social">
-                                          <mat-option value="Twitter">Twitter</mat-option>
-                                          <mat-option value="Linkedin">Linkedin</mat-option>
-                                          <mat-option value="Viadeo">Viadeo</mat-option>
-                                          <mat-option value="Github">Github</mat-option>
-                                          <mat-option value="Autre">Autre</mat-option>
-                                        </mat-select>
-                                      </mat-form-field>
                                     </div>
-                                    <div class="col-sm-1"></div>
-                                    <div class="col-sm-6 ">
-                                      <!--<i class="fa fa-bars prefix" aria-hidden="true"></i>-->
-                                      <mat-form-field class="example-full-width">
-                                        <input matInput formControlName="socialNetworkUrl" placeholder="Lien du réseau social">
-                                      </mat-form-field>
+
+                                    <div *ngIf="socialNetwork.removeOption" class="delete-confirmation bordered">
+                                      <p class="h6">Voulez-vous vraiment supprimer définitivement ce réseau social ?</p>
+                                      <button type="button" class="btn btn-outline-elegant waves-effect btn-md"
+                                        (click)="removeSocialNetwork(socialNetwork,candidate)">Supprimer</button>
+                                      <button type="button" class="btn btn-outline-deep-orange waves-effect btn-md"
+                                        (click)="socialNetwork.removeOption=false">Annuler</button>
+                                    </div>
+
+
+                                  </div>
+                                  <!--new Social Network adding-->
+
+                                  <div style="text-align:center;"><a tooltip="Ajouter un réseau social"
+                                      (click)="newSocialNetworkAdd=true" *ngIf="!newSocialNetworkAdd && contactEdit">
+                                      <i class="fa fa-plus-square-o "></i></a></div>
+                                  <section>
+                                    <form *ngIf="newSocialNetworkAdd" novalidate [formGroup]="socialNetworkForm"
+                                      class=" rounded candidate-cvs">
+                                      <div class="">
+                                        <br>
+                                        <div class="row">
+
+                                          <div class="col-sm-1"></div>
+                                          <div class="col-sm-3">
+                                            <mat-form-field>
+                                              <mat-select formControlName="socialNetworkType"
+                                                placeholder="Réseau Social">
+                                                <mat-option value="Twitter">Twitter</mat-option>
+                                                <mat-option value="Linkedin">Linkedin</mat-option>
+                                                <mat-option value="Viadeo">Viadeo</mat-option>
+                                                <mat-option value="Github">Github</mat-option>
+                                                <mat-option value="Autre">Autre</mat-option>
+                                              </mat-select>
+                                            </mat-form-field>
+                                          </div>
+                                          <div class="col-sm-1"></div>
+                                          <div class="col-sm-6 ">
+                                            <!--<i class="fa fa-bars prefix" aria-hidden="true"></i>-->
+                                            <mat-form-field class="example-full-width">
+                                              <input matInput formControlName="socialNetworkUrl"
+                                                placeholder="Lien du réseau social">
+                                            </mat-form-field>
+                                          </div>
+                                        </div>
+                                        <div class="text-center mt-4 mb-2">
+                                          <button type="submit" class="mySuccessButton"
+                                            (click)="addNewSocialNetwork(candidate) ; newSocialNetworkAdd=false"
+                                            [disabled]="!socialNetworkForm.valid">Ajouter <i
+                                              class="fa fa-plus ml-3"></i>
+                                          </button>
+                                          <button type="button" class="myWarningButton"
+                                            (click)="newSocialNetworkAdd=false">Annuler
+                                            <i class="fa fa-times-circle ml-3"></i> </button>
+                                        </div>
+                                      </div>
+                                    </form>
+                                  </section>
+                                </th>
+                              </tr>
+
+                            </table>
+                          </mat-expansion-panel>
+                        </mat-accordion>
+
+
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="card">
+                      <div class="card-header">
+                        <span class="h5" style="color :#434142;" id="languages">
+                          <i class="fa fa-flag prefix"></i> Langues :</span>
+                        <span class="col-sm-3 modify bordered rounded " style="float:right">
+                          <a (click)="languagesEdit=true" *ngIf="!languagesEdit" matTooltip="Modifier cette section">
+                            <strong><i class="fa fa-edit prefix"></i></strong></a>
+                          <a (click)="getOneCandidate(this.id);languagesEdit=false" *ngIf="languagesEdit"> <strong><i
+                                class="fa fa-edit" matTooltip="Voir les Modifications"></i></strong></a>
+                        </span>
+                      </div>
+                      <div class="card-body">
+                        <mat-accordion>
+                          <mat-expansion-panel [expanded]="languagesEdit">
+                            <mat-expansion-panel-header>
+                              <mat-panel-title>
+                                Langues
+                              </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <table class="table table-hover" *ngIf="exist">
+                              <tr>
+                                <th>
+                                  <div *ngFor="let language of languages" class="candidate-cvs   rounded">
+                                    <!--languages-->
+                                    <div style="overflow: hidden;">
+                                      <p class="h6" style="float: left;margin-left:0.5em;">{{language.name}} :
+                                        <em>{{language.type}}</em></p>
+                                      <p style="float: right;margin-right:0.5em;">
+                                        <a *ngIf="languagesEdit" (click)="language.removeOption=true;"> <i
+                                            class="fa fa-times-circle-o "></i></a>
+                                      </p>
+                                    </div>
+                                    <!-- delete language -->
+                                    <div *ngIf="language.removeOption" class="delete-confirmation">
+                                      <p class="h6" style="color:#434142;">Voulez-vous vraiment supprimer définitivement
+                                        cette
+                                        langue ?</p>
+                                      <button type="button" class="btn btn-outline-purple waves-effect btn-md"
+                                        (click)="removeLanguage(language,candidate)">Supprimer</button>
+                                      <button type="button" class="btn btn-outline-elegant waves-effect btn-md"
+                                        (click)="language.removeOption=false">Annuler</button>
                                     </div>
                                   </div>
-                                  <div class="text-center mt-4 mb-2">
-                                    <button type="submit" class="mySuccessButton" (click)="addNewSocialNetwork(candidate) ; newSocialNetworkAdd=false"
-                                      [disabled]="!socialNetworkForm.valid">Ajouter <i class="fa fa-plus ml-3"></i>
-                                    </button>
-                                    <button type="button" class="myWarningButton" (click)="newSocialNetworkAdd=false">Annuler
-                                      <i class="fa fa-times-circle ml-3"></i> </button>
+                                  <!--new language adding-->
+                                  <div style="text-align:center;"><a tooltip="Ajouter une langue"
+                                      (click)="newLanguageAdd=true" *ngIf="!newLanguageAdd && languagesEdit">
+                                      <i class="fa fa-plus-square-o "></i></a></div>
+
+                                  <section>
+                                    <form *ngIf="newLanguageAdd" class=" rounded candidate-cvs">
+                                      <div class="row">
+                                        <div class=" col-sm-5  skill-form">
+                                          <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Langue" aria-label="State"
+                                              [matAutocomplete]="auto" [formControl]="langCtrl">
+                                            <mat-autocomplete #auto="matAutocomplete">
+                                              <mat-option *ngFor="let lang of filteredLangs | async"
+                                                [value]="lang.name">
+                                                <span>{{ lang.name }}</span>
+                                              </mat-option>
+                                            </mat-autocomplete>
+                                          </mat-form-field>
+                                        </div>
+                                        <div class="col-sm-1"></div>
+                                        <div class="col-sm-5">
+                                          <mat-form-field class="example-full-width">
+
+                                            <mat-select [formControl]="langType" placeholder="Niveau">
+                                              <mat-option value="" disabled>Niveau</mat-option>
+                                              <mat-option value="Notions élémentaires" selected>Notions
+                                                élémentaires</mat-option>
+                                              <mat-option value="Compétence professionnelle ">Compétence professionnelle
+                                              </mat-option>
+                                              <mat-option value="Compétence professionnelle complète">Compétence
+                                                professionnelle
+                                                complète</mat-option>
+                                              <mat-option value="Bilingue ou langue natale">Bilingue ou langue
+                                                natale</mat-option>
+                                            </mat-select>
+                                          </mat-form-field>
+                                        </div>
+                                      </div>
+
+                                      <div class="text-center mt-4 mb-2">
+                                        <button type="submit" class="mySuccessButton"
+                                          (click)="addLanguage(candidate) ; newLanguageAdd=false">Ajouter
+                                          <i class="fa fa-plus ml-3"></i> </button>
+                                        <button type="button" class="myWarningButton"
+                                          (click)="newLanguageAdd=false">Annuler
+                                          <i class="fa fa-times-circle ml-3"></i>
+                                        </button>
+                                      </div>
+                                    </form>
+                                  </section>
+                                  <!-- language adding END-->
+                                </th>
+                              </tr>
+                            </table>
+                          </mat-expansion-panel>
+                        </mat-accordion>
+
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="card">
+                      <div class="card-header">
+                        <span class="h5" style="color :#434142;" id="skills">
+                          <i class="fa fa-graduation-cap prefix" aria-hidden="true"></i> Compétences :</span>
+                        <span class="col-sm-3 modify bordered rounded " style="float:right">
+                          <a (click)="skillsEdit=true" *ngIf="!skillsEdit" matTooltip="Modifier cette Compétences">
+                            <strong><i class="fa fa-edit prefix" aria-hidden="true"></i></strong></a>
+                          <a (click)="getOneCandidate(this.id);skillsEdit=false" *ngIf="skillsEdit"
+                            matTooltip="Voir les Modifications"><strong><i class="fa fa-edit prefix"
+                                aria-hidden="true"></i></strong></a>
+                        </span>
+                      </div>
+                      <div class="card-body">
+                        <mat-accordion>
+                          <mat-expansion-panel [expanded]="skillsEdit">
+                            <mat-expansion-panel-header>
+                              <mat-panel-title>
+                                Compétences
+                              </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <table class="table table-hover" *ngIf="exist">
+                              <tr>
+                                <!--Showing Skills-->
+                                <th>
+                                  <div *ngFor="let skill of skills" class="candidate-cvs row rounded">
+                                    <div class="col-sm-10">
+                                      <div class="myskill"><span class="h6">{{skill.name}}</span></div>
+                                    </div>
+                                    <div class="col-sm-1">
+                                      <div *ngIf="skillsEdit"><a (click)="skill.removeOption=true;"
+                                          style="text-align:right;"><i class="fa fa-times-circle-o"></i></a></div>
+                                    </div>
+                                    <div class="col-sm-1" class="down-button">
+                                      <a (click)="skill.show=!skill.show">
+                                        <i class="fa fa-arrow-circle-down" aria-hidden="true" *ngIf="!skill.show"></i>
+                                        <i class="fa fa-arrow-circle-up" aria-hidden="true" *ngIf="skill.show"></i>
+                                      </a>
+                                    </div>
+                                    <div *ngIf="skill.show" class="mydescription">
+                                      <em class="text-muted">{{skill.type}}</em><br *ngIf="skill.description"> <span
+                                        *ngIf="skill.description">Description
+                                        : {{skill.description}}</span><br>Evaluation : {{evaluationSkill(skill)}}
+                                      <br>
+                                    </div>
+                                    <div *ngIf="skill.removeOption" class="delete-confirmation">
+                                      <p class="h6">Voulez-vous vraiment supprimer définitivement cette compétence ?</p>
+                                      <button type="button" class="btn btn-outline-elegant waves-effect btn-md"
+                                        (click)="removeSkill(skill,candidate)">Supprimer</button>
+                                      <button type="button" class="btn btn-outline-deep-orange waves-effect btn-md"
+                                        (click)="skill.removeOption=false">Annuler</button>
+                                    </div>
+
                                   </div>
-                                </div>
-                              </form>
-                            </section>
-                          </th>
-                        </tr>
 
-                      </table>
-                    </mat-expansion-panel>
-                  </mat-accordion>
+                                  <!--Adding a new Skill -->
 
-
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="card">
-                <div class="card-header">
-                  <span class="h5" style="color :#434142;" id="languages">
-                    <i class="fa fa-flag prefix"></i> Langues :</span>
-                  <span class="col-sm-3 modify bordered rounded " style="float:right">
-                    <a (click)="languagesEdit=true" *ngIf="!languagesEdit" matTooltip="Modifier cette section"> <strong><i
-                          class="fa fa-edit prefix"></i></strong></a>
-                    <a (click)="getOneCandidate(this.id);languagesEdit=false" *ngIf="languagesEdit"> <strong><i class="fa fa-edit"
-                          matTooltip="Voir les Modifications"></i></strong></a>
-                  </span>
-                </div>
-                <div class="card-body">
-                  <mat-accordion>
-                    <mat-expansion-panel [expanded]="languagesEdit">
-                      <mat-expansion-panel-header>
-                        <mat-panel-title>
-                          Langues
-                        </mat-panel-title>
-                      </mat-expansion-panel-header>
-                      <table class="table table-hover" *ngIf="exist">
-                        <tr>
-                          <th>
-                            <div *ngFor="let language of languages" class="candidate-cvs   rounded">
-                              <!--languages-->
-                              <div style="overflow: hidden;">
-                                <p class="h6" style="float: left;margin-left:0.5em;">{{language.name}} : <em>{{language.type}}</em></p>
-                                <p style="float: right;margin-right:0.5em;">
-                                  <a *ngIf="languagesEdit" (click)="language.removeOption=true;"> <i class="fa fa-times-circle-o "></i></a>
-                                </p>
-                              </div>
-                              <!-- delete language -->
-                              <div *ngIf="language.removeOption" class="delete-confirmation">
-                                <p class="h6" style="color:#434142;">Voulez-vous vraiment supprimer définitivement
-                                  cette
-                                  langue ?</p>
-                                <button type="button" class="btn btn-outline-purple waves-effect btn-md" (click)="removeLanguage(language,candidate)">Supprimer</button>
-                                <button type="button" class="btn btn-outline-elegant waves-effect btn-md" (click)="language.removeOption=false">Annuler</button>
-                              </div>
-                            </div>
-                            <!--new language adding-->
-                            <div style="text-align:center;"><a tooltip="Ajouter une langue" (click)="newLanguageAdd=true"
-                                *ngIf="!newLanguageAdd && languagesEdit">
-                                <i class="fa fa-plus-square-o "></i></a></div>
-
-                            <section>
-                              <form *ngIf="newLanguageAdd" class=" rounded candidate-cvs">
-                                <div class="row">
-                                  <div class=" col-sm-5  skill-form">
-                                    <mat-form-field class="example-full-width">
-                                      <input matInput placeholder="Langue" aria-label="State" [matAutocomplete]="auto"
-                                        [formControl]="langCtrl">
-                                      <mat-autocomplete #auto="matAutocomplete">
-                                        <mat-option *ngFor="let lang of filteredLangs | async" [value]="lang.name">
-                                          <span>{{ lang.name }}</span>
-                                        </mat-option>
-                                      </mat-autocomplete>
-                                    </mat-form-field>
-                                  </div>
-                                  <div class="col-sm-1"></div>
-                                  <div class="col-sm-5">
-                                    <mat-form-field class="example-full-width">
-
-                                      <mat-select [formControl]="langType" placeholder="Niveau">
-                                        <mat-option value="" disabled>Niveau</mat-option>
-                                        <mat-option value="Notions élémentaires" selected>Notions élémentaires</mat-option>
-                                        <mat-option value="Compétence professionnelle ">Compétence professionnelle
-                                        </mat-option>
-                                        <mat-option value="Compétence professionnelle complète">Compétence
-                                          professionnelle
-                                          complète</mat-option>
-                                        <mat-option value="Bilingue ou langue natale">Bilingue ou langue natale</mat-option>
-                                      </mat-select>
-                                    </mat-form-field>
-                                  </div>
-                                </div>
-
-                                <div class="text-center mt-4 mb-2">
-                                  <button type="submit" class="mySuccessButton" (click)="addLanguage(candidate) ; newLanguageAdd=false">Ajouter
-                                    <i class="fa fa-plus ml-3"></i> </button>
-                                  <button type="button" class="myWarningButton" (click)="newLanguageAdd=false">Annuler
-                                    <i class="fa fa-times-circle ml-3"></i>
-                                  </button>
-                                </div>
-                              </form>
-                            </section>
-                            <!-- language adding END-->
-                          </th>
-                        </tr>
-                      </table>
-                    </mat-expansion-panel>
-                  </mat-accordion>
-
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="card">
-                <div class="card-header">
-                  <span class="h5" style="color :#434142;" id="skills">
-                    <i class="fa fa-graduation-cap prefix" aria-hidden="true"></i> Compétences :</span>
-                  <span class="col-sm-3 modify bordered rounded " style="float:right">
-                    <a (click)="skillsEdit=true" *ngIf="!skillsEdit" matTooltip="Modifier cette Compétences"> <strong><i
-                          class="fa fa-edit prefix" aria-hidden="true"></i></strong></a>
-                    <a (click)="getOneCandidate(this.id);skillsEdit=false" *ngIf="skillsEdit" matTooltip="Voir les Modifications"><strong><i
-                          class="fa fa-edit prefix" aria-hidden="true"></i></strong></a>
-                  </span>
-                </div>
-                <div class="card-body">
-                  <mat-accordion>
-                    <mat-expansion-panel [expanded]="skillsEdit">
-                      <mat-expansion-panel-header>
-                        <mat-panel-title>
-                          Compétences
-                        </mat-panel-title>
-                      </mat-expansion-panel-header>
-                      <table class="table table-hover" *ngIf="exist">
-                        <tr>
-                          <!--Showing Skills-->
-                          <th>
-                            <div *ngFor="let skill of skills" class="candidate-cvs row rounded">
-                              <div class="col-sm-10">
-                                <div class="myskill"><span class="h6">{{skill.name}}</span></div>
-                              </div>
-                              <div class="col-sm-1">
-                                <div *ngIf="skillsEdit"><a (click)="skill.removeOption=true;" style="text-align:right;"><i
-                                      class="fa fa-times-circle-o"></i></a></div>
-                              </div>
-                              <div class="col-sm-1" class="down-button">
-                                <a (click)="skill.show=!skill.show">
-                                  <i class="fa fa-arrow-circle-down" aria-hidden="true" *ngIf="!skill.show"></i>
-                                  <i class="fa fa-arrow-circle-up" aria-hidden="true" *ngIf="skill.show"></i>
-                                </a>
-                              </div>
-                              <div *ngIf="skill.show" class="mydescription">
-                                <em class="text-muted">{{skill.type}}</em><br *ngIf="skill.description"> <span *ngIf="skill.description">Description
-                                  : {{skill.description}}</span><br>Evaluation : {{evaluationSkill(skill)}}
-                                <br>
-                              </div>
-                              <div *ngIf="skill.removeOption" class="delete-confirmation">
-                                <p class="h6">Voulez-vous vraiment supprimer définitivement cette compétence ?</p>
-                                <button type="button" class="btn btn-outline-elegant waves-effect btn-md" (click)="removeSkill(skill,candidate)">Supprimer</button>
-                                <button type="button" class="btn btn-outline-deep-orange waves-effect btn-md" (click)="skill.removeOption=false">Annuler</button>
-                              </div>
-
-                            </div>
-
-                            <!--Adding a new Skill -->
-
-                            <!--  <div><a id="newskill" (click)="newSkillAdd=true" *ngIf="!newSkillAdd && skillsEdit">
+                                  <!--  <div><a id="newskill" (click)="newSkillAdd=true" *ngIf="!newSkillAdd && skillsEdit">
                                           <button type="button" class="btn btn-outline-elegant btn-md waves-effect">Ajouter une nouvelle compétence</button></a></div>-->
 
-                            <div style="text-align:center;"><a tooltip="Ajouter une compétence" (click)="newSkillAdd=true"
-                                *ngIf="!newSkillAdd && skillsEdit">
-                                <i class="fa fa-plus-square-o "></i></a></div>
+                                  <div style="text-align:center;"><a tooltip="Ajouter une compétence"
+                                      (click)="newSkillAdd=true" *ngIf="!newSkillAdd && skillsEdit">
+                                      <i class="fa fa-plus-square-o "></i></a></div>
 
-                            <section>
-                              <form *ngIf="newSkillAdd" class="rounded candidate-cvs">
+                                  <section>
+                                    <form *ngIf="newSkillAdd" class="rounded candidate-cvs">
 
-                                <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Compétence" aria-label="State" [matAutocomplete]="auto"
-                                    [formControl]="skillCtrl"> 
-                                  <mat-autocomplete #auto="matAutocomplete">
-                                    <mat-option *ngFor="let askill of filteredSkills | async" [value]="askill.name">
-                                      <span>{{ askill.name }}</span>
-                                    </mat-option>
-                                  </mat-autocomplete>
-                                </mat-form-field>
+                                      <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Compétence" aria-label="State"
+                                          [matAutocomplete]="auto" [formControl]="skillCtrl">
+                                        <mat-autocomplete #auto="matAutocomplete">
+                                          <mat-option *ngFor="let askill of filteredSkills | async"
+                                            [value]="askill.name">
+                                            <span>{{ askill.name }}</span>
+                                          </mat-option>
+                                        </mat-autocomplete>
+                                      </mat-form-field>
 
 
-                                <!-- <textarea rows="10" cols="50"
+                                      <!-- <textarea rows="10" cols="50"
                                                       class=" materialize-textarea form-control form-control-md"
                                                       ></textarea>-->
-                                <mat-form-field class="example-full-width">
-                                  <textarea matInput [formControl]="skillDescription" placeholder="Description" required="false"></textarea>
-                                </mat-form-field>
-                                <div class="row">
-                                  <div class="col-sm-1"></div>
-                                  <mat-form-field class="col-sm-5 example-full-width">
-                                    <mat-select id="soflow" [formControl]="skillEvaluate" placeholder="Evaluation">
-                                      <mat-option value="0">0 Non évalué</mat-option>
-                                      <mat-option value="1">1 Débutant</mat-option>
-                                      <mat-option value="2">2 Intermédiaire</mat-option>
-                                      <mat-option value="3">3 Confirmé</mat-option>
-                                      <mat-option value="4">4 Expert</mat-option>
-                                    </mat-select>
-                                  </mat-form-field>
-                                  <mat-form-field class="col-sm-5 example-full-width">
-                                    <mat-select id="soflow" [formControl]="skillT" placeholder="Type de compétence">
-                                      <mat-option value="Competence technique">Compétence technique</mat-option>
-                                      <mat-option value="Competence personnelle">Compétence personnelle</mat-option>
-                                    </mat-select>
-                                  </mat-form-field>
-                                </div>
+                                      <mat-form-field class="example-full-width">
+                                        <textarea matInput [formControl]="skillDescription" placeholder="Description"
+                                          required="false"></textarea>
+                                      </mat-form-field>
+                                      <div class="row">
+                                        <div class="col-sm-1"></div>
+                                        <mat-form-field class="col-sm-5 example-full-width">
+                                          <mat-select id="soflow" [formControl]="skillEvaluate"
+                                            placeholder="Evaluation">
+                                            <mat-option value="0">0 Non évalué</mat-option>
+                                            <mat-option value="1">1 Débutant</mat-option>
+                                            <mat-option value="2">2 Intermédiaire</mat-option>
+                                            <mat-option value="3">3 Confirmé</mat-option>
+                                            <mat-option value="4">4 Expert</mat-option>
+                                          </mat-select>
+                                        </mat-form-field>
+                                        <mat-form-field class="col-sm-5 example-full-width">
+                                          <mat-select id="soflow" [formControl]="skillT"
+                                            placeholder="Type de compétence">
+                                            <mat-option value="Competence technique">Compétence technique</mat-option>
+                                            <mat-option value="Competence personnelle">Compétence
+                                              personnelle</mat-option>
+                                          </mat-select>
+                                        </mat-form-field>
+                                      </div>
 
-                                <div class="text-center mt-4 mb-2">
-                                  <button type="submit" class="mySuccessButton" (click)="addSkill(candidate) ; newSkillAdd=false"
-                                    [disabled]="false">Ajouter <i class="fa fa-plus ml-3"></i> </button>
-                                  <button type="button" class="myWarningButton" (click)="newSkillAdd=false">Annuler
-                                    <i class="fa fa-times-circle ml-3"></i>
-                                  </button>
-                                </div>
-                              </form>
-                            </section>
-                          </th>
-                        </tr>
-                      </table>
+                                      <div class="text-center mt-4 mb-2">
+                                        <button type="submit" class="mySuccessButton"
+                                          (click)="addSkill(candidate) ; newSkillAdd=false" [disabled]="false">Ajouter
+                                          <i class="fa fa-plus ml-3"></i> </button>
+                                        <button type="button" class="myWarningButton"
+                                          (click)="newSkillAdd=false">Annuler
+                                          <i class="fa fa-times-circle ml-3"></i>
+                                        </button>
+                                      </div>
+                                    </form>
+                                  </section>
+                                </th>
+                              </tr>
+                            </table>
 
-                    </mat-expansion-panel>
-                  </mat-accordion>
+                          </mat-expansion-panel>
+                        </mat-accordion>
+
+                      </div>
+                    </div>
+                  </div>
 
                 </div>
-              </div>
-            </div>
-
-          </div>
 
 
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="card">
-                <div class="card-header">
-                  <span class="h5" style="color :#434142;">
-                    <i class="fa fa-suitcase prefix" aria-hidden="true" id="current-position"></i> Poste Actuel</span>
-                  <span class="col-sm-3 modify bordered rounded " style="float:right">
-                    <a *ngIf="!positionsEdit" (click)="positionsEdit=true;" matTooltip="Modifier le Poste Actuel">
-                      <strong><i class="fa fa-edit prefix" aria-hidden="true"></i></strong></a>
-                    <a *ngIf="positionsEdit" (click)="getOneCandidate(this.id);positionsEdit=false;" matTooltip="Voir le Poste Actuel">
-                      <strong><i class="fa fa-edit prefix" aria-hidden="true"></i></strong></a>
-                  </span>
-                </div>
-                <div class="card-body">
-                  <mat-accordion>
-                    <mat-expansion-panel [expanded]="positionsEdit">
-                      <mat-expansion-panel-header>
-                        <mat-panel-title>
-                          Poste Actuel
-                        </mat-panel-title>
-                      </mat-expansion-panel-header>
-                      <table class="table table-hover" *ngIf="exist">
-                        <tr>
-                          <th>
-                            <div *ngIf="this.actualPoste" class="candidate-cvs row  rounded">
-                              <div class="col-sm-11">
-                                <div class="mypost"><span class="h6">{{this.actualPoste.name}}</span></div>
-                              </div>
-                              <div class="down-button">
-                                <a (click)="this.actualPoste.show=!this.actualPoste.show" class="col-sm-1">
-                                  <i class="fa fa-arrow-circle-down" aria-hidden="true" *ngIf="!this.actualPoste.show"></i>
-                                  <i class="fa fa-arrow-circle-up" aria-hidden="true" *ngIf="this.actualPoste.show"></i>
-                                </a>
-                              </div>
-                              <table *ngIf="this.actualPoste.show" class="table table-bordered table-sm  " style="margin-bottom:0.1em;">
-                                <tr>
-                                  <th style="width:25%;"><span>Entreprise</span></th>
-                                  <th style="width:75%;"><span>{{this.actualPoste.company}}</span></th>
-                                </tr>
-                                <tr>
-                                  <th><span>Type de Contrat</span></th>
-                                  <th><span>{{this.actualPoste.type}}</span></th>
-                                </tr>
-                                <tr>
-                                  <th><span>Salaire</span></th>
-                                  <th><span>{{this.actualPoste.salary}} {{this.actualPoste.currency}}</span></th>
-                                </tr>
-                                <tr>
-                                  <th><span>Description</span></th>
-                                  <th><span>{{this.actualPoste.description}}</span></th>
-                                </tr>
-                                <tr>
-                                  <th><span>Date de début</span></th>
-                                  <th><span>{{ this.actualPoste.startedJob | date:"dd/MM/yyyy" }}</span></th>
-                                </tr>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="card">
+                      <div class="card-header">
+                        <span class="h5" style="color :#434142;">
+                          <i class="fa fa-suitcase prefix" aria-hidden="true" id="current-position"></i> Poste
+                          Actuel</span>
+                        <span class="col-sm-3 modify bordered rounded " style="float:right">
+                          <a *ngIf="!positionsEdit" (click)="positionsEdit=true;" matTooltip="Modifier le Poste Actuel">
+                            <strong><i class="fa fa-edit prefix" aria-hidden="true"></i></strong></a>
+                          <a *ngIf="positionsEdit" (click)="getOneCandidate(this.id);positionsEdit=false;"
+                            matTooltip="Voir le Poste Actuel">
+                            <strong><i class="fa fa-edit prefix" aria-hidden="true"></i></strong></a>
+                        </span>
+                      </div>
+                      <div class="card-body">
+                        <mat-accordion>
+                          <mat-expansion-panel [expanded]="positionsEdit">
+                            <mat-expansion-panel-header>
+                              <mat-panel-title>
+                                Poste Actuel
+                              </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <table class="table table-hover" *ngIf="exist">
+                              <tr>
+                                <th>
+                                  <div *ngIf="this.actualPoste" class="candidate-cvs row  rounded">
+                                    <div class="col-sm-11">
+                                      <div class="mypost"><span class="h6">{{this.actualPoste.name}}</span></div>
+                                    </div>
+                                    <div class="down-button">
+                                      <a (click)="this.actualPoste.show=!this.actualPoste.show" class="col-sm-1">
+                                        <i class="fa fa-arrow-circle-down" aria-hidden="true"
+                                          *ngIf="!this.actualPoste.show"></i>
+                                        <i class="fa fa-arrow-circle-up" aria-hidden="true"
+                                          *ngIf="this.actualPoste.show"></i>
+                                      </a>
+                                    </div>
+                                    <table *ngIf="this.actualPoste.show" class="table table-bordered table-sm  "
+                                      style="margin-bottom:0.1em;">
+                                      <tr>
+                                        <th style="width:25%;"><span>Entreprise</span></th>
+                                        <th style="width:75%;"><span>{{this.actualPoste.company}}</span></th>
+                                      </tr>
+                                      <tr>
+                                        <th><span>Type de Contrat</span></th>
+                                        <th><span>{{this.actualPoste.type}}</span></th>
+                                      </tr>
+                                      <tr>
+                                        <th><span>Salaire</span></th>
+                                        <th><span>{{this.actualPoste.salary}} {{this.actualPoste.currency}}</span></th>
+                                      </tr>
+                                      <tr>
+                                        <th><span>Description</span></th>
+                                        <th><span>{{this.actualPoste.description}}</span></th>
+                                      </tr>
+                                      <tr>
+                                        <th><span>Date de début</span></th>
+                                        <th><span>{{ this.actualPoste.startedJob | date:"dd/MM/yyyy" }}</span></th>
+                                      </tr>
 
 
-                              </table>
+                                    </table>
 
-                            </div>
-                            <div style="text-align:center;"><a tooltip="Modifier le poste actuel" (click)="newPositionAdding=true;"
-                                *ngIf="!newPositionAdding && positionsEdit">
-                                <i class="fa fa-pencil "></i></a></div>
+                                  </div>
+                                  <div style="text-align:center;"><a tooltip="Modifier le poste actuel"
+                                      (click)="newPositionAdding=true;" *ngIf="!newPositionAdding && positionsEdit">
+                                      <i class="fa fa-pencil "></i></a></div>
 
-                            <!--    <a id="newPosition"(click)="newPositionAdding=true;"*ngIf="!newPositionAdding && positionsEdit">
+                                  <!--    <a id="newPosition"(click)="newPositionAdding=true;"*ngIf="!newPositionAdding && positionsEdit">
                                               <button type="button" class="btn btn-outline-elegant btn-md waves-effect">Modifier le poste actuel</button></a> -->
-                            <!-- Current Position Form-->
-                            <section>
-                              <form *ngIf="newPositionAdding" novalidate [formGroup]="positionForm" class=" rounded candidate-cvs"
-                                (ngSubmit)="addNewPosition(candidate) ; newPositionAdding=false">
-                                <div class="position-form">
+                                  <!-- Current Position Form-->
+                                  <section>
+                                    <form *ngIf="newPositionAdding" novalidate [formGroup]="positionForm"
+                                      class=" rounded candidate-cvs"
+                                      (ngSubmit)="addNewPosition(candidate) ; newPositionAdding=false">
+                                      <div class="position-form">
 
-                                  <div class="form-group md-form form-md">
-                                    <i class="fa fa-suitcase prefix" aria-hidden="true"></i>
-                                    <input type="text" class="form-control form-control-md" formControlName="positionName"
-                                      placeholder="Poste Actuel">
-                                  </div>
+                                        <div class="form-group md-form form-md">
+                                          <i class="fa fa-suitcase prefix" aria-hidden="true"></i>
+                                          <input type="text" class="form-control form-control-md"
+                                            formControlName="positionName" placeholder="Poste Actuel">
+                                        </div>
 
-                                  <div class="form-group md-form form-md">
-                                    <i class="fa fa-pencil-square-o prefix" aria-hidden="true"></i>
-                                    <textarea rows="10" cols="50" class="form-control form-control-md" formControlName="positionDescription"
-                                      placeholder="Description"></textarea>
-                                  </div>
-                                  <div class="row">
-                                    <div class="form-group md-form form-md col-md-7">
-                                      <i class="fa fa-dollar prefix" aria-hidden="true"></i>
-                                      <input type="number" class="form-control form-control-md" formControlName="positionSalary"
-                                        placeholder="Salaire">
-                                    </div>
-                                    <div class="col-md-4">
-                                      <select class="form-control form-control-md" formControlName="positionCurrency"
-                                        style="margin-top:0.6em;">
-                                        <option value="" disabled selected>Currency </option>
-                                        <option value="USD">Dollar Américain</option>
-                                        <option value="EUR">Euro</option>
-                                        <option value="MAD">Dirham Marocain</option>
-                                        <option value="CNY">Yuan Renminbi </option>
-                                        <option value="GBP">livre sterling</option>
-                                        <option value="CAD">Dollar Canadien</option>
-                                        <option value="SEK">couronne suédoise </option>
-                                        <option value="RON">Leu Roumain </option>
-                                        <option value="TRY">Livre Turque </option>
-                                        <option value="JPY">Yen Japoanis</option>
-                                        <option value="RUB">rouble russe</option>
-                                        <option value="ZAR">Rand </option>
-                                        <option value="TND">Dinar Tunisien</option>
-                                        <option value="DZD">Dinar Algérien</option>
+                                        <div class="form-group md-form form-md">
+                                          <i class="fa fa-pencil-square-o prefix" aria-hidden="true"></i>
+                                          <textarea rows="10" cols="50" class="form-control form-control-md"
+                                            formControlName="positionDescription" placeholder="Description"></textarea>
+                                        </div>
+                                        <div class="row">
+                                          <div class="form-group md-form form-md col-md-7">
+                                            <i class="fa fa-dollar prefix" aria-hidden="true"></i>
+                                            <input type="number" class="form-control form-control-md"
+                                              formControlName="positionSalary" placeholder="Salaire">
+                                          </div>
+                                          <div class="col-md-4">
+                                            <select class="form-control form-control-md"
+                                              formControlName="positionCurrency" style="margin-top:0.6em;">
+                                              <option value="" disabled selected>Currency </option>
+                                              <option value="USD">Dollar Américain</option>
+                                              <option value="EUR">Euro</option>
+                                              <option value="MAD">Dirham Marocain</option>
+                                              <option value="CNY">Yuan Renminbi </option>
+                                              <option value="GBP">livre sterling</option>
+                                              <option value="CAD">Dollar Canadien</option>
+                                              <option value="SEK">couronne suédoise </option>
+                                              <option value="RON">Leu Roumain </option>
+                                              <option value="TRY">Livre Turque </option>
+                                              <option value="JPY">Yen Japoanis</option>
+                                              <option value="RUB">rouble russe</option>
+                                              <option value="ZAR">Rand </option>
+                                              <option value="TND">Dinar Tunisien</option>
+                                              <option value="DZD">Dinar Algérien</option>
 
-                                      </select>
+                                            </select>
 
-                                    </div>
-                                  </div>
-                                  <div class="form-group md-form form-md">
-                                    <i class="fa fa-bank prefix" aria-hidden="true"></i>
-                                    <input type="text" class="form-control form-control-md" formControlName="positionCompany"
-                                      placeholder="Société">
-                                  </div>
-                                  <div class="row">
-                                    <div class="col-md-5">
-                                      Date de début<br>
-                                      <input type="date" id="date" formControlName="positionDate" />
-                                    </div>
-                                    <div class="col-md-5">
-                                      <select id="soflow" formControlName="positionType">
-                                        <option value="" disabled selected>Type de contrat: </option>
-                                        <option value="Stage">Stage</option>
-                                        <option value="CDI">CDI</option>
-                                        <option value="CDD">CDD</option>
-                                        <option value="Alternance">Alternance</option>
-                                        <option value="Freelance">Freelance</option>
-                                        <option value="Intérim">Intérim</option>
-                                        <option value="Autre">Autre</option>
+                                          </div>
+                                        </div>
+                                        <div class="form-group md-form form-md">
+                                          <i class="fa fa-bank prefix" aria-hidden="true"></i>
+                                          <input type="text" class="form-control form-control-md"
+                                            formControlName="positionCompany" placeholder="Société">
+                                        </div>
+                                        <div class="row">
+                                          <div class="col-md-5">
+                                            Date de début<br>
+                                            <input type="date" id="date" formControlName="positionDate" />
+                                          </div>
+                                          <div class="col-md-5">
+                                            <select id="soflow" formControlName="positionType">
+                                              <option value="" disabled selected>Type de contrat: </option>
+                                              <option value="Stage">Stage</option>
+                                              <option value="CDI">CDI</option>
+                                              <option value="CDD">CDD</option>
+                                              <option value="Alternance">Alternance</option>
+                                              <option value="Freelance">Freelance</option>
+                                              <option value="Intérim">Intérim</option>
+                                              <option value="Autre">Autre</option>
 
-                                      </select>
-                                    </div>
+                                            </select>
+                                          </div>
 
-                                  </div>
+                                        </div>
 
 
 
-                                  <div class="text-center mt-4 mb-2">
-                                    <button type="submit" mat-raised-button class="mySuccessButton" [disabled]="!positionForm.valid">Ajouter
-                                      <i class="fa fa-plus ml-3"></i> </button>
-                                    <button mat-raised-button class="myWarningButton" (click)="newPositionAdding=false">Annuler
-                                      <i class="fa fa-times-circle ml-3"></i> </button>
-                                  </div>
-                                  <!-- <pre>{{positionForm.value | json}}</pre>-->
+                                        <div class="text-center mt-4 mb-2">
+                                          <button type="submit" mat-raised-button class="mySuccessButton"
+                                            [disabled]="!positionForm.valid">Ajouter
+                                            <i class="fa fa-plus ml-3"></i> </button>
+                                          <button mat-raised-button class="myWarningButton"
+                                            (click)="newPositionAdding=false">Annuler
+                                            <i class="fa fa-times-circle ml-3"></i> </button>
+                                        </div>
+                                        <!-- <pre>{{positionForm.value | json}}</pre>-->
 
-                                </div>
-                              </form>
-                            </section>
+                                      </div>
+                                    </form>
+                                  </section>
 
-                          </th>
-                        </tr>
-                      </table>
-                    </mat-expansion-panel>
-                  </mat-accordion>
+                                </th>
+                              </tr>
+                            </table>
+                          </mat-expansion-panel>
+                        </mat-accordion>
+
+                      </div>
+                    </div>
+
+                  </div>
+
 
                 </div>
-              </div>
 
-            </div>
+                <div class="row">
+
+                  <div class="col-sm-12">
+                    <div class="card">
+                      <div class="card-header">
+                        <span class="h5" style="color :#434142;">
+                          <i class="fa fa-suitcase prefix" aria-hidden="true" id="desired-position"></i> Poste souhaité
+                          :</span>
+
+                        <span class="col-sm-3 modify bordered rounded " style="float:right">
+                          <a *ngIf="!currentPositionsEdit" (click)="currentPositionsEdit=true;"
+                            matTooltip="Modifier Poste souhaité">
+                            <strong><i class="fa fa-edit prefix" aria-hidden="true"></i></strong></a>
+                          <a *ngIf="currentPositionsEdit" (click)="getOneCandidate(this.id);currentPositionsEdit=false;"
+                            matTooltip="Voir Poste souhaité"> <strong><i class="fa fa-edit prefix"
+                                aria-hidden="true"></i></strong></a>
+                        </span>
+                      </div>
+                      <div class="card-body">
+                        <mat-accordion>
+                          <mat-expansion-panel [expanded]="currentPositionsEdit">
+                            <mat-expansion-panel-header>
+                              <mat-panel-title>
+                                Poste souhaité
+                              </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <table class="table table-hover" *ngIf="exist">
+                              <tr>
+                                <!-- Desired position -->
+                                <th>
+                                  <div *ngIf="this.desiredPoste" class="candidate-cvs row rounded">
+                                    <div class="col-md-11">
+                                      <div class="mypost"><span class="h6">{{this.desiredPoste.name}}</span></div>
+                                    </div>
+                                    <div>
+                                      <a (click)="this.desiredPoste.show=!this.desiredPoste.show" class="col-md-1">
+                                        <i class="fa fa-arrow-circle-down" aria-hidden="true"
+                                          *ngIf="!this.desiredPoste.show"></i>
+                                        <i class="fa fa-arrow-circle-up" aria-hidden="true"
+                                          *ngIf="this.desiredPoste.show"></i>
+                                      </a>
+                                    </div>
+                                    <table *ngIf="this.desiredPoste.show" class="table  table-sm table-bordered"
+                                      style="margin-bottom:0.1em;">
+                                      <tr>
+                                        <th style="width:25%;"><span>Type de Contrat</span></th>
+                                        <th style="width:75%;"><span>{{this.desiredPoste.type}}</span></th>
+                                      </tr>
+                                      <tr>
+                                        <th><span>Salaire</span></th>
+                                        <th><span>{{this.desiredPoste.salary}} {{this.desiredPoste.currency}}</span>
+                                        </th>
+                                      </tr>
+                                      <tr>
+                                        <th><span>Mobilité</span></th>
+                                        <th><span>{{this.desiredPoste.company}}</span></th>
+                                      </tr>
+                                      <tr>
+                                        <th><span>Description</span></th>
+                                        <th><span>{{this.desiredPoste.description}}</span></th>
+                                      </tr>
 
 
-          </div>
+                                    </table>
 
-          <div class="row">
+                                  </div>
+                                  <div style="text-align:center;"><a tooltip="Modifier le poste souhaité"
+                                      (click)="newDesiredPositionAdding=true;"
+                                      *ngIf="!newDesiredPositionAdding && currentPositionsEdit">
+                                      <i class="fa fa-pencil "></i></a></div>
 
-            <div class="col-sm-12">
-              <div class="card">
-                <div class="card-header">
-                  <span class="h5" style="color :#434142;">
-                    <i class="fa fa-suitcase prefix" aria-hidden="true" id="desired-position"></i> Poste souhaité :</span>
-
-                  <span class="col-sm-3 modify bordered rounded " style="float:right">
-                    <a *ngIf="!currentPositionsEdit" (click)="currentPositionsEdit=true;" matTooltip="Modifier Poste souhaité">
-                      <strong><i class="fa fa-edit prefix" aria-hidden="true"></i></strong></a>
-                    <a *ngIf="currentPositionsEdit" (click)="getOneCandidate(this.id);currentPositionsEdit=false;"
-                      matTooltip="Voir Poste souhaité"> <strong><i class="fa fa-edit prefix" aria-hidden="true"></i></strong></a>
-                  </span>
-                </div>
-                <div class="card-body">
-                  <mat-accordion>
-                    <mat-expansion-panel [expanded]="currentPositionsEdit">
-                      <mat-expansion-panel-header>
-                        <mat-panel-title>
-                          Poste souhaité
-                        </mat-panel-title>
-                      </mat-expansion-panel-header>
-                      <table class="table table-hover" *ngIf="exist">
-                        <tr>
-                          <!-- Desired position -->
-                          <th>
-                            <div *ngIf="this.desiredPoste" class="candidate-cvs row rounded">
-                              <div class="col-md-11">
-                                <div class="mypost"><span class="h6">{{this.desiredPoste.name}}</span></div>
-                              </div>
-                              <div>
-                                <a (click)="this.desiredPoste.show=!this.desiredPoste.show" class="col-md-1">
-                                  <i class="fa fa-arrow-circle-down" aria-hidden="true" *ngIf="!this.desiredPoste.show"></i>
-                                  <i class="fa fa-arrow-circle-up" aria-hidden="true" *ngIf="this.desiredPoste.show"></i>
-                                </a>
-                              </div>
-                              <table *ngIf="this.desiredPoste.show" class="table  table-sm table-bordered" style="margin-bottom:0.1em;">
-                                <tr>
-                                  <th style="width:25%;"><span>Type de Contrat</span></th>
-                                  <th style="width:75%;"><span>{{this.desiredPoste.type}}</span></th>
-                                </tr>
-                                <tr>
-                                  <th><span>Salaire</span></th>
-                                  <th><span>{{this.desiredPoste.salary}} {{this.desiredPoste.currency}}</span></th>
-                                </tr>
-                                <tr>
-                                  <th><span>Mobilité</span></th>
-                                  <th><span>{{this.desiredPoste.company}}</span></th>
-                                </tr>
-                                <tr>
-                                  <th><span>Description</span></th>
-                                  <th><span>{{this.desiredPoste.description}}</span></th>
-                                </tr>
-
-
-                              </table>
-
-                            </div>
-                            <div style="text-align:center;"><a tooltip="Modifier le poste souhaité" (click)="newDesiredPositionAdding=true;"
-                                *ngIf="!newDesiredPositionAdding && currentPositionsEdit">
-                                <i class="fa fa-pencil "></i></a></div>
-
-                            <!--     <a id="newPosition"(click)="newDesiredPositionAdding=true;"*ngIf="!newDesiredPositionAdding && currentPositionsEdit">
+                                  <!--     <a id="newPosition"(click)="newDesiredPositionAdding=true;"*ngIf="!newDesiredPositionAdding && currentPositionsEdit">
                                                       <button type="button" class="btn btn-outline-elegant btn-md waves-effect">Modifier le poste désiré</button></a> -->
-                            <!-- Desired Position Form-->
-                            <section>
-                              <form *ngIf="newDesiredPositionAdding" novalidate [formGroup]="desiredPositionForm" class=" rounded candidate-cvs">
-                                <div class="position-form">
+                                  <!-- Desired Position Form-->
+                                  <section>
+                                    <form *ngIf="newDesiredPositionAdding" novalidate [formGroup]="desiredPositionForm"
+                                      class=" rounded candidate-cvs">
+                                      <div class="position-form">
 
-                                  <div class="form-group md-form form-md">
-                                    <i class="fa fa-suitcase prefix" aria-hidden="true"></i>
-                                    <input type="text" class="form-control form-control-md" formControlName="positionName"
-                                      placeholder="Poste Désiré">
-                                  </div>
+                                        <div class="form-group md-form form-md">
+                                          <i class="fa fa-suitcase prefix" aria-hidden="true"></i>
+                                          <input type="text" class="form-control form-control-md"
+                                            formControlName="positionName" placeholder="Poste Désiré">
+                                        </div>
 
-                                  <div class="form-group md-form form-md">
-                                    <i class="fa fa-pencil-square-o prefix" aria-hidden="true"></i>
-                                    <textarea rows="10" cols="50" class="form-control form-control-md" formControlName="positionDescription"
-                                      placeholder="Description"></textarea>
-                                  </div>
-                                  <div class="row">
-                                    <div class="form-group md-form form-md col-md-7">
-                                      <i class="fa fa-dollar prefix" aria-hidden="true"></i>
-                                      <input type="number" class="form-control form-control-md" formControlName="positionSalary"
-                                        placeholder="Salaire">
-                                    </div>
+                                        <div class="form-group md-form form-md">
+                                          <i class="fa fa-pencil-square-o prefix" aria-hidden="true"></i>
+                                          <textarea rows="10" cols="50" class="form-control form-control-md"
+                                            formControlName="positionDescription" placeholder="Description"></textarea>
+                                        </div>
+                                        <div class="row">
+                                          <div class="form-group md-form form-md col-md-7">
+                                            <i class="fa fa-dollar prefix" aria-hidden="true"></i>
+                                            <input type="number" class="form-control form-control-md"
+                                              formControlName="positionSalary" placeholder="Salaire">
+                                          </div>
 
-                                    <div class="col-md-4">
-                                      <select class="form-control form-control-md" formControlName="positionCurrency"
-                                        style="margin-top:0.6em;">
-                                        <option value="" disabled selected>Currency </option>
-                                        <option value="USD">Dollar Américain</option>
-                                        <option value="EUR">Euro</option>
-                                        <option value="MAD">Dirham Marocain</option>
-                                        <option value="CNY">Yuan Renminbi </option>
-                                        <option value="GBP">livre sterling</option>
-                                        <option value="CAD">Dollar Canadien</option>
-                                        <option value="SEK">couronne suédoise </option>
-                                        <option value="RON">Leu Roumain </option>
-                                        <option value="TRY">Livre Turque </option>
-                                        <option value="JPY">Yen Japoanis</option>
-                                        <option value="RUB">rouble russe</option>
-                                        <option value="ZAR">Rand </option>
-                                        <option value="TND">Dinar Tunisien</option>
-                                        <option value="DZD">Dinar Algérien</option>
+                                          <div class="col-md-4">
+                                            <select class="form-control form-control-md"
+                                              formControlName="positionCurrency" style="margin-top:0.6em;">
+                                              <option value="" disabled selected>Currency </option>
+                                              <option value="USD">Dollar Américain</option>
+                                              <option value="EUR">Euro</option>
+                                              <option value="MAD">Dirham Marocain</option>
+                                              <option value="CNY">Yuan Renminbi </option>
+                                              <option value="GBP">livre sterling</option>
+                                              <option value="CAD">Dollar Canadien</option>
+                                              <option value="SEK">couronne suédoise </option>
+                                              <option value="RON">Leu Roumain </option>
+                                              <option value="TRY">Livre Turque </option>
+                                              <option value="JPY">Yen Japoanis</option>
+                                              <option value="RUB">rouble russe</option>
+                                              <option value="ZAR">Rand </option>
+                                              <option value="TND">Dinar Tunisien</option>
+                                              <option value="DZD">Dinar Algérien</option>
 
-                                      </select>
+                                            </select>
 
-                                    </div>
-                                  </div>
-                                  <div class="form-group md-form form-md">
-                                    <i class="fa  fa-map-marker prefix" aria-hidden="true"></i>
-                                    <input type="text" class="form-control form-control-md" formControlName="positionMobility"
-                                      placeholder="Mobilité">
-                                  </div>
-                                  <div class="row">
-                                    <div class="col-md-5">
-                                      <select id="soflow" formControlName="positionType">
-                                        <option value="" disabled selected>Type de contrat: </option>
-                                        <option value="Stage">Stage</option>
-                                        <option value="CDI">CDI</option>
-                                        <option value="CDD">CDD</option>
-                                        <option value="Alternance">Alternance</option>
-                                        <option value="Freelance">Freelance</option>
-                                        <option value="Intérim">Intérim</option>
-                                        <option value="Autre">Autre</option>
+                                          </div>
+                                        </div>
+                                        <div class="form-group md-form form-md">
+                                          <i class="fa  fa-map-marker prefix" aria-hidden="true"></i>
+                                          <input type="text" class="form-control form-control-md"
+                                            formControlName="positionMobility" placeholder="Mobilité">
+                                        </div>
+                                        <div class="row">
+                                          <div class="col-md-5">
+                                            <select id="soflow" formControlName="positionType">
+                                              <option value="" disabled selected>Type de contrat: </option>
+                                              <option value="Stage">Stage</option>
+                                              <option value="CDI">CDI</option>
+                                              <option value="CDD">CDD</option>
+                                              <option value="Alternance">Alternance</option>
+                                              <option value="Freelance">Freelance</option>
+                                              <option value="Intérim">Intérim</option>
+                                              <option value="Autre">Autre</option>
 
-                                      </select>
-                                    </div>
+                                            </select>
+                                          </div>
 
-                                  </div>
+                                        </div>
 
 
 
-                                  <div class="text-center mt-4 mb-2">
-                                    <button type="submit" mat-raised-button class="mySuccessButton" (click)="addNewDesiredPosition(candidate) ; newDesiredPositionAdding=false"
-                                            [disabled]="!desiredPositionForm.valid">Ajouter <i class="fa fa-plus ml-3"></i>
-                                    </button>
-                                    <button type="button" mat-raised-button class="myWarningButton" (click)="newDesiredPositionAdding=false">Annuler
-                                      <i class="fa fa-times-circle ml-3"></i> </button>
-                                  </div>
-                                </div>
-                              </form>
-                            </section>
+                                        <div class="text-center mt-4 mb-2">
+                                          <button type="submit" mat-raised-button class="mySuccessButton"
+                                            (click)="addNewDesiredPosition(candidate) ; newDesiredPositionAdding=false"
+                                            [disabled]="!desiredPositionForm.valid">Ajouter <i
+                                              class="fa fa-plus ml-3"></i>
+                                          </button>
+                                          <button type="button" mat-raised-button class="myWarningButton"
+                                            (click)="newDesiredPositionAdding=false">Annuler
+                                            <i class="fa fa-times-circle ml-3"></i> </button>
+                                        </div>
+                                      </div>
+                                    </form>
+                                  </section>
 
-                          </th>
-                        </tr>
-                      </table>
-                    </mat-expansion-panel>
-                  </mat-accordion>
+                                </th>
+                              </tr>
+                            </table>
+                          </mat-expansion-panel>
+                        </mat-accordion>
 
+                      </div>
+                    </div>
+
+                  </div>
                 </div>
-              </div>
 
+
+
+              </section>
+              <div *ngIf="!exist" class="delete-success"><strong><br>Candidat Supprimé ou inexistant</strong></div>
+              <div class="row white"></div>
             </div>
           </div>
-
-
-
         </section>
-        <div *ngIf="!exist" class="delete-success"><strong><br>Candidat Supprimé ou inexistant</strong></div>
-        <div class="row white"></div>
       </div>
     </div>
   </div>
-</div>

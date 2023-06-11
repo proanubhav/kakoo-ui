@@ -5,6 +5,9 @@
 
    
 }
+.main{
+  background-color: white;
+}
 .page-container{
     background-color:white;
 }
@@ -125,4 +128,12 @@
 	background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e9e9e9', endColorstr='#f9f9f9',GradientType=0);
 	background-color:#e9e9e9;
+}
+
+
+.main{
+  background-color: white;
+}
+.table-active, .table-active>td, .table-active>th {
+  background-color: #fff;
 }

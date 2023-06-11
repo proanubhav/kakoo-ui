@@ -1,142 +1,166 @@
 <app-client-header></app-client-header>
 
-<div class="page-container" *ngIf="!loader">
-  <div class="row white"></div>
-  <div class="container col-md-8">
-    <div class="row my-form rounded">
-      <div class="col">
-
-        <div class="titleContainer">
-          <h3 class="title" *ngIf="!editing">
-            <br> Ajout d'une mission
-          </h3>
-          <h3 class="title" *ngIf="editing">
-            <br> Modification d'une mission
-          </h3>
-        </div>
-
+<div class="page-container page-wrap">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 col-lg-3 col-xl-2">
+        <app-client-sidebar></app-client-sidebar>
+      </div>
+      <div class="col-md-9 col-lg-9 col-xl-10">
         <section>
-          <form novalidate [formGroup]="assignTaskForm" (ngSubmit)="onSubmit()">
-            <div class="example-container row">
-              <div  class="col-sm-11" *ngIf="knownEmployee && employee != null">
-                <label >Collaborateur : </label> <label> {{employee.lastName}} {{employee.firstName}} </label>
-                <!-- <mat-form-field class="" >
+          <header class="header">
+            <div style="text-align:right;">
+              <div class="d-flex justify-content-between align-items-center form-group">
+                <h2 class="m-b-0" *ngIf="!editing">Ajout d'une mission</h2>
+                <h2 class="m-b-0" *ngIf="editing">Modification d'une mission</h2>
+              </div>
+            </div>
+          </header>
+        </section>
+        <section class="main rounded">
+
+          <div class="page-container" *ngIf="!loader">
+            <div class="row white"></div>
+            <div class="container-fluid">
+              <div class="row my-form rounded">
+                <div class="col-sm-12">
+
+                  <!-- <div class="titleContainer">
+                    <h3 class="title" *ngIf="!editing">
+                      <br> Ajout d'une mission
+                    </h3>
+                    <h3 class="title" *ngIf="editing">
+                      <br> Modification d'une mission
+                    </h3>
+                  </div> -->
+
+                  <section>
+                    <form novalidate [formGroup]="assignTaskForm" (ngSubmit)="onSubmit()">
+                      <div class="example-container row">
+                        <div class="col-sm-12" *ngIf="knownEmployee && employee != null">
+                          <label>Collaborateur : </label> <label> {{employee.lastName}} {{employee.firstName}} </label>
+                          <!-- <mat-form-field class="" >
                   <input  placeholder="{{employee.lastName}} {{employee.firstName}}"/>
                 </mat-form-field> -->
-            </div>
-              <mat-form-field class="col-sm-11">
-                <input matInput placeholder="Titre" formControlName="name" required/>
-                <mat-error>Champs obligatoire</mat-error>
-              </mat-form-field>
+                        </div>
+                        <mat-form-field class="col-sm-12">
+                          <input matInput placeholder="Titre" formControlName="name" required />
+                          <mat-error>Champs obligatoire</mat-error>
+                        </mat-form-field>
 
-              <!--<div class="col-sm-1"></div>-->
+                        <!--<div class="col-sm-1"></div>-->
 
-              <mat-form-field class="col-sm-11">
-                <mat-select placeholder="Client" formControlName="clientName" required>
-                  <mat-option *ngFor="let client of allClients" [value]="client.id">{{client.name}}</mat-option>
-                </mat-select>
-                <mat-error>Champs obligatoire</mat-error>
-              </mat-form-field>
-              <mat-form-field class="col-sm-11">
-                <textarea matInput placeholder="Description" formControlName="description">
+                        <mat-form-field class="col-sm-12">
+                          <mat-select placeholder="Client" formControlName="clientName" required>
+                            <mat-option *ngFor="let client of allClients"
+                              [value]="client.id">{{client.name}}</mat-option>
+                          </mat-select>
+                          <mat-error>Champs obligatoire</mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="col-sm-12">
+                          <textarea matInput placeholder="Description" formControlName="description">
                 </textarea>
-              </mat-form-field>
-              <mat-form-field class="col-sm-11" *ngIf="!knownEmployee">
-                <mat-select placeholder="Collaborateur" formControlName="employeeID">
-                  <mat-option *ngFor="let employee of allEmployees" [value]="employee.id">{{employee.lastName}} {{employee.firstName}}</mat-option>
-                </mat-select>
-              </mat-form-field>
-              <!--<div class="col-sm-1"></div>-->
-              <mat-form-field class="col-sm-5">
-                <mat-select [(ngModel)]="selected1" placeholder="Durée" formControlName="duration" required>
-                  <mat-option value="Indéterminée">Indéterminée</mat-option>
-                      <mat-option value="< 1 mois">< 1 mois</mat-option>
-                      <mat-option value="1 mois">1 mois</mat-option>
-                      <mat-option value="2 mois">2 mois</mat-option>
-                      <mat-option value="3 mois">3 mois</mat-option>
-                      <mat-option value="4 mois">4 mois</mat-option>
-                      <mat-option value="5 mois">5 mois</mat-option>
-                      <mat-option value="6 mois">6 mois</mat-option>
-                      <mat-option value="> 6 mois">> 6 mois</mat-option>
-                </mat-select>
-                <mat-error>Champs obligatoire</mat-error>
-              </mat-form-field>
-              <div class="col-sm-1"></div>
+                        </mat-form-field>
+                        <mat-form-field class="col-sm-12" *ngIf="!knownEmployee">
+                          <mat-select placeholder="Collaborateur" formControlName="employeeID">
+                            <mat-option *ngFor="let employee of allEmployees"
+                              [value]="employee.id">{{employee.lastName}} {{employee.firstName}}</mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                        <!--<div class="col-sm-1"></div>-->
+                        <mat-form-field class="col-sm-6">
+                          <mat-select [(ngModel)]="selected1" placeholder="Durée" formControlName="duration" required>
+                            <mat-option value="Indéterminée">Indéterminée</mat-option>
+                            <mat-option value="< 1 mois">
+                              < 1 mois</mat-option>
+                                <mat-option value="1 mois">1 mois</mat-option>
+                                <mat-option value="2 mois">2 mois</mat-option>
+                                <mat-option value="3 mois">3 mois</mat-option>
+                                <mat-option value="4 mois">4 mois</mat-option>
+                                <mat-option value="5 mois">5 mois</mat-option>
+                                <mat-option value="6 mois">6 mois</mat-option>
+                                <mat-option value="> 6 mois">> 6 mois</mat-option>
+                          </mat-select>
+                          <mat-error>Champs obligatoire</mat-error>
+                        </mat-form-field>
+                        <div class="col-sm-1"></div>
 
-              <mat-form-field class="col-sm-2">
-                  <mat-select [(ngModel)]="selected2" placeholder="Devise" formControlName="currency" required>
-                    <mat-option value="eur">EUR Euro</mat-option>
-                    <mat-option value="usd">USD Dollar</mat-option>
-                  </mat-select>
-                  <mat-error>Champs invalide</mat-error>
-                </mat-form-field>
+                        <mat-form-field class="col-sm-2">
+                          <mat-select [(ngModel)]="selected2" placeholder="Devise" formControlName="currency" required>
+                            <mat-option value="eur">EUR Euro</mat-option>
+                            <mat-option value="usd">USD Dollar</mat-option>
+                          </mat-select>
+                          <mat-error>Champs invalide</mat-error>
+                        </mat-form-field>
 
-              <mat-form-field class="col-sm-3">
-                  <input matInput placeholder="TJM" formControlName="cjm" required/>
-                  <mat-error>Champs obligatoire</mat-error>
-                </mat-form-field>
+                        <mat-form-field class="col-sm-3">
+                          <input matInput placeholder="TJM" formControlName="cjm" required />
+                          <mat-error>Champs obligatoire</mat-error>
+                        </mat-form-field>
 
-              <div class="col-sm-2" style="margin-top: 1.3em;">
-                <p>
-                  <mat-checkbox [formControl]="disableSelect1">Préavis</mat-checkbox>
-                </p>
-              </div>
+                        <div class="col-sm-2" style="margin-top: 1.3em;">
+                          <p>
+                            <mat-checkbox [formControl]="disableSelect1">Préavis</mat-checkbox>
+                          </p>
+                        </div>
 
-              <mat-form-field class="col-sm-3">
-                <mat-select [disabled]="!disableSelect1.value" placeholder="Durée du préavis" formControlName="preavis">
-                  <mat-option value="3">3 mois</mat-option>
-                  <mat-option value="6">6 mois</mat-option>
-                </mat-select>
-              </mat-form-field>
+                        <mat-form-field class="col-sm-3">
+                          <mat-select [disabled]="!disableSelect1.value" placeholder="Durée du préavis"
+                            formControlName="preavis">
+                            <mat-option value="3">3 mois</mat-option>
+                            <mat-option value="6">6 mois</mat-option>
+                          </mat-select>
+                        </mat-form-field>
 
-              <!-- <div class="col-sm-3 start-date">Date de d�mmarage</div> -->
+                        <!-- <div class="col-sm-3 start-date">Date de d�mmarage</div> -->
 
-              <div class="col-sm-1"></div>
-              <div class="col-sm-2" style="margin-top: 1.3em;">
-                <p>
-                  <mat-checkbox [formControl]="disableSelect2">Immédiate</mat-checkbox>
-                </p>
-              </div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-2" style="margin-top: 1.3em;">
+                          <p>
+                            <mat-checkbox [formControl]="disableSelect2">Immédiate</mat-checkbox>
+                          </p>
+                        </div>
 
-              <!-- <div class="col-sm-2"></div> -->
+                        <!-- <div class="col-sm-2"></div> -->
 
-              <mat-form-field class="col-sm-3">
-                <input matInput [matDatepicker]="dp" placeholder="Date de démmarage" formControlName="startDate" [disabled]="disableSelect2.value"
-                />
-                <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
-                <mat-datepicker #dp></mat-datepicker>
-                <mat-error>Date invalide</mat-error>
-              </mat-form-field>
+                        <mat-form-field class="col-sm-3">
+                          <input matInput [matDatepicker]="dp" placeholder="Date de démmarage"
+                            formControlName="startDate" [disabled]="disableSelect2.value" />
+                          <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+                          <mat-datepicker #dp></mat-datepicker>
+                          <mat-error>Date invalide</mat-error>
+                        </mat-form-field>
 
-              
-              <div class="col-sm-11">
-                  <span>*TJM : Taux Journalier Moyen</span>
+
+                        <div class="col-sm-12">
+                          <span>*TJM : Taux Journalier Moyen</span>
+                        </div>
+
+                      </div>
+
+                      <div class="text-center mt-4 mb-2">
+                        <button class="btn btn-outline-danger" type="button" (click)="cancelOperation()">
+                          <i class="fa fa-times-circle"></i> Annuler
+                        </button>
+
+                        <button class="btn btn-danger ml-3" type="submit"
+                          [disabled]="!assignTaskForm.valid" *ngIf="!editing">
+                          <i class="fa fa-briefcase"></i> Ajouter
+                        </button>
+
+                        <button mat-raised-button type="submit" class="myInfoButton" *ngIf="editing">Modifier
+                          <i class="fa fa-pencil ml-3"></i>
+                        </button>
+                      </div>
+                      <div class="text-center mt-4 mb-2">
+
+                      </div>
+                    </form>
+                  </section>
                 </div>
-             
+              </div>
             </div>
-            
-            <div class="text-center mt-4 mb-2">
-              <button mat-raised-button class="mySimpleButton" type="button" (click)="cancelOperation()">
-                <i class="fa fa-times-circle ml-3"></i> Annuler
-              </button>
-
-              <button mat-raised-button class="mySuccessButton" type="submit" [disabled]="!assignTaskForm.valid" *ngIf="!editing">
-                <i class="fa fa-briefcase ml-3"></i> Ajouter
-              </button>
-
-              <button mat-raised-button type="submit" class="myInfoButton" *ngIf="editing">Modifier
-                <i class="fa fa-pencil ml-3"></i>
-              </button>
-            </div>
-            <div class="text-center mt-4 mb-2">
-              
-            </div>
-          </form>
-        </section>
-      </div>
-    </div>
-  </div>
-</div>
+          </div>
 
 
-<div class="loader" *ngIf="loader"></div>
+          <div class="loader" *ngIf="loader"></div>

@@ -254,19 +254,19 @@ form{
     border:solid 1px black;
     
     @media screen and (max-width: 500px) {
-        margin-left: 30%;
-        width: 40%;
-        min-width:40%;
-        max-width:40%;
-        max-height: 130px;
+        // margin-left: 30%;
+        width: 100px;
+        min-width:100px;
+        max-width:100px;
+        max-height: 100px;
        
     }
     @media screen and (min-width: 501px) {
-        margin-left:43%;
-        width:14%;
-        min-width:14%;
-        max-width:14%;
-        max-height: 130px;
+        // margin-left:43%;
+        width:150px;
+        min-width:150px;
+        max-width:150px;
+        max-height: 140px;
 
     }
    
@@ -355,7 +355,7 @@ border: #9A2828
     background-color:white;
 }
 .my-candidate{
-    background-color: rgb(232, 232, 236);
+    background-color: #fff;
 }
 .items{
     padding-top:1em;
@@ -852,4 +852,14 @@ margin-left :13%;
     @extend %myButton;
     border: 1px solid $info;
     color: $info;
+}
+.d-flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card .card-body p {
+    line-height: 1.5;
+    margin: 0;
 }
