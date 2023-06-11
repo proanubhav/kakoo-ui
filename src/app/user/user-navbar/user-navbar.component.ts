@@ -54,8 +54,8 @@ export class UserNavbarComponent implements OnInit {
   disconnect() {
     localStorage.removeItem('token');
     this.router.navigate(['']);
-
   }
+
   loadToken() {
     this.jwtToken = localStorage.getItem('token');
   }

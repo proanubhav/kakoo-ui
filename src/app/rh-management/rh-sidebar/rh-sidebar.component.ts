@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-rh-sidebar',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class RhSidebarComponent implements OnInit {
   
   toggleFlag = true;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
 
@@ -16,4 +17,10 @@ export class RhSidebarComponent implements OnInit {
   toggleMenu() {
     this.toggleFlag = !this.toggleFlag
   }
+  
+  disconnect() {
+    localStorage.removeItem('token');
+    this.router.navigate(['']);
+  }
+
 }

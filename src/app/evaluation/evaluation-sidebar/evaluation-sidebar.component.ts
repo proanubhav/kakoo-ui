@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-evaluation-sidebar',
@@ -8,12 +9,17 @@ import { Component, OnInit } from '@angular/core';
 export class EvaluationSidebarComponent implements OnInit {
   
   toggleFlag = false;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
 
   }
   toggleMenu() {
     this.toggleFlag = !this.toggleFlag
+  }
+  
+  disconnect() {
+    localStorage.removeItem('token');
+    this.router.navigate(['']);
   }
 }
