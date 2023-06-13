@@ -1,58 +1,58 @@
 <app-user-navbar></app-user-navbar>
 <div class="page-container">
   <div class="container col-sm-7">
-      
+
 
     <div class="row  profile rounded">
-        <div class="col">
-            <div style="text-align:center;color:#9A2828;" >
-                <h4><br>Paramètres</h4>
-            </div>
-             <!--   <div style="text-align:center;color:#555;">
+      <div class="col">
+        <div style="text-align:center;color:#9A2828;">
+          <h4><br>Paramètres</h4>
+        </div>
+        <!--   <div style="text-align:center;color:#555;">
                 <h4>{{firstName | titlecase}} {{lastName | uppercase}}</h4>
                 <h6><strong>{{companyName | titlecase}}</strong></h6>
-                </div>  -->      
+                </div>  -->
+      </div>
+
+      <div class="col-sm-12">
+        <p id="password-change" class="h6 bordered"><i class="fa fa-lock"></i><a (click)="change=!change"> Modifier le
+            mot de passe</a> </p>
+        <div *ngIf="true">
+          <section>
+            <form novalidate [formGroup]="changeForm" (ngSubmit)="changePassword()">
+              <div class="form-group md-form form-md">
+                Mot de passe Actuel
+                <input type="password" class="form-control" formControlName="oldpassword">
+              </div>
+
+              <div class="form-group md-form form-md">
+                Nouveau Mot de passe
+                <input type="password" class="form-control" formControlName="password">
+              </div>
+              <div class="form-group md-form form-md" *ngIf="true">
+                Confirmer le nouveau Mot de passe
+                <input type="password" class="form-control" formControlName="passwordConfirm">
+                <small
+                  *ngIf="changeForm.controls.passwordConfirm.dirty && changeForm.controls.passwordConfirm.value!=changeForm.controls.password.value"
+                  class="text-danger">
+                  <i class="fa fa-exclamation-circle"> </i><strong>Les 2 mots de passe ne sont pas égaux
+                  </strong></small>
+              </div>
+              <div class="text-center mt-4 mb-2">
+                <button class="btn btn-danger"
+                  [disabled]="!checkValidPassword(changeForm.controls.passwordConfirm.value,changeForm.controls.password.value)">Confirmer
+                  <i class="fa fa-send ml-3"></i> </button>
+              </div>
+            </form>
+          </section>
         </div>
+        <br>
+        <br>
+        <!--  <p class="h6"><i class="fa fa-envelope"></i> Modifier Votre addresse email </p>-->
 
-        <div class="col-sm-12">
-          <p id="password-change"class="h6 bordered"><i class="fa fa-lock"></i><a (click)="change=!change"> Modifier le mot de passe</a> </p>
-            <div *ngIf="true">
-                    <section>
-                            <form novalidate [formGroup]="changeForm" (ngSubmit)="changePassword()">
-                                <div class="form-group md-form form-md">
-                                 Mot de passe Actuel
-                                <input type="password"
-                                      class="form-control"
-                                      formControlName="oldpassword">
-                              </div>  
-
-                              <div class="form-group md-form form-md">
-                                  Nouveau Mot de passe
-                                <input type="password"
-                                      class="form-control"
-                                      formControlName="password">
-                              </div>  
-                              <div class="form-group md-form form-md" *ngIf="true">
-                                    Confirmer le nouveau Mot de passe
-                                    <input type="password"
-                                      class="form-control"
-                                      formControlName="passwordConfirm">
-                                      <small *ngIf="changeForm.controls.passwordConfirm.dirty && changeForm.controls.passwordConfirm.value!=changeForm.controls.password.value" class="text-danger">
-                                        <i class="fa fa-exclamation-circle"> </i><strong>Les 2 mots de passe ne sont pas égaux </strong></small>
-                              </div>            
-                              <div class= "text-center mt-4 mb-2">
-                                <button mat-raised-button class="mySimpleButton"  [disabled]="!checkValidPassword(changeForm.controls.passwordConfirm.value,changeForm.controls.password.value)" >Confirmer  <i class="fa fa-send ml-3"></i> </button>
-                              </div>
-                            </form>
-                          </section>
-            </div>
-            <br>
-            <br>
-      <!--  <p class="h6"><i class="fa fa-envelope"></i> Modifier Votre addresse email </p>-->
-        
-          <br>
-         <!-- <p class="h6"><i class="fa fa-bank"></i> Modifier les coordonnées de la société </p>-->
-          <!--<table class=" table btn-table table-active ">
+        <br>
+        <!-- <p class="h6"><i class="fa fa-bank"></i> Modifier les coordonnées de la société </p>-->
+        <!--<table class=" table btn-table table-active ">
             <tr>
               <th class="item "style="width:30%;">Nom<th>
               <th style="width:70%;"> {{firstName | titlecase}} {{lastName | uppercase}}</th>
@@ -74,7 +74,7 @@
                 <th >{{role | titlecase}}</th>
             </tr>
           </table>-->
-          <!--<p class="h6"><i class="fa fa-bank"></i>Données de la société</p>
+        <!--<p class="h6"><i class="fa fa-bank"></i>Données de la société</p>
           <table class="table btn-table table-active ">
             <tr>
               <th class="item "style="width:30%;">Nom<th>
@@ -95,10 +95,8 @@
             </tr>
           </table>
         -->
-        </div>
-      
+      </div>
+
     </div>
-  <div>
-</div>
-
-
+    <div>
+    </div>

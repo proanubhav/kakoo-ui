@@ -238,35 +238,7 @@ img {
   text-align:center;
   padding-left:0.6em;
 }
-.myButton3{
-  color:#9A2828;
-  border:1px solid #9a2828;
-  
-  background-color:#f9f9f9;
-  -moz-border-radius:6px;
-  -webkit-border-radius:6px;
-  border-radius:6px;
-  border:1px solid #9a2828;
-  display:inline-block;
-  cursor:pointer;
-  color:#9a2828;
-  font-size:15px;
-  padding-left:1em;
-  padding-right:2em;
-  padding-top:2px;
 
-
-}
-.myButton3:hover {
-  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e9e9e9), color-stop(1, #f9f9f9));
-  background:-moz-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
-  background:-webkit-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
-  background:-o-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
-  background:-ms-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
-  background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e9e9e9', endColorstr='#f9f9f9',GradientType=0);
-  background-color:#e9e9e9;
-}
 .myButton4{
   color:#9A2828;
   border:1px solid #9a2828;

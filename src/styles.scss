@@ -148,6 +148,26 @@ body {
       border: 2px solid #9a2828 !important;
     }
   }
+
+  .myButton3 {
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid #9a2828;
+    display: inline-block;
+    cursor: pointer;
+    color: #9a2828;
+    font-size: 15px;
+    padding: 0;
+    width: 45px !important;
+    height: 35px;
+    text-align: center;
+    line-height: 2;
+  }
+
+  .myButton3:hover {
+    background-color: #9a2828;
+    color: #fff;
+  }
 }
 body,
 p,
@@ -167,7 +187,7 @@ h6,
 .mat-option,
 .mat-select,
 .mat-input-element,
-.mat-tab-label, 
+.mat-tab-label,
 .mat-tab-link,
 .mat-tab-group,
 .mat-form-field,
@@ -288,4 +308,8 @@ body {
   display: block;
   min-width: 150px;
   font-weight: 600;
+}
+.mat-menu-panel {
+  position: absolute !important;
+  top: 46px !important;
 }
