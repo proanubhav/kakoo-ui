@@ -91,6 +91,7 @@ public firstName: string;
       this.getUnseenNotifs();
     });
   }
+  
   getConnectedUser() {
     this.authenticationService.getConnectedUser().toPromise().then(
       resp => { 

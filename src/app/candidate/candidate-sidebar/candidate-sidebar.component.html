@@ -1,14 +1,16 @@
 <section class="sidebar-wrapper">
   <div class="sidebar-wrap">
     <ul>
-      <li routerLink="/user/profile">profil de l'utilisateur</li>
-      <li routerLink="/company/allusers">Espace Utilisateurs</li>
-      <li  routerLinkActive="active" routerLink="/candidate/list">Espace Candidats</li>
-      <li routerLink="/quizz/create">Espace Recrutement</li>
+      <li routerLinkActive="active" routerLink="/user/profile">Profil de l'utilisateur</li>
+      <li routerLink="/company/allusers" *ngIf="!this.isEmployee">Espace Utilisateurs</li>
+      <li routerLink="/candidate/list" *ngIf="!this.isEmployee">Espace Candidats</li>
+      <li routerLink="/quizz/create" *ngIf="!this.isEmployee">Espace Recrutement</li>
+      <li routerLinkActive="active" routerLink="/employee/dashboard" *ngIf="this.isEmployee">Tableau de bord</li>
+      <li routerLinkActive="active" (click)="goMyTasks(userId)" *ngIf="this.isEmployee">Mes projets</li>
       <li (click)="toggleMenu()" class="d-flex justify-content-between align-items-center">Espace RH <i class="fa fa-angle-down"></i></li>
       <ol *ngIf="this.toggleFlag">
-        <li routerLink="/rh/list">Employés</li>
-        <li routerLink="/client/list">Clients</li>
+        <li routerLink="/rh/list" *ngIf="!this.isEmployee">Employés</li>
+        <li routerLink="/client/list" *ngIf="!this.isEmployee">Clients</li>
         <li routerLink="/task/list">Missions</li>
       </ol>
       <li (click)="disconnect()">Déconnexion</li>

@@ -132,6 +132,7 @@ export class UserNavbarComponent implements OnInit {
       }
     )
   }
+  
   getUnseenNotifs() {
     this.authenticationService.getUnseenNotif(this.userId).subscribe(resp => {
       //console.log('notification');
