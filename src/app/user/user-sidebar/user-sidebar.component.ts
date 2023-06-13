@@ -20,7 +20,7 @@ export class UserSidebarComponent implements OnInit {
   public companyName: string;
 
   isAdmin: boolean = false;
-  isEmployee: boolean = false;
+  isEmployee: boolean = true;
   userRole: any;
 
   toggleFlag = false;

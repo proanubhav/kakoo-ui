@@ -22,6 +22,7 @@ export class CandidateSidebarComponent implements OnInit {
   private userRole: string;
   private jwtToken: string;
   public isAdminRole: boolean = false;
+  public isEmployee: boolean = true;
   companyName: any;
 
   constructor(private router: Router, private authenticationService: AuthenticationService) { }
@@ -35,14 +36,15 @@ export class CandidateSidebarComponent implements OnInit {
     if (this.jwtToken != null) {
       this.authenticationService.getConnectedUser().subscribe(resp => {
         this.userRole = resp.body['roles'][0].role;
-        //console.log("user Role is : " + this.userRole);
         if (this.userRole == "ADMIN") {
-
           this.isAdminRole = true;
+          this.isEmployee = false
           //console.log("************* yes ***************");
         } else if (this.userRole == "RH") {
-          //console.log("************* no ***************");
-
+          this.isAdminRole = false;
+          this.isEmployee = false;
+        } else if (this.userRole == 'EMPLOYEE') {
+          this.isEmployee = true;
           this.isAdminRole = false;
         }
       });

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {environment} from "../../../../assets/environments/environment";
-import {AuthenticationService} from "../../../user/services/authentication.service";
+import { environment } from "../../../../assets/environments/environment";
+import { AuthenticationService } from "../../../user/services/authentication.service";
 
 @Component({
   selector: 'app-client-sidebar',
@@ -9,9 +9,9 @@ import {AuthenticationService} from "../../../user/services/authentication.servi
   styleUrls: ['./client-sidebar.component.scss']
 })
 export class ClientSidebarComponent implements OnInit {
-  
+
   toggleFlag = true;
-  
+
   private apiUrl = environment.apiUrl;
   public jwtToken: string;
   private userId: number;
@@ -22,7 +22,8 @@ export class ClientSidebarComponent implements OnInit {
   public imgUrl: string;
   public firstName: string;
   public lastName: string;
-  public isAdminRole: boolean = false;
+  public isAdmin: boolean = false;
+  public isEmployee: boolean = true;
 
   constructor(private authenticationService: AuthenticationService, private router: Router) { }
 
@@ -34,14 +35,21 @@ export class ClientSidebarComponent implements OnInit {
     this.imgUrl = './assets/home/images/user.png';
     this.notifs = [];
 
-    if(this.jwtToken != null) {
+    if (this.jwtToken != null) {
       this.authenticationService.getConnectedUser().subscribe(
         resp => {
           this.userRole = resp.body['roles'][0].role;
-          if(this.userRole === 'ADMIN')
-            this.isAdminRole = true;
-          else if(this.userRole === 'RH')
-            this.isAdminRole = false;
+          if (this.userRole == "ADMIN") {
+            this.isAdmin = true;
+            this.isEmployee = false
+            //console.log("************* yes ***************");
+          } else if (this.userRole == "RH") {
+            this.isAdmin = false;
+            this.isEmployee = false;
+          } else if (this.userRole == 'EMPLOYEE') {
+            this.isEmployee = true;
+            this.isAdmin = false;
+          }
         }
       );
     }
@@ -61,7 +69,7 @@ export class ClientSidebarComponent implements OnInit {
 
         this.getUnseenNotifs();
 
-        if(resp.body['photo'])
+        if (resp.body['photo'])
           this.imgUrl = this.apiUrl + 'users/' + this.userId + '/downloadPhoto';
         else
           this.imgUrl = './assets/home/images/user.png';
@@ -122,7 +130,7 @@ export class ClientSidebarComponent implements OnInit {
   toggleMenu() {
     this.toggleFlag = !this.toggleFlag
   }
-  
+
   disconnect() {
     localStorage.removeItem('token');
     this.router.navigate(['']);

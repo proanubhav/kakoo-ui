@@ -20,7 +20,7 @@ export class RhSidebarComponent implements OnInit {
   public jwtToken: string;
   public isAdminRole: boolean = false;
   companyName: any;
-  isEmployee: boolean = false;
+  isEmployee: boolean = true;
   currentUser;
   @Output() adminRole = new EventEmitter<boolean>();
 

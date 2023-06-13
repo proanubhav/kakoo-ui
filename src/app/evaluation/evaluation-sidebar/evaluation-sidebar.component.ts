@@ -20,6 +20,7 @@ export class EvaluationSidebarComponent implements OnInit {
   private lastName: string;
   userRole: string;
   isAdminRole: boolean = false;
+  isEmployee: boolean = true;
   companyName: any;
 
   constructor(private router: Router, private authenticationService: AuthenticationService) { }
@@ -43,6 +44,9 @@ export class EvaluationSidebarComponent implements OnInit {
         } else if (this.userRole == "RH") {
           //console.log("************* no ***************");
 
+          this.isAdminRole = false;
+        } else if (this.userRole == 'EMPLOYEE') {
+          this.isEmployee = true;
           this.isAdminRole = false;
         }
       });

@@ -155,18 +155,24 @@ body {
     border: 1px solid #9a2828;
     display: inline-block;
     cursor: pointer;
-    color: #9a2828;
-    font-size: 15px;
+    color: #9a2828 !important;
+    font-size: 14px !important;
     padding: 0;
     width: 45px !important;
     height: 35px;
     text-align: center;
-    line-height: 2;
+    line-height: 2 !important;
+    i {
+      color: #9a2828 !important;
+    }
   }
 
   .myButton3:hover {
     background-color: #9a2828;
-    color: #fff;
+    color: #fff !important;
+    i {
+      color: #fff !important;
+    }
   }
 }
 body,
@@ -312,4 +318,5 @@ body {
 .mat-menu-panel {
   position: absolute !important;
   top: 46px !important;
+  left: -30px;
 }
