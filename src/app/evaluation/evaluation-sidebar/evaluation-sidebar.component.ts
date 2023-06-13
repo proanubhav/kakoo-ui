@@ -40,10 +40,12 @@ export class EvaluationSidebarComponent implements OnInit {
         if (this.userRole == "ADMIN") {
 
           this.isAdminRole = true;
+          this.isEmployee = false;
           //console.log("************* yes ***************");
         } else if (this.userRole == "RH") {
           //console.log("************* no ***************");
 
+          this.isEmployee = false;
           this.isAdminRole = false;
         } else if (this.userRole == 'EMPLOYEE') {
           this.isEmployee = true;
