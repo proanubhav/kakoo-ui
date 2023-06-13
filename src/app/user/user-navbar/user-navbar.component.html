@@ -116,7 +116,7 @@
     </mat-menu>
   </div> -->
 
-  <div class="menu" *ngIf="jwtToken && isEmployee">
+  <!-- <div class="menu" *ngIf="jwtToken && isEmployee">
     <button mat-icon-button [matMenuTriggerFor]="menu1">
       <mat-icon mat-button class="maticon">apps</mat-icon>
     </button>
@@ -142,12 +142,14 @@
         <span>Mes absences</span>
       </button>
     </mat-menu>
-  </div>
+  </div> -->
 
   <div *ngIf="jwtToken">
     <span>
-      <a>
-        <img id="user-image" [src]="imageUrl" mat-button [matMenuTriggerFor]="menu" height="30" alt="" class="rounded-circle img-fluid">
+      <a  [matMenuTriggerFor]="menu" class="nav-profile">
+        <img id="user-image" [src]="imageUrl" mat-button height="30" alt=""
+          class="rounded-circle img-fluid"> 
+          {{firstName | titlecase}} {{lastName | titlecase}}
       </a>
     </span>
     <mat-menu #menu="matMenu">

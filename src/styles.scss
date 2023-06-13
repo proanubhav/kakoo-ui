@@ -129,6 +129,9 @@ body {
         border-color: #641818 !important;
       }
     }
+    &.btn-round {
+      border-radius: 30px;
+    }
   }
   input.form-control {
     border: 2px solid rgba(0, 0, 0, 0.08);
@@ -276,4 +279,9 @@ body {
       }
     }
   }
+}
+.nav-profile {
+  display: block;
+  min-width: 150px;
+  font-weight: 600;
 }
