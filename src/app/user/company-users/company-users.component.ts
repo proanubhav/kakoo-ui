@@ -3,7 +3,7 @@ import { AuthenticationService } from '../services/authentication.service';
 import { User } from '../user.model';
 import { Router } from '@angular/router';
 import 'rxjs/add/operator/map';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 import * as _ from 'underscore';
 import { PagerService } from '../../candidate/services/pager.service';
@@ -28,8 +28,8 @@ export class CompanyUsersComponent implements OnInit {
   private companyPhone: string;
   private username: string;
   private companyType: string;
-  private allUsers;
   private closeResult: string;
+  allUsers: any = [];
 
   private Notyf = require('notyf');
   private notyf2 = new this.Notyf({
@@ -88,17 +88,18 @@ export class CompanyUsersComponent implements OnInit {
   getCompanyUsers() {
     this.authenticationService.getCompanyUsers().subscribe(
       users => {
-        this.allUsers = users;
+        let userArray: any = [];
+        userArray = users;
+        userArray.forEach((elem: any) => {
+          if (elem.enabled) {
+            this.allUsers.push(elem);
+          }
+        });
         this.allItems = users;
         this.allItems.reverse();
         for (let u of this.allItems) {
-          // //console.log('user is')
-          // //console.log(u)
         }
-        //console.log('ALL USERS ARE')
-        //console.log(this.allUsers);
         this.setPage(1);
-
       }
     );
   }
@@ -151,26 +152,26 @@ export class CompanyUsersComponent implements OnInit {
     );
   }
 
-  activeUser(eve:any, user:User) {
-    if(eve.target.checked) {
-    this.authenticationService.activateUser(user).subscribe(
-      resp => {
-        this.notyf2.confirm(resp);
-        this.getCompanyUsers();
-      },
-      err => {
-        this.notyf2.alert(err);
-      }
-    );
+  activeUser(eve: any, user: User) {
+    if (eve.target.checked) {
+      this.authenticationService.activateUser(user).subscribe(
+        resp => {
+          this.notyf2.confirm(resp);
+          this.getCompanyUsers();
+        },
+        err => {
+          this.notyf2.alert(err);
+        }
+      );
     }
   }
 
-  userInfo:any;
-  viewUser(content, user){
+  userInfo: any;
+  viewUser(content, user) {
     this.userInfo = user;
     console.log('user info', this.userInfo)
     this.modalService.open(content, { size: 'lg' }).result.then((result) => {
-      
+
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
@@ -182,7 +183,7 @@ export class CompanyUsersComponent implements OnInit {
     } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
       return 'by clicking on a backdrop';
     } else {
-      return  `with: ${reason}`;
+      return `with: ${reason}`;
     }
   }
 

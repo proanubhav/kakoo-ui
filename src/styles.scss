@@ -320,3 +320,11 @@ body {
   top: 46px !important;
   left: -30px;
 }
+.mat-tab-label {
+  background-color: #fff !important;
+  opacity: 1 !important;
+  &:hover {
+    color: #9a2828 !important;
+    background-color: #ffe5e5 !important;
+  }
+}
