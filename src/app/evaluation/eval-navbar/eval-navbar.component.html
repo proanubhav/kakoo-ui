@@ -12,7 +12,7 @@
   <div class="collapse navbar-collapse" id="basicExampleNav">
 
     <!-- Links -->
-    <ul class="navbar-nav mr-auto" *ngIf="this.jwtToken">
+    <!-- <ul class="navbar-nav mr-auto" *ngIf="this.jwtToken"> -->
       <!--  <li class="nav-item">
           <a class="nav-link " routerLink=""><i class="fa fa-home"></i> Acceuil
               <span class="sr-only">(current)</span>
@@ -26,7 +26,7 @@
             <a class="nav-link"  routerLink="/user/profile" ><i class="fa fa-user"></i> Mon Profil</a>
       </li>
     -->
-      <li class="nav-item" style="margin-left:40em;">
+      <!-- <li class="nav-item" style="margin-left:40em;">
         <strong class="nav-link " style="color:#9A2828"> Espace Recrutement {{companyName | uppercase}}
         </strong>
       </li>
@@ -34,7 +34,7 @@
 
 
 
-    </ul>
+    </ul> -->
 
 
 
@@ -52,15 +52,20 @@
        </ul>-->
   <!-- Links -->
 
-  <div class="menu" *ngIf="this.jwtToken">
+  <div class="menu d-flex align-items-center" *ngIf="this.jwtToken">
     <span>
-
       <div>
-        <button mat-icon-button [matMenuTriggerFor]="menu1">
+        <button mat-icon-button [matMenuTriggerFor]="menu1" class="notification-icon">
           <mat-icon class="maticon">notifications</mat-icon>
           <span class="badge" *ngIf="notifs.length!==0"> {{notifs.length}}</span>
         </button>
       </div>
+    </span>
+    <span>
+      <button mat-menu-item routerLink="/user/settings">
+        <mat-icon class="mr-0">settings</mat-icon>
+        Paramètres
+      </button>
     </span>
     <mat-menu #menu1="matMenu">
       <button mat-menu-item class="dropdown-item" *ngFor="let notif of notifs" (click)="checkNotif(notif)">

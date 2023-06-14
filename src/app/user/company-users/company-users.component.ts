@@ -91,9 +91,9 @@ export class CompanyUsersComponent implements OnInit {
         let userArray: any = [];
         userArray = users;
         userArray.forEach((elem: any) => {
-          if (elem.enabled) {
+          // if (elem.enabled) {
             this.allUsers.push(elem);
-          }
+          // }
         });
         this.allItems = users;
         this.allItems.reverse();
@@ -103,11 +103,11 @@ export class CompanyUsersComponent implements OnInit {
       }
     );
   }
-  activatedAccount(data) {
-    if (data.enabled)
-      return 'Oui';
-    else return 'Non';
-  }
+  // activatedAccount(data) {
+  //   if (data.enabled)
+  //     return 'Oui';
+  //   else return 'Non';
+  // }
   redirectSettings() {
     this.router.navigate(['user/settings']);
   }

@@ -139,18 +139,10 @@
                       </div>
 
                       <div class="text-center mt-4 mb-2">
-                        <button class="btn btn-outline-danger" type="button" (click)="cancelOperation()">
-                          <i class="fa fa-times-circle"></i> Annuler
-                        </button>
-
+                        <button class="btn btn-outline-danger" type="button" (click)="cancelOperation()">Annuler</button>
                         <button class="btn btn-danger ml-3" type="submit"
-                          [disabled]="!assignTaskForm.valid" *ngIf="!editing">
-                          <i class="fa fa-briefcase"></i> Ajouter
-                        </button>
-
-                        <button mat-raised-button type="submit" class="myInfoButton" *ngIf="editing">Modifier
-                          <i class="fa fa-pencil ml-3"></i>
-                        </button>
+                          [disabled]="!assignTaskForm.valid" *ngIf="!editing">Ajouter</button>
+                        <button mat-raised-button type="submit" class="myInfoButton" *ngIf="editing">Modifier</button>
                       </div>
                       <div class="text-center mt-4 mb-2">
 

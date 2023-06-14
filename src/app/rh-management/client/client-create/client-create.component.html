@@ -1,20 +1,17 @@
 <app-client-header></app-client-header>
 
-<div class="page-container" *ngIf="!loader">
-  <div class="row white"></div>
-  <div class="container col-md-7">
-    <div class="row  my-form rounded">
-      <div class="col">
-
-        <div style="text-align:center;color:#9A2828;">
-          <h3 class="title" *ngIf="!editing">
-            <br>Ajout d'un client</h3>
-
-          <h3 class="title" *ngIf="editing">
-            <br>Modification d'un client</h3>
+<div class="page-container page-wrap" *ngIf="!loader">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 col-lg-3 col-xl-2">
+        <app-client-sidebar></app-client-sidebar>
+      </div>
+      <div class="col-md-9 col-lg-9 col-xl-10">
+        <div class="form-group">
+          <h2 class="title" *ngIf="!editing">Ajout d'un client</h2>
+          <h2 class="title" *ngIf="editing">Modification d'un client</h2>
         </div>
-
-        <section>
+        <section class="white-card">
           <form novalidate [formGroup]="clientForm" (ngSubmit)="onSubmit()">
             <div class="example-container row">
 
@@ -29,51 +26,52 @@
               <div class="col-sm-1"></div>
 
               <mat-form-field class="col-sm-4">
-                <input matInput placeholder="Nom de la société" formControlName="name" required/>
+                <input matInput placeholder="Nom de la société" formControlName="name" required />
                 <mat-error>Champs obligatoire</mat-error>
               </mat-form-field>
 
               <mat-form-field class="col-sm-5">
-                <input matInput placeholder="Secteur d'activité" formControlName="activityArea" required/>
+                <input matInput placeholder="Secteur d'activité" formControlName="activityArea" required />
                 <mat-error>Champs obligatoire</mat-error>
               </mat-form-field>
 
               <mat-form-field class="col-sm-4">
-                <input matInput placeholder="Téléphone" formControlName="phone" required/>
+                <input matInput placeholder="Téléphone" formControlName="phone" required />
                 <mat-error>Numéro invalide</mat-error>
               </mat-form-field>
 
               <mat-form-field class="col-sm-4">
-                <input matInput placeholder="Web Site" formControlName="webSite"/>
+                <input matInput placeholder="Web Site" formControlName="webSite" />
                 <mat-error>Lien invalide</mat-error>
               </mat-form-field>
 
               <mat-form-field class="col-sm-4">
-                <input matInput placeholder="Email" formControlName="email"/>
+                <input matInput placeholder="Email" formControlName="email" />
                 <mat-error>Email invalide</mat-error>
               </mat-form-field>
 
               <mat-form-field class="col-sm-4">
-                <input matInput placeholder="Lieu" formControlName="locality" required/>
+                <input matInput placeholder="Lieu" formControlName="locality" required />
                 <mat-error>Champs obligatoire</mat-error>
               </mat-form-field>
 
               <div class="col-sm-12">
-                <textarea matInput placeholder="Informations sur la société" formControlName="description" cols="30" rows="10"></textarea>
+                <textarea matInput placeholder="Informations sur la société" formControlName="description" cols="30"
+                  rows="10"></textarea>
               </div>
             </div>
 
             <div class="text-center mt-4 mb-2">
-              <button type="button" mat-raised-button class="mySimpleButton" (click)="cancelOperation()">
-                Annuler <i class="fa fa-times-circle ml-3"></i>
+              <button type="button" class="btn btn-outline-danger" (click)="cancelOperation()">
+                Annuler
               </button>
 
-              <button mat-raised-button type="submit" class="mySuccessButton" *ngIf="!editing">
-                Ajouter <i class="fa fa-user-plus ml-3"></i>
+              <button type="submit" class="btn btn-danger" *ngIf="!editing">
+                Ajouter
               </button>
 
-              <button mat-raised-button type="submit" class="myInfoButton" *ngIf="editing">
-                Modifier <i class="fa fa-pencil ml-3"></i>
+              <button type="submit" class="btn btn-outline-danger" *ngIf="editing">
+                Modifier
               </button>
             </div>
           </form>

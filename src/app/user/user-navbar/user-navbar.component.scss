@@ -1,25 +1,23 @@
-@import '../../../assets/sass/var';
-.changed-color{
+@import "../../../assets/sass/var";
+.changed-color {
     background-color: white;
 }
 img {
-    width : 1.5em;
-    height : 1.5em;
-   
+    width: 1.5em;
+    height: 1.5em;
 }
-.nav-link{
-    color:	$defaultColor;
+.nav-link {
+    color: $defaultColor;
 }
 .navbar-nav.mr-auto li a {
-    color:	$defaultColor;
+    color: $defaultColor;
     font-weight: 500;
-
 }
 input::placeholder {
     color: defaultColor;
-  }
+}
 
-input[type=email] {
+input[type="email"] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -28,9 +26,8 @@ input[type=email] {
     border-radius: 4px;
     box-sizing: border-box;
     background-color: white;
-
 }
-input[type=password] {
+input[type="password"] {
     width: 90%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -39,44 +36,38 @@ input[type=password] {
     border-radius: 4px;
     box-sizing: border-box;
     background-color: white;
-    margin-left:5%;
-
+    margin-left: 5%;
 }
-.menu{
-	margin-right:2em;
+.fa.fa-th {
+    font-size: 1.5em;
+    color: defaultColor;
 }
-.fa.fa-th{
- font-size:1.5em;
- color:defaultColor;
+.fa-bell-o {
+    font-size: 1.5em;
+    color: defaultColor;
 }
-.fa-bell-o{
- font-size:1.5em;
- color:defaultColor;
+.fa.fa-paperclip {
+    font-size: 1.5em;
+    color: defaultColor;
 }
-.fa.fa-paperclip{
- font-size:1.5em;
- color:defaultColor;
-}
-.img{
-	margin-top:-0.5em;
-	width : 2em;
-    height : 2em;
+.img {
+    margin-top: -0.5em;
+    width: 2em;
+    height: 2em;
 }
 
-#right{
-	margin-right:1em;
+#right {
+    margin-right: 1em;
 }
-.dropdown-item{
-   
+.dropdown-item {
     background-color: #f9f9f9;
-    
+
     &:hover {
         color: defaultColor;
-      }
-
+    }
 }
-#user-image{
-    margin-top:-0.5em;
+#user-image {
+    margin-top: -0.5em;
 }
 
 .badge {
@@ -93,7 +84,3 @@ input[type=password] {
     color: #fff;
     text-align: center;
 }
-
-  .maticon{
-	  color: $defaultColor;
-  }

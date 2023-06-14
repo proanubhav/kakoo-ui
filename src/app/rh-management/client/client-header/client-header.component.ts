@@ -15,6 +15,7 @@ export class ClientHeaderComponent implements OnInit {
   private userId: number;
   private role: string;
   private userRole: string;
+  public imageUrl: string;
 
   public notifs;
   public imgUrl: string;
@@ -26,6 +27,7 @@ export class ClientHeaderComponent implements OnInit {
 
   ngOnInit() {
 
+    this.imageUrl = "./assets/home/images/user.png";
     this.loadToken();
     this.getConnectedUser();
 
@@ -60,9 +62,9 @@ export class ClientHeaderComponent implements OnInit {
         this.getUnseenNotifs();
 
         if(resp.body['photo'])
-          this.imgUrl = this.apiUrl + 'users/' + this.userId + '/downloadPhoto';
+          this.imageUrl = this.apiUrl + 'users/' + this.userId + '/downloadPhoto';
         else
-          this.imgUrl = './assets/home/images/user.png';
+          this.imageUrl = './assets/home/images/user.png';
       }
     );
   }

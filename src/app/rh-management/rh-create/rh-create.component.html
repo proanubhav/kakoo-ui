@@ -1,43 +1,41 @@
 <app-rh-header></app-rh-header>
-
-<div class="page-container"  *ngIf="!loader">
-  <div class="row white"></div>
-  <div class="container col-md-7">
-    <div class="row  my-form rounded">
-      <div class="col">
-        <div style="text-align:center;color:#9A2828; ">
-
-          <h3 class="title" *ngIf="!editing">
-            <br> Ajout d'un employé
-          </h3>
-
-          <h3 class="title" *ngIf="editing">
-            <br> Modification d'un employé</h3>
+<div class="page-container page-wrap" *ngIf="!loader">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 col-lg-3 col-xl-2">
+        <app-rh-sidebar></app-rh-sidebar>
+      </div>
+      <div class="col-md-9 col-lg-9 col-xl-10">
+        <div class="form-group">
+          <h2 class="title" *ngIf="!editing">Ajout d'un employé</h2>
+          <h2 class="title" *ngIf="editing">Modification d'un employé</h2>
         </div>
 
-        <section>
+        <section class="white-card">
           <form novalidate [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
             <div class="example-container row">
               <mat-form-field class="col-sm-4">
-                <input matInput placeholder="Matricule" formControlName="matricule" required/>
+                <input matInput placeholder="Matricule" formControlName="matricule" required />
                 <mat-error>Numéro invalide</mat-error>
               </mat-form-field>
 
               <mat-form-field class="col-sm-4">
-                <input matInput placeholder="Nom" formControlName="lastName" required/>
+                <input matInput placeholder="Nom" formControlName="lastName" required />
                 <mat-error>Champs obligatoire</mat-error>
               </mat-form-field>
 
               <mat-form-field class="col-sm-4">
-                <input matInput placeholder="Prénom" formControlName="firstName" required/>
+                <input matInput placeholder="Prénom" formControlName="firstName" required />
                 <mat-error>Champs obligatoire</mat-error>
               </mat-form-field>
 
               <mat-form-field class="col-sm-4">
-                <input matInput placeholder="Nom utilisateur" formControlName="username" required/>
+                <input matInput placeholder="Nom utilisateur" formControlName="username" required />
                 <mat-error>Champs invalide
-                  <span *ngIf="employeeForm.controls['username']?.errors?.required "> : Veuillez entrer un identifiant</span>
-                  <span *ngIf="employeeForm.controls['username']?.errors?.usernameTaken  "> : Un utilisateur avec cet identifiant existe déjà</span>
+                  <span *ngIf="employeeForm.controls['username']?.errors?.required "> : Veuillez entrer un
+                    identifiant</span>
+                  <span *ngIf="employeeForm.controls['username']?.errors?.usernameTaken  "> : Un utilisateur avec
+                    cet identifiant existe déjà</span>
                 </mat-error>
                 <div *ngIf="employeeForm.controls['username']?.status === 'PENDING'">
                   <span class="text-info">Vérification...</span>
@@ -55,25 +53,27 @@
               <div class="col-sm-2"></div>
 
               <mat-form-field class="col-sm-4">
-                <input matInput placeholder="Situation familiale" formControlName="familySituation"/>
+                <input matInput placeholder="Situation familiale" formControlName="familySituation" />
                 <mat-error>Champs invalide</mat-error>
               </mat-form-field>
 
               <mat-form-field class="col-sm-4">
-                <input matInput placeholder="Nombre d'enfants" formControlName="childrenNbr"/>
+                <input matInput placeholder="Nombre d'enfants" formControlName="childrenNbr" />
                 <mat-error>Champs invalide</mat-error>
               </mat-form-field>
 
               <mat-form-field class="col-sm-4">
-                <input matInput placeholder="Adresse" formControlName="address" required/>
+                <input matInput placeholder="Adresse" formControlName="address" required />
                 <mat-error>Champs obligatoire</mat-error>
               </mat-form-field>
 
               <mat-form-field class="col-sm-4">
-                <input matInput placeholder="Email" required formControlName="email"/>
-                <mat-error>Champs invalide 
-                  <span *ngIf="employeeForm.controls['email']?.errors?.required "> : Veuillez entrer une adresse mail</span>
-                  <span *ngIf="employeeForm.controls['email']?.errors?.emailTaken  "> : Un utilisateur avec cet email existe déjà</span>
+                <input matInput placeholder="Email" required formControlName="email" />
+                <mat-error>Champs invalide
+                  <span *ngIf="employeeForm.controls['email']?.errors?.required "> : Veuillez entrer une adresse
+                    mail</span>
+                  <span *ngIf="employeeForm.controls['email']?.errors?.emailTaken  "> : Un utilisateur avec cet
+                    email existe déjà</span>
                 </mat-error>
                 <!--<mat-error *ngIf="!emailExist">Email invalide</mat-error>-->
                 <div *ngIf="employeeForm.controls['email']?.status === 'PENDING'">
@@ -82,31 +82,31 @@
               </mat-form-field>
 
               <mat-form-field class="col-sm-4">
-                <input matInput placeholder="Téléphone" formControlName="phone"/>
+                <input matInput placeholder="Téléphone" formControlName="phone" />
                 <mat-error>Numéro invalide</mat-error>
               </mat-form-field>
 
               <mat-form-field class="col-sm-4">
-                <input matInput placeholder="Service" formControlName="service"/>
+                <input matInput placeholder="Service" formControlName="service" />
                 <mat-error>Champs invalide</mat-error>
-              </mat-form-field>
-
-              <mat-form-field class="col-sm-4" >
-                <input matInput placeholder="Poste"   formControlName="profile"/>
-                <mat-error >Champs invalide</mat-error>
               </mat-form-field>
 
               <mat-form-field class="col-sm-4">
-                <input matInput placeholder="Salaire" formControlName="salary"/>
+                <input matInput placeholder="Poste" formControlName="profile" />
                 <mat-error>Champs invalide</mat-error>
               </mat-form-field>
 
-              <mat-form-field class="col-sm-4" >
-                <mat-select placeholder="Expérience"  formControlName="experience">
+              <mat-form-field class="col-sm-4">
+                <input matInput placeholder="Salaire" formControlName="salary" />
+                <mat-error>Champs invalide</mat-error>
+              </mat-form-field>
+
+              <mat-form-field class="col-sm-4">
+                <mat-select placeholder="Expérience" formControlName="experience">
                   <mat-option [value]=0>Sans Expérience</mat-option>
                   <mat-option [value]=1>1 année</mat-option>
-                  <mat-option *ngFor="let i of [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,16,17,18,19]"
-                              [value]=i>{{i}} années</mat-option>
+                  <mat-option *ngFor="let i of [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,16,17,18,19]" [value]=i>{{i}}
+                    années</mat-option>
                   <mat-option [value]=20>+20 année</mat-option>
                 </mat-select>
                 <mat-error>Champs invalide</mat-error>
@@ -114,17 +114,14 @@
             </div>
 
             <div class="text-center mt-4 mb-2">
-              <button type="button" mat-raised-button class="mySimpleButton" (click)="cancelOperation()">Annuler
-                <i class="fa fa-times-circle ml-3"></i>
+              <button type="button" class="btn btn-outline-danger" (click)="cancelOperation()">Annuler
               </button>
 
-              <button mat-raised-button type="submit" class="mySuccessButton" *ngIf="!editing"
-              [disabled]="!employeeForm.valid">Ajouter
-                <i class="fa fa-user-plus ml-3"></i>
+              <button type="submit" class="btn btn-danger" *ngIf="!editing"
+                [disabled]="!employeeForm.valid">Ajouter
               </button>
 
-              <button mat-raised-button type="submit" class="myInfoButton" *ngIf="editing">Modifier
-                <i class="fa fa-pencil ml-3"></i>
+              <button type="submit" class="btn btn-outline-danger" *ngIf="editing">Modifier
               </button>
             </div>
           </form>

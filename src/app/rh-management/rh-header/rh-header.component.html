@@ -6,20 +6,26 @@
   </a>
 
   <div class="collapse navbar-collapse" id="basicExampleNav" *ngIf="jwtToken">
-    <ul class="navbar-nav mr-auto">
+    <!-- <ul class="navbar-nav mr-auto">
       <li class="nav-item" style="margin-left: 30em;">
         <strong class="nav-link" style="color: #9A2828;">
           Espace RH : {{ companyName | uppercase }}
         </strong>
       </li>
-    </ul>
+    </ul> -->
   </div>
 
-  <div class="menu" *ngIf="jwtToken">
+  <div class="menu d-flex align-items-center" *ngIf="jwtToken">
     <span>
-      <button mat-icon-button [matMenuTriggerFor]="menun">
+      <button mat-icon-button [matMenuTriggerFor]="menun" class="notification-icon">
         <mat-icon class="maticon">notifications</mat-icon>
         <span class="badge" *ngIf="notifs && notifs.length!==0"> {{notifs.length}}</span>
+      </button>
+    </span>
+    <span>
+      <button mat-menu-item routerLink="/user/settings">
+        <mat-icon class="mr-0">settings</mat-icon>
+        Paramètres
       </button>
     </span>
     <mat-menu #menun="matMenu">
