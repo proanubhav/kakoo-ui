@@ -5,9 +5,11 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://164.92.135.12:8080/kakoo-back-end/',
+  // apiUrl: 'http://164.92.135.12:8080/kakoo-back-end/',
 
-  // apiUrl: 'https://kakoo-software.com/kakoo-back-end/',
+  // apiUrl: 'http://146.190.205.53:8080/kakoo-back-end/',
+
+  apiUrl: 'https://backend.kakoo-software.com/',
   
   // apiUrl: 'http://localhost:883/'
 };

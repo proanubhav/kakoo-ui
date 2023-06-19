@@ -29,37 +29,15 @@
       </div>
     </div>
 
-
-    <div class="container">
-      <div align="center">
-        <div class="prospections">
-          <!--
-            <h3>
-            Vous êtes un recruteur ? Vous recherchez un ERP pour vous aider à accomplir vos tâches et faciliter votre
-            gestion ? KAKOO
-            est là, n'hésite pas à nous contacter ou faire une demande d’essai 100% gratuite de 10 jours
-          </h3> -->
-        </div>
-
-      </div>
-    </div>
-
-    <div class="container demoform col-md-12">
-
-      <div class="row  my-form rounded">
+    <div class="container demoform">
+      <div class="row">
         <div class="col">
-
-
           <div class="alert alert-success" role="alert" *ngIf="done">
             <strong>Votre demande a été envoyé avec succés !</strong>
           </div>
-
           <div style="text-align:center;color:#9A2828;" *ngIf="chooseDate && !done">
-
             <strong class="h5-responsive">
               Planifier un rendez-vous avec un commercial</strong>
-
-
             <center>
               <div class="col-sm-4" *ngIf="chooseDate">
                 <input class="form-control " [(ngModel)]="myDate" placeholder="Choisissez une date ici"
@@ -68,10 +46,7 @@
               </div>
             </center>
           </div>
-
           <div style="text-align:center;color:#9A2828;" *ngIf="putCode&&!chooseDate">
-
-
             <div class="alert alert-success" role="alert">
               <strong>Un mail contient un code vous a été envoyé pour valider votre adresse mail !</strong>
             </div>
@@ -88,7 +63,7 @@
 
 
 
-          <section *ngIf="!chooseDate && !putCode">
+          <section *ngIf="!chooseDate && !putCode" class="coupon-section">
 
 
             <form novalidate [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
@@ -133,20 +108,20 @@
               <i class="fa fa-arrow-left"></i> Précedent
             </button>
           -->
-            <button mat-raised-button class="mySimpleButton2" type="submit" (click)="askDemo()" [disabled]="!sendValid()">
-              <i class="fa fa-send"></i> Envoyer
+            <button class="btn btn-danger" type="submit" (click)="askDemo()"
+              [disabled]="!sendValid()">
             </button>
 
           </div>
 
           <div class="text-center mt-4 mb-2" *ngIf="!putCode">
-            <button mat-raised-button class="mySimpleButton2" (click)="nextValidToCode();">
+            <button class="btn btn-danger" (click)="nextValidToCode();">
               Suivant
             </button>
 
           </div>
           <div class="text-center mt-4 mb-2" *ngIf="!chooseDate && putCode">
-            <button mat-raised-button class="mySimpleButton2" (click)="nextValidToDate();">
+            <button class="btn btn-danger" (click)="nextValidToDate();">
               Suivant
             </button>
 
