@@ -1,9 +1,6 @@
 <div *ngIf="!isHome">
   <app-header></app-header>
 </div>
-
-
-
 <div id="generic_price_table">
   <section class="pricingSection">
     <div *ngIf="!isHome">
@@ -13,7 +10,6 @@
             <!--PRICE HEADING START-->
             <div class="price-heading clearfix">
               <h3>
-
                 <span class="meilleurs">Demander </span>
                 <span class="meilleurs">une </span>
                 <span class="meilleurs">démonstration</span>
@@ -28,7 +24,6 @@
         </div>
       </div>
     </div>
-
     <div class="container demoform">
       <div class="row">
         <div class="col">
@@ -39,7 +34,7 @@
             <strong class="h5-responsive">
               Planifier un rendez-vous avec un commercial</strong>
             <center>
-              <div class="col-sm-4" *ngIf="chooseDate">
+              <div class="col-sm-12" *ngIf="chooseDate">
                 <input class="form-control " [(ngModel)]="myDate" placeholder="Choisissez une date ici"
                   [owlDateTimeTrigger]="dt" [owlDateTime]="dt">
                 <owl-date-time #dt></owl-date-time>
@@ -50,22 +45,16 @@
             <div class="alert alert-success" role="alert">
               <strong>Un mail contient un code vous a été envoyé pour valider votre adresse mail !</strong>
             </div>
-
             <center>
-              <div class="col-sm-4" *ngIf="putCode&&!chooseDate">
-                <mat-form-field>
-                  <input matInput placeholder="Code" class="form-control " [(ngModel)]="code" required>
+              <div class="col-sm-12" *ngIf="putCode&&!chooseDate">
+                <mat-form-field class="full-width">
+                  <input matInput placeholder="Code" [(ngModel)]="code" required>
                   <mat-error>Champs invalide</mat-error>
                 </mat-form-field>
               </div>
             </center>
           </div>
-
-
-
           <section *ngIf="!chooseDate && !putCode" class="coupon-section">
-
-
             <form novalidate [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
               <div class="example-container row">
                 <mat-form-field class="col-sm-6">
@@ -92,7 +81,6 @@
 
               </div>
               <div *ngIf="!chooseDate && !putCode" class="example-container row">
-
                 <mat-form-field class="col-sm-12">
                   <input matInput placeholder="Téléphone" formControlName="companyPhone" required>
                   <mat-error *ngIf="!registrationForm.controls.companyPhone.value &&!phoneFormatError">Champs
@@ -108,30 +96,20 @@
               <i class="fa fa-arrow-left"></i> Précedent
             </button>
           -->
-            <button class="btn btn-danger" type="submit" (click)="askDemo()"
-              [disabled]="!sendValid()">
-            </button>
-
+            <button class="btn btn-danger" type="submit" (click)="askDemo()" [disabled]="!sendValid()">Suivant</button>
           </div>
-
           <div class="text-center mt-4 mb-2" *ngIf="!putCode">
             <button class="btn btn-danger" (click)="nextValidToCode();">
               Suivant
             </button>
-
           </div>
           <div class="text-center mt-4 mb-2" *ngIf="!chooseDate && putCode">
             <button class="btn btn-danger" (click)="nextValidToDate();">
               Suivant
             </button>
-
           </div>
         </div>
-
-
       </div>
     </div>
-
   </section>
-
 </div>

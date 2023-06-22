@@ -8,6 +8,15 @@ body {
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
+  p {
+    font-size: 0.875rem;
+  }
+  a {
+    color: #8a1d20;
+    &:hover {
+      color: #641818;
+    }
+  }
 }
 
 .my-mat-dialog-container .mat-dialog-container {
@@ -183,6 +192,11 @@ h3,
 h4,
 h5,
 h6,
+div,
+span,
+li,
+ul,
+ol,
 .mat-button,
 .mat-fab,
 .mat-flat-button,
@@ -330,4 +344,9 @@ body {
 }
 .notification-icon {
   color: rgba(0,0,0,.54) !important;
+}
+.full-width {
+  input.form-control {
+    width: 100% !important;
+  }
 }
