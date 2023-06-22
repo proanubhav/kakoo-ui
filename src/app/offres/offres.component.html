@@ -104,7 +104,8 @@
                     </span>
                   </span>
                   <span class="cent">.00</span>
-                  <span class="month">/Mois</span>
+                  <span class="month" *ngIf="!switchabnt">/Mois</span>
+                  <span class="month" *ngIf="switchabnt">/An</span>
                 </span>
               </div>
               <!--//PRICE END-->
@@ -199,7 +200,8 @@
                     </span>
                   </span>
                   <span class="cent">.00</span>
-                  <span class="month">/Mois</span>
+                  <span class="month" *ngIf="!switchabnt">/Mois</span>
+                  <span class="month" *ngIf="switchabnt">/An</span>
                 </span>
               </div>
               <!--//PRICE END-->

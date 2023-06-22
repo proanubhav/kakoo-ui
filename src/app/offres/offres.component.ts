@@ -48,7 +48,7 @@ export class OffresComponent implements OnInit {
     if (switchvalue) {
       // years prices
       this.priceValues = {
-        price_1: 99,
+        price_1: 29,
         price_2: 199,
         // price_3: 500,
       }
