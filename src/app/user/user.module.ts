@@ -41,6 +41,7 @@ import { InternationalPhoneModule } from 'ng4-intl-phone';
 import { UserSidebarComponent } from './user-sidebar/user-sidebar.component';
 import { CandidateSignupComponent } from './candidate-signup/candidate-signup.component';
 import { forgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { PasswordResetComponent } from './password-reset/password-reset.component';
 
 
 
@@ -76,6 +77,7 @@ import { forgotPasswordComponent } from './forgot-password/forgot-password.compo
   ],
   declarations: [
     UserLoginComponent,
+    PasswordResetComponent,
     forgotPasswordComponent,
     UserSignupComponent,
     CandidateSignupComponent,

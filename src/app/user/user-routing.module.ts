@@ -13,11 +13,9 @@ import { PaymentNotificationComponent } from './payment/payment-notification/pay
 import { UnsubscribedComponent } from './payment/unsubscribed/unsubscribed.component';
 import { MySubscriptionComponent } from './payment/my-subscription/my-subscription.component';
 import { DmdUnsubscribeComponent } from './payment/dmd-unsubscribe/dmd-unsubscribe.component';
-import { UrlPermission } from './UrlPermission/UrlPermission';
 import { UrlPaymentPermission } from './UrlPermission/UrlPaymentPermission';
 import { RhdeletedComponent } from './rhdeleted/rhdeleted.component';
 import { EtiGePaymentComponent } from './payment/eti-ge-payment/eti-ge-payment.component';
-import { PaymentComponent } from './payment/payment.component';
 import { CandidateSignupComponent } from './candidate-signup/candidate-signup.component';
 import { forgotPasswordComponent } from './forgot-password/forgot-password.component';
 
@@ -40,7 +38,6 @@ const routes: Routes = [
   { path: 'company/allusers', component: CompanyUsersComponent, canActivate: [UrlPaymentPermission] },
   { path: 'user/settings', component: UserSettingsComponent },
   { path: 'user/rhdeleted', component: RhdeletedComponent },
-  // abonnement
   { path: 'users/unsubscribed/:token', component: DmdUnsubscribeComponent },
   { path: 'user/unsubscribed', component: UnsubscribedComponent },
   { path: 'user/my-subscription', component: MySubscriptionComponent },
@@ -48,7 +45,6 @@ const routes: Routes = [
   { path: 'user/notifpayment', component: PaymentNotificationComponent },
   { path: 'user/dmd-unsubscribe', component: DmdUnsubscribeComponent, },
   { path: 'payment/etige/:rh/:amount/:token', component: EtiGePaymentComponent, },
-  // fin abonnement 
 ];
 
 @NgModule({
