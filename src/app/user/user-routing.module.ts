@@ -18,14 +18,18 @@ import { UrlPaymentPermission } from './UrlPermission/UrlPaymentPermission';
 import { RhdeletedComponent } from './rhdeleted/rhdeleted.component';
 import { EtiGePaymentComponent } from './payment/eti-ge-payment/eti-ge-payment.component';
 import { PaymentComponent } from './payment/payment.component';
+import { CandidateSignupComponent } from './candidate-signup/candidate-signup.component';
+import { forgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 
 
 
 const routes: Routes = [
   { path: 'user/login', component: UserLoginComponent },
+  { path: 'user/forgot-password', component: forgotPasswordComponent },
   { path: 'user/login/:info', component: UserLoginComponent },
   { path: 'user/signup', component: UserSignupComponent },
+  { path: 'user/candidate-signup', component: CandidateSignupComponent },
   { path: 'user/signup/:typeoffre', component: UserSignupComponent }, /// nos offres 
   { path: 'users/confirm/:code', component: UserConfirmComponent },
   { path: 'users/confirm/:code/:typeoffre', component: UserConfirmComponent },

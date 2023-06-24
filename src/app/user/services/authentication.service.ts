@@ -44,6 +44,11 @@ export class AuthenticationService {
 
     //.map((res:Response) => res.json())
   }
+  candidateSignup(user): Observable<boolean> {
+    return this.httpClient.post<boolean>(this.apiUrl + 'candidate-signup', user);
+
+    //.map((res:Response) => res.json())
+  }
   addRh(user) {
     this.loadToken();
     return this.httpClient.post(this.apiUrl + 'users', user, { headers: new HttpHeaders({ 'authorization': this.jwtToken }), observe: 'response' });

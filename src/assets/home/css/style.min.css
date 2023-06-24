@@ -154,11 +154,7 @@ p.lead {
         text-align: center;
     }
 }
-header {
-    padding: 100px 0 0;
-    text-align: center;
-    color: #fff;
-}
+
 .bg-gradient {
     background-image: -moz-linear-gradient(180deg, #fff 0, rgba(255, 255, 255, 0.2) 40%);
     background-image: -webkit-linear-gradient(180deg, #fff 0, rgba(255, 255, 255, 0.2) 40%);

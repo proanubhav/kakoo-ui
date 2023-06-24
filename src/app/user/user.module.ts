@@ -9,7 +9,6 @@ import { UserNavbarComponent } from './user-navbar/user-navbar.component';
 import { UserConfirmComponent } from './user-confirm/user-confirm.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatAutocompleteModule, MatInputModule, MatSelectModule, MatSidenavModule, MatSliderModule, MatSlideToggleModule, MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule, MatStepperModule, MatTooltipModule } from '@angular/material';
-import { PasswordResetComponent } from './password-reset/password-reset.component';
 
 import { MatMenuModule, MatButtonModule, MatIconModule } from '@angular/material';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
@@ -40,6 +39,8 @@ import { MessageDialogUnsubscribeComponent } from './payment/message-dialog-unsu
 import { EtiGePaymentComponent } from './payment/eti-ge-payment/eti-ge-payment.component';
 import { InternationalPhoneModule } from 'ng4-intl-phone';
 import { UserSidebarComponent } from './user-sidebar/user-sidebar.component';
+import { CandidateSignupComponent } from './candidate-signup/candidate-signup.component';
+import { forgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 
 
@@ -75,11 +76,12 @@ import { UserSidebarComponent } from './user-sidebar/user-sidebar.component';
   ],
   declarations: [
     UserLoginComponent,
+    forgotPasswordComponent,
     UserSignupComponent,
+    CandidateSignupComponent,
     UserNavbarComponent,
     UserSidebarComponent,
     UserConfirmComponent,
-    PasswordResetComponent,
     AddRhComponent,
     UserProfileComponent,
     CompanyUsersComponent,
