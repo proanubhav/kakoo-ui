@@ -42,6 +42,7 @@ export class TakeTestComponent implements OnInit {
   private partid;
   public quizzEnd: boolean;
   private bascule: boolean;
+  private jwtToken = null;
   seconds: number;
   timer;
   qnProgress: number;
@@ -71,6 +72,12 @@ export class TakeTestComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.loadToken();
+    if (this.jwtToken) {
+      this.router.navigate(['/quizz/take-quizz/3/84e8d15b-a157-4c27-aba2-5d4d769434f1'])
+    } else {
+      this.router.navigate(['/user/login'])
+    }
     this.questionProgress = 0;
     this.bascule = false;
     this.quizzEnd = false;
@@ -86,8 +93,10 @@ export class TakeTestComponent implements OnInit {
     this.startTest = false;
     this.seconds = 0;
     this.qnProgress = 0;
+  }
 
-
+  loadToken() {
+    this.jwtToken = localStorage.getItem('token');
   }
 
   displayTimeElapsed() {
@@ -149,6 +158,7 @@ export class TakeTestComponent implements OnInit {
       console.log(err);
     })
   }
+
   getNextTest() {
     this.evaluationService.getNextTest(this.token, this.quizzId, this.partNum).subscribe(resp => {
       console.log('next test');
@@ -258,18 +268,16 @@ export class TakeTestComponent implements OnInit {
       this.notyf2.alert("Vous n'avez pas le droit d'accéder à ce quizz");
     });
   }
+
   skipQuestion() {
     // this.evaluationService.getNextQuestion(this.minid, this.token,this.numQuest).subscribe(resp=>{
     //   // console.log(resp);
-
-
     //  });
     this.getNextQuestion();
   }
+
   getQuizz() {
     this.evaluationService.getQuizz(this.code).subscribe(resp => {
-      //console.log('partie 111')
-      //console.log(resp)
       this.quizzId = resp.body['id'];
       this.quizzExperience = resp.body['level'];
       this.quizzSkills = resp.body['description'];

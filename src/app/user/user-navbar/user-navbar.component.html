@@ -51,7 +51,7 @@
        </ul>-->
   <!-- Links -->
   <div class="menu d-flex align-items-center" *ngIf="this.jwtToken">
-    <span>
+    <span *ngIf="!this.isCandidate">
       <div>
         <button mat-icon-button [matMenuTriggerFor]="menu1" class="notification-icon">
           <mat-icon class="maticon">notifications</mat-icon>

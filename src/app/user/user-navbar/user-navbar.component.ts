@@ -20,6 +20,7 @@ export class UserNavbarComponent implements OnInit {
   private notifs;
   private A;
   public companyName: string;
+  isCandidate: boolean = false;
 
   isAdmin: boolean = false;
   isEmployee: boolean = false;
@@ -107,24 +108,26 @@ export class UserNavbarComponent implements OnInit {
           if (this.userRole == "ADMIN") {
             this.isAdmin = true;
             this.isEmployee = false
-            //console.log("************* yes ***************");
           } else if (this.userRole == "RH") {
             this.isAdmin = false;
             this.isEmployee = false;
           } else if(this.userRole == 'EMPLOYEE') {
             this.isEmployee = true;
             this.isAdmin = false;
+          } else if (this.userRole == 'CANDIDATE') {
+            this.isEmployee = false;
+            this.isAdmin = false;
+            this.isCandidate = true;
           }
           this.firstName = resp.body['firstName'];
           this.lastName = resp.body['lastName'];
           this.userId = resp.body['id'];
-          this.companyName = resp.body['company'].name;
+          this.companyName = resp.body['company'] ? resp.body['company'].name : '';
           this.getUnseenNotifs();
 
         }
         if (resp.body['photo']) {
           this.imageUrl = this.apiUrl + "users/" + this.userId + "/downloadPhoto";
-          //console.log(this.imageUrl)
         } else
           this.imageUrl = "./assets/home/images/user.png";
       }, err => {
@@ -135,14 +138,8 @@ export class UserNavbarComponent implements OnInit {
   
   getUnseenNotifs() {
     this.authenticationService.getUnseenNotif(this.userId).subscribe(resp => {
-      //console.log('notification');
-      //console.log(resp)
       this.notifs = resp.body;
       this.notifs.reverse();
-      //console.log(this.notifs)
-      // this.notyf2.confirm(resp.body[0]['message']);
-
-
     })
   }
 

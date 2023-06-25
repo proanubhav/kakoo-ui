@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../services/authentication.service';
 import { environment } from '../../../assets/environments/environment';
+import { CandidateService } from '../../candidate/candidate.service';
 
 @Component({
   selector: 'app-user-sidebar',
@@ -21,10 +22,11 @@ export class UserSidebarComponent implements OnInit {
 
   isAdmin: boolean = false;
   isEmployee: boolean = true;
+  isCandidate: boolean = false;
   userRole: any;
 
   toggleFlag = false;
-  constructor(private router: Router, private authenticationService: AuthenticationService) { }
+  constructor(private router: Router, private authenticationService: AuthenticationService, private candidateService: CandidateService,) { }
 
   ngOnInit() {
     this.notifs = [];
@@ -42,26 +44,32 @@ export class UserSidebarComponent implements OnInit {
     this.jwtToken = localStorage.getItem('token');
   }
 
+  candidateUuid: any = '';
   getConnectedUser2() {
     this.authenticationService.getConnectedUser().subscribe(
       resp => {
         if (resp.body) {
+          // this.candidateUuid = resp.body['candidateId'];
+          this.candidateUuid = 1034734452;
           this.userRole = resp.body['roles'][0].role;
           if (this.userRole == "ADMIN") {
             this.isAdmin = true;
             this.isEmployee = false
-            //console.log("************* yes ***************");
           } else if (this.userRole == "RH") {
             this.isAdmin = false;
             this.isEmployee = false;
           } else if (this.userRole == 'EMPLOYEE') {
             this.isEmployee = true;
             this.isAdmin = false;
+          } else if (this.userRole == 'CANDIDATE') {
+            this.isEmployee = false;
+            this.isAdmin = false;
+            this.isCandidate = true;
           }
           this.firstName = resp.body['firstName'];
           this.lastName = resp.body['lastName'];
           this.userId = resp.body['id'];
-          this.companyName = resp.body['company'].name;
+          this.companyName = resp.body['company'] ? resp.body['company'].name : '';
           this.getUnseenNotifs();
 
         }
@@ -75,31 +83,32 @@ export class UserSidebarComponent implements OnInit {
       }
     )
   }
+  
+  dispReports() {
+    if (this.candidateUuid) {
+      //console.log("uuid form get candidate is " + can.uuid);
+      this.candidateService.findByUuid(this.candidateUuid).subscribe(
+        res => {
+          let token = res.body['convocationToken'];
+          let url = "candidate/reports/" + this.candidateUuid;
+          this.router.navigate([url]);
+        }
+      );
+    }
+  }
 
   getUnseenNotifs() {
     this.authenticationService.getUnseenNotif(this.userId).subscribe(resp => {
-      //console.log('notification');
-      //console.log(resp)
       this.notifs = resp.body;
       this.notifs.reverse();
-      //console.log(this.notifs)
-      // this.notyf2.confirm(resp.body[0]['message']);
-
-
     })
   }
 
   checkNotif(notif) {
-    //console.log('notif is');
-    //console.log(notif['message'])
     window.open(notif['url']);
-
-    //this.router.navigate(['quizz-result/'+notif['url']]);
     this.authenticationService.disableNotif(notif['id']).subscribe(resp => {
-      //console.log(resp)
       this.getUnseenNotifs();
     });
-
   }
 
   goMyTasks(id) {

@@ -401,16 +401,10 @@ export class CandidateListComponent implements OnInit {
     this.authenticationService.getConnectedUser().subscribe(
       resp => {
         //
-        if (resp) {//console.log('resp exist')
-          // //console.log(resp)
-          //console.log('le canddiate connecté est ')
-          //this.userConnect= resp.body['lastName']+' '+resp.body['firstName'];
-          //console.log(this.userConnect);
+        if (resp) {
           this.getCandidates();
         }
         else {
-          //console.log('non resp')
-          // //console.log(resp)
         }
       }
     )
@@ -440,8 +434,6 @@ export class CandidateListComponent implements OnInit {
         }
       );
     }
-
-    //console.log("candidate deleted");
   }
 
   redirectNewCandidatePage() {
@@ -449,40 +441,34 @@ export class CandidateListComponent implements OnInit {
   }
 
   displayCandidatePage(can: Candidate) {
-    //this.router.navigate(['/candidate/details/'+can.id]);
     this.router.navigate(['/candidate/details/' + can.uuid]);
   }
 
 
   editCandidatePage(can: Candidate) {
-    // //console.log("candidate editing  ",can.id);
     if (can) {
       this.router.navigate(['/candidate/edit', can.uuid]);
     }
   }
   uploadCV(can: Candidate) {
     if (can) {
-      //console.log("candidate cv uploading", can.id);
       this.router.navigate(['/candidate/upload/form/', can.uuid]);
-      //window.open('/candidate/upload/form/'+can.uuid);
-
     }
   }
-  dispReports(can: Candidate) {
 
+  dispReports(can: Candidate) {
     if (can) {
       //console.log("uuid form get candidate is " + can.uuid);
       this.candidateService.findByUuid(can.uuid).subscribe(
         res => {
           let token = res.body['convocationToken'];
-          //console.log("token is " + token);
           let url = "candidate/reports/" + can.uuid;
           this.router.navigate([url]);
         }
       );
     }
-
   }
+
   getCandidatesBySkills(query: string) {
     this.candidateService.findBySkills(query).subscribe(
       candidates => {
@@ -804,15 +790,8 @@ export class CandidateListComponent implements OnInit {
                     candidate.score = (sum / array.length);
                   } else candidate.score = 9999;
                 }
-
               );
-
-
-
-              //
-
             }
-            //this.allItems.reverse();
             this.setPage(1);
           }
           else {
@@ -821,15 +800,11 @@ export class CandidateListComponent implements OnInit {
             this.allItems = [];
             this.candidates = [];
             this.pagedItems = [];
-            //this.getCandidates();
           }
 
         }
       );
-
     }
-
-
   }
 
   visible = true;

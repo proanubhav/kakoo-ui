@@ -13,7 +13,7 @@
           </div>
           <div class="profile-info">
             <h4>{{firstName | titlecase}} {{lastName | uppercase}} </h4>
-            <h6>{{companyName | titlecase}}</h6>
+            <h6 *ngIf="isCandidate()">{{companyName | titlecase}}</h6>
           </div>
         </div>
         <!-- <div class="col-sm-12">
@@ -27,6 +27,7 @@
             </div>
 
         </div>   -->
+
         <div class="row">
           <div class="col-sm-12">
             <p class="h6" style="color:#9A2828;margin-left:0.4em;"><i class="fa fa-user"></i> Données personnelles</p>
@@ -41,7 +42,7 @@
                 <th>
                 <th>{{mail}}</th>
               </tr>
-              <tr>
+              <tr *ngIf="isCandidate()">
                 <th class="item ">Téléphone
                 <th>
                 <th>{{phone}}</th>
@@ -51,14 +52,14 @@
                 <th>
                 <th>{{username}}</th>
               </tr>
-              <tr>
+              <tr *ngIf="isCandidate()">
                 <th class="item ">Poste
                 <th>
                 <th>{{role | titlecase}}</th>
               </tr>
             </table>
-            <p class="h6" style="color:#9A2828;margin-left:0.4em;"><i class="fa fa-bank"></i> Données de la société</p>
-            <table class="table btn-table table-active ">
+            <p class="h6" style="color:#9A2828;margin-left:0.4em;" *ngIf="isCandidate()"><i class="fa fa-bank"></i> Données de la société</p>
+            <table class="table btn-table table-active" *ngIf="isCandidate()">
               <tr>
                 <th class="item " style="width:30%;">Nom
                 <th>

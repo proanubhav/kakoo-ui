@@ -71,18 +71,15 @@ export class UserLoginComponent implements OnInit {
 
     })
   }
+  
   loadToken() {
     this.jwtToken = localStorage.getItem('token');
   }
 
   onLogin(user) {
-    //  //console.log(dataForm);
     this.authenticationService.login(user)
       .subscribe(resp => {
         let jwt = resp.headers.get('authorization');
-        //console.log(jwt);
-        //console.log('ok');
-        //console.log(resp);
         this.authenticationService.saveToken(jwt);
         this.authenticationService.getConnectedUser().subscribe(resp => {
           this.userRole = resp.body['roles'][0].role;
@@ -99,10 +96,11 @@ export class UserLoginComponent implements OnInit {
             case 'EMPLOYEE':
               this.router.navigate(['user/profile']);
               break;
+            case 'CANDIDATE':
+              this.router.navigate(['user/profile']);
+              break;
           }
         });
-
-
       },
         error => {
           this.notyf2.alert("Email ou mot de passe incorrect , Réessayez!");
