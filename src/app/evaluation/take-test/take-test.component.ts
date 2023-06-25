@@ -48,6 +48,7 @@ export class TakeTestComponent implements OnInit {
   qnProgress: number;
   bgColor: string;
   fgColor: string;
+  routedUrl: any = '';
 
   private Notyf = require('notyf');
   private notyf2 = new this.Notyf({
@@ -58,23 +59,16 @@ export class TakeTestComponent implements OnInit {
 
 
   constructor(public route: ActivatedRoute, private evaluationService: EvaluationService, private router: Router, private http: HttpClient) {
-    router.events.subscribe(s => {
-      if (s instanceof NavigationEnd) {
-        const tree = router.parseUrl(router.url);
-        if (tree.fragment) {
-          const element = document.querySelector("#" + tree.fragment);
-          if (element) { element.scrollIntoView(true); }
-        }
-      }
-    });
-
-
+    
   }
 
   ngOnInit() {
+    localStorage.setItem('routed', this.router.url);
+    this.routedUrl = localStorage.getItem('routed')
     this.loadToken();
     if (this.jwtToken) {
-      this.router.navigate(['/quizz/take-quizz/3/84e8d15b-a157-4c27-aba2-5d4d769434f1'])
+      this.router.navigate([this.routedUrl])
+      localStorage.removeItem("routed");
     } else {
       this.router.navigate(['/user/login'])
     }

@@ -49,8 +49,8 @@ export class UserSidebarComponent implements OnInit {
     this.authenticationService.getConnectedUser().subscribe(
       resp => {
         if (resp.body) {
-          // this.candidateUuid = resp.body['candidateId'];
-          this.candidateUuid = 1034734452;
+          this.candidateUuid = resp.body['candidateId'];
+          // this.candidateUuid = 1034734452;
           this.userRole = resp.body['roles'][0].role;
           if (this.userRole == "ADMIN") {
             this.isAdmin = true;

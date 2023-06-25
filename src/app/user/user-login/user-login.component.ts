@@ -36,6 +36,7 @@ export class UserLoginComponent implements OnInit {
   resetFailure: boolean;
   resetSuccess: boolean;
   loader: boolean;
+  routedUrl: any = ''
   constructor(
     public route: ActivatedRoute,
     private router: Router,
@@ -47,6 +48,7 @@ export class UserLoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.routedUrl = localStorage.getItem('routed');
     window.scroll(0, 0);
     this.setTitle('Kakoo Software - Connexion');
     this.loadToken();
@@ -71,7 +73,7 @@ export class UserLoginComponent implements OnInit {
 
     })
   }
-  
+
   loadToken() {
     this.jwtToken = localStorage.getItem('token');
   }
@@ -97,7 +99,11 @@ export class UserLoginComponent implements OnInit {
               this.router.navigate(['user/profile']);
               break;
             case 'CANDIDATE':
-              this.router.navigate(['user/profile']);
+              if (this.routedUrl) {
+                this.router.navigate([this.routedUrl])
+              } else {
+                this.router.navigate(['/user/profile'])
+              }
               break;
           }
         });
