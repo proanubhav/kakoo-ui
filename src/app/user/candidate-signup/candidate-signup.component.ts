@@ -20,12 +20,12 @@ declare var require: any;
 export class CandidateSignupComponent implements OnInit {
   private jwtToken = null;
   user: User;
-  errorBoolean: boolean;
-  confirmEmail: boolean;
   emailExist: boolean;
-  loader: boolean;
+  loader: boolean = false;
+  passwordMatched: boolean = true;
   noCompanyError: boolean;
   noCountryError: boolean;
+  successSignup: boolean = false;
   private sh: number;
   private emailFormatError: boolean;
   private phoneFormatError: boolean;
@@ -68,12 +68,11 @@ export class CandidateSignupComponent implements OnInit {
     this.emailExist = false;
     this.loader = false;
     this.sh = 0;
-    this.errorBoolean = false;
-    this.confirmEmail = false;
     this.registrationForm = this.formBuilder.group({
       firstName: new FormControl('', Validators.required),
       lastName: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
+      confirmPassword: new FormControl('', Validators.required),
       email: new FormControl('',
         [Validators.required, Validators.pattern("[^ @]*@[^ @]*")], this.checkEmail.bind(this)),
     });
@@ -88,7 +87,6 @@ export class CandidateSignupComponent implements OnInit {
     if (this.registrationForm.valid) {
       this.emailFormatError = false;
       this.phoneFormatError = false;
-      this.errorBoolean = false;
       this.loader = true;
 
       // let user: User = new User();
@@ -100,13 +98,10 @@ export class CandidateSignupComponent implements OnInit {
         password: this.registrationForm.controls['password'].value,
       };
 
-      // var toffre = this.typeoffre == undefined ? "signup" : this.typeoffre;
       this.authenticationService.candidateSignup(user).subscribe(
         resp => {
-          console.log('Candidate Signup', resp)
-          // this.errorBoolean = false;
-          // this.confirmEmail = true;
-          // this.loader = false;
+          this.successSignup = true;
+          this.loader = false;
           // if (resp) {
           //   this.authenticationService.getActivationLink(user.email).subscribe(
           //     r => {
@@ -120,7 +115,6 @@ export class CandidateSignupComponent implements OnInit {
 
         },
         err => {
-          this.errorBoolean = true;
           this.notyf2.alert(" Echec d'inscription , Vous devez compléter/corriger les champs en rouge");
           if (err.status == 409) {
             this.emailExist = true;
@@ -135,10 +129,19 @@ export class CandidateSignupComponent implements OnInit {
       );
     }
     else {
-      this.errorBoolean = true;
       this.showAlert();
     }
   }
+
+  pwdConfirm() {
+    this.passwordMatched = false;
+    if(this.registrationForm.controls['password'].value == this.registrationForm.controls['confirmPassword'].value) {
+      this.passwordMatched = true;
+    } else {
+      this.passwordMatched = false;
+    }
+  }
+
   showAlert() {
     if (this.sh == 1) {
       this.notyf2.alert(" Echec d'inscription , Vous devez compléter/corriger les champs en rouge");

@@ -350,3 +350,21 @@ body {
     width: 100% !important;
   }
 }
+.error-msg {
+  color: red;
+  font-size: 12px;
+  display: block;
+}
+input.mat-input-element {
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+.text-center {
+  text-align: center !important;
+}
+.text-left {
+  text-align: left !important;
+}
+.text-right {
+  text-align: right !important;
+}

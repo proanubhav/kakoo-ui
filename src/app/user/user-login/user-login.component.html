@@ -15,7 +15,7 @@
             <p>akoo Software</p>
           </div>
           <div class="row  my-form rounded">
-            <div class="col" *ngIf="!resetSuccess">
+            <div class="col">
               <div class="connect-text">
                 <h3 class="title">Connectez vous à kakoo</h3>
               </div>
@@ -45,11 +45,6 @@
                       <strong>Mot de passe oublié?</strong>
                     </a>
                   </div>
-                  <div class="messages">
-                    <p>si vous êtes candidat <span style="color:#9A2828;"><a routerLink="/user/candidate-signup">Inscrivez-vous</a>
-                      </span>
-                    </p>
-                  </div>
                   <div class="text-center mt-4 mb-4">
                     <button type="submit" class="btn btn-danger" *ngIf="!getPassword" [disabled]="false">Se
                       connecter
@@ -63,6 +58,11 @@
                       mon compte</button>
                   </div>
                   <div class="messages">
+                    <p class="mb-1">si vous êtes candidat</p>
+                    <button class="btn btn-outline-danger" routerLink="/user/candidate-signup">Inscrivez-vous</button>
+                  </div>
+                  <br>
+                  <div class="messages">
                     <p>Vous n'avez pas encore de compte ? <br>
                       <span style="color:#9A2828;">
                         <a (click)="redirectSignup()">Inscrivez-vous</a>
@@ -75,14 +75,14 @@
                 </form>
               </section>
             </div>
-            <div class="col" *ngIf="resetSuccess">
+            <!-- <div class="col" *ngIf="resetSuccess">
               <section class="messages ">
                 <div class="alert alert-info confirm-success" role="alert">
                   <strong class="h5">
                     <br>Consulter votre boite mail pour réinitialiser votre mot de passe</strong>
                 </div>
               </section>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>

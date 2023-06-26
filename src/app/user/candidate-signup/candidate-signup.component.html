@@ -1,6 +1,5 @@
 <app-user-navbar></app-user-navbar>
 <div class="page-container">
-  <!-- <div class="row white"></div> -->
   <div class="container signup-sec">
     <div class="row align-items-center">
       <div class="col-md-5">
@@ -11,13 +10,8 @@
               <img src="assets/home/images/logo.png" alt="">
               <p>akoo Software</p>
             </div>
-            <div class="connect-text" style="text-align:center;color:#9A2828;">
-              <h3 class="title" *ngIf="!confirmEmail && !loader">
-                Inscrivez vous facilement pour bénéficier des services de Kakoo :
-              </h3>
-            </div>
             <div class="loader" *ngIf="loader"></div>
-            <section *ngIf="!confirmEmail && !loader">
+            <section *ngIf="!successSignup && !loader">
               <form novalidate [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
                 <div class="example-container row">
                   <mat-form-field class="col-sm-6">
@@ -44,9 +38,14 @@
                     </div>
                   </mat-form-field>
                   <mat-form-field class="col-sm-12">
-                    <input matInput placeholder="Mot de passe oublie?" formControlName="password" required>
-                    <mat-error>Mot de passe oublié?</mat-error>
+                    <input matInput placeholder="mot de passe" type="password"  (keyup)="pwdConfirm()" formControlName="password" required>
+                    <mat-error>mot de passe</mat-error>
                   </mat-form-field>
+                  <mat-form-field class="col-sm-12">
+                    <input matInput placeholder="Confirmez le mot de passe" type="password" (keyup)="pwdConfirm()" formControlName="confirmPassword" required>
+                    <mat-error>Confirmez le mot de passe</mat-error>
+                  </mat-form-field>
+                  <p class="error-msg" *ngIf="!this.passwordMatched">le mot de passe ne correspond pas</p>
                 </div>
                 <p class="small-footer-text"> En cliquant sur<em> S'inscrire </em>, vous acceptez notre <a routerLink=""
                     class="def-font-color" (click)="goTerms()">
@@ -54,22 +53,25 @@
                     d'utilisation </a></p>
 
                 <div class="text-center mt-4 mb-2">
-                  <button (click)="onSubmit()" class="btn btn-danger" [disabled]="false">S'inscrire
+                  <button (click)="onSubmit()" class="btn btn-danger" [disabled]="!this.passwordMatched">S'inscrire
                   </button>
                   <div class="messages mt-4">
-                    <p>Vous avez déjà un compte ?<br>
-                      <span style="color:#9A2828;">
-                        <a (click)="redirectLogin()">Inscrivez-vous</a>
-                      </span>
-                    </p>
+                    <p class="mb-1">Vous avez déjà un compte ?</p>
+                    <button type="submit" class="btn btn-outline-danger" (click)="redirectLogin()">Se
+                      connecter
+                    </button>
                   </div>
                 </div>
               </form>
 
             </section>
-            <section *ngIf="confirmEmail && typeoffre == undefined" id="success-signup">
+            <section id="success-signup" *ngIf="this.successSignup">
               <div class="alert alert-success" role="alert">
-                <strong>Votre demande a été envoyée, nous vous recontacterons dans les meilleurs délais</strong>
+                <strong>votre compte a été créé avec succès</strong>
+              </div>
+              <div class="messages mt-2">
+                <button type="submit" class="btn btn-outline-danger" (click)="redirectLogin()">Se connecter
+                </button>
               </div>
             </section>
           </div>
