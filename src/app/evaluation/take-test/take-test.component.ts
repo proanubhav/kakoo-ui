@@ -70,7 +70,7 @@ export class TakeTestComponent implements OnInit {
       this.router.navigate([this.routedUrl])
       localStorage.removeItem("routed");
     } else {
-      this.router.navigate(['/user/login'])
+      this.router.navigate(['/user/candidate-signup'])
     }
     this.questionProgress = 0;
     this.bascule = false;
@@ -190,14 +190,12 @@ export class TakeTestComponent implements OnInit {
       else {
         this.quizzEnd = true;
         clearInterval(this.timer)
-        //console.log('test termineé')
         this.validateAll(this.quizzId, this.token);
       }
     });
   }
   validateAll(id, token) {
     this.evaluationService.validateAll(id, token).subscribe(resp => {
-      //console.log(resp);
       console.log('VALIDATEDDDDDDDD')
     })
   }
@@ -205,51 +203,34 @@ export class TakeTestComponent implements OnInit {
     this.evaluationService.validateTest(this.token, minid).subscribe(resp => {
       console.log('minintest valid')
       console.log(resp);
-      //this.notyf2.confirm("Merci d'avoir passé ce quizz , on vous communiquera votre résultat le plus proche possible");
-      //this.router.navigate([''])
-      // this.evaluationService.validateGlobalTest(this.token,this.code).subscribe();
-      //console.log(resp);
     })
-
   }
+
   checkAnswer(answr) {
-    //console.log('check answer is')
-    //console.log(answr['name']);
+    
   }
 
   getTest() {
-    console.log('step 111111')
     this.evaluationService.getTest(this.token, this.code).subscribe(resp => {
-      //console.log('tESSSSSST')
-      console.log('step 2222')
-      //console.log(resp)
       if (!resp.body) {
         console.log(resp)
       }
       if (resp.body) {
-        console.log('step 333')
-
         this.startTest = true;
         this.partNum = resp.body['numTest'];
         this.partName = resp.body['testName'];
         this.minid = resp.body['id'];
         this.evaluationService.takefTest(resp.body['id'], this.token).subscribe(resp => {
-          //console.log(resp)
           this.partid = resp.body['id'];
           this.numQuest = resp.body['numQuestion'];
           this.questions[this.index - 1] = resp.body['questionBody'];
-          //console.log('answers ')
-          //console.log(this.answers)
           this.answers = resp.body['answers'];
         });
 
         this.timer = setInterval(() => {
           if (this.seconds < 60) {
             this.seconds++;
-            //this.questionProgress=Math.floor(this.seconds / 20)*100;
             this.questionProgress = 100 * (this.seconds / 60)
-            // console.log('prog')
-            //  console.log(this.questionProgress)
           }
           else {
             this.answerQuestion();
@@ -264,9 +245,6 @@ export class TakeTestComponent implements OnInit {
   }
 
   skipQuestion() {
-    // this.evaluationService.getNextQuestion(this.minid, this.token,this.numQuest).subscribe(resp=>{
-    //   // console.log(resp);
-    //  });
     this.getNextQuestion();
   }
 
