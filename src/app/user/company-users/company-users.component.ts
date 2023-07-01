@@ -4,7 +4,6 @@ import { User } from '../user.model';
 import { Router } from '@angular/router';
 import 'rxjs/add/operator/map';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
-
 import * as _ from 'underscore';
 import { PagerService } from '../../candidate/services/pager.service';
 declare var require: any;

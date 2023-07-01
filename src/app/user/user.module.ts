@@ -40,6 +40,7 @@ import { MessageDialogUnsubscribeComponent } from './payment/message-dialog-unsu
 import { EtiGePaymentComponent } from './payment/eti-ge-payment/eti-ge-payment.component';
 import { InternationalPhoneModule } from 'ng4-intl-phone';
 import { UserSidebarComponent } from './user-sidebar/user-sidebar.component';
+import { AsideMenuComponent } from '../aside-menu/aside-menu.component';
 
 
 
@@ -71,7 +72,7 @@ import { UserSidebarComponent } from './user-sidebar/user-sidebar.component';
     MatStepperModule,
     CKEditorModule,
     MatTooltipModule,
-    InternationalPhoneModule
+    InternationalPhoneModule,
   ],
   declarations: [
     UserLoginComponent,
@@ -94,6 +95,7 @@ import { UserSidebarComponent } from './user-sidebar/user-sidebar.component';
     RhdeletedComponent,
     MessageDialogUnsubscribeComponent,
     EtiGePaymentComponent,
+    AsideMenuComponent
   ],
   providers: [NotificationsService, UrlPermission, UrlPaymentPermission],
   entryComponents: [PaymentComponent, RequestEtiGeComponent, DetailsUploadComponent, MessageDialogUnsubscribeComponent],
